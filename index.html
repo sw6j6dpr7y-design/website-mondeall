@@ -136,8 +136,10 @@
   .ini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 22px; padding-top: 28px; }
   .ini-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--lijn); border-radius: 14px; overflow: hidden; }
   .ini-stripe { height: 4px; width: 100%; }
-  .ini-thumb { position: relative; aspect-ratio: 4 / 2.5; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--lijn); }
-  .ini-thumb svg { width: 52px; height: 52px; stroke: var(--diep); stroke-width: 1.75; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+  .ini-thumb { position: relative; aspect-ratio: 4 / 2.5; overflow: hidden; border-bottom: 1px solid var(--lijn); }
+  .ini-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
+  .ini-icon { position: absolute; right: 12px; bottom: 12px; width: 50px; height: 50px; border-radius: 50%; background: #fff; border: 1px solid var(--lijn); display: flex; align-items: center; justify-content: center; }
+  .ini-icon svg { width: 28px; height: 28px; stroke: var(--diep); stroke-width: 1.75; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   .ini-status { position: absolute; top: 12px; left: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; background: #fff; border: 1px solid var(--lijn); color: var(--diep); border-radius: 999px; padding: 4px 9px; }
   .ini-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
   .ini-chip { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); }
@@ -160,8 +162,13 @@
   .id-eyebrow .dot { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 7px; }
   #initiatief-detail h1 { font-size: clamp(30px, 4.6vw, 46px); margin: 14px 0 8px; max-width: 20ch; letter-spacing: -.01em; }
   .id-sub { color: var(--gedempt); margin: 0 0 14px; }
-  .id-hero { margin: 22px 0 0; aspect-ratio: 16 / 7; border: 1px solid var(--lijn); border-radius: 16px; display: flex; align-items: center; justify-content: center; }
-  .id-hero svg { width: 96px; height: 96px; stroke: var(--diep); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: .92; }
+  .id-fotowrap { margin: 22px 0 0; }
+  .id-hero { position: relative; aspect-ratio: 16 / 7; border: 1px solid var(--lijn); border-radius: 16px; overflow: hidden; }
+  .id-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
+  .id-icon { position: absolute; right: 16px; bottom: 16px; width: 68px; height: 68px; border-radius: 50%; background: #fff; border: 1px solid var(--lijn); display: flex; align-items: center; justify-content: center; }
+  .id-fotowrap .foto-credit { margin-top: 6px; }
+  .ini-beg .foto-credit { margin-top: 6px; }
+  .id-icon svg { width: 38px; height: 38px; stroke: var(--diep); stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   .id-steps { display: flex; margin: 26px 0 4px; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: #fff; }
   .id-step { flex: 1; padding: 12px 8px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .04em; color: var(--gedempt); border-right: 1px solid var(--lijn); }
   .id-step:last-child { border-right: 0; }
@@ -1097,42 +1104,42 @@
   };
   var INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];
   var INI_DATA = [
-    { slug: "renovatie-kleedkamers-sv-laren", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
+    { slug: "renovatie-kleedkamers-sv-laren", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
       vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
       kop: "Gerenoveerde, toegankelijke kleedruimtes.",
       tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
       berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsors: 3 },
-    { slug: "instrumentenfonds-concordia", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
+    { slug: "instrumentenfonds-concordia", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Marina Gr / Pexels", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
       vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument.",
       kop: "Een fonds voor leeninstrumenten voor de jeugd.",
       tekst: "We willen dat geld nooit de reden is dat een kind niet meespeelt. Met dit fonds kan elke jonge muzikant bij ons beginnen: een klarinet, een trompet of een slagwerkset, klaar om mee te nemen naar de eerste les.",
       berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsors: 2 },
-    { slug: "ontmoetingscafe-dementie-gorssel", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
+    { slug: "ontmoetingscafe-dementie-gorssel", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
       vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten.",
       kop: "Een ingericht ontmoetingscafé, elke week open.",
       tekst: "Dementie maakt de wereld klein. Een middag samen, met koffie en muziek van vroeger, geeft rust aan wie het treft en lucht aan wie mantelzorgt. We richten een vaste, warme ruimte in.",
       berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsors: 2 },
-    { slug: "verkeerseducatie-eefde", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
+    { slug: "verkeerseducatie-eefde", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Vladimir Srajber / Pexels", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
       vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school.",
       kop: "Een praktische lessenreeks verkeersveiligheid.",
       tekst: "De weg naar school is druk. Met echte fietslessen op het schoolplein en in de wijk leren kinderen kijken, voorrang geven en zichtbaar zijn. Veiligheid die een leven lang meegaat.",
       berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsors: 2 },
-    { slug: "bijenlint-almen", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
+    { slug: "bijenlint-almen", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Freek Wolsink / Pexels", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
       vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp.",
       kop: "Een aaneengesloten bloemenlint langs de dorpsranden.",
       tekst: "Bermen vol bloemen zijn niet alleen mooi, ze zijn voedsel voor bijen en vlinders. We zaaien een lint dwars door het dorp, onderhouden door vrijwilligers, dat elk jaar weer terugkomt.",
       berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsors: 2 },
-    { slug: "aed-training-sv-epse", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
+    { slug: "aed-training-sv-epse", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Mikhail Nilov / Pexels", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
       vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt.",
       kop: "Een trainingsreeks reanimatie en AED-gebruik.",
       tekst: "Op en om het sportveld kan het zomaar misgaan. Als genoeg mensen weten hoe je reanimeert en de AED bedient, telt elke seconde in ons voordeel. We trainen trainers, vrijwilligers en ouders.",
       berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsors: 2 },
-    { slug: "gereedschapbank-nieuwstad", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
+    { slug: "gereedschapbank-nieuwstad", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Julia M Cameron / Pexels", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
       vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder.",
       kop: "Een uitleenpunt met gedeeld gereedschap.",
       tekst: "Niet iedereen heeft een schuur vol spullen die je twee keer per jaar gebruikt. Met een buurtgereedschapbank leen je wat je nodig hebt, scheelt geld en ruimte, en je leert je buren kennen.",
       berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsors: 2 },
-    { slug: "zonnepanelen-dorpshuis-harfsen", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
+    { slug: "zonnepanelen-dorpshuis-harfsen", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Zeynep Merve Kilic Cakir / Pexels", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
       vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat.",
       kop: "Zonnepanelen op het dak van het dorpshuis.",
       tekst: "De energierekening eet ons budget op. Met eigen opwek dalen de vaste lasten en blijft er ruimte voor wat het dorpshuis is: de klaverjasavond, de peuterochtend, het dorpsfeest.",
@@ -1152,15 +1159,16 @@
     card.innerHTML =
       '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
       '<div class="ini-thumb" style="background:' + iniTint(s.hex, 0.10) + '">' +
+        '<img src="' + d.foto + '" alt="" loading="lazy">' +
         '<span class="ini-status">Voorbeeld</span>' +
-        '<svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg>' +
+        '<span class="ini-icon"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></span>' +
       '</div>' +
       '<div class="ini-body">' +
         '<span class="ini-chip"><span class="dot" style="background:' + s.hex + '"></span>' + d.sector + ' · ' + iniEsc(s.naam) + '</span>' +
         '<span class="ini-plaats">' + iniEsc(d.kern) + '</span>' +
         '<h3>' + iniEsc(d.titel) + '</h3>' +
         '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
-        '<div class="ini-beg">' + iniEsc(d.beg) + '<span class="ini-meer">Bekijk het Initiatief &rarr;</span></div>' +
+        '<div class="ini-beg">' + iniEsc(d.beg) + '<span class="ini-meer">Bekijk het Initiatief &rarr;</span><span class="foto-credit">Foto: ' + iniEsc(d.credit) + '</span></div>' +
       '</div>';
     iniGrid.appendChild(card);
   });
@@ -1187,7 +1195,10 @@
           '<h1 id="id-kop" tabindex="-1">' + iniEsc(d.titel) + '</h1>' +
           '<p class="id-sub">' + iniEsc(d.titel) + ' voor ' + iniEsc(d.beg) + ', gestart door ' + iniEsc(d.starter) + '.</p>' +
           '<span class="preview-status">Fictief voorbeeld van een Initiatiefpagina.</span>' +
-          '<div class="id-hero" style="background:' + iniTint(s.hex, 0.12) + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></div>' +
+          '<div class="id-fotowrap"><div class="id-hero" style="background:' + iniTint(s.hex, 0.12) + '">' +
+            '<img src="' + d.foto + '" alt="Sfeerbeeld bij ' + iniEsc(d.titel) + '">' +
+            '<span class="id-icon"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></span></div>' +
+            '<span class="foto-credit">Sfeerbeeld ter illustratie. Foto: ' + iniEsc(d.credit) + '</span></div>' +
           '<div class="id-steps">' + steps + '</div>' +
           '<h2 class="id-h2">De Voorziening</h2>' +
           '<div class="id-prose"><p><strong>' + iniEsc(d.kop) + '</strong></p><p>' + iniEsc(d.tekst) + '</p></div>' +

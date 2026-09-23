@@ -128,6 +128,25 @@
   }
   .cta-btn:hover { background: var(--merk); }
 
+  /* INITIATIEVEN (voorbeelden) */
+  .ini-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--gedempt); margin: 0; }
+  #initiatieven h2 { font-size: clamp(30px, 4.4vw, 44px); max-width: 16ch; margin: 12px 0 0; }
+  .ini-sub { color: var(--gedempt); max-width: 56ch; margin: 16px 0 16px; font-size: 1.1rem; }
+  .ini-sortnote { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: .06em; color: var(--gedempt); margin: 18px 0 0; }
+  .ini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); gap: 22px; padding-top: 28px; }
+  .ini-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--lijn); border-radius: 14px; overflow: hidden; }
+  .ini-stripe { height: 4px; width: 100%; }
+  .ini-thumb { position: relative; aspect-ratio: 4 / 2.5; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--lijn); }
+  .ini-thumb svg { width: 52px; height: 52px; stroke: var(--diep); stroke-width: 1.75; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+  .ini-status { position: absolute; top: 12px; left: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; background: #fff; border: 1px solid var(--lijn); color: var(--diep); border-radius: 999px; padding: 4px 9px; }
+  .ini-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+  .ini-chip { display: inline-flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); }
+  .ini-chip .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+  .ini-plaats { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .08em; color: var(--gedempt); text-transform: uppercase; }
+  .ini-card h3 { font-size: 1.25rem; margin: 2px 0 0; }
+  .ini-vz { color: var(--gedempt); font-size: 0.97rem; line-height: 1.45; margin: 0; }
+  .ini-beg { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--lijn); font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: .04em; color: var(--gedempt); line-height: 1.3; }
+
   /* START EEN INITIATIEF (preview) */
   #start-initiatief { background: var(--nevel); }
   .preview-status {
@@ -638,6 +657,17 @@
   </div>
 </header>
 
+<section id="initiatieven">
+  <div class="hdr-wrap">
+    <p class="ini-eyebrow">Voorbeelden · gemeente Lochem</p>
+    <h2>Zo ziet het er straks uit</h2>
+    <p class="ini-sub">Elk Initiatief begint bij iemand die de eerste stap zet: een bestuurslid, een leerkracht, een vrijwilliger. Straks kies je er een uit en deel je mee vanaf één euro. Alles komt aan, omdat Sponsors de kosten dragen.</p>
+    <span class="preview-status">Fictieve voorbeelden: het platform wordt gebouwd.</span>
+    <p class="ini-sortnote">Straks gesorteerd op nabijheid, niet op populariteit. Geen ranglijst, geen doelbedrag.</p>
+    <div class="ini-grid" id="ini-grid" role="list"></div>
+  </div>
+</section>
+
 <section id="start-initiatief">
   <div class="wrap">
     <h2>Zo start je straks een Initiatief</h2>
@@ -1016,6 +1046,50 @@
   });
   document.querySelectorAll('.flow-next').forEach(function (b) {
     b.addEventListener('click', function () { toonStap(b.getAttribute('data-goto')); });
+  });
+
+  var INI_ICON = {
+    "02": '<path d="M20.8 4.6a5 5 0 0 0-7 0l-1.8 1.8-1.8-1.8a5 5 0 0 0-7 7L12 20l8.8-9a5 5 0 0 0 0-6.4z"/><path d="M12 6.4 8 10l2.5 2.5L14 9"/>',
+    "03": '<path d="M8 4h8v3a4 4 0 0 1-8 0z"/><path d="M8 5H5v2a3 3 0 0 0 3 3M16 5h3v2a3 3 0 0 1-3 3"/><path d="M12 11v4M9 20h6M10 15h4l1 5H9z"/>',
+    "04": '<path d="M20.8 5.6a5 5 0 0 0-8.8-1 5 5 0 0 0-8.8 1c-1.2 2.4-.5 5.2 1.6 7.2L12 20l7.2-7.2c2.1-2 2.8-4.8 1.6-7.2z"/>',
+    "05": '<circle cx="8" cy="18" r="3"/><path d="M11 18V5l9-2v11"/><circle cx="17" cy="15" r="3"/>',
+    "06": '<path d="M12 3c-1.5 3-4 4-4 7a4 4 0 0 0 8 0c0-3-2.5-4-4-7z"/><path d="M12 14v7M8.5 18l3.5 3 3.5-3"/>',
+    "07": '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/>',
+    "08": '<path d="M3 6.5 12 3l9 3.5L12 10z"/><path d="M6 8v6c0 1.7 2.7 3 6 3s6-1.3 6-3V8"/><path d="M21 6.5V13"/>',
+    "12": '<path d="M3 12h4l2-5 3 10 3-7 2 2h4"/>'
+  };
+  var INI_DATA = [
+    { sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger." },
+    { sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument." },
+    { sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten." },
+    { sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school." },
+    { sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp." },
+    { sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt." },
+    { sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder." },
+    { sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat." }
+  ];
+  function iniEsc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function iniTint(hex, a) { var n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
+  var iniGrid = document.getElementById('ini-grid');
+  INI_DATA.forEach(function (d) {
+    var s = sectoren.filter(function (x) { return x.nr === d.sector; })[0];
+    var card = document.createElement('article');
+    card.className = 'ini-card';
+    card.setAttribute('role', 'listitem');
+    card.innerHTML =
+      '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
+      '<div class="ini-thumb" style="background:' + iniTint(s.hex, 0.10) + '">' +
+        '<span class="ini-status">Voorbeeld</span>' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg>' +
+      '</div>' +
+      '<div class="ini-body">' +
+        '<span class="ini-chip"><span class="dot" style="background:' + s.hex + '"></span>' + d.sector + ' · ' + iniEsc(s.naam) + '</span>' +
+        '<span class="ini-plaats">' + iniEsc(d.kern) + '</span>' +
+        '<h3>' + iniEsc(d.titel) + '</h3>' +
+        '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
+        '<div class="ini-beg">' + iniEsc(d.beg) + '</div>' +
+      '</div>';
+    iniGrid.appendChild(card);
   });
 
   var tabBtns = document.querySelectorAll('.tab-btn');

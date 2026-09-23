@@ -84,6 +84,9 @@
   header nav ul { display: flex; flex-wrap: wrap; gap: 0 28px; list-style: none; margin: 0; padding: 0; }
   header nav a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--kop); font-weight: 600; font-size: 1rem; color: var(--diep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
   header nav a:hover { text-decoration-thickness: 2px; }
+  header nav a.menuknop { padding: 0 22px; border-radius: 999px; background: var(--diep); color: #fff; text-decoration: none; }
+  header nav a.menuknop:hover { background: #003d35; }
+  header nav a.menuknop:focus-visible { outline-color: var(--diep); outline-offset: 4px; }
 
   header .hero { background: var(--nevel); border-top: 1px solid var(--lijn); }
   header .hero .hdr-wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 24px 56px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
@@ -598,6 +601,7 @@
       <ul>
         <li><a href="#wat-is-mondeall">Wat Mondéall wordt</a></li>
         <li><a href="#vertrouwen">Wat er niet gebeurt</a></li>
+        <li><a class="menuknop" href="#contact">Blijf op de hoogte</a></li>
       </ul>
     </nav>
   </div>

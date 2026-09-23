@@ -227,6 +227,127 @@
     flex-shrink: 0;
   }
 
+  /* START EEN INITIATIEF (preview) */
+  #start-initiatief { background: var(--nevel); }
+  .preview-status {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--diep);
+    background: #fff;
+    border: 1px solid var(--lijn);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin: 4px 0 24px;
+  }
+  .stepper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .stepper button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: #fff;
+    border: 1.5px solid var(--lijn);
+    color: var(--tekst);
+    padding: 9px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .stepper button[aria-current="step"] {
+    background: var(--diep);
+    border-color: var(--diep);
+    color: #fff;
+  }
+  .stepper button:focus-visible,
+  .sector-tile:focus-visible,
+  .flow-next:focus-visible {
+    outline: 2px solid var(--diep);
+    outline-offset: 2px;
+  }
+  .flow-card {
+    background: #fff;
+    border: 1px solid var(--lijn);
+    border-radius: 20px;
+    padding: 32px;
+  }
+  .flow-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .flow-hint { margin: 0 0 16px; font-size: 0.95rem; color: var(--gedempt); }
+  .flow-label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--gedempt);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .flow-field {
+    border: 1.5px solid var(--lijn);
+    border-radius: 10px;
+    padding: 13px 16px;
+    background: var(--achtergrond);
+    color: var(--gedempt);
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .flow-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .flow-pill {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--lijn);
+    border-radius: 999px;
+    padding: 9px 18px;
+    background: #fff;
+  }
+  .flow-pill.on { background: var(--merk); border-color: var(--merk); color: #fff; }
+  .flow-check { display: flex; gap: 12px; align-items: flex-start; font-size: 0.95rem; }
+  .flow-box {
+    width: 20px; height: 20px; flex: 0 0 auto; margin-top: 2px;
+    border: 1.5px solid var(--gedempt); border-radius: 4px;
+  }
+  .code-boxes { display: flex; gap: 10px; margin: 8px 0 14px; }
+  .code-boxes span {
+    width: 46px; height: 58px; border: 1.5px solid var(--lijn); border-radius: 10px;
+    background: var(--achtergrond);
+  }
+  .sector-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .sector-tile {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    background: #fff; border: 1.5px solid var(--lijn); border-radius: 14px;
+    padding: 14px 8px; cursor: pointer; text-align: center;
+    font-family: 'Bricolage Grotesque', sans-serif; color: var(--tekst);
+  }
+  .sector-tile img { width: 44px; height: 44px; display: block; }
+  .sector-tile .code { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--gedempt); }
+  .sector-tile .naam { font-size: 0.8rem; font-weight: 600; line-height: 1.25; }
+  .sector-tile[aria-pressed="true"] { border-width: 2px; }
+  .sector-uitleg {
+    margin-top: 16px; background: var(--achtergrond); border: 1px solid var(--lijn);
+    border-radius: 14px; padding: 16px 20px; font-size: 0.95rem;
+  }
+  .sector-uitleg .kop { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 500; }
+  .sector-uitleg .titel { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; color: var(--diep); margin: 2px 0 4px; }
+  .flow-foot { margin-top: 22px; display: flex; justify-content: flex-end; }
+  .flow-next {
+    font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.95rem;
+    background: var(--diep); color: #fff; border: none; border-radius: 999px;
+    padding: 12px 28px; cursor: pointer;
+  }
+  .flow-next:hover { background: var(--merk); }
+  @media (max-width: 720px) {
+    .sector-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow-card { padding: 22px; }
+  }
+
   /* WAT IS MONDEALL */
   .kenmerken {
     display: grid;
@@ -606,6 +727,64 @@
   </div>
 </section>
 
+<section id="start-initiatief">
+  <div class="wrap">
+    <h2>Zo start je straks een Initiatief</h2>
+    <p>In vier korte stappen. Zo ziet het eruit als het platform er is.</p>
+    <span class="preview-status">Preview: het platform wordt gebouwd. Er wordt hier niets opgeslagen of verstuurd.</span>
+
+    <div class="stepper" id="stepper" role="group" aria-label="Stappen">
+      <button type="button" data-step="1" aria-current="step">1 · Plaats en sector</button>
+      <button type="button" data-step="2">2 · Organisatie</button>
+      <button type="button" data-step="3">3 · Account</button>
+      <button type="button" data-step="4">4 · Bevestigen</button>
+    </div>
+
+    <div class="flow-card" id="flow-1" data-panel="1">
+      <h3>Waar staat je Initiatief?</h3>
+      <p class="flow-hint">Zo laten we je Initiatief zien bij de juiste gemeente en Kern.</p>
+      <span class="flow-label">Plaats</span>
+      <div class="flow-field">Bijvoorbeeld: Lochem, Laren of Barchem</div>
+      <h3>Bij welke sector past jouw Initiatief het beste?</h3>
+      <p class="flow-hint">Kies er één. Klik op een sector voor een korte toelichting.</p>
+      <div class="sector-tiles" id="start-tiles"></div>
+      <div class="sector-uitleg" id="start-uitleg">Klik hierboven op een sector. Hier verschijnt een korte toelichting.</div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="2">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-2" data-panel="2" hidden>
+      <h3>Voor welke organisatie start je dit Initiatief?</h3>
+      <p class="flow-hint">Dit is altijd een vereniging, stichting, school of kerk, nooit een privépersoon of privérekening. Het geld dat mensen delen komt straks rechtstreeks bij deze organisatie terecht.</p>
+      <div class="flow-pills" aria-hidden="true">
+        <span class="flow-pill on">Vereniging</span><span class="flow-pill">Stichting</span><span class="flow-pill">School</span><span class="flow-pill">Kerk</span><span class="flow-pill">Anders</span>
+      </div>
+      <span class="flow-label">Naam van de organisatie</span>
+      <div class="flow-field">Bijvoorbeeld: Voetbalvereniging Lochem</div>
+      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik heb toestemming van deze organisatie om namens hen dit Initiatief te starten.</span></div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="3">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-3" data-panel="3" hidden>
+      <h3>Maak je account aan</h3>
+      <p class="flow-hint">Zo kun je straks terugkomen in je werkplaats, verder werken aan je Initiatief en later de terugkoppeling geven.</p>
+      <span class="flow-label">Voornaam en achternaam</span>
+      <div class="flow-field">Jan Jansen</div>
+      <span class="flow-label">E-mailadres</span>
+      <div class="flow-field">jij@voorbeeld.nl</div>
+      <p class="flow-hint">Hierna vragen we je om een code uit deze mail over te typen. Dat kost je een halve minuut.</p>
+      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik ga akkoord met de algemene voorwaarden en het privacybeleid van Mondéall.</span></div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="4">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-4" data-panel="4" hidden>
+      <h3>Bevestig je e-mailadres</h3>
+      <p class="flow-hint">We stuurden een code naar jij@voorbeeld.nl. Nog één ding: we willen zeker weten dat dit jouw e-mailadres is.</p>
+      <div class="code-boxes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="flow-hint">Deze code is 10 minuten geldig.</p>
+    </div>
+  </div>
+</section>
+
 <section id="wat-is-mondeall">
   <div class="wrap">
     <h2>Wat is Mondéall</h2>
@@ -849,6 +1028,82 @@
         '<span class="toelichting">' + s.toelichting + '</span></div>';
     }
     grid.appendChild(card);
+  });
+
+  var startSectoren = [
+    { icon: "sector-01-internationale-hulp", naam: "Internationale Hulp & Mensenrechten", desc: "Voor hulp en verbondenheid over de grens, van noodhulp tot een partnerschool ver weg." },
+    { icon: "sector-02-sociale-hulp", naam: "Sociale Hulp & Ondersteuning", desc: "Voor aandacht en steun dichtbij, van een taalmaatje tot een buurtgereedschapbank." },
+    { icon: "sector-03-sport", naam: "Sport & Recreatie", desc: "Voor alles wat een club of clubhuis beter maakt, van een kleedkamer tot veldverlichting." },
+    { icon: "sector-04-zorg", naam: "Zorg & Welzijn", desc: "Voor zorg en een plek om op adem te komen, dichtbij en toegankelijk voor wie dat nodig heeft." },
+    { icon: "sector-05-kunst", naam: "Kunst & Cultuur", desc: "Voor kunst, muziek en erfgoed die een podium of een herstelbeurt verdienen." },
+    { icon: "sector-06-dieren", naam: "Dieren & Natuur", desc: "Voor de zorg voor dieren en de natuur in je eigen omgeving." },
+    { icon: "sector-07-milieu", naam: "Milieu & Duurzaamheid", desc: "Voor een groenere en duurzamere leefomgeving, stap voor stap." },
+    { icon: "sector-08-onderwijs", naam: "Onderwijs & Educatie", desc: "Voor leren en ontwikkelen, op school en daarbuiten." },
+    { icon: "sector-09-wetenschap", naam: "Wetenschap & Innovatie", desc: "Voor onderzoek en nieuwe ideeën die een lokaal vraagstuk vooruithelpen." },
+    { icon: "sector-10-religie", naam: "Religie & Levensbeschouwing", desc: "Voor ruimte voor bezinning, ontmoeting en levensbeschouwelijk erfgoed." },
+    { icon: "sector-11-samenleving", naam: "Samenleving & Maatschappij", desc: "Voor initiatieven die de buurt samenbrengen, van een buurttuin tot een wijkfestival." },
+    { icon: "sector-12-gezondheid", naam: "Gezondheid & Preventie", desc: "Voor gezondheid en veiligheid dichtbij, van reanimatietraining tot een beweegroute." }
+  ];
+
+  var tiles = document.getElementById('start-tiles');
+  var uitleg = document.getElementById('start-uitleg');
+  var tileEls = [];
+  startSectoren.forEach(function (s, i) {
+    var meta = sectoren[i];
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'sector-tile';
+    b.setAttribute('aria-pressed', 'false');
+    var img = document.createElement('img');
+    img.src = 'assets/iconen/merk/' + s.icon + '.svg';
+    img.alt = '';
+    var code = document.createElement('span');
+    code.className = 'code';
+    code.textContent = meta.nr;
+    var naam = document.createElement('span');
+    naam.className = 'naam';
+    naam.textContent = s.naam;
+    b.appendChild(img); b.appendChild(code); b.appendChild(naam);
+    b.addEventListener('click', function () {
+      tileEls.forEach(function (t) {
+        t.el.setAttribute('aria-pressed', 'false');
+        t.el.style.borderColor = '';
+        t.el.style.background = '';
+        t.img.src = 'assets/iconen/merk/' + t.icon + '.svg';
+      });
+      b.setAttribute('aria-pressed', 'true');
+      b.style.borderColor = meta.hex;
+      b.style.background = '#fff';
+      img.src = 'assets/iconen/kleur/' + s.icon + '.svg';
+      uitleg.textContent = '';
+      var kop = document.createElement('div');
+      kop.className = 'kop';
+      kop.textContent = 'SECTOR ' + meta.nr;
+      var titel = document.createElement('div');
+      titel.className = 'titel';
+      titel.textContent = s.naam;
+      var tekst = document.createElement('div');
+      tekst.textContent = s.desc;
+      uitleg.appendChild(kop); uitleg.appendChild(titel); uitleg.appendChild(tekst);
+    });
+    tileEls.push({ el: b, img: img, icon: s.icon });
+    tiles.appendChild(b);
+  });
+
+  function toonStap(n) {
+    document.querySelectorAll('[data-panel]').forEach(function (p) {
+      p.hidden = p.getAttribute('data-panel') !== String(n);
+    });
+    document.querySelectorAll('#stepper button').forEach(function (b) {
+      if (b.getAttribute('data-step') === String(n)) b.setAttribute('aria-current', 'step');
+      else b.removeAttribute('aria-current');
+    });
+  }
+  document.querySelectorAll('#stepper button').forEach(function (b) {
+    b.addEventListener('click', function () { toonStap(b.getAttribute('data-step')); });
+  });
+  document.querySelectorAll('.flow-next').forEach(function (b) {
+    b.addEventListener('click', function () { toonStap(b.getAttribute('data-goto')); });
   });
 
   var tabBtns = document.querySelectorAll('.tab-btn');

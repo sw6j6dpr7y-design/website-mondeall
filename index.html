@@ -183,7 +183,11 @@
   .id-bericht .naam { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); text-transform: uppercase; }
   .id-sponsors { margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--lijn); }
   .id-sponsorrow { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 8px; }
-  .id-sponsorchip { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--diep); background: #fff; border: 1px dashed var(--gedempt); border-radius: 10px; padding: 9px 14px; }
+  .id-sponsor { display: inline-flex; align-items: center; gap: 16px; background: #fff; border: 1px solid var(--lijn); border-radius: 14px; padding: 14px 20px 14px 14px; max-width: 100%; }
+  .id-logo { flex: none; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+  .id-logo svg { width: 38px; height: 38px; display: block; }
+  .id-sponsor-naam { display: block; font-size: 1.2rem; line-height: 1.2; color: var(--tekst); }
+  .id-sponsor-type { display: block; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gedempt); }
   .id-aside { position: sticky; top: 24px; background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 22px; }
   .id-aside h2 { font-size: 1.35rem; }
   .id-aside p { color: var(--gedempt); font-size: 0.97rem; margin: 10px 0 16px; }
@@ -1102,48 +1106,58 @@
     "08": '<path d="M3 6.5 12 3l9 3.5L12 10z"/><path d="M6 8v6c0 1.7 2.7 3 6 3s6-1.3 6-3V8"/><path d="M21 6.5V13"/>',
     "12": '<path d="M3 12h4l2-5 3 10 3-7 2 2h4"/>'
   };
+  var SP_MARK = {
+    huis: function (c) { return '<path d="M9 25 24 11l15 14v13H9z" fill="#fff"/><rect x="20" y="28" width="8" height="10" fill="' + c + '"/>'; },
+    klank: function (c) { return '<rect x="10" y="25" width="5" height="11" rx="2.5" fill="#fff"/><rect x="18" y="17" width="5" height="19" rx="2.5" fill="#fff"/><rect x="26" y="10" width="5" height="26" rx="2.5" fill="#fff"/><rect x="34" y="20" width="5" height="16" rx="2.5" fill="#fff"/>'; },
+    bloem: function (c) { return '<g fill="#fff"><circle cx="24" cy="14" r="6.5"/><circle cx="33.5" cy="21" r="6.5"/><circle cx="30" cy="32.5" r="6.5"/><circle cx="18" cy="32.5" r="6.5"/><circle cx="14.5" cy="21" r="6.5"/></g><circle cx="24" cy="24" r="5" fill="#ffd54a"/>'; },
+    wiel: function (c) { return '<circle cx="24" cy="24" r="14" fill="none" stroke="#fff" stroke-width="3"/><path d="M24 12v24M12 24h24M15.5 15.5l17 17M32.5 15.5l-17 17" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="24" cy="24" r="3" fill="#fff"/>'; },
+    blad: function (c) { return '<path d="M11 36C11 20 21 11 37 11c0 15-7 25-23 25z" fill="#fff"/><path d="M14 34 31 17" stroke="' + c + '" stroke-width="2.2" stroke-linecap="round"/>'; },
+    kruis: function (c) { return '<path d="M20 10h8v10h10v8H28v10h-8V28H10v-8h10z" fill="#fff"/>'; },
+    moer: function (c) { return '<path d="M24 8l14 8v16l-14 8-14-8V16z" fill="#fff"/><circle cx="24" cy="24" r="6" fill="' + c + '"/>'; },
+    zon: function (c) { return '<circle cx="24" cy="24" r="8" fill="#fff"/><path d="M24 6v5M24 37v5M6 24h5M37 24h5M11.3 11.3l3.5 3.5M33.2 33.2l3.5 3.5M11.3 36.7l3.5-3.5M33.2 14.8l3.5-3.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'; }
+  };
   var INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];
   var INI_DATA = [
     { slug: "renovatie-kleedkamers-sv-laren", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
       vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
       kop: "Gerenoveerde, toegankelijke kleedruimtes.",
       tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
-      berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsors: 3 },
+      berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
     { slug: "instrumentenfonds-concordia", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Marina Gr / Pexels", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
       vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument.",
       kop: "Een fonds voor leeninstrumenten voor de jeugd.",
       tekst: "We willen dat geld nooit de reden is dat een kind niet meespeelt. Met dit fonds kan elke jonge muzikant bij ons beginnen: een klarinet, een trompet of een slagwerkset, klaar om mee te nemen naar de eerste les.",
-      berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsors: 2 },
+      berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsor: { naam: "Muziekhuis Klankbord", type: "Lokale ondernemer", kleur: "#5b3a8c", logo: "klank", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
     { slug: "ontmoetingscafe-dementie-gorssel", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
       vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten.",
       kop: "Een ingericht ontmoetingscafé, elke week open.",
       tekst: "Dementie maakt de wereld klein. Een middag samen, met koffie en muziek van vroeger, geeft rust aan wie het treft en lucht aan wie mantelzorgt. We richten een vaste, warme ruimte in.",
-      berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsors: 2 },
+      berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsor: { naam: "Bloemenhuis Madelief", type: "Lokale ondernemer", kleur: "#c2456f", logo: "bloem", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
     { slug: "verkeerseducatie-eefde", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Vladimir Srajber / Pexels", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
       vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school.",
       kop: "Een praktische lessenreeks verkeersveiligheid.",
       tekst: "De weg naar school is druk. Met echte fietslessen op het schoolplein en in de wijk leren kinderen kijken, voorrang geven en zichtbaar zijn. Veiligheid die een leven lang meegaat.",
-      berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsors: 2 },
+      berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsor: { naam: "Rijwielhandel Ter Braak", type: "Familiebedrijf", kleur: "#1f5fa8", logo: "wiel", vorm: "rond", stijl: "font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.02em;" } },
     { slug: "bijenlint-almen", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Freek Wolsink / Pexels", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
       vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp.",
       kop: "Een aaneengesloten bloemenlint langs de dorpsranden.",
       tekst: "Bermen vol bloemen zijn niet alleen mooi, ze zijn voedsel voor bijen en vlinders. We zaaien een lint dwars door het dorp, onderhouden door vrijwilligers, dat elk jaar weer terugkomt.",
-      berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsors: 2 },
+      berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsor: { naam: "Tuinhof Bloemrijk", type: "Lokale ondernemer", kleur: "#4d7c2a", logo: "blad", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
     { slug: "aed-training-sv-epse", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Mikhail Nilov / Pexels", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
       vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt.",
       kop: "Een trainingsreeks reanimatie en AED-gebruik.",
       tekst: "Op en om het sportveld kan het zomaar misgaan. Als genoeg mensen weten hoe je reanimeert en de AED bedient, telt elke seconde in ons voordeel. We trainen trainers, vrijwilligers en ouders.",
-      berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsors: 2 },
+      berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsor: { naam: "Apotheek Hofstede", type: "Franchisenemer", kleur: "#1b8f5a", logo: "kruis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
     { slug: "gereedschapbank-nieuwstad", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Julia M Cameron / Pexels", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
       vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder.",
       kop: "Een uitleenpunt met gedeeld gereedschap.",
       tekst: "Niet iedereen heeft een schuur vol spullen die je twee keer per jaar gebruikt. Met een buurtgereedschapbank leen je wat je nodig hebt, scheelt geld en ruimte, en je leert je buren kennen.",
-      berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsors: 2 },
+      berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsor: { naam: "HandigMarkt", type: "Franchisenemer", kleur: "#d2691e", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;text-transform:uppercase;" } },
     { slug: "zonnepanelen-dorpshuis-harfsen", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Zeynep Merve Kilic Cakir / Pexels", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
       vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat.",
       kop: "Zonnepanelen op het dak van het dorpshuis.",
       tekst: "De energierekening eet ons budget op. Met eigen opwek dalen de vaste lasten en blijft er ruimte voor wat het dorpshuis is: de klaverjasavond, de peuterochtend, het dorpsfeest.",
-      berichten: [["Anoniem", "Zuinig en verstandig."], ["Gerda", "Mooi voor het dorp."]], sponsors: 2 }
+      berichten: [["Anoniem", "Zuinig en verstandig."], ["Gerda", "Mooi voor het dorp."]], sponsor: { naam: "Zonnehof Installatie", type: "Familiebedrijf", kleur: "#c98a00", logo: "zon", vorm: "rond", stijl: "font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.02em;" } }
   ];
   function iniEsc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function iniTint(hex, a) { var n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
@@ -1185,8 +1199,14 @@
     var berichten = d.berichten.map(function (b) {
       return '<div class="id-bericht"><p>' + iniEsc(b[1]) + '</p><p class="naam">' + iniEsc(b[0]) + '</p></div>';
     }).join('');
-    var sponsors = '';
-    for (var i = 0; i < d.sponsors; i++) sponsors += '<span class="id-sponsorchip">Een lokale ondernemer</span>';
+    var sp = d.sponsor;
+    var sponsors =
+      '<div class="id-sponsor">' +
+        '<span class="id-logo" style="background:' + sp.kleur + ';border-radius:' + (sp.vorm === 'vierkant' ? '12px' : '50%') + '">' +
+          '<svg viewBox="0 0 48 48" aria-hidden="true">' + SP_MARK[sp.logo](sp.kleur) + '</svg></span>' +
+        '<span><span class="id-sponsor-naam" style="' + sp.stijl + '">' + iniEsc(sp.naam) + '</span>' +
+        '<span class="id-sponsor-type">' + iniEsc(sp.type) + '</span></span>' +
+      '</div>';
     detailEl.innerHTML =
       '<div class="hdr-wrap">' +
         '<a class="id-back" href="#initiatieven">&larr; Terug naar Initiatieven</a>' +
@@ -1207,7 +1227,7 @@
           '<p class="id-note">Voorbeeldberichten.</p>' + berichten +
           '<div class="id-sponsors"><p class="ini-eyebrow">Mede mogelijk gemaakt door</p>' +
             '<div class="id-sponsorrow">' + sponsors + '</div>' +
-            '<p class="id-note">Voorbeeld: hier staan straks de Sponsors.</p></div>' +
+            '<p class="id-note">Voorbeeld-Sponsor: een fictief bedrijf en logo.</p></div>' +
         '</div>' +
         '<aside class="id-aside"><h2>Straks deel je mee vanaf € 1</h2>' +
           '<p>Elk bedrag telt. Jij kiest.</p>' +

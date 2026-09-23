@@ -147,6 +147,41 @@
   .ini-vz { color: var(--gedempt); font-size: 0.97rem; line-height: 1.45; margin: 0; }
   .ini-beg { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--lijn); font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: .04em; color: var(--gedempt); line-height: 1.3; }
 
+  a.ini-card { text-decoration: none; color: inherit; transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease; }
+  a.ini-card:hover { transform: translateY(-3px); border-color: var(--diep); box-shadow: 0 12px 26px -18px rgba(4, 59, 52, .5); }
+  a.ini-card:focus-visible { outline: 3px solid var(--diep); outline-offset: 3px; }
+  .ini-meer { display: block; margin-top: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.88rem; color: var(--merktekst); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* INITIATIEFPAGINA (voorbeeld) */
+  #initiatief-detail { padding: 36px 0 72px; }
+  .id-back { display: inline-flex; align-items: center; min-height: 44px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--diep); margin-bottom: 14px; }
+  .id-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 44px; align-items: start; }
+  .id-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+  .id-eyebrow .dot { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 7px; }
+  #initiatief-detail h1 { font-size: clamp(30px, 4.6vw, 46px); margin: 14px 0 8px; max-width: 20ch; letter-spacing: -.01em; }
+  .id-sub { color: var(--gedempt); margin: 0 0 14px; }
+  .id-hero { margin: 22px 0 0; aspect-ratio: 16 / 7; border: 1px solid var(--lijn); border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+  .id-hero svg { width: 96px; height: 96px; stroke: var(--diep); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: .92; }
+  .id-steps { display: flex; margin: 26px 0 4px; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: #fff; }
+  .id-step { flex: 1; padding: 12px 8px; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .04em; color: var(--gedempt); border-right: 1px solid var(--lijn); }
+  .id-step:last-child { border-right: 0; }
+  .id-step.on { background: var(--nevel); color: var(--diep); font-weight: 500; }
+  .id-step small { display: block; font-size: 0.6rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; margin-bottom: 3px; }
+  .id-h2 { font-size: 1.5rem; margin: 34px 0 10px; }
+  .id-prose p { margin: 0 0 14px; max-width: 62ch; }
+  .id-honderd { background: #fff; border: 1px solid var(--lijn); border-left: 4px solid var(--merk); border-radius: 12px; padding: 16px 18px; color: var(--diep); max-width: 62ch; margin: 0; }
+  .id-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .04em; color: var(--gedempt); margin: 0 0 8px; }
+  .id-bericht { padding: 14px 0; border-top: 1px solid var(--lijn); }
+  .id-bericht p { margin: 0 0 5px; }
+  .id-bericht .naam { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); text-transform: uppercase; }
+  .id-sponsors { margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--lijn); }
+  .id-sponsorrow { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 8px; }
+  .id-sponsorchip { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--diep); background: #fff; border: 1px dashed var(--gedempt); border-radius: 10px; padding: 9px 14px; }
+  .id-aside { position: sticky; top: 24px; background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 22px; }
+  .id-aside h2 { font-size: 1.35rem; }
+  .id-aside p { color: var(--gedempt); font-size: 0.97rem; margin: 10px 0 16px; }
+  @media (max-width: 900px) { .id-layout { grid-template-columns: 1fr; gap: 28px; } .id-aside { position: static; } }
+
   /* START EEN INITIATIEF (preview) */
   #start-initiatief { background: var(--nevel); }
   .preview-status {
@@ -657,12 +692,14 @@
   </div>
 </header>
 
+<section id="initiatief-detail" hidden></section>
+
 <section id="initiatieven">
   <div class="hdr-wrap">
     <p class="ini-eyebrow">Voorbeelden · gemeente Lochem</p>
     <h2>Zo ziet het er straks uit</h2>
     <p class="ini-sub">Elk Initiatief begint bij iemand die de eerste stap zet: een bestuurslid, een leerkracht, een vrijwilliger. Straks kies je er een uit en deel je mee vanaf één euro. Alles komt aan, omdat Sponsors de kosten dragen.</p>
-    <span class="preview-status">Fictieve voorbeelden: het platform wordt gebouwd.</span>
+    <span class="preview-status">Fictieve voorbeelden: het platform wordt gebouwd. Klik op een kaart voor de Initiatiefpagina.</span>
     <p class="ini-sortnote">Straks gesorteerd op nabijheid, niet op populariteit. Geen ranglijst, geen doelbedrag.</p>
     <div class="ini-grid" id="ini-grid" role="list"></div>
   </div>
@@ -1058,23 +1095,59 @@
     "08": '<path d="M3 6.5 12 3l9 3.5L12 10z"/><path d="M6 8v6c0 1.7 2.7 3 6 3s6-1.3 6-3V8"/><path d="M21 6.5V13"/>',
     "12": '<path d="M3 12h4l2-5 3 10 3-7 2 2h4"/>'
   };
+  var INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];
   var INI_DATA = [
-    { sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger." },
-    { sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument." },
-    { sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten." },
-    { sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school." },
-    { sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp." },
-    { sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt." },
-    { sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder." },
-    { sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat." }
+    { slug: "renovatie-kleedkamers-sv-laren", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
+      vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
+      kop: "Gerenoveerde, toegankelijke kleedruimtes.",
+      tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
+      berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsors: 3 },
+    { slug: "instrumentenfonds-concordia", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
+      vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument.",
+      kop: "Een fonds voor leeninstrumenten voor de jeugd.",
+      tekst: "We willen dat geld nooit de reden is dat een kind niet meespeelt. Met dit fonds kan elke jonge muzikant bij ons beginnen: een klarinet, een trompet of een slagwerkset, klaar om mee te nemen naar de eerste les.",
+      berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsors: 2 },
+    { slug: "ontmoetingscafe-dementie-gorssel", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
+      vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten.",
+      kop: "Een ingericht ontmoetingscafé, elke week open.",
+      tekst: "Dementie maakt de wereld klein. Een middag samen, met koffie en muziek van vroeger, geeft rust aan wie het treft en lucht aan wie mantelzorgt. We richten een vaste, warme ruimte in.",
+      berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsors: 2 },
+    { slug: "verkeerseducatie-eefde", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
+      vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school.",
+      kop: "Een praktische lessenreeks verkeersveiligheid.",
+      tekst: "De weg naar school is druk. Met echte fietslessen op het schoolplein en in de wijk leren kinderen kijken, voorrang geven en zichtbaar zijn. Veiligheid die een leven lang meegaat.",
+      berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsors: 2 },
+    { slug: "bijenlint-almen", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
+      vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp.",
+      kop: "Een aaneengesloten bloemenlint langs de dorpsranden.",
+      tekst: "Bermen vol bloemen zijn niet alleen mooi, ze zijn voedsel voor bijen en vlinders. We zaaien een lint dwars door het dorp, onderhouden door vrijwilligers, dat elk jaar weer terugkomt.",
+      berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsors: 2 },
+    { slug: "aed-training-sv-epse", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
+      vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt.",
+      kop: "Een trainingsreeks reanimatie en AED-gebruik.",
+      tekst: "Op en om het sportveld kan het zomaar misgaan. Als genoeg mensen weten hoe je reanimeert en de AED bedient, telt elke seconde in ons voordeel. We trainen trainers, vrijwilligers en ouders.",
+      berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsors: 2 },
+    { slug: "gereedschapbank-nieuwstad", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
+      vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder.",
+      kop: "Een uitleenpunt met gedeeld gereedschap.",
+      tekst: "Niet iedereen heeft een schuur vol spullen die je twee keer per jaar gebruikt. Met een buurtgereedschapbank leen je wat je nodig hebt, scheelt geld en ruimte, en je leert je buren kennen.",
+      berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsors: 2 },
+    { slug: "zonnepanelen-dorpshuis-harfsen", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
+      vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat.",
+      kop: "Zonnepanelen op het dak van het dorpshuis.",
+      tekst: "De energierekening eet ons budget op. Met eigen opwek dalen de vaste lasten en blijft er ruimte voor wat het dorpshuis is: de klaverjasavond, de peuterochtend, het dorpsfeest.",
+      berichten: [["Anoniem", "Zuinig en verstandig."], ["Gerda", "Mooi voor het dorp."]], sponsors: 2 }
   ];
   function iniEsc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function iniTint(hex, a) { var n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
+  function iniSector(nr) { return sectoren.filter(function (x) { return x.nr === nr; })[0]; }
+
   var iniGrid = document.getElementById('ini-grid');
   INI_DATA.forEach(function (d) {
-    var s = sectoren.filter(function (x) { return x.nr === d.sector; })[0];
-    var card = document.createElement('article');
+    var s = iniSector(d.sector);
+    var card = document.createElement('a');
     card.className = 'ini-card';
+    card.href = '#/initiatief/' + d.slug;
     card.setAttribute('role', 'listitem');
     card.innerHTML =
       '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
@@ -1087,10 +1160,78 @@
         '<span class="ini-plaats">' + iniEsc(d.kern) + '</span>' +
         '<h3>' + iniEsc(d.titel) + '</h3>' +
         '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
-        '<div class="ini-beg">' + iniEsc(d.beg) + '</div>' +
+        '<div class="ini-beg">' + iniEsc(d.beg) + '<span class="ini-meer">Bekijk het Initiatief &rarr;</span></div>' +
       '</div>';
     iniGrid.appendChild(card);
   });
+
+  var HOME_IDS = ['initiatieven', 'start-initiatief', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
+  var BASIS_TITEL = document.title;
+  var detailEl = document.getElementById('initiatief-detail');
+
+  function renderDetail(d) {
+    var s = iniSector(d.sector);
+    var steps = INI_STAPPEN.map(function (st, i) {
+      return '<div class="id-step' + (i === 2 ? ' on' : '') + '"><small>' + st[0] + '</small>' + st[1] + '</div>';
+    }).join('');
+    var berichten = d.berichten.map(function (b) {
+      return '<div class="id-bericht"><p>' + iniEsc(b[1]) + '</p><p class="naam">' + iniEsc(b[0]) + '</p></div>';
+    }).join('');
+    var sponsors = '';
+    for (var i = 0; i < d.sponsors; i++) sponsors += '<span class="id-sponsorchip">Een lokale ondernemer</span>';
+    detailEl.innerHTML =
+      '<div class="hdr-wrap">' +
+        '<a class="id-back" href="#initiatieven">&larr; Terug naar Initiatieven</a>' +
+        '<div class="id-layout"><div>' +
+          '<p class="ini-eyebrow id-eyebrow"><span><span class="dot" style="background:' + s.hex + '"></span>' + d.sector + ' · ' + iniEsc(s.naam) + '</span><span>' + iniEsc(d.kern) + '</span><span>Voorbeeld</span></p>' +
+          '<h1 id="id-kop" tabindex="-1">' + iniEsc(d.titel) + '</h1>' +
+          '<p class="id-sub">' + iniEsc(d.titel) + ' voor ' + iniEsc(d.beg) + ', gestart door ' + iniEsc(d.starter) + '.</p>' +
+          '<span class="preview-status">Fictief voorbeeld van een Initiatiefpagina.</span>' +
+          '<div class="id-hero" style="background:' + iniTint(s.hex, 0.12) + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></div>' +
+          '<div class="id-steps">' + steps + '</div>' +
+          '<h2 class="id-h2">De Voorziening</h2>' +
+          '<div class="id-prose"><p><strong>' + iniEsc(d.kop) + '</strong></p><p>' + iniEsc(d.tekst) + '</p></div>' +
+          '<p class="id-honderd">Straks gaat 100% van jouw bijdrage naar de Voorziening. De kosten worden gedragen door Sponsors.</p>' +
+          '<h2 class="id-h2">Berichten van Geld Delers</h2>' +
+          '<p class="id-note">Voorbeeldberichten.</p>' + berichten +
+          '<div class="id-sponsors"><p class="ini-eyebrow">Mede mogelijk gemaakt door</p>' +
+            '<div class="id-sponsorrow">' + sponsors + '</div>' +
+            '<p class="id-note">Voorbeeld: hier staan straks de Sponsors.</p></div>' +
+        '</div>' +
+        '<aside class="id-aside"><h2>Straks deel je mee vanaf € 1</h2>' +
+          '<p>Elk bedrag telt. Jij kiest.</p>' +
+          '<p>Dit is een voorbeeldpagina van een fictief Initiatief. Meedelen kan nog niet: het platform wordt gebouwd.</p>' +
+          '<a class="cta-btn" href="#contact">Blijf op de hoogte</a></aside>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function toonPaginaRoute() {
+    var h = location.hash;
+    var m = h.match(/^#\/initiatief\/([a-z0-9-]+)$/);
+    var d = m ? INI_DATA.filter(function (x) { return x.slug === m[1]; })[0] : null;
+    var hero = document.getElementById('hero');
+    if (d) {
+      renderDetail(d);
+      detailEl.hidden = false;
+      hero.hidden = true;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
+      document.title = d.titel + ' · Mondéall';
+      window.scrollTo(0, 0);
+      document.getElementById('id-kop').focus({ preventScroll: true });
+    } else {
+      detailEl.hidden = true;
+      hero.hidden = false;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = false; });
+      document.title = BASIS_TITEL;
+      if (h.length > 1 && h.indexOf('#/') !== 0) {
+        var t = document.getElementById(h.slice(1));
+        if (t) t.scrollIntoView();
+      }
+    }
+  }
+  window.addEventListener('hashchange', toonPaginaRoute);
+  toonPaginaRoute();
 
   var tabBtns = document.querySelectorAll('.tab-btn');
   tabBtns.forEach(function (btn) {

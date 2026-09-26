@@ -293,7 +293,6 @@
     font-family: 'Bricolage Grotesque', sans-serif; color: var(--tekst);
   }
   .sector-tile img { width: 44px; height: 44px; display: block; }
-  .sector-tile .code { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--gedempt); }
   .sector-tile .naam { font-size: 0.8rem; font-weight: 600; line-height: 1.25; }
   .sector-tile[aria-pressed="true"] { border-width: 2px; }
   .sector-uitleg {
@@ -437,11 +436,6 @@
     margin-bottom: 4px;
   }
   .sector-card .toelichting { font-size: 0.92rem; }
-  .sector-nr {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--merk);
-  }
 
   /* Sector cards mét foto */
   .sector-card.met-foto {
@@ -537,7 +531,6 @@
   .sd-kop img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .sd-kop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,20,17,.72) 100%); }
   .sd-label { position: absolute; z-index: 1; left: 24px; right: 64px; bottom: 16px; color: #fff; }
-  .sd-label .code { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .1em; opacity: .9; }
   .sd-label h2 { color: #fff; font-size: 1.6rem; margin: 2px 0 0; }
   .sd-sluit {
     position: absolute; z-index: 2; top: 12px; right: 12px; width: 44px; height: 44px;
@@ -551,7 +544,6 @@
   .sd-tel { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); margin: 0 0 14px; }
   .sd-lijst { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
   .sd-lijst li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-top: 1px solid var(--lijn); font-size: 1rem; line-height: 1.35; }
-  .sd-lijst .c { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--gedempt); flex: none; }
   @media (max-width: 560px) { .sd-lijst { grid-template-columns: 1fr; } .sd-label h2 { font-size: 1.3rem; } }
   .sector-card.met-foto .toelichting {
     display: block;
@@ -1091,13 +1083,9 @@
     img.alt = '';
     var label = document.createElement('div');
     label.className = 'sd-label';
-    var code = document.createElement('div');
-    code.className = 'code';
-    code.textContent = 'SECTOR ' + s.nr;
     var h = document.createElement('h2');
     h.id = 'sd-titel';
     h.textContent = s.naam;
-    label.appendChild(code);
     label.appendChild(h);
     var sluit = document.createElement('button');
     sluit.type = 'button';
@@ -1121,12 +1109,8 @@
     ul.className = 'sd-lijst';
     lijst.forEach(function (naam, i) {
       var li = document.createElement('li');
-      var c = document.createElement('span');
-      c.className = 'c';
-      c.textContent = s.nr + '.' + (i < 9 ? '0' : '') + (i + 1);
       var n = document.createElement('span');
       n.textContent = naam;
-      li.appendChild(c);
       li.appendChild(n);
       ul.appendChild(li);
     });
@@ -1152,7 +1136,7 @@
         '<img src="' + s.foto + '" alt="">' +
         '<span class="overlay"></span>' +
         '<span class="label"><span class="dot" style="background:' + s.hex + '"></span>' +
-        '<span class="naam">' + s.nr + ' · ' + s.naam + '</span></span>' +
+        '<span class="naam">' + s.naam + '</span></span>' +
       '</span>' +
       '<span class="body">' +
         '<span class="toelichting">' + s.toelichting + '</span>' +
@@ -1190,13 +1174,10 @@
     var img = document.createElement('img');
     img.src = 'assets/iconen/merk/' + s.icon + '.svg';
     img.alt = '';
-    var code = document.createElement('span');
-    code.className = 'code';
-    code.textContent = meta.nr;
     var naam = document.createElement('span');
     naam.className = 'naam';
     naam.textContent = s.naam;
-    b.appendChild(img); b.appendChild(code); b.appendChild(naam);
+    b.appendChild(img); b.appendChild(naam);
     b.addEventListener('click', function () {
       tileEls.forEach(function (t) {
         t.el.setAttribute('aria-pressed', 'false');
@@ -1209,15 +1190,12 @@
       b.style.background = '#fff';
       img.src = 'assets/iconen/kleur/' + s.icon + '.svg';
       uitleg.textContent = '';
-      var kop = document.createElement('div');
-      kop.className = 'kop';
-      kop.textContent = 'SECTOR ' + meta.nr;
       var titel = document.createElement('div');
       titel.className = 'titel';
       titel.textContent = s.naam;
       var tekst = document.createElement('div');
       tekst.textContent = s.desc;
-      uitleg.appendChild(kop); uitleg.appendChild(titel); uitleg.appendChild(tekst);
+      uitleg.appendChild(titel); uitleg.appendChild(tekst);
     });
     tileEls.push({ el: b, img: img, icon: s.icon });
     tiles.appendChild(b);
@@ -1321,7 +1299,7 @@
         '<span class="ini-icon"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></span>' +
       '</div>' +
       '<div class="ini-body">' +
-        '<span class="ini-chip"><span class="dot" style="background:' + s.hex + '"></span>' + d.sector + ' · ' + iniEsc(s.naam) + '</span>' +
+        '<span class="ini-chip"><span class="dot" style="background:' + s.hex + '"></span>' + iniEsc(s.naam) + '</span>' +
         '<span class="ini-plaats">' + iniEsc(d.kern) + '</span>' +
         '<h3>' + iniEsc(d.titel) + '</h3>' +
         '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
@@ -1354,7 +1332,7 @@
       '<div class="hdr-wrap">' +
         '<a class="id-back" href="#initiatieven">&larr; Terug naar Initiatieven</a>' +
         '<div class="id-layout"><div>' +
-          '<p class="ini-eyebrow id-eyebrow"><span><span class="dot" style="background:' + s.hex + '"></span>' + d.sector + ' · ' + iniEsc(s.naam) + '</span><span>' + iniEsc(d.kern) + '</span><span>Voorbeeld</span></p>' +
+          '<p class="ini-eyebrow id-eyebrow"><span><span class="dot" style="background:' + s.hex + '"></span>' + iniEsc(s.naam) + '</span><span>' + iniEsc(d.kern) + '</span><span>Voorbeeld</span></p>' +
           '<h1 id="id-kop" tabindex="-1">' + iniEsc(d.titel) + '</h1>' +
           '<p class="id-sub">' + iniEsc(d.titel) + ' voor ' + iniEsc(d.beg) + ', gestart door ' + iniEsc(d.starter) + '.</p>' +
           '<span class="preview-status">Fictief voorbeeld van een Initiatiefpagina.</span>' +

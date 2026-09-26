@@ -177,6 +177,17 @@
   .id-h2 { font-size: 1.5rem; margin: 34px 0 10px; }
   .id-prose p { margin: 0 0 14px; max-width: 62ch; }
   .id-honderd { background: #fff; border: 1px solid var(--lijn); border-left: 4px solid var(--merk); border-radius: 12px; padding: 16px 18px; color: var(--diep); max-width: 62ch; margin: 0; }
+  .id-stats { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 18px; }
+  .id-stat { background: #fff; border: 1px solid var(--lijn); border-radius: 14px; padding: 16px 22px; min-width: 200px; }
+  .id-stat .n { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 2rem; line-height: 1.1; color: var(--diep); }
+  .id-stat .l { display: block; margin-top: 4px; font-size: 0.95rem; color: var(--gedempt); }
+  .id-ritme { list-style: none; margin: 0; padding: 0; max-width: 62ch; }
+  .id-ritme li { padding: 10px 0; border-top: 1px solid var(--lijn); }
+  .id-ritme li:first-child { border-top: 0; }
+  .id-ritme strong { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; color: var(--diep); }
+  .id-afgesloten { background: var(--nevel); border: 1px solid #cbe7e2; border-left: 4px solid var(--merk); border-radius: 12px; padding: 16px 18px; margin: 0 0 18px; max-width: 62ch; }
+  .id-afgesloten p { margin: 0; }
+  .id-afgesloten .q { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--diep); margin-bottom: 4px; }
   .id-note { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .04em; color: var(--gedempt); margin: 0 0 8px; }
   .id-bericht { padding: 14px 0; border-top: 1px solid var(--lijn); }
   .id-bericht p { margin: 0 0 5px; }
@@ -879,7 +890,8 @@
         <li>Deel mee vanaf €1</li>
         <li>Geen doelbedrag</li>
         <li>Geen druk</li>
-        <li>Geen tellers, geen ranglijsten</li>
+        <li>Geen ranglijsten, geen procentenbalk</li>
+        <li>Je ziet hoeveel mensen meedoen</li>
       </ul>
     </div>
     <div class="tab-panel" id="tab-verenigingen">
@@ -925,7 +937,7 @@
       </div>
       <div class="vertrouwen-item">
         <span class="mono mark">→</span>
-        <span>Geen doelbedragen, tellers of ranglijsten tussen Initiatieven of Begunstigden.</span>
+        <span>Geen doelbedragen, voortgangsbalken of ranglijsten tussen Initiatieven of Begunstigden. Bij een Initiatief tellen we mensen, geen procenten.</span>
       </div>
       <div class="vertrouwen-item">
         <span class="mono mark">→</span>
@@ -1239,42 +1251,42 @@
   };
   var INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];
   var INI_DATA = [
-    { slug: "renovatie-kleedkamers-sv-laren", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", pos: "40%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
+    { slug: "renovatie-kleedkamers-sv-laren", mensen: 63, bedrag: "1.845", sinds: "8 september", eerste: "Karin", afgesloten: "", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", pos: "40%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
       vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
       kop: "Gerenoveerde, toegankelijke kleedruimtes.",
       tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
       berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "instrumentenfonds-concordia", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Alankrantas / Pexels", pos: "40%", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
+    { slug: "instrumentenfonds-concordia", mensen: 41, bedrag: "1.120", sinds: "10 september", eerste: "Wim", afgesloten: "", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Alankrantas / Pexels", pos: "40%", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
       vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument.",
       kop: "Een fonds voor leeninstrumenten voor de jeugd.",
       tekst: "We willen dat geld nooit de reden is dat een kind niet meespeelt. Met dit fonds kan elke jonge muzikant bij ons beginnen: een klarinet, een trompet of een slagwerkset, klaar om mee te nemen naar de eerste les.",
       berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsor: { naam: "Muziekhuis Klankbord", type: "Lokale ondernemer", kleur: "#5b3a8c", logo: "klank", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
-    { slug: "ontmoetingscafe-dementie-gorssel", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", pos: "30%", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
+    { slug: "ontmoetingscafe-dementie-gorssel", mensen: 28, bedrag: "960", sinds: "12 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", pos: "30%", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
       vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten.",
       kop: "Een ingericht ontmoetingscafé, elke week open.",
       tekst: "Dementie maakt de wereld klein. Een middag samen, met koffie en muziek van vroeger, geeft rust aan wie het treft en lucht aan wie mantelzorgt. We richten een vaste, warme ruimte in.",
       berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsor: { naam: "Bloemenhuis Madelief", type: "Lokale ondernemer", kleur: "#c2456f", logo: "bloem", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
-    { slug: "verkeerseducatie-eefde", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Taavii / Pexels", pos: "42%", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
+    { slug: "verkeerseducatie-eefde", mensen: 35, bedrag: "780", sinds: "15 september", eerste: "Sanne", afgesloten: "", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Taavii / Pexels", pos: "42%", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
       vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school.",
       kop: "Een praktische lessenreeks verkeersveiligheid.",
       tekst: "De weg naar school is druk. Met echte fietslessen op het schoolplein en in de wijk leren kinderen kijken, voorrang geven en zichtbaar zijn. Veiligheid die een leven lang meegaat.",
       berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsor: { naam: "Rijwielhandel Ter Braak", type: "Familiebedrijf", kleur: "#1f5fa8", logo: "wiel", vorm: "rond", stijl: "font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.02em;" } },
-    { slug: "bijenlint-almen", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Onkel Ramirez / Pexels", pos: "50%", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
+    { slug: "bijenlint-almen", mensen: 52, bedrag: "690", sinds: "9 september", eerste: "Henk", afgesloten: "", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Onkel Ramirez / Pexels", pos: "50%", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
       vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp.",
       kop: "Een aaneengesloten bloemenlint langs de dorpsranden.",
       tekst: "Bermen vol bloemen zijn niet alleen mooi, ze zijn voedsel voor bijen en vlinders. We zaaien een lint dwars door het dorp, onderhouden door vrijwilligers, dat elk jaar weer terugkomt.",
       berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsor: { naam: "Tuinhof Bloemrijk", type: "Lokale ondernemer", kleur: "#4d7c2a", logo: "blad", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "aed-training-sv-epse", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Haromhatar / Pexels", pos: "50%", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
+    { slug: "aed-training-sv-epse", mensen: 74, bedrag: "2.310", sinds: "1 september", eerste: "Marijke", afgesloten: "22 september", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Haromhatar / Pexels", pos: "50%", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
       vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt.",
       kop: "Een trainingsreeks reanimatie en AED-gebruik.",
       tekst: "Op en om het sportveld kan het zomaar misgaan. Als genoeg mensen weten hoe je reanimeert en de AED bedient, telt elke seconde in ons voordeel. We trainen trainers, vrijwilligers en ouders.",
       berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsor: { naam: "Apotheek Hofstede", type: "Franchisenemer", kleur: "#1b8f5a", logo: "kruis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "gereedschapbank-nieuwstad", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Sam Clarke / Pexels", pos: "70%", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
+    { slug: "gereedschapbank-nieuwstad", mensen: 19, bedrag: "445", sinds: "16 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Sam Clarke / Pexels", pos: "70%", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
       vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder.",
       kop: "Een uitleenpunt met gedeeld gereedschap.",
       tekst: "Niet iedereen heeft een schuur vol spullen die je twee keer per jaar gebruikt. Met een buurtgereedschapbank leen je wat je nodig hebt, scheelt geld en ruimte, en je leert je buren kennen.",
       berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsor: { naam: "HandigMarkt", type: "Franchisenemer", kleur: "#d2691e", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;text-transform:uppercase;" } },
-    { slug: "zonnepanelen-dorpshuis-harfsen", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Kindel Media / Pexels", pos: "50%", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
+    { slug: "zonnepanelen-dorpshuis-harfsen", mensen: 88, bedrag: "3.260", sinds: "3 september", eerste: "Gerda", afgesloten: "", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Kindel Media / Pexels", pos: "50%", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
       vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat.",
       kop: "Zonnepanelen op het dak van het dorpshuis.",
       tekst: "De energierekening eet ons budget op. Met eigen opwek dalen de vaste lasten en blijft er ruimte voor wat het dorpshuis is: de klaverjasavond, de peuterochtend, het dorpsfeest.",
@@ -1295,7 +1307,7 @@
       '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
       '<div class="ini-thumb" style="background:' + iniTint(s.hex, 0.10) + '">' +
         '<img src="' + d.foto + '" alt="" loading="lazy" style="object-position:center ' + d.pos + '">' +
-        '<span class="ini-status">Voorbeeld</span>' +
+        '<span class="ini-status">' + (d.afgesloten ? 'Voorbeeld · afgesloten' : 'Voorbeeld') + '</span>' +
         '<span class="ini-icon"><svg viewBox="0 0 24 24" aria-hidden="true">' + INI_ICON[d.sector] + '</svg></span>' +
       '</div>' +
       '<div class="ini-body">' +
@@ -1315,7 +1327,7 @@
   function renderDetail(d) {
     var s = iniSector(d.sector);
     var steps = INI_STAPPEN.map(function (st, i) {
-      return '<div class="id-step' + (i === 2 ? ' on' : '') + '"><small>' + st[0] + '</small>' + st[1] + '</div>';
+      return '<div class="id-step' + (i === (d.afgesloten ? 3 : 2) ? ' on' : '') + '"><small>' + st[0] + '</small>' + st[1] + '</div>';
     }).join('');
     var berichten = d.berichten.map(function (b) {
       return '<div class="id-bericht"><p>' + iniEsc(b[1]) + '</p><p class="naam">' + iniEsc(b[0]) + '</p></div>';
@@ -1328,11 +1340,34 @@
         '<span><span class="id-sponsor-naam" style="' + sp.stijl + '">' + iniEsc(sp.naam) + '</span>' +
         '<span class="id-sponsor-type">' + iniEsc(sp.type) + '</span></span>' +
       '</div>';
-    detailEl.innerHTML =
-      '<div class="hdr-wrap">' +
+    var wie = '';
+    if (d.afgesloten) {
+      wie += '<div class="id-afgesloten"><p class="q">' + iniEsc(d.beg) + ': &ldquo;Dank, het is genoeg.&rdquo;</p>' +
+        '<p>De Begunstigde heeft dit Initiatief zelf afgesloten op ' + iniEsc(d.afgesloten) + '.</p></div>';
+    }
+    wie += '<div class="id-stats">' +
+      '<div class="id-stat"><span class="n">' + d.mensen + '</span><span class="l">mensen deelden mee</span></div>' +
+      '<div class="id-stat"><span class="n">&euro; ' + d.bedrag + '</span><span class="l">gedeeld, alles voor ' + iniEsc(d.beg) + '</span></div>' +
+      '</div><ul class="id-ritme">';
+    if (!d.afgesloten) {
+      wie += '<li><strong>Geen doelbedrag.</strong> ' + iniEsc(d.beg) + ' bepaalt zelf wanneer het genoeg is.</li>' +
+        '<li><strong>Vaste uitbetaaldag.</strong> Wat je vandaag deelt, staat vrijdag op de rekening van ' + iniEsc(d.beg) + '.</li>';
+    }
+    wie += '<li><strong>De eerste.</strong> ' + (d.eerste ? iniEsc(d.eerste) : 'Een anonieme Geld Deler') + ' deelde als eerste mee, op ' + iniEsc(d.sinds) + '.</li>' +
+      '<li><strong>' + (d.afgesloten ? 'Open van ' + iniEsc(d.sinds) + ' tot ' + iniEsc(d.afgesloten) + '.' : 'Open sinds ' + iniEsc(d.sinds) + '.') + '</strong>' + (d.afgesloten ? '' : ' De Starter verlengt het wekelijks.') + '</li></ul>';
+    var aside = d.afgesloten
+      ? '<aside class="id-aside"><h2>Dit Initiatief is afgesloten</h2>' +
+          '<p>' + iniEsc(d.beg) + ' zegt: dank, het is genoeg. Bedankt aan de ' + d.mensen + ' mensen die meedeelden.</p>' +
+          '<p>Dit is een voorbeeldpagina van een fictief Initiatief.</p>' +
+          '<a class="cta-btn" href="#initiatieven">Bekijk andere Initiatieven</a></aside>'
+      : '<aside class="id-aside"><h2>Straks deel je mee vanaf € 1</h2>' +
+          '<p>Elk bedrag telt. Jij kiest.</p>' +
+          '<p>Dit is een voorbeeldpagina van een fictief Initiatief. Meedelen kan nog niet: het platform wordt gebouwd.</p>' +
+          '<a class="cta-btn" href="#contact">Blijf op de hoogte</a></aside>';
+    detailEl.innerHTML =      '<div class="hdr-wrap">' +
         '<a class="id-back" href="#initiatieven">&larr; Terug naar Initiatieven</a>' +
         '<div class="id-layout"><div>' +
-          '<p class="ini-eyebrow id-eyebrow"><span><span class="dot" style="background:' + s.hex + '"></span>' + iniEsc(s.naam) + '</span><span>' + iniEsc(d.kern) + '</span><span>Voorbeeld</span></p>' +
+          '<p class="ini-eyebrow id-eyebrow"><span><span class="dot" style="background:' + s.hex + '"></span>' + iniEsc(s.naam) + '</span><span>' + iniEsc(d.kern) + '</span><span>' + (d.afgesloten ? 'Voorbeeld · afgesloten' : 'Voorbeeld') + '</span></p>' +
           '<h1 id="id-kop" tabindex="-1">' + iniEsc(d.titel) + '</h1>' +
           '<p class="id-sub">' + iniEsc(d.titel) + ' voor ' + iniEsc(d.beg) + ', gestart door ' + iniEsc(d.starter) + '.</p>' +
           '<span class="preview-status">Fictief voorbeeld van een Initiatiefpagina.</span>' +
@@ -1344,16 +1379,14 @@
           '<h2 class="id-h2">De Voorziening</h2>' +
           '<div class="id-prose"><p><strong>' + iniEsc(d.kop) + '</strong></p><p>' + iniEsc(d.tekst) + '</p></div>' +
           '<p class="id-honderd">Straks gaat 100% van jouw bijdrage naar de Voorziening. De kosten worden gedragen door Sponsors.</p>' +
+          '<h2 class="id-h2">Wie delen er mee</h2>' + wie +
           '<h2 class="id-h2">Berichten van Geld Delers</h2>' +
           '<p class="id-note">Voorbeeldberichten.</p>' + berichten +
           '<div class="id-sponsors"><p class="ini-eyebrow">Mede mogelijk gemaakt door</p>' +
             '<div class="id-sponsorrow">' + sponsors + '</div>' +
             '<p class="id-note">Voorbeeld-Sponsor: een fictief bedrijf en logo.</p></div>' +
         '</div>' +
-        '<aside class="id-aside"><h2>Straks deel je mee vanaf € 1</h2>' +
-          '<p>Elk bedrag telt. Jij kiest.</p>' +
-          '<p>Dit is een voorbeeldpagina van een fictief Initiatief. Meedelen kan nog niet: het platform wordt gebouwd.</p>' +
-          '<a class="cta-btn" href="#contact">Blijf op de hoogte</a></aside>' +
+        aside +
         '</div>' +
       '</div>';
   }

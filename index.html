@@ -450,11 +450,34 @@
     overflow: hidden;
     border-width: 2px;
     border-color: var(--sector-kleur, var(--lijn));
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform .16s ease, box-shadow .16s ease;
   }
+  .sector-card.met-foto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px -18px rgba(4, 59, 52, .55);
+  }
+  .sector-card.met-foto:focus-visible { outline: 3px solid var(--diep); outline-offset: 3px; }
   .sector-card.met-foto .foto-wrap {
+    display: block;
     position: relative;
     height: 150px;
   }
+  .sector-meer {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--merktekst);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .sector-card.met-foto .foto-credit { margin-top: 6px; }
   .sector-card.met-foto img {
     width: 100%;
     height: 100%;
@@ -487,8 +510,49 @@
     margin-bottom: 0;
   }
   .sector-card.met-foto .body {
+    display: block;
     padding: 14px 16px 16px;
   }
+
+  /* Dialoog met aandachtsgebieden */
+  html:has(dialog[open]) { overflow: hidden; }
+  #sector-dialog {
+    width: min(680px, calc(100vw - 32px));
+    max-height: min(86vh, 720px);
+    padding: 0;
+    border: 2px solid var(--sector-kleur, var(--lijn));
+    border-radius: 20px;
+    background: #fff;
+    color: var(--tekst);
+    box-shadow: 0 30px 70px -20px rgba(0, 30, 25, .55);
+    overflow: auto;
+  }
+  #sector-dialog::backdrop { background: rgba(10, 30, 26, .55); backdrop-filter: blur(2px); }
+  #sector-dialog[open] { animation: sd-in .22s ease-out; }
+  #sector-dialog[open]::backdrop { animation: sd-fade .22s ease-out; }
+  @keyframes sd-in { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes sd-fade { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { #sector-dialog[open], #sector-dialog[open]::backdrop { animation: none; } }
+  .sd-kop { position: relative; height: 150px; }
+  .sd-kop img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sd-kop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,20,17,.72) 100%); }
+  .sd-label { position: absolute; z-index: 1; left: 24px; right: 64px; bottom: 16px; color: #fff; }
+  .sd-label .code { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .1em; opacity: .9; }
+  .sd-label h2 { color: #fff; font-size: 1.6rem; margin: 2px 0 0; }
+  .sd-sluit {
+    position: absolute; z-index: 2; top: 12px; right: 12px; width: 44px; height: 44px;
+    border-radius: 50%; border: 1px solid var(--lijn); background: #fff; color: var(--diep);
+    font-size: 1.4rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .sd-sluit:hover { background: var(--nevel); }
+  .sd-sluit:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+  .sd-body { padding: 22px 24px 26px; }
+  .sd-intro { margin: 0 0 6px; color: var(--gedempt); }
+  .sd-tel { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); margin: 0 0 14px; }
+  .sd-lijst { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  .sd-lijst li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-top: 1px solid var(--lijn); font-size: 1rem; line-height: 1.35; }
+  .sd-lijst .c { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--gedempt); flex: none; }
+  @media (max-width: 560px) { .sd-lijst { grid-template-columns: 1fr; } .sd-label h2 { font-size: 1.3rem; } }
   .sector-card.met-foto .toelichting {
     display: block;
     margin-bottom: 4px;
@@ -852,10 +916,12 @@
 <section id="sectoren">
   <div class="wrap">
     <h2>De twaalf sectoren</h2>
-    <p>Elk Initiatief valt binnen één van de twaalf sectoren.</p>
+    <p>Elk Initiatief valt binnen één van de twaalf sectoren. Klik op een sector voor de aandachtsgebieden.</p>
     <div class="sectoren-grid" id="sectoren-grid"></div>
   </div>
 </section>
+
+<dialog id="sector-dialog" aria-labelledby="sd-titel"></dialog>
 
 <section id="vertrouwen">
   <div class="wrap">
@@ -993,30 +1059,107 @@
     });
   })();
 
+  var AANDACHT = {
+    "01": ["Inheemse volken", "Ontwikkelingswerk", "Vluchtelingenhulp internationaal", "Drinkwater & sanitatie", "Internationale huisvesting", "Internationale scholing", "Noodhulp & rampen", "Juridische hulp internationaal", "Mensenrechten & advocacy", "Internationale voedselhulp"],
+    "02": ["Voedselbanken", "Armoedebestrijding", "Slachtofferhulp", "Dak- en thuislozen", "Diaconie & caritas", "Vrijwilligerswerk", "Vaste lasten / noodsteun", "Juridische hulp nationaal", "Sociale opvang", "Nationale acties"],
+    "03": ["Sportorganisaties", "Wedstrijden & competities", "Jeugdgroepen", "Speeltuinen", "Kinderboerderijen", "Kindervakantiekampen", "Recreatieve verenigingen", "Scouting", "Recreatieve evenementen"],
+    "04": ["Zorg algemeen", "GGZ", "Jeugdzorg", "Gehandicaptenzorg", "Verslavingszorg", "Mantelzorg", "Maatschappelijk werk", "Opvang", "Kinderopvang", "Kraamzorg"],
+    "05": ["Cultureel erfgoed", "Musea", "Podiumkunsten", "Bouwkunst & architectuur", "Monumentenzorg", "Dans", "Film & filmhuizen", "Schouwburgen", "Bibliotheken (cultureel/publiek)", "Festivals & evenementen", "Amateurkunst"],
+    "06": ["Dierenrechten", "Dierenwelzijn", "Dierenbescherming", "Dierenambulance", "Wildlife", "Natuurbehoud (soorten & leefgebied)", "Biodiversiteit", "Omgeving & leefgebied", "Voeding & voedselketen (dieren)"],
+    "07": ["Milieu algemeen", "Eco & bio", "Duurzaamheid", "Voedselverspilling", "Klimaat", "Energie", "Landbouw (duurzaam)", "Voeding (duurzaam)"],
+    "08": ["Basisonderwijs", "Voortgezet onderwijs", "Speciaal onderwijs", "Voorschoolse educatie", "Naschoolse opvang", "Bibliotheken (educatief)", "Onderwijssteun (school-/collegegeld)", "Studiebegeleiding"],
+    "09": ["Wetenschappelijk onderzoek", "Technologie & innovatie", "Medisch onderzoek", "Onderzoeksinstellingen & wetenschappers"],
+    "10": ["Kerkgenootschappen", "Zendingsorganisaties", "Islamitische organisaties", "Spiritualiteit", "Rituelen (herdenken/begrafenis/crematie)"],
+    "11": ["Burgerparticipatie & burgercollectieven", "Buurt- & wijkontwikkeling", "Gemeenschapsvoorzieningen (buurt-/dorps-/clubhuizen)", "Sociale cohesie & inclusie", "Emancipatie & gelijke behandeling", "Maatschappelijke participatie", "Protest / actiegroepen / pressie"],
+    "12": ["Ziekte & aandoeningen", "Gezondheid algemeen", "Lifestyle & leefstijl", "Medisch (niet onderzoek)", "Preventie", "Verzorging", "Sport als gezondheidsinterventie", "Medisch reizen / zorgreizen", "Wensen (laatste wensen)"]
+  };
+
   var grid = document.getElementById('sectoren-grid');
+  var sdDialog = document.getElementById('sector-dialog');
+  var sdKnop = null;
+
+  function openSector(s, knop) {
+    var lijst = AANDACHT[s.nr] || [];
+    sdKnop = knop;
+    sdDialog.style.setProperty('--sector-kleur', s.hex);
+    sdDialog.textContent = '';
+
+    var kop = document.createElement('div');
+    kop.className = 'sd-kop';
+    var img = document.createElement('img');
+    img.src = s.foto;
+    img.alt = '';
+    var label = document.createElement('div');
+    label.className = 'sd-label';
+    var code = document.createElement('div');
+    code.className = 'code';
+    code.textContent = 'SECTOR ' + s.nr;
+    var h = document.createElement('h2');
+    h.id = 'sd-titel';
+    h.textContent = s.naam;
+    label.appendChild(code);
+    label.appendChild(h);
+    var sluit = document.createElement('button');
+    sluit.type = 'button';
+    sluit.className = 'sd-sluit';
+    sluit.setAttribute('aria-label', 'Sluiten');
+    sluit.innerHTML = '&times;';
+    sluit.addEventListener('click', function () { sdDialog.close(); });
+    kop.appendChild(img);
+    kop.appendChild(label);
+    kop.appendChild(sluit);
+
+    var body = document.createElement('div');
+    body.className = 'sd-body';
+    var intro = document.createElement('p');
+    intro.className = 'sd-intro';
+    intro.textContent = s.toelichting;
+    var tel = document.createElement('p');
+    tel.className = 'sd-tel';
+    tel.textContent = lijst.length + ' aandachtsgebieden';
+    var ul = document.createElement('ul');
+    ul.className = 'sd-lijst';
+    lijst.forEach(function (naam, i) {
+      var li = document.createElement('li');
+      var c = document.createElement('span');
+      c.className = 'c';
+      c.textContent = s.nr + '.' + (i < 9 ? '0' : '') + (i + 1);
+      var n = document.createElement('span');
+      n.textContent = naam;
+      li.appendChild(c);
+      li.appendChild(n);
+      ul.appendChild(li);
+    });
+    body.appendChild(intro);
+    body.appendChild(tel);
+    body.appendChild(ul);
+
+    sdDialog.appendChild(kop);
+    sdDialog.appendChild(body);
+    sdDialog.showModal();
+  }
+  sdDialog.addEventListener('click', function (e) { if (e.target === sdDialog) sdDialog.close(); });
+  sdDialog.addEventListener('close', function () { if (sdKnop) sdKnop.focus(); });
+
   sectoren.forEach(function (s) {
-    var card = document.createElement('div');
-    if (s.foto) {
-      card.className = 'sector-card met-foto';
-      card.style.setProperty('--sector-kleur', s.hex);
-      card.innerHTML =
-        '<div class="foto-wrap">' +
-          '<img src="' + s.foto + '" alt="Sfeerbeeld bij sector ' + s.naam + '">' +
-          '<div class="overlay"></div>' +
-          '<div class="label"><span class="dot" style="background:' + s.hex + '"></span>' +
-          '<span class="naam">' + s.nr + ' · ' + s.naam + '</span></div>' +
-        '</div>' +
-        '<div class="body">' +
-          '<span class="toelichting">' + s.toelichting + '</span>' +
-          '<span class="foto-credit">Foto: ' + s.credit + '</span>' +
-        '</div>';
-    } else {
-      card.className = 'sector-card';
-      card.innerHTML =
-        '<span class="dot" style="background:' + s.hex + '"></span>' +
-        '<div><span class="sector-nr">' + s.nr + '</span> <span class="naam">' + s.naam + '</span>' +
-        '<span class="toelichting">' + s.toelichting + '</span></div>';
-    }
+    var card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'sector-card met-foto';
+    card.setAttribute('aria-haspopup', 'dialog');
+    card.style.setProperty('--sector-kleur', s.hex);
+    card.innerHTML =
+      '<span class="foto-wrap">' +
+        '<img src="' + s.foto + '" alt="">' +
+        '<span class="overlay"></span>' +
+        '<span class="label"><span class="dot" style="background:' + s.hex + '"></span>' +
+        '<span class="naam">' + s.nr + ' · ' + s.naam + '</span></span>' +
+      '</span>' +
+      '<span class="body">' +
+        '<span class="toelichting">' + s.toelichting + '</span>' +
+        '<span class="sector-meer">Bekijk de aandachtsgebieden &rarr;</span>' +
+        '<span class="foto-credit">Foto: ' + s.credit + '</span>' +
+      '</span>';
+    card.addEventListener('click', function () { openSector(s, card); });
     grid.appendChild(card);
   });
 

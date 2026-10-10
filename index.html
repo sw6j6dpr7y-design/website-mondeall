@@ -149,6 +149,53 @@
   .ini-vz { color: var(--gedempt); font-size: 0.97rem; line-height: 1.45; margin: 0; }
   .ini-beg { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--lijn); font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: .04em; color: var(--gedempt); line-height: 1.3; }
 
+  /* FILTERS */
+  .if-kernen { margin: 26px 0 0; border-bottom: 1px solid var(--lijn); overflow-x: auto; }
+  .if-kernen ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; min-width: max-content; }
+  .if-kernen button { background: none; border: 0; border-bottom: 4px solid transparent; padding: 10px 0 8px; min-height: 48px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1.02rem; color: var(--gedempt); cursor: pointer; white-space: nowrap; }
+  .if-kernen button:hover { color: var(--tekst); }
+  .if-kernen button[aria-pressed="true"] { color: var(--diep); border-bottom-color: var(--merk); }
+  .if-kernen button:focus-visible, .if-ctl:focus-visible, .if-seg button:focus-visible, .if-textbtn:focus-visible, .if-chip button:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+  .if-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; padding: 18px 0 0; }
+  .if-field { display: flex; flex-direction: column; gap: 5px; }
+  .if-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; font-weight: 400; letter-spacing: 0; color: var(--gedempt); margin: 0; display: block; }
+  .if-search { flex: 1 1 320px; position: relative; }
+  .if-search input { width: 100%; height: 48px; border: 1.5px solid var(--lijn); background: #fff; border-radius: 10px; padding: 0 14px 0 42px; font-family: 'Source Serif 4', serif; font-size: 1.02rem; }
+  .if-search input:focus { border-color: var(--diep); outline: none; box-shadow: 0 0 0 3px rgba(0, 159, 140, .3); }
+  .if-search svg { position: absolute; left: 14px; bottom: 15px; width: 18px; height: 18px; color: var(--gedempt); }
+  .if-ctl { height: 48px; border: 1.5px solid var(--lijn); background: #fff; border-radius: 10px; padding: 0 14px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--tekst); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; width: auto; }
+  .if-ctl:hover { border-color: var(--gedempt); }
+  select.if-ctl { padding-right: 34px; appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--gedempt) 50%), linear-gradient(135deg, var(--gedempt) 50%, transparent 50%); background-position: calc(100% - 18px) 21px, calc(100% - 13px) 21px; background-size: 5px 5px; background-repeat: no-repeat; }
+  .if-count { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 0.8rem; background: var(--diep); color: #fff; border-radius: 999px; padding: 0 7px; min-width: 22px; text-align: center; }
+  .if-seg { display: inline-flex; border: 1.5px solid var(--lijn); border-radius: 10px; overflow: hidden; height: 48px; background: #fff; }
+  .if-seg button { border: 0; background: none; padding: 0 14px; white-space: nowrap; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.92rem; cursor: pointer; color: var(--gedempt); }
+  .if-seg button + button { border-left: 1px solid var(--lijn); }
+  .if-seg button[aria-pressed="true"] { background: var(--nevel); color: var(--diep); }
+  .if-sectorwrap { position: relative; }
+  .if-panel { position: absolute; z-index: 30; top: calc(100% + 8px); left: 0; width: min(420px, 92vw); max-height: min(70vh, 480px); overflow: auto; background: #fff; border: 1px solid var(--lijn); border-radius: 12px; box-shadow: 0 18px 40px -16px rgba(0, 30, 25, .4); padding: 10px 8px; }
+  .if-panel fieldset { border: 0; margin: 0; padding: 0; }
+  .if-panel legend { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--gedempt); padding: 4px 10px 8px; }
+  .if-opt { display: flex; align-items: center; gap: 10px; padding: 7px 10px; margin: 0; border-radius: 8px; cursor: pointer; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--tekst); letter-spacing: 0; }
+  .if-opt:hover { background: var(--nevel); }
+  .if-opt input { width: 18px; height: 18px; padding: 0; margin: 0; accent-color: var(--diep); flex: none; }
+  .if-opt img { width: 22px; height: 22px; flex: none; display: block; }
+  .if-panelfoot { display: flex; justify-content: space-between; padding: 8px 10px 2px; border-top: 1px solid var(--lijn); margin-top: 6px; }
+  .if-textbtn { background: none; border: 0; padding: 4px 0; min-height: 32px; cursor: pointer; color: var(--merktekst); text-decoration: underline; text-underline-offset: .18em; font-family: 'Source Serif 4', serif; font-size: 0.95rem; }
+  .if-chips { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin-top: 14px; }
+  .if-chips:empty { display: none; }
+  .if-chip { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--lijn); background: #fff; border-radius: 999px; padding: 3px 6px 3px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; }
+  .if-chip button { border: 0; background: var(--nevel); color: var(--diep); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 1rem; line-height: 1; padding: 0; }
+  .if-copied { font-size: 0.85rem; color: var(--gedempt); }
+  .if-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 26px; padding-bottom: 10px; border-bottom: 1px solid var(--lijn); }
+  .if-head h3 { margin: 0; font-size: 1.15rem; }
+  .if-head p { margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--gedempt); }
+  .if-leeg { margin-top: 22px; border: 1.5px dashed var(--lijn); border-radius: 12px; padding: 26px 22px; background: #fff; }
+  .if-leeg h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--diep); margin: 0 0 6px; }
+  .if-leeg p { margin: 0 0 12px; color: var(--gedempt); }
+  .if-leeg a { font-weight: 600; }
+  .ini-grid { padding-top: 22px; }
+  @media (max-width: 720px) { .if-row .if-seg, .if-row .if-ctl, .if-row .if-sectorwrap { flex: 1 1 auto; } .if-row .if-field:last-child { flex: 1 1 100%; } .if-seg button { flex: 1; padding: 0 10px; } }
+
   a.ini-card { text-decoration: none; color: inherit; transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease; }
   a.ini-card:hover { transform: translateY(-3px); border-color: var(--diep); box-shadow: 0 12px 26px -18px rgba(4, 59, 52, .5); }
   a.ini-card:focus-visible { outline: 3px solid var(--diep); outline-offset: 3px; }
@@ -778,7 +825,56 @@
     <h2>Zo ziet het er straks uit</h2>
     <p class="ini-sub">Elk Initiatief begint bij iemand die de eerste stap zet: een bestuurslid, een leerkracht, een vrijwilliger. Straks kies je er een uit en deel je mee vanaf één euro. Alles komt aan, omdat Sponsors de kosten dragen.</p>
     <span class="preview-status">Fictieve voorbeelden: het platform wordt gebouwd. Klik op een kaart voor de Initiatiefpagina.</span>
-    <p class="ini-sortnote">Straks gesorteerd op nabijheid, niet op populariteit. Geen ranglijst, geen doelbedrag.</p>
+    <p class="ini-sortnote">De volgorde wisselt bij elk bezoek. Zo krijgt geen Initiatief vaste voorrang. Geen ranglijst, geen doelbedrag.</p>
+
+    <nav class="if-kernen" aria-label="Kies een Kern in gemeente Lochem"><ul id="if-kernen"></ul></nav>
+
+    <div role="search" aria-label="Zoeken en filteren">
+      <div class="if-row">
+        <div class="if-field if-search">
+          <label class="if-label" for="if-q">Zoek een Initiatief, Begunstigde of Kern</label>
+          <input id="if-q" type="search" autocomplete="off" placeholder="Bijvoorbeeld kleedkamers, bijen of Laren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        </div>
+        <div class="if-field if-sectorwrap">
+          <span class="if-label" id="if-sector-label">Sector</span>
+          <button type="button" class="if-ctl" id="if-sector-btn" aria-expanded="false" aria-controls="if-panel" aria-describedby="if-sector-label"><span id="if-sector-txt">Alle sectoren</span> <span class="if-count" id="if-sector-count" hidden>0</span></button>
+          <div class="if-panel" id="if-panel" hidden>
+            <fieldset>
+              <legend>Kies een of meer sectoren</legend>
+              <div id="if-opts"></div>
+            </fieldset>
+            <div class="if-panelfoot">
+              <button type="button" class="if-textbtn" id="if-sector-clear">Wis sectoren</button>
+              <button type="button" class="if-textbtn" id="if-sector-close">Klaar</button>
+            </div>
+          </div>
+        </div>
+        <div class="if-field">
+          <label class="if-label" for="if-soort">Soort Begunstigde</label>
+          <select id="if-soort" class="if-ctl"><option value="">Alle soorten</option></select>
+        </div>
+        <div class="if-field">
+          <span class="if-label" id="if-status-label">Status</span>
+          <div class="if-seg" role="group" aria-labelledby="if-status-label" id="if-status">
+            <button type="button" data-v="" aria-pressed="true">Alle</button>
+            <button type="button" data-v="open" aria-pressed="false">Open voor delen</button>
+            <button type="button" data-v="afgesloten" aria-pressed="false">Afgesloten</button>
+          </div>
+        </div>
+      </div>
+      <div class="if-chips" id="if-chips"></div>
+    </div>
+
+    <div class="if-head">
+      <h3 id="if-titel">Initiatieven in gemeente Lochem</h3>
+      <p id="if-result" aria-live="polite"></p>
+    </div>
+    <div class="if-leeg" id="if-leeg" hidden>
+      <h4>Geen Initiatieven bij deze keuze</h4>
+      <p>Haal een filter weg of kies een andere Kern. Of start zelf een Initiatief voor jouw vereniging, stichting of school.</p>
+      <button type="button" class="if-textbtn" id="if-leeg-wis">Wis alle filters</button> &nbsp; <a href="#start-initiatief">Start een Initiatief</a>
+    </div>
     <div class="ini-grid" id="ini-grid" role="list"></div>
   </div>
 </section>
@@ -1251,42 +1347,42 @@
   };
   var INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];
   var INI_DATA = [
-    { slug: "renovatie-kleedkamers-sv-laren", mensen: 63, bedrag: "1.845", sinds: "8 september", eerste: "Karin", afgesloten: "", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", pos: "40%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
+    { slug: "renovatie-kleedkamers-sv-laren", soort: "Vereniging", mensen: 63, bedrag: "1.845", sinds: "8 september", eerste: "Karin", afgesloten: "", foto: "assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", pos: "40%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
       vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
       kop: "Gerenoveerde, toegankelijke kleedruimtes.",
       tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
       berichten: [["Karin", "Zelf hier leren voetballen. Mooi dat dit gebeurt."], ["Anoniem", "Succes met de klus."]], sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "instrumentenfonds-concordia", mensen: 41, bedrag: "1.120", sinds: "10 september", eerste: "Wim", afgesloten: "", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Alankrantas / Pexels", pos: "40%", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
+    { slug: "instrumentenfonds-concordia", soort: "Vereniging", mensen: 41, bedrag: "1.120", sinds: "10 september", eerste: "Wim", afgesloten: "", foto: "assets/fotos/initiatief-instrumentenfonds-concordia.jpg", credit: "Alankrantas / Pexels", pos: "40%", sector: "05", kern: "Lochem", titel: "Instrumentenfonds jeugd", beg: "muziekvereniging Concordia", starter: "een bestuurslid",
       vz: "Leeninstrumenten zodat elk kind kan leren spelen, ook zonder eigen instrument.",
       kop: "Een fonds voor leeninstrumenten voor de jeugd.",
       tekst: "We willen dat geld nooit de reden is dat een kind niet meespeelt. Met dit fonds kan elke jonge muzikant bij ons beginnen: een klarinet, een trompet of een slagwerkset, klaar om mee te nemen naar de eerste les.",
       berichten: [["Wim", "Zelf begonnen op een geleende trompet. Dit gun je iedereen."], ["Els", "Prachtig initiatief."]], sponsor: { naam: "Muziekhuis Klankbord", type: "Lokale ondernemer", kleur: "#5b3a8c", logo: "klank", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
-    { slug: "ontmoetingscafe-dementie-gorssel", mensen: 28, bedrag: "960", sinds: "12 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", pos: "30%", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
+    { slug: "ontmoetingscafe-dementie-gorssel", soort: "Stichting", mensen: 28, bedrag: "960", sinds: "12 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-ontmoetingscafe-dementie-gorssel.jpg", credit: "Anthony Shkraba / Pexels", pos: "30%", sector: "04", kern: "Gorssel", titel: "Ontmoetingscafé bij dementie", beg: "Stichting Welzijn Gorssel", starter: "een vrijwilliger",
       vz: "Een vaste plek waar mensen met dementie en hun naasten elkaar ontmoeten.",
       kop: "Een ingericht ontmoetingscafé, elke week open.",
       tekst: "Dementie maakt de wereld klein. Een middag samen, met koffie en muziek van vroeger, geeft rust aan wie het treft en lucht aan wie mantelzorgt. We richten een vaste, warme ruimte in.",
       berichten: [["Anoniem", "Voor mijn moeder zou dit veel betekenen."]], sponsor: { naam: "Bloemenhuis Madelief", type: "Lokale ondernemer", kleur: "#c2456f", logo: "bloem", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" } },
-    { slug: "verkeerseducatie-eefde", mensen: 35, bedrag: "780", sinds: "15 september", eerste: "Sanne", afgesloten: "", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Taavii / Pexels", pos: "42%", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
+    { slug: "verkeerseducatie-eefde", soort: "Vereniging", mensen: 35, bedrag: "780", sinds: "15 september", eerste: "Sanne", afgesloten: "", foto: "assets/fotos/initiatief-verkeerseducatie-eefde.jpg", credit: "Taavii / Pexels", pos: "42%", sector: "08", kern: "Eefde", titel: "Verkeerseducatie op de basisschool", beg: "Oudervereniging De Vijverhof", starter: "een lid van de oudervereniging",
       vz: "Een lessenreeks zodat kinderen veilig leren fietsen naar school.",
       kop: "Een praktische lessenreeks verkeersveiligheid.",
       tekst: "De weg naar school is druk. Met echte fietslessen op het schoolplein en in de wijk leren kinderen kijken, voorrang geven en zichtbaar zijn. Veiligheid die een leven lang meegaat.",
       berichten: [["Sanne", "Onze straat is druk, dit helpt echt."]], sponsor: { naam: "Rijwielhandel Ter Braak", type: "Familiebedrijf", kleur: "#1f5fa8", logo: "wiel", vorm: "rond", stijl: "font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.02em;" } },
-    { slug: "bijenlint-almen", mensen: 52, bedrag: "690", sinds: "9 september", eerste: "Henk", afgesloten: "", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Onkel Ramirez / Pexels", pos: "50%", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
+    { slug: "bijenlint-almen", soort: "Stichting", mensen: 52, bedrag: "690", sinds: "9 september", eerste: "Henk", afgesloten: "", foto: "assets/fotos/initiatief-bijenlint-almen.jpg", credit: "Onkel Ramirez / Pexels", pos: "50%", sector: "06", kern: "Almen", titel: "Bijenlint door het dorp", beg: "Stichting Groen Almen", starter: "een vrijwilliger",
       vz: "Een doorlopend bloemenlint dat bijen en vlinders terugbrengt in het dorp.",
       kop: "Een aaneengesloten bloemenlint langs de dorpsranden.",
       tekst: "Bermen vol bloemen zijn niet alleen mooi, ze zijn voedsel voor bijen en vlinders. We zaaien een lint dwars door het dorp, onderhouden door vrijwilligers, dat elk jaar weer terugkomt.",
       berichten: [["Anoniem", "Eindelijk weer bloemen langs de weg."], ["Henk", "Goed bezig."]], sponsor: { naam: "Tuinhof Bloemrijk", type: "Lokale ondernemer", kleur: "#4d7c2a", logo: "blad", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "aed-training-sv-epse", mensen: 74, bedrag: "2.310", sinds: "1 september", eerste: "Marijke", afgesloten: "22 september", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Haromhatar / Pexels", pos: "50%", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
+    { slug: "aed-training-sv-epse", soort: "Vereniging", mensen: 74, bedrag: "2.310", sinds: "1 september", eerste: "Marijke", afgesloten: "22 september", foto: "assets/fotos/initiatief-aed-training-sv-epse.jpg", credit: "Haromhatar / Pexels", pos: "50%", sector: "12", kern: "Epse", titel: "Reanimatie en AED-training", beg: "sv Epse", starter: "een bestuurslid",
       vz: "Trainers en vrijwilligers die weten wat ze moeten doen als het erop aankomt.",
       kop: "Een trainingsreeks reanimatie en AED-gebruik.",
       tekst: "Op en om het sportveld kan het zomaar misgaan. Als genoeg mensen weten hoe je reanimeert en de AED bedient, telt elke seconde in ons voordeel. We trainen trainers, vrijwilligers en ouders.",
       berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]], sponsor: { naam: "Apotheek Hofstede", type: "Franchisenemer", kleur: "#1b8f5a", logo: "kruis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
-    { slug: "gereedschapbank-nieuwstad", mensen: 19, bedrag: "445", sinds: "16 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Sam Clarke / Pexels", pos: "70%", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
+    { slug: "gereedschapbank-nieuwstad", soort: "Vereniging", mensen: 19, bedrag: "445", sinds: "16 september", eerste: "", afgesloten: "", foto: "assets/fotos/initiatief-gereedschapbank-nieuwstad.jpg", credit: "Sam Clarke / Pexels", pos: "70%", sector: "02", kern: "Lochem", titel: "Buurtgereedschapbank", beg: "Buurtvereniging Nieuwstad", starter: "een vrijwilliger",
       vz: "Gedeeld gereedschap voor de hele buurt, van boormachine tot ladder.",
       kop: "Een uitleenpunt met gedeeld gereedschap.",
       tekst: "Niet iedereen heeft een schuur vol spullen die je twee keer per jaar gebruikt. Met een buurtgereedschapbank leen je wat je nodig hebt, scheelt geld en ruimte, en je leert je buren kennen.",
       berichten: [["Anoniem", "Handig, en je komt eens bij elkaar over de vloer."]], sponsor: { naam: "HandigMarkt", type: "Franchisenemer", kleur: "#d2691e", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;text-transform:uppercase;" } },
-    { slug: "zonnepanelen-dorpshuis-harfsen", mensen: 88, bedrag: "3.260", sinds: "3 september", eerste: "Gerda", afgesloten: "", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Kindel Media / Pexels", pos: "50%", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
+    { slug: "zonnepanelen-dorpshuis-harfsen", soort: "Stichting", mensen: 88, bedrag: "3.260", sinds: "3 september", eerste: "Gerda", afgesloten: "", foto: "assets/fotos/initiatief-zonnepanelen-dorpshuis-harfsen.jpg", credit: "Kindel Media / Pexels", pos: "50%", sector: "07", kern: "Harfsen", titel: "Zonnepanelen op het dorpshuis", beg: "Stichting Dorpshuis Harfsen", starter: "een bestuurslid",
       vz: "Een dorpshuis dat zijn eigen stroom opwekt, zodat meer geld naar activiteiten gaat.",
       kop: "Zonnepanelen op het dak van het dorpshuis.",
       tekst: "De energierekening eet ons budget op. Met eigen opwek dalen de vaste lasten en blijft er ruimte voor wat het dorpshuis is: de klaverjasavond, de peuterochtend, het dorpsfeest.",
@@ -1296,15 +1392,35 @@
   function iniTint(hex, a) { var n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; }
   function iniSector(nr) { return sectoren.filter(function (x) { return x.nr === nr; })[0]; }
 
+  var IF_ICON = { "01": "sector-01-internationale-hulp", "02": "sector-02-sociale-hulp", "03": "sector-03-sport", "04": "sector-04-zorg", "05": "sector-05-kunst", "06": "sector-06-dieren", "07": "sector-07-milieu", "08": "sector-08-onderwijs", "09": "sector-09-wetenschap", "10": "sector-10-religie", "11": "sector-11-samenleving", "12": "sector-12-gezondheid" };
   var iniGrid = document.getElementById('ini-grid');
-  INI_DATA.forEach(function (d) {
+  var iniOrder = INI_DATA.slice();
+  for (var si = iniOrder.length - 1; si > 0; si--) { var sj = Math.floor(Math.random() * (si + 1)); var stmp = iniOrder[si]; iniOrder[si] = iniOrder[sj]; iniOrder[sj] = stmp; }
+  function ifNorm(t) { return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function ifId(naam) { return ifNorm(naam).replace(/[^a-z0-9]+/g, '-'); }
+  function ifStatus(d) { return d.afgesloten ? 'afgesloten' : 'open'; }
+  var IF_STATUSNAAM = { open: 'Open voor delen', afgesloten: 'Afgesloten' };
+
+  var IF_KERNEN = [];
+  INI_DATA.forEach(function (d) { if (!IF_KERNEN.some(function (k) { return k.naam === d.kern; })) IF_KERNEN.push({ id: ifId(d.kern), naam: d.kern }); });
+  IF_KERNEN.sort(function (a, b) { return a.naam.localeCompare(b.naam, 'nl'); });
+  var IF_SOORTEN = [];
+  INI_DATA.forEach(function (d) { if (IF_SOORTEN.indexOf(d.soort) < 0) IF_SOORTEN.push(d.soort); });
+  IF_SOORTEN.sort(function (a, b) { return a.localeCompare(b, 'nl'); });
+
+  var IF = { kern: '', sectors: [], soort: '', status: '', q: '' };
+  var ifEl = {
+    kernen: document.getElementById('if-kernen'), q: document.getElementById('if-q'),
+    btn: document.getElementById('if-sector-btn'), txt: document.getElementById('if-sector-txt'), cnt: document.getElementById('if-sector-count'),
+    panel: document.getElementById('if-panel'), opts: document.getElementById('if-opts'),
+    soort: document.getElementById('if-soort'), status: document.getElementById('if-status'),
+    chips: document.getElementById('if-chips'), titel: document.getElementById('if-titel'), result: document.getElementById('if-result'),
+    leeg: document.getElementById('if-leeg')
+  };
+
+  function ifCardHTML(d) {
     var s = iniSector(d.sector);
-    var card = document.createElement('a');
-    card.className = 'ini-card';
-    card.href = '#/initiatief/' + d.slug;
-    card.setAttribute('role', 'listitem');
-    card.innerHTML =
-      '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
+    return '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
       '<div class="ini-thumb" style="background:' + iniTint(s.hex, 0.10) + '">' +
         '<img src="' + d.foto + '" alt="" loading="lazy" style="object-position:center ' + d.pos + '">' +
         '<span class="ini-status">' + (d.afgesloten ? 'Voorbeeld · afgesloten' : 'Voorbeeld') + '</span>' +
@@ -1317,8 +1433,147 @@
         '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
         '<div class="ini-beg">' + iniEsc(d.beg) + '<span class="ini-meer">Bekijk het Initiatief &rarr;</span><span class="foto-credit">Foto: ' + iniEsc(d.credit) + '</span></div>' +
       '</div>';
-    iniGrid.appendChild(card);
+  }
+  function ifMatches(d) {
+    if (IF.kern && ifId(d.kern) !== IF.kern) return false;
+    if (IF.sectors.length && IF.sectors.indexOf(d.sector) < 0) return false;
+    if (IF.soort && d.soort !== IF.soort) return false;
+    if (IF.status && ifStatus(d) !== IF.status) return false;
+    if (IF.q) {
+      var hooi = ifNorm([d.titel, d.vz, d.beg, d.soort, d.kern, iniSector(d.sector).naam].join(' '));
+      if (!ifNorm(IF.q).split(/\s+/).every(function (w) { return hooi.indexOf(w) >= 0; })) return false;
+    }
+    return true;
+  }
+
+  function ifRenderKernen() {
+    var alle = [{ id: '', naam: 'Hele gemeente' }].concat(IF_KERNEN);
+    ifEl.kernen.innerHTML = alle.map(function (k) {
+      return '<li><button type="button" data-kern="' + k.id + '" aria-pressed="' + (IF.kern === k.id) + '">' + iniEsc(k.naam) + '</button></li>';
+    }).join('');
+  }
+  function ifRenderChips() {
+    var chips = [];
+    if (IF.kern) chips.push(['kern', '', IF_KERNEN.filter(function (k) { return k.id === IF.kern; })[0].naam]);
+    IF.sectors.forEach(function (nr) { chips.push(['sector', nr, iniSector(nr).naam]); });
+    if (IF.soort) chips.push(['soort', '', IF.soort]);
+    if (IF.status) chips.push(['status', '', IF_STATUSNAAM[IF.status]]);
+    if (IF.q) chips.push(['q', '', '\u201c' + IF.q + '\u201d']);
+    if (!chips.length) { ifEl.chips.innerHTML = ''; return; }
+    ifEl.chips.innerHTML = chips.map(function (c) {
+      return '<span class="if-chip">' + iniEsc(c[2]) + '<button type="button" data-t="' + c[0] + '" data-v="' + c[1] + '" aria-label="Filter ' + iniEsc(c[2]) + ' weghalen">\u00d7</button></span>';
+    }).join('') +
+      '<button type="button" class="if-textbtn" data-t="all">Wis alle filters</button>' +
+      '<button type="button" class="if-textbtn" data-t="share">Kopieer link naar deze selectie</button>' +
+      '<span class="if-copied" id="if-copied" aria-live="polite"></span>';
+  }
+  function ifSchrijfUrl() {
+    var p = new URLSearchParams();
+    if (IF.kern) p.set('kern', IF.kern);
+    if (IF.sectors.length) p.set('sector', IF.sectors.join(','));
+    if (IF.soort) p.set('soort', IF.soort);
+    if (IF.status) p.set('status', IF.status);
+    if (IF.q) p.set('q', IF.q);
+    var qs = p.toString();
+    try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) {}
+  }
+  function ifLeesUrl() {
+    var p = new URLSearchParams(location.search);
+    var k = p.get('kern') || '';
+    IF.kern = IF_KERNEN.some(function (x) { return x.id === k; }) ? k : '';
+    IF.sectors = (p.get('sector') || '').split(',').filter(function (nr) { return iniSector(nr); }).sort();
+    var so = p.get('soort') || '';
+    IF.soort = IF_SOORTEN.indexOf(so) >= 0 ? so : '';
+    var st = p.get('status') || '';
+    IF.status = IF_STATUSNAAM[st] ? st : '';
+    IF.q = (p.get('q') || '').trim().slice(0, 80);
+  }
+  function ifSyncUi() {
+    ifEl.q.value = IF.q;
+    ifEl.soort.value = IF.soort;
+    ifEl.status.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-v') === IF.status); });
+    ifEl.opts.querySelectorAll('input').forEach(function (i) { i.checked = IF.sectors.indexOf(i.value) >= 0; });
+  }
+  function ifUpdate() {
+    var lijst = iniOrder.filter(ifMatches);
+    iniGrid.textContent = '';
+    lijst.forEach(function (d) {
+      var card = document.createElement('a');
+      card.className = 'ini-card';
+      card.href = '#/initiatief/' + d.slug;
+      card.setAttribute('role', 'listitem');
+      card.innerHTML = ifCardHTML(d);
+      iniGrid.appendChild(card);
+    });
+    iniGrid.hidden = !lijst.length;
+    ifEl.leeg.hidden = !!lijst.length;
+    ifEl.result.textContent = lijst.length === 1 ? '1 gevonden' : lijst.length + ' gevonden';
+    ifEl.titel.textContent = IF.kern ? 'Initiatieven in ' + IF_KERNEN.filter(function (k) { return k.id === IF.kern; })[0].naam : 'Initiatieven in gemeente Lochem';
+    ifEl.txt.textContent = IF.sectors.length ? 'Sectoren' : 'Alle sectoren';
+    ifEl.cnt.hidden = !IF.sectors.length;
+    ifEl.cnt.textContent = IF.sectors.length;
+    ifRenderKernen();
+    ifRenderChips();
+    ifSchrijfUrl();
+  }
+  function ifWis(t, v) {
+    if (t === 'kern' || t === 'all') IF.kern = '';
+    if (t === 'sector') IF.sectors = IF.sectors.filter(function (nr) { return nr !== v; });
+    if (t === 'all') IF.sectors = [];
+    if (t === 'soort' || t === 'all') IF.soort = '';
+    if (t === 'status' || t === 'all') IF.status = '';
+    if (t === 'q' || t === 'all') IF.q = '';
+    ifSyncUi();
+    ifUpdate();
+  }
+  function ifKopieer() {
+    var uit = document.getElementById('if-copied');
+    var zet = function (m) { if (uit) uit.textContent = m; };
+    var url = location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { zet('Link gekopieerd.'); }, function () { zet('Kopi\u00ebren lukt hier niet. Kopieer de link uit de adresbalk.'); });
+    } else { zet('Kopi\u00ebren lukt hier niet. Kopieer de link uit de adresbalk.'); }
+  }
+
+  ifEl.opts.innerHTML = sectoren.map(function (s) {
+    return '<label class="if-opt"><input type="checkbox" value="' + s.nr + '"><img src="assets/iconen/kleur/' + IF_ICON[s.nr] + '.svg" alt=""><span>' + iniEsc(s.naam) + '</span></label>';
+  }).join('');
+  ifEl.soort.insertAdjacentHTML('beforeend', IF_SOORTEN.map(function (x) { return '<option value="' + iniEsc(x) + '">' + iniEsc(x) + '</option>'; }).join(''));
+
+  function ifPaneel(open) { ifEl.panel.hidden = !open; ifEl.btn.setAttribute('aria-expanded', open); if (open) { var f = ifEl.panel.querySelector('input'); if (f) f.focus(); } }
+  ifEl.btn.addEventListener('click', function () { ifPaneel(ifEl.panel.hidden); });
+  document.getElementById('if-sector-close').addEventListener('click', function () { ifPaneel(false); ifEl.btn.focus(); });
+  document.getElementById('if-sector-clear').addEventListener('click', function () { IF.sectors = []; ifSyncUi(); ifUpdate(); });
+  ifEl.opts.addEventListener('change', function (e) {
+    var nr = e.target.value;
+    IF.sectors = IF.sectors.filter(function (x) { return x !== nr; });
+    if (e.target.checked) IF.sectors.push(nr);
+    IF.sectors.sort();
+    ifUpdate();
   });
+  document.addEventListener('click', function (e) { if (!ifEl.panel.hidden && !e.target.closest('.if-sectorwrap')) ifPaneel(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ifEl.panel.hidden) { ifPaneel(false); ifEl.btn.focus(); } });
+  ifEl.soort.addEventListener('change', function () { IF.soort = ifEl.soort.value; ifUpdate(); });
+  ifEl.status.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    IF.status = b.getAttribute('data-v'); ifSyncUi(); ifUpdate();
+  });
+  ifEl.kernen.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-kern]'); if (!b) return;
+    IF.kern = b.getAttribute('data-kern'); ifUpdate();
+  });
+  var ifTimer;
+  ifEl.q.addEventListener('input', function () { clearTimeout(ifTimer); ifTimer = setTimeout(function () { IF.q = ifEl.q.value.trim(); ifUpdate(); }, 120); });
+  ifEl.chips.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.getAttribute('data-t') === 'share') { ifKopieer(); return; }
+    ifWis(b.getAttribute('data-t'), b.getAttribute('data-v'));
+  });
+  document.getElementById('if-leeg-wis').addEventListener('click', function () { ifWis('all'); });
+
+  ifLeesUrl();
+  ifSyncUi();
+  ifUpdate();
 
   var HOME_IDS = ['initiatieven', 'start-initiatief', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
   var BASIS_TITEL = document.title;

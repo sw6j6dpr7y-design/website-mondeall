@@ -345,6 +345,120 @@
   .id-aside p { color: var(--gedempt); font-size: 0.97rem; margin: 10px 0 16px; }
   @media (max-width: 900px) { .id-layout { grid-template-columns: 1fr; gap: 28px; } .id-aside { position: static; } }
 
+  /* WERKPLAATS (voorbeeld) */
+  #werkplaats .stepper { margin-top: 4px; }
+  .wp-app { border: 1px solid var(--lijn); border-radius: 18px; overflow: hidden; background: var(--achtergrond); }
+  .wp-app button:focus-visible, .wp-app a:focus-visible, .wp-app input:focus-visible, .wp-app textarea:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+  .wp-top { background: #fff; border-bottom: 1px solid var(--lijn); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; }
+  .wp-merk { display: flex; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--diep); }
+  .wp-merk img { height: 24px; width: auto; display: block; }
+  .wp-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: .08em; color: var(--gedempt); padding-left: 14px; border-left: 1px solid var(--lijn); }
+  .wp-merkwrap { display: flex; align-items: center; gap: 14px; }
+  .wp-gebruiker { display: flex; align-items: center; gap: 16px; font-size: 0.95rem; color: var(--gedempt); }
+  .wp-tekstknop { background: none; border: 0; padding: 0; min-height: 44px; font-family: 'Source Serif 4', serif; font-size: 0.95rem; color: var(--diep); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .wp-tekstknop:disabled { color: var(--gedempt); text-decoration: none; cursor: default; }
+  .wp-body { padding: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+  .wp-nav { flex: 1 1 190px; max-width: 250px; display: flex; flex-direction: column; gap: 6px; }
+  .wp-nav button { text-align: left; min-height: 44px; padding: 10px 16px; border-radius: 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer; border: 0; background: transparent; color: var(--tekst); }
+  .wp-nav button[aria-current="page"] { background: var(--nevel); color: var(--diep); }
+  .wp-nav .wp-nieuw { margin-top: 16px; display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 18px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--diep); background: #fff; border: 1.5px solid var(--diep); border-radius: 999px; text-decoration: none; }
+  .wp-main { flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+  .wp-main h1 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.1rem); letter-spacing: -.02em; color: var(--diep); margin: 0; line-height: 1.1; }
+  .wp-lead { margin: 8px 0 0; font-size: 1rem; line-height: 1.55; color: var(--gedempt); max-width: 62ch; }
+  .wp-groep { display: flex; flex-direction: column; gap: 12px; }
+  .wp-groep h2 { margin: 0; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: .08em; color: var(--gedempt); }
+  .wp-kaart { background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 22px; }
+  .wp-rij { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+  .wp-rij > div { flex: 1 1 300px; min-width: 0; }
+  .wp-meta { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--gedempt); text-transform: uppercase; }
+  .wp-meta .bar { display: inline-block; width: 14px; height: 4px; border-radius: 2px; margin-right: 8px; vertical-align: middle; }
+  .wp-meta .bar.licht { outline: 1px solid #c9a92a; }
+  .wp-kaart h3, .wp-sectie h3 { margin: 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--tekst); }
+  .wp-org { margin: 4px 0 0; font-size: 0.95rem; color: var(--gedempt); }
+  .wp-stand { margin: 12px 0 0; font-size: 0.97rem; line-height: 1.5; }
+  .wp-knop { min-height: 48px; padding: 0 26px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff; background: var(--diep); border: 0; border-radius: 999px; cursor: pointer; }
+  .wp-knop:hover { background: #003d35; }
+  .wp-knop.rand { color: var(--diep); background: #fff; border: 1.5px solid var(--diep); }
+  .wp-knop.rand:hover { background: var(--nevel); }
+  .wp-knop:disabled { background: var(--lijn); color: var(--gedempt); cursor: not-allowed; }
+  .wp-zacht { min-height: 44px; padding: 0 18px; font-family: 'Source Serif 4', serif; font-size: 0.95rem; color: var(--diep); background: #fff; border: 1.5px solid var(--lijn); border-radius: 999px; cursor: pointer; }
+  .wp-zacht:disabled { color: var(--gedempt); cursor: default; }
+  .wp-terug { align-self: flex-start; }
+  .wp-live { background: var(--nevel); border-radius: 16px; padding: 22px; }
+  .wp-live .k { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .08em; color: var(--diep); }
+  .wp-live p { margin: 6px 0 0; font-size: 1.05rem; line-height: 1.5; }
+  .wp-live p.n { font-size: 0.92rem; color: var(--gedempt); margin-top: 4px; }
+  .wp-pillen { display: flex; flex-wrap: wrap; gap: 12px; }
+  .wp-pil { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1.5px solid var(--lijn); border-radius: 999px; background: #fff; font-size: 0.95rem; text-decoration: none; color: var(--tekst); font-family: 'Source Serif 4', serif; }
+  button.wp-pil:disabled { color: var(--gedempt); }
+  .wp-noot { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--gedempt); max-width: 68ch; }
+  .wp-twee { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-start; }
+  .wp-twee > section { flex: 1 1 280px; min-width: 0; }
+  .wp-sectie { background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 22px; }
+  .wp-sectie h2 { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--tekst); }
+  .wp-sub { margin: 4px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: .06em; color: var(--gedempt); }
+  .wp-bedrag { margin: 16px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.8rem; color: var(--tekst); }
+  .wp-lijst { list-style: none; margin: 16px 0 0; padding: 0; border-top: 1px solid var(--lijn); }
+  .wp-lijst li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--lijn); font-size: 0.95rem; }
+  .wp-lijst .w { font-family: 'IBM Plex Mono', monospace; font-size: 0.82rem; color: var(--gedempt); }
+  .wp-lijst .b { font-variant-numeric: tabular-nums; }
+  .wp-berichten { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .wp-berichten li { padding: 12px 14px; border-radius: 10px; background: var(--nevel); }
+  .wp-berichten li.weg { background: var(--achtergrond); }
+  .wp-berichten .t { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .wp-berichten .t b { font-weight: 600; }
+  .wp-berichten p { margin: 2px 0 0; font-size: 0.95rem; line-height: 1.5; }
+  .wp-berichten p.v { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--gedempt); }
+  .wp-sporen { display: flex; flex-wrap: wrap; gap: 22px; align-items: stretch; }
+  .wp-sporen > section { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+  .wp-spoorkop { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .08em; color: var(--gedempt); }
+  .wp-stappen { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .wp-stappen li { display: flex; gap: 12px; align-items: flex-start; }
+  .wp-bol { flex: none; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; font-weight: 600; box-sizing: border-box; background: #fff; color: var(--gedempt); border: 1.5px solid var(--gedempt); }
+  .wp-bol.klaar { background: var(--diep); color: #fff; border-color: var(--diep); }
+  .wp-bol.wacht { color: var(--diep); border: 1.5px dashed var(--diep); }
+  .wp-stappen b { display: block; font-weight: 600; font-size: 0.97rem; }
+  .wp-stappen b span { font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: 0.72rem; color: var(--gedempt); margin-left: 6px; }
+  .wp-stappen i { display: block; font-style: normal; font-size: 0.9rem; line-height: 1.45; color: var(--gedempt); }
+  .wp-vw { margin-top: 6px; padding-top: 16px; border-top: 1px solid var(--lijn); display: flex; align-items: flex-start; gap: 12px; }
+  .wp-vw input { width: 20px; height: 20px; padding: 0; margin: 2px 0 0; accent-color: var(--diep); flex: none; }
+  .wp-vw label { margin: 0; font-family: 'Source Serif 4', serif; font-size: 0.92rem; line-height: 1.5; letter-spacing: 0; color: var(--tekst); }
+  .wp-indien { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+  .wp-indien ol { flex: 1 1 320px; margin: 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.6; }
+  .wp-ingediend { background: var(--nevel); border-radius: 16px; padding: 22px; }
+  .wp-ingediend .k { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .08em; color: var(--diep); }
+  .wp-ingediend p { margin: 6px 0 0; line-height: 1.55; }
+  .wp-dl { margin: 16px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+  .wp-dl dt { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); text-transform: uppercase; }
+  .wp-dl dd { margin: 2px 0 0; font-size: 0.95rem; }
+  .wp-ph { color: var(--gedempt); }
+  .wp-label-v { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: .06em; padding: 4px 10px; border-radius: 999px; color: #fff; background: var(--diep); }
+  .wp-label-v.wacht { color: var(--diep); background: #fff; border: 1.5px dashed var(--diep); padding: 3px 10px; }
+  .wp-kop-rij { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .wp-kopkaart { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; }
+  .wp-accountchk { margin-top: 14px; display: flex; align-items: flex-start; gap: 12px; }
+  .wp-accountchk input { width: 20px; height: 20px; padding: 0; margin: 2px 0 0; accent-color: var(--diep); flex: none; }
+  .wp-accountchk label { margin: 0; font-family: 'Source Serif 4', serif; font-size: 0.95rem; letter-spacing: 0; color: var(--tekst); }
+  .wp-links { display: flex; flex-wrap: wrap; gap: 18px; }
+  .wp-label { display: block; margin: 0 0 6px; font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; color: var(--gedempt); text-transform: uppercase; }
+  .wp-textarea { width: 100%; padding: 14px 16px; border: 1.5px solid var(--lijn); border-radius: 10px; font-family: 'Source Serif 4', serif; font-size: 1rem; line-height: 1.5; color: var(--tekst); background: #fff; resize: vertical; }
+  .wp-login { padding: 34px 26px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+  .wp-login-tekst { flex: 1 1 280px; min-width: 0; }
+  .wp-login-tekst h3 { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 2rem; letter-spacing: -.02em; line-height: 1.05; color: var(--diep); }
+  .wp-login-tekst p { margin: 16px 0 0; font-size: 0.97rem; line-height: 1.55; color: var(--gedempt); max-width: 46ch; }
+  .wp-login-tekst p.lead { font-size: 1.1rem; margin-top: 12px; }
+  .wp-login-kaart { flex: 1 1 320px; max-width: 440px; background: #fff; border: 1px solid var(--lijn); border-radius: 20px; padding: 28px; box-sizing: border-box; }
+  .wp-login-kaart h4 { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; }
+  .wp-login-kaart input[type="email"], .wp-login-kaart input[type="text"] { width: 100%; padding: 14px 16px; border: 1.5px solid var(--lijn); border-radius: 10px; font-family: 'Source Serif 4', serif; font-size: 1.05rem; color: var(--tekst); background: #fff; }
+  .wp-login-kaart input.code { font-family: 'IBM Plex Mono', monospace; font-size: 1.6rem; letter-spacing: .4em; }
+  .wp-login-kaart .veld { margin-top: 20px; }
+  .wp-login-kaart .hint { margin: 10px 0 0; font-size: 0.85rem; color: var(--gedempt); }
+  .wp-login-kaart .uitleg { margin: 10px 0 18px; font-size: 0.95rem; line-height: 1.55; color: var(--gedempt); }
+  .wp-login-kaart .wp-knop { width: 100%; margin-top: 22px; }
+  .wp-login-kaart .onder { margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .wp-voet { margin: 0; padding: 16px 26px; border-top: 1px solid var(--lijn); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .04em; color: var(--gedempt); }
+  @media (max-width: 720px) { .wp-body { padding: 18px; } .wp-nav { max-width: none; flex-basis: 100%; flex-direction: row; flex-wrap: wrap; } .wp-nav .wp-nieuw { margin-top: 0; } .wp-dl { grid-template-columns: 1fr; } .wp-login { padding: 24px 18px; } }
+
   /* START EEN INITIATIEF (preview) */
   #start-initiatief { background: var(--nevel); }
   .preview-status {
@@ -1033,13 +1147,14 @@
     </div>
 
     <div class="flow-card" id="flow-3" data-panel="3" hidden>
+      <p class="flow-hint" style="text-align:right;margin:0 0 14px">Heb je al een Mondéall-account? <a href="#werkplaats">Inloggen</a></p>
       <h3>Maak je account aan</h3>
       <p class="flow-hint">Zo kun je straks terugkomen in je werkplaats, verder werken aan je Initiatief en later de terugkoppeling geven.</p>
       <span class="flow-label">Voornaam en achternaam</span>
       <div class="flow-field">Jan Jansen</div>
       <span class="flow-label">E-mailadres</span>
       <div class="flow-field">jij@voorbeeld.nl</div>
-      <p class="flow-hint">Hierna vragen we je om een code uit deze mail over te typen. Dat kost je een halve minuut.</p>
+      <p class="flow-hint">Hierna typ je een code uit deze mail over. Zo log je ook later in: met een code, zonder wachtwoord.</p>
       <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik ga akkoord met de algemene voorwaarden en het privacybeleid van Mondéall.</span></div>
       <div class="flow-foot"><button type="button" class="flow-next" data-goto="4">Volgende</button></div>
     </div>
@@ -1053,6 +1168,18 @@
   </div>
 </section>
 
+<section id="werkplaats">
+  <div class="wrap">
+    <h2>Zo werkt je werkplaats straks</h2>
+    <p>Na het starten van je Initiatief log je in met een code per mail, zonder wachtwoord. In je werkplaats houd je het Initiatief bij, verleng je het met een week en geef je later de terugkoppeling.</p>
+    <span class="preview-status">Voorbeeld: het platform wordt gebouwd. Er wordt niets opgeslagen of verstuurd.</span>
+    <div class="stepper" id="wp-tabs" role="group" aria-label="Voorbeeldschermen">
+      <button type="button" data-w="inloggen" aria-current="step">Inloggen</button>
+      <button type="button" data-w="werkplaats">Werkplaats</button>
+    </div>
+    <div class="wp-app" id="wp-app"></div>
+  </div>
+</section>
 <section id="wat-is-mondeall">
   <div class="wrap">
     <h2>Wat is Mondéall</h2>
@@ -1937,7 +2064,187 @@
   ifUpdate(false);
   if (IF.view === 'kaart') ifZetView('kaart');
 
-  var HOME_IDS = ['initiatieven', 'start-initiatief', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
+  /* Werkplaats van de Starter: voorbeeld, niets wordt opgeslagen of verstuurd */
+  var WP = { weergave: 'inloggen', logstap: 'email', scherm: 'overzicht', verlengingen: 0, voorwaarden: false, ingediend: false, verborgen: {}, aedVoltooid: false };
+  var WP_SLUIT = ['19-10-2026', '26-10-2026', '02-11-2026', '09-11-2026'];
+  var WP_GIFTEN = [['09-10 · 21:14', '€ 25,00'], ['08-10 · 12:02', '€ 5,00'], ['06-10 · 19:47', '€ 100,00'], ['05-10 · 08:30', '€ 1,00'], ['03-10 · 16:55', '€ 13,00'], ['02-10 · 20:10', '€ 50,00'], ['30-09 · 09:21', '€ 10,00'], ['29-09 · 18:03', '€ 20,00'], ['28-09 · 14:40', '€ 7,50']];
+  var WP_BERICHTEN = [
+    { id: 'b1', naam: 'Familie Wolters', tekst: 'Succes met de verbouwing!' },
+    { id: 'b2', naam: 'Anoniem', tekst: '' },
+    { id: 'b3', naam: 'Henk', tekst: 'Ooit zelf in die kleedkamer gestaan. Tijd voor iets nieuws.' },
+    { id: 'b4', naam: 'Anoniem', tekst: 'Mooi dat dit gebeurt.' },
+    { id: 'b5', naam: 'Kapsalon Mies (fictief)', tekst: '' }
+  ];
+  var wpEl = document.getElementById('wp-app');
+  var wpTabs = document.getElementById('wp-tabs');
+
+  function wpMeta(sector, hex, kern, extra, licht) {
+    return '<div class="wp-meta"><span><span class="bar' + (licht ? ' licht' : '') + '" style="background:' + hex + '"></span>' + iniEsc(sector) + '</span><span aria-hidden="true">·</span><span>' + iniEsc(kern) + '</span>' + (extra ? '<span aria-hidden="true">·</span><span>' + iniEsc(extra) + '</span>' : '') + '</div>';
+  }
+  function wpStap(titel, klaar, uitleg, wacht) {
+    return '<li><span class="wp-bol' + (klaar ? ' klaar' : (wacht ? ' wacht' : '')) + '" aria-hidden="true">' + (klaar ? '✓' : (wacht ? '…' : '·')) + '</span><div><b>' + iniEsc(titel) + '<span>' + (klaar ? 'KLAAR' : (wacht ? 'WACHT' : 'NOG DOEN')) + '</span></b><i>' + iniEsc(uitleg) + '</i></div></li>';
+  }
+
+  function wpInloggen() {
+    var code = WP.logstap === 'code';
+    var kaart = code
+      ? '<h4>Typ de code over</h4>' +
+        '<p class="uitleg">Als dit adres bij ons bekend is, staat er nu een code in je mailbox. Kijk ook even bij ongewenste mail.</p>' +
+        '<label class="wp-label" for="wp-code">Code van zes cijfers</label>' +
+        '<input id="wp-code" class="code" type="text" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="000000">' +
+        '<p class="hint">De code is 10 minuten geldig.</p>' +
+        '<button type="button" class="wp-knop" data-act="inloggen">Inloggen</button>' +
+        '<div class="onder"><button type="button" class="wp-tekstknop" data-act="email">Ander e-mailadres</button><button type="button" class="wp-tekstknop" disabled>Nieuwe code sturen</button></div>'
+      : '<h4>Inloggen</h4>' +
+        '<div class="veld"><label class="wp-label" for="wp-email">E-mailadres</label><input id="wp-email" type="email" autocomplete="off" placeholder="jij@voorbeeld.nl"></div>' +
+        '<div class="wp-accountchk"><input id="wp-onthoud" type="checkbox"><label for="wp-onthoud">Ingelogd blijven op dit apparaat (30 dagen). Niet aanvinken op een gedeelde computer.</label></div>' +
+        '<button type="button" class="wp-knop" data-act="code">Stuur mij een code</button>';
+    return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div></div>' +
+      '<div class="wp-login"><div class="wp-login-tekst"><h3>Naar je werkplaats</h3>' +
+      '<p class="lead">Hier volg je je Initiatief, verleng je het en geef je straks de terugkoppeling.</p>' +
+      '<p>Je hebt geen wachtwoord nodig. We sturen je bij elke keer inloggen een code van zes cijfers. Werkt je vereniging met een gedeeld mailadres, zoals het secretariaat? Dan kan iedereen met toegang tot die mailbox inloggen.</p>' +
+      '<p>Nog geen account? <a href="#start-initiatief">Start een Initiatief</a></p></div>' +
+      '<div class="wp-login-kaart">' + kaart + '</div></div>' +
+      '<p class="wp-voet">ALLEEN EEN FUNCTIONELE COOKIE VOOR JE INLOGSESSIE · GEEN TRACKING · GEEN INLOGGEN VIA GOOGLE OF FACEBOOK</p>';
+  }
+
+  function wpOverzicht() {
+    var aed = WP.aedVoltooid ? 'Afgesloten op 14-06-2026. Terugkoppeling geplaatst, het Initiatief is voltooid.' : 'Afgesloten op 14-06-2026. Terugkoppeling graag vóór 02-05-2027.';
+    var opbouw = WP.ingediend ? 'Ingediend, wordt bekeken. Wacht daarnaast op de verificatie door de organisatie.' : (WP.voorwaarden ? 'Klaar om in te dienen. Wacht daarnaast op de verificatie door de organisatie.' : 'Nog te doen: voorwaarden bevestigen. Wacht daarnaast op de verificatie door de organisatie.');
+    return '<h1>Mijn Initiatieven</h1>' +
+      '<section class="wp-groep"><h2>LIVE</h2><div class="wp-kaart wp-rij"><div>' + wpMeta('Sport & Recreatie', '#e77123', 'Laren') +
+        '<h3>Renovatie kleedkamers</h3><p class="wp-org">Voetbalvereniging Laren (fictief)</p><p class="wp-stand">Live sinds 28-09-2026, sluit op 19-10-2026.</p></div>' +
+        '<button type="button" class="wp-knop" data-act="scherm" data-arg="live">Openen</button></div></section>' +
+      '<section class="wp-groep"><h2>IN OPBOUW</h2><div class="wp-kaart wp-rij"><div>' + wpMeta('Kunst & Cultuur', '#813ea3', 'Laren') +
+        '<h3>Nieuwe pauken voor het orkest</h3><p class="wp-org">Muziekvereniging Laren (fictief)</p><p class="wp-stand">' + iniEsc(opbouw) + '</p></div>' +
+        '<button type="button" class="wp-knop rand" data-act="scherm" data-arg="opbouw">Verder werken</button></div></section>' +
+      '<section class="wp-groep"><h2>AFGESLOTEN</h2><div class="wp-kaart wp-rij"><div>' + wpMeta('Gezondheid & Preventie', '#f3cf3f', 'Laren', '', true) +
+        '<h3>AED bij het clubhuis</h3><p class="wp-org">Voetbalvereniging Laren (fictief)</p><p class="wp-stand">' + iniEsc(aed) + '</p></div>' +
+        (WP.aedVoltooid ? '' : '<button type="button" class="wp-knop rand" data-act="scherm" data-arg="terugkoppeling">Terugkoppeling geven</button>') + '</div></section>';
+  }
+
+  function wpLive() {
+    var rest = 3 - WP.verlengingen;
+    var gift = WP_GIFTEN.map(function (g) { return '<li><span class="w">' + g[0] + '</span><span class="b">' + g[1] + '</span></li>'; }).join('');
+    var ber = WP_BERICHTEN.map(function (b) {
+      var weg = !!WP.verborgen[b.id];
+      return '<li class="' + (weg ? 'weg' : '') + '"><div class="t"><b>' + iniEsc(b.naam) + '</b>' +
+        (b.tekst ? '<button type="button" class="wp-tekstknop" data-act="verberg" data-arg="' + b.id + '">' + (weg ? 'Toon weer' : 'Bericht verbergen') + '</button>' : '') + '</div>' +
+        (!weg && b.tekst ? '<p>' + iniEsc(b.tekst) + '</p>' : '') +
+        (weg ? '<p class="v">BERICHT VERBORGEN, DE GIFT BLIJFT STAAN</p>' : '') + '</li>';
+    }).join('');
+    return '<button type="button" class="wp-tekstknop wp-terug" data-act="scherm" data-arg="overzicht">Terug naar Mijn Initiatieven</button>' +
+      '<div>' + wpMeta('Sport & Recreatie', '#e77123', 'Laren', 'Voetbalvereniging Laren (fictief)') + '<h1 style="margin-top:8px">Renovatie kleedkamers</h1></div>' +
+      '<div class="wp-live wp-rij"><div><div class="k">LIVE</div><p>Live sinds 28-09-2026. Sluit op <strong>' + WP_SLUIT[WP.verlengingen] + '</strong>.</p>' +
+        '<p class="n">' + (rest > 0 ? 'Je kunt nog ' + rest + ' keer met een week verlengen, uiterlijk tot 09-11-2026.' : 'Dit is de langste looptijd: 42 dagen.') + '</p></div>' +
+        (rest > 0 ? '<button type="button" class="wp-knop" data-act="verleng">Met een week verlengen</button>' : '') + '</div>' +
+      '<div class="wp-pillen"><a class="wp-pil" href="#/initiatief/renovatie-kleedkamers-sv-laren">Openbare pagina bekijken</a>' +
+        '<button type="button" class="wp-pil" disabled>Delen: link, deelknop en QR-poster</button><button type="button" class="wp-pil" disabled>Verhaal of foto bijwerken</button></div>' +
+      '<p class="wp-noot" style="margin-top:-8px">Voorziening, sector en organisatie liggen vast zolang je Initiatief live is. Zo weet iedereen waaraan hij meedeelde.</p>' +
+      '<div class="wp-twee"><section class="wp-sectie"><h2>Wat er binnenkwam</h2><p class="wp-sub">ALLEEN VOOR JOU ZICHTBAAR</p>' +
+        '<p class="wp-bedrag">€ 231,50</p><p class="wp-org" style="margin-top:2px">in 9 giften, rechtstreeks naar de rekening van de vereniging</p>' +
+        '<ul class="wp-lijst">' + gift + '</ul><p class="wp-noot" style="margin-top:14px">Bedragen staan hier los van namen. Wie wat gaf, blijft tussen de Geld Deler en de vereniging.</p></section>' +
+      '<section class="wp-sectie"><h2>Namen en berichten</h2><p class="wp-sub">ZO STAAN ZE OP DE OPENBARE PAGINA</p><ul class="wp-berichten">' + ber + '</ul></section></div>' +
+      '<p class="wp-noot">Kun je het Initiatief niet meer volgen? <button type="button" class="wp-tekstknop" disabled>Overdragen aan iemand anders van de vereniging</button></p>';
+  }
+
+  function wpOpbouw() {
+    var s1 = wpStap('Plaats en sector', true, 'Laren · Kunst & Cultuur') +
+      wpStap('Voorziening', true, 'Twee pauken voor het orkest, voor optredens en repetities.') +
+      wpStap('Titel en verhaal', true, 'Kun je tot livegang blijven aanpassen.') +
+      wpStap('Voorwaarden', WP.voorwaarden, WP.voorwaarden ? 'Bevestigd.' : 'Vink hieronder aan.');
+    var s2 = wpStap('Rechtsvorm en KvK-nummer', true, 'Vereniging met volledige rechtsbevoegdheid.') +
+      wpStap('Rekening op naam van de organisatie', true, 'De tenaamstelling klopt.') +
+      wpStap('Fiscale kwalificatie', true, 'ANBI, opgegeven door jou.') +
+      wpStap('Verificatie door de organisatie', false, 'Uitnodiging gestuurd aan de penningmeester op 08-10-2026. Die rondt de verificatie zelf af, buiten deze werkplaats.', true);
+    var onder = WP.ingediend
+      ? '<div class="wp-ingediend"><div class="k">INGEDIEND · WORDT BEKEKEN</div><p>Dank je. We kijken mee en laten het je per mail weten. Je Initiatief gaat live zodra ook de verificatie van Muziekvereniging Laren rond is. Tot die tijd kun je alles nog aanpassen.</p></div>'
+      : '<div class="wp-kaart wp-indien"><ol><li>Jij dient in. We controleren automatisch of alles is ingevuld.</li><li>Iemand van Mondéall kijkt mee op duidelijkheid van tekst en beeld. Niet op wat je Initiatief waard is.</li><li>Je Initiatief gaat live zodra de organisatie geverifieerd is. Vanaf dan lopen de 21 dagen.</li></ol>' +
+        '<button type="button" class="wp-knop" data-act="dienin"' + (WP.voorwaarden ? '' : ' disabled aria-disabled="true"') + '>Indienen</button></div>';
+    return '<button type="button" class="wp-tekstknop wp-terug" data-act="scherm" data-arg="overzicht">Terug naar Mijn Initiatieven</button>' +
+      '<div>' + wpMeta('Kunst & Cultuur', '#813ea3', 'Laren') + '<h1 style="margin-top:8px">Nieuwe pauken voor het orkest</h1>' +
+      '<p class="wp-lead">Twee sporen lopen naast elkaar. Je kunt indienen zodra je eigen spoor klaar is; live gaan kan pas als ook de organisatie rond is.</p></div>' +
+      '<div class="wp-sporen"><section class="wp-kaart"><div class="wp-spoorkop">SPOOR 1 · JIJ</div><h2 class="wp-kopkaart">Je Initiatief</h2><ul class="wp-stappen">' + s1 + '</ul>' +
+        '<div class="wp-vw"><input id="wp-vw" type="checkbox" data-act="vw"' + (WP.voorwaarden ? ' checked' : '') + '><label for="wp-vw">Ik bevestig: 21 dagen live, wekelijks te verlengen tot 42 dagen; giften zijn onvoorwaardelijk; terugkoppeling binnen 52 weken; de Voorziening wordt binnen een jaar gerealiseerd.</label></div></section>' +
+      '<section class="wp-kaart"><div class="wp-spoorkop">SPOOR 2 · DE ORGANISATIE</div><h2 class="wp-kopkaart">Muziekvereniging Laren (fictief)</h2><ul class="wp-stappen">' + s2 + '</ul>' +
+        '<button type="button" class="wp-zacht" style="align-self:flex-start" disabled>Uitnodiging opnieuw sturen</button></section></div>' + onder;
+  }
+
+  function wpOrganisaties() {
+    var orgs = [
+      { naam: 'Voetbalvereniging Laren (fictief)', iban: '12 34', fiscaal: 'SBBI', ver: 'GEVERIFIEERD', wacht: false },
+      { naam: 'Muziekvereniging Laren (fictief)', iban: '56 78', fiscaal: 'ANBI', ver: 'WACHT OP VERIFICATIE', wacht: true }
+    ];
+    return '<div><h1>Organisaties</h1><p class="wp-lead">De verenigingen en stichtingen namens wie jij een Initiatief startte. Bij een nieuw Initiatief kies je er gewoon weer één, zonder alles opnieuw op te zoeken.</p></div>' +
+      orgs.map(function (o) {
+        return '<section class="wp-kaart"><div class="wp-kop-rij"><h2 class="wp-kopkaart">' + iniEsc(o.naam) + '</h2><span class="wp-label-v' + (o.wacht ? ' wacht' : '') + '">' + o.ver + '</span></div>' +
+          '<dl class="wp-dl"><div><dt>Rechtsvorm</dt><dd>Vereniging met volledige rechtsbevoegdheid</dd></div><div><dt>KvK-nummer</dt><dd class="wp-ph">[KvK-nummer]</dd></div>' +
+          '<div><dt>Rekening op naam van de organisatie</dt><dd style="font-family:\'IBM Plex Mono\',monospace">NL•• •••• •••• ••' + o.iban + '</dd></div>' +
+          '<div><dt>Fiscale kwalificatie</dt><dd>' + o.fiscaal + ', opgegeven door jou</dd></div></dl>' +
+          '<p class="wp-noot" style="margin-top:16px">Mondéall beoordeelt de fiscale status niet. Wijzig je de rekening, dan verifieert de organisatie opnieuw voordat er weer giften binnen kunnen komen.</p>' +
+          '<button type="button" class="wp-zacht" style="margin-top:14px" disabled>Gegevens wijzigen</button></section>';
+      }).join('');
+  }
+
+  function wpAccount() {
+    return '<h1>Account</h1>' +
+      '<section class="wp-kaart"><h2 class="wp-kopkaart" style="font-size:1.2rem">Jouw gegevens</h2><dl class="wp-dl"><div><dt>Naam</dt><dd>Bas Bakker</dd></div><div><dt>E-mailadres</dt><dd class="wp-ph">[e-mailadres]</dd></div></dl>' +
+        '<p class="wp-noot" style="margin-top:14px">Je logt in met een code per mail. Er is geen wachtwoord om te vergeten.</p></section>' +
+      '<section class="wp-kaart"><h2 class="wp-kopkaart" style="font-size:1.2rem">Waar je bent ingelogd</h2><ul class="wp-lijst"><li><span>Deze browser</span><span class="w">NU</span></li><li><span>Telefoon</span><span class="w">07-10-2026</span></li></ul>' +
+        '<button type="button" class="wp-zacht" style="margin-top:14px" disabled>Overal uitloggen</button></section>' +
+      '<section class="wp-kaart"><h2 class="wp-kopkaart" style="font-size:1.2rem">Mails van Mondéall</h2><p style="margin:8px 0 0;line-height:1.55">Je krijgt altijd: je inlogcode, een bericht als de status van je Initiatief verandert, een herinnering drie dagen voor sluiting en een herinnering voor de terugkoppeling. Geen nieuwsbrief, tenzij je daar zelf apart voor kiest.</p>' +
+        '<div class="wp-accountchk"><input id="wp-giftmail" type="checkbox"><label for="wp-giftmail">Stuur mij een mail bij elke nieuwe gift</label></div></section>' +
+      '<div class="wp-links"><button type="button" class="wp-tekstknop" disabled>Mijn gegevens downloaden</button><button type="button" class="wp-tekstknop" disabled>Account verwijderen</button></div>';
+  }
+
+  function wpTerugkoppeling() {
+    return '<button type="button" class="wp-tekstknop wp-terug" data-act="scherm" data-arg="overzicht">Terug naar Mijn Initiatieven</button>' +
+      '<div><h1>Hoe is het gegaan?</h1><p class="wp-lead">AED bij het clubhuis. Een kort bericht of een foto is genoeg. Het verschijnt op de pagina van het Initiatief, zodat iedereen die meedeelde ziet wat ervan geworden is. Mondéall controleert de besteding niet.</p></div>' +
+      '<section class="wp-kaart" style="display:flex;flex-direction:column;gap:16px"><div><label class="wp-label" for="wp-tk">Je bericht</label><textarea id="wp-tk" class="wp-textarea" rows="5"></textarea></div>' +
+        '<div class="wp-rij"><button type="button" class="wp-zacht" disabled>Foto toevoegen</button><button type="button" class="wp-knop" data-act="plaats">Plaatsen</button></div>' +
+        '<p class="wp-noot">Graag vóór 02-05-2027, 52 weken na livegang.</p></section>';
+  }
+
+  function wpWerkplaats() {
+    var inIni = ['overzicht', 'live', 'opbouw', 'terugkoppeling'].indexOf(WP.scherm) > -1;
+    var scherm = { overzicht: wpOverzicht, live: wpLive, opbouw: wpOpbouw, organisaties: wpOrganisaties, account: wpAccount, terugkoppeling: wpTerugkoppeling }[WP.scherm]();
+    var nav = function (t, arg, actief) { return '<button type="button" data-act="scherm" data-arg="' + arg + '" aria-current="' + (actief ? 'page' : 'false') + '">' + t + '</button>'; };
+    return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div>' +
+      '<div class="wp-gebruiker"><span>Bas Bakker</span><button type="button" class="wp-tekstknop" data-act="uitloggen">Uitloggen</button></div></div>' +
+      '<div class="wp-body"><nav class="wp-nav" aria-label="Werkplaats">' + nav('Mijn Initiatieven', 'overzicht', inIni) + nav('Organisaties', 'organisaties', WP.scherm === 'organisaties') + nav('Account', 'account', WP.scherm === 'account') +
+      '<a class="wp-nieuw" href="#start-initiatief">Nieuw Initiatief</a></nav><main class="wp-main">' + scherm + '</main></div>';
+  }
+
+  function wpRender(focus) {
+    wpEl.innerHTML = WP.weergave === 'inloggen' ? wpInloggen() : wpWerkplaats();
+    wpTabs.querySelectorAll('button').forEach(function (b) { if (b.getAttribute('data-w') === WP.weergave) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+    if (focus) { var f = wpEl.querySelector(focus); if (f) { if (!/^(BUTTON|INPUT|A|TEXTAREA)$/.test(f.tagName)) f.setAttribute('tabindex', '-1'); f.focus({ preventScroll: true }); } }
+  }
+  wpTabs.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-w]'); if (!b) return;
+    WP.weergave = b.getAttribute('data-w');
+    if (WP.weergave === 'inloggen') WP.logstap = 'email'; else WP.scherm = 'overzicht';
+    wpRender();
+  });
+  wpEl.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b || b.tagName === 'INPUT') return;
+    var a = b.getAttribute('data-act'), arg = b.getAttribute('data-arg');
+    if (a === 'code') { WP.logstap = 'code'; wpRender('#wp-code'); }
+    else if (a === 'email') { WP.logstap = 'email'; wpRender('#wp-email'); }
+    else if (a === 'inloggen') { WP.weergave = 'werkplaats'; WP.scherm = 'overzicht'; wpRender('.wp-main h1'); }
+    else if (a === 'uitloggen') { WP.weergave = 'inloggen'; WP.logstap = 'email'; wpRender('#wp-email'); }
+    else if (a === 'scherm') { WP.scherm = arg; wpRender('.wp-main h1, .wp-terug'); }
+    else if (a === 'verleng') { WP.verlengingen = Math.min(3, WP.verlengingen + 1); wpRender('[data-act="verleng"], .wp-terug'); }
+    else if (a === 'verberg') { WP.verborgen[arg] = !WP.verborgen[arg]; wpRender('[data-act="verberg"][data-arg="' + arg + '"]'); }
+    else if (a === 'dienin') { if (WP.voorwaarden) { WP.ingediend = true; wpRender('.wp-ingediend'); } }
+    else if (a === 'plaats') { WP.aedVoltooid = true; WP.scherm = 'overzicht'; wpRender('.wp-main h1'); }
+  });
+  wpEl.addEventListener('change', function (e) {
+    if (e.target.getAttribute('data-act') === 'vw') { WP.voorwaarden = e.target.checked; wpRender('#wp-vw'); }
+  });
+  wpRender();
+
+  var HOME_IDS = ['initiatieven', 'start-initiatief', 'werkplaats', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
   var BASIS_TITEL = document.title;
   var detailEl = document.getElementById('initiatief-detail');
 

@@ -84,9 +84,6 @@
   header nav ul { display: flex; flex-wrap: wrap; gap: 0 28px; list-style: none; margin: 0; padding: 0; }
   header nav a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--kop); font-weight: 600; font-size: 1rem; color: var(--diep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
   header nav a:hover { text-decoration-thickness: 2px; }
-  header nav a.menuknop { padding: 0 22px; border-radius: 999px; background: var(--diep); color: #fff; text-decoration: none; }
-  header nav a.menuknop:hover { background: #003d35; }
-  header nav a.menuknop:focus-visible { outline-color: var(--diep); outline-offset: 4px; }
 
   header .hero { background: var(--nevel); border-top: 1px solid var(--lijn); }
   header .hero .hdr-wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 24px 56px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
@@ -344,6 +341,90 @@
   .id-aside h2 { font-size: 1.35rem; }
   .id-aside p { color: var(--gedempt); font-size: 0.97rem; margin: 10px 0 16px; }
   @media (max-width: 900px) { .id-layout { grid-template-columns: 1fr; gap: 28px; } .id-aside { position: static; } }
+
+  /* LINT MET KEUZEMENU'S */
+  header .bar-wrap { position: relative; }
+  header .hoofdnav { margin-left: 24px; margin-right: auto; }
+  header .acties { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  header .inlog { display: flex; align-items: center; height: 48px; padding: 0 12px; font-family: var(--kop); font-weight: 600; font-size: 1rem; color: var(--diep); text-decoration: none; }
+  header .inlog:hover { text-decoration: underline; text-underline-offset: 6px; }
+  header .mknop { font-family: var(--kop); font-weight: 600; font-size: 1rem; border-radius: 999px; padding: 0 22px; height: 48px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  header .mknop.rand { color: var(--diep); background: #fff; border: 1.5px solid var(--diep); }
+  header .mknop.vol { color: #fff; background: var(--merktekst); border: 0; }
+  header .mknop.vol:hover { background: var(--diep); }
+  header .mknop.rand:hover { background: var(--nevel); }
+  header .mknop svg { width: 16px; height: 16px; flex: none; transition: transform .15s; }
+  header .mknop[aria-expanded="true"] svg { transform: rotate(180deg); }
+  header .mknop .kort { display: none; }
+  header .burger { display: none; width: 44px; height: 44px; border: 1.5px solid var(--diep); border-radius: 999px; background: #fff; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+  header .burger svg { width: 20px; height: 20px; }
+  header .menuwrap { position: relative; }
+  header .menurel { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; }
+  header .menupaneel { position: absolute; right: 24px; top: 10px; width: 440px; max-width: calc(100% - 48px); background: #fff; border: 1px solid var(--lijn); border-radius: 16px; box-shadow: 0 12px 32px rgba(18, 33, 29, .12); padding: 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; z-index: 40; }
+  header .menupaneel[hidden] { display: none; }
+  header .menupaneel h2 { margin: 0 0 4px; font-family: var(--kop); font-size: 1.25rem; font-weight: 700; color: var(--tekst); }
+  header .menukeuze { display: flex; flex-direction: column; gap: 6px; padding: 14px 18px; border: 1px solid var(--lijn); border-radius: 12px; text-decoration: none; color: var(--tekst); background: #fff; }
+  header .menukeuze.eerste { background: var(--nevel); }
+  header a.menukeuze:hover { border-color: var(--diep); }
+  header .menukeuze .k { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gedempt); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  header .menukeuze .k em { font-style: normal; font-size: 0.7rem; letter-spacing: 0; text-transform: none; color: var(--gedempt); border: 1px solid var(--lijn); border-radius: 999px; padding: 2px 9px; background: #fff; }
+  header .menukeuze .t { font-family: var(--kop); font-weight: 600; font-size: 1.06rem; color: var(--diep); }
+  header .menukeuze .u { font-size: 0.94rem; line-height: 1.45; color: var(--gedempt); }
+  header .menukeuze.nog { border-style: dashed; background: var(--achtergrond); }
+  header .menukeuze.nog .t { color: var(--gedempt); }
+  header .alleenmobiel { display: none; }
+  @media (max-width: 860px) {
+    header .hoofdnav { display: none; margin: 0; flex-basis: 100%; order: 10; border-top: 1px solid var(--lijn); padding-top: 6px; }
+    header .hoofdnav.open { display: block; }
+    header .hoofdnav ul { flex-direction: column; gap: 0; }
+    header .hoofdnav li { border-bottom: 1px solid var(--lijn); }
+    header .hoofdnav li:last-child { border-bottom: 0; }
+    header .hoofdnav a { width: 100%; font-size: 1.1rem; min-height: 52px; }
+    header .alleenmobiel { display: list-item; }
+    header .inlog { display: none; }
+    header .burger { display: inline-flex; }
+    header .mknop { height: 44px; padding: 0 16px; }
+    header .mknop .lang, header .mknop svg { display: none; }
+    header .mknop .kort { display: inline; }
+    header .acties { gap: 8px; flex-wrap: nowrap; }
+    header .bar { gap: 8px; flex-wrap: wrap; }
+    header .merk span { font-size: 1.3rem; }
+    header .merk img { width: 34px; }
+    header .menurel { padding: 0; max-width: none; }
+    header .menupaneel { position: static; width: auto; max-width: none; border-radius: 0; border-width: 1px 0; box-shadow: none; padding: 20px 16px 24px; gap: 10px; }
+  }
+
+  /* KAN JOUW ORGANISATIE STARTEN? */
+  #starten { padding: 48px 0 72px; background: var(--achtergrond); border-bottom: 0; }
+  .hdr-wrap.st-wrap { max-width: 808px; display: flex; flex-direction: column; gap: 26px; }
+  .st-kop .ini-eyebrow { margin-bottom: 12px; }
+  #starten h1 { font-family: var(--kop); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.1; letter-spacing: -.02em; color: var(--diep); margin: 0 0 14px; }
+  .st-kop p { margin: 0 0 12px; font-size: 1.1rem; line-height: 1.55; color: var(--gedempt); }
+  .st-kop p.klein { font-size: 1rem; }
+  .st-vraag { background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .st-vraag .n { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--diep); }
+  .st-vraag h2 { margin: 0; font-size: 1.3rem; line-height: 1.3; color: var(--tekst); font-weight: 700; }
+  .st-vraag p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--gedempt); }
+  .st-opties { display: flex; gap: 10px; flex-wrap: wrap; }
+  .st-opt { height: 44px; padding: 0 22px; border-radius: 999px; border: 1.5px solid var(--diep); background: #fff; color: var(--diep); font-family: var(--kop); font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+  .st-opt[aria-pressed="true"] { background: var(--diep); color: #fff; }
+  .st-opt:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+  .st-uitkomst { border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: #fff; border: 1px solid var(--lijn); }
+  .st-uitkomst.ja { background: var(--nevel); }
+  .st-uitkomst h2 { margin: 0; font-size: 1.35rem; color: var(--tekst); font-weight: 700; }
+  .st-uitkomst.ja h2 { color: var(--diep); }
+  .st-uitkomst p { margin: 0; line-height: 1.5; }
+  .st-uitkomst .cta-btn { align-self: flex-start; margin-top: 6px; border-radius: 999px; padding: 0 24px; height: 48px; display: inline-flex; align-items: center; }
+  .st-niet h2 { margin: 0 0 10px; font-size: 1.4rem; color: var(--tekst); font-weight: 700; }
+  .st-niet ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 10px; line-height: 1.5; }
+  .st-niet p { margin: 12px 0 0; font-size: 0.95rem; line-height: 1.5; color: var(--gedempt); }
+
+  /* Inloggen: extra kaart */
+  .wp-login-rechts { flex: 1 1 320px; max-width: 440px; display: flex; flex-direction: column; gap: 18px; }
+  .wp-login-rechts .wp-login-kaart { flex: none; max-width: none; }
+  .wp-login-kaart a.wp-reg { display: inline-flex; align-items: center; justify-content: center; width: auto; min-height: 44px; margin-top: 12px; padding: 0 22px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--diep); background: #fff; border: 1.5px solid var(--diep); border-radius: 999px; text-decoration: none; }
+  .wp-login-kaart a.wp-reg:hover { background: var(--nevel); }
+
 
   /* WERKPLAATS (voorbeeld) */
   #werkplaats .stepper { margin-top: 4px; }
@@ -980,18 +1061,87 @@
 <a class="skip" href="#wat-is-mondeall">Naar de inhoud</a>
 
 <header>
-  <div class="hdr-wrap bar">
-    <a class="merk" href="/" aria-label="Mondéall, naar de beginpagina">
-      <img src="assets/klavertje-mondeall.png" alt="" width="42" height="37">
-      <span>Mondéall</span>
-    </a>
-    <nav aria-label="Hoofdmenu">
-      <ul>
-        <li><a href="#wat-is-mondeall">Wat Mondéall wordt</a></li>
-        <li><a href="#vertrouwen">Wat er niet gebeurt</a></li>
-        <li><a class="menuknop" href="#contact">Blijf op de hoogte</a></li>
-      </ul>
-    </nav>
+  <div class="bar-wrap">
+    <div class="hdr-wrap bar">
+      <a class="merk" href="/" aria-label="Mondéall, naar de beginpagina">
+        <img src="assets/klavertje-mondeall.png" alt="" width="42" height="37">
+        <span>Mondéall</span>
+      </a>
+      <nav class="hoofdnav" id="hoofdmenu" aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="#initiatieven">Initiatieven</a></li>
+          <li><a href="#hoe-het-werkt">Hoe het werkt</a></li>
+          <li><a href="#wat-is-mondeall">Over Mondéall</a></li>
+          <li class="alleenmobiel"><a href="#werkplaats" data-login>Inloggen</a></li>
+        </ul>
+      </nav>
+      <div class="acties">
+        <a class="inlog" href="#werkplaats" data-login>Inloggen</a>
+        <button type="button" class="mknop rand" data-menu="start" aria-expanded="false" aria-controls="startmenu" aria-label="Start een Initiatief">
+          <span class="lang">Start een Initiatief</span><span class="kort" aria-hidden="true">Start</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="mknop vol" data-menu="doe" aria-expanded="false" aria-controls="keuzemenu">
+          Doe mee
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="burger" data-menu="nav" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 6h12M4 10h12M4 14h12" stroke="#005248" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="menuwrap">
+      <div class="menurel">
+        <div class="menupaneel" id="keuzemenu" hidden>
+          <h2>Hoe wil je meedoen?</h2>
+          <a class="menukeuze eerste" href="#initiatieven">
+            <span class="k">Inwoner</span>
+            <span class="t">Deel mee met een Initiatief</span>
+            <span class="u">Vanaf € 1. Je geld gaat rechtstreeks naar de vereniging, school, kerk of stichting achter het Initiatief.</span>
+          </a>
+          <a class="menukeuze" href="#contact" data-rol="Sponsor">
+            <span class="k">Lokale ondernemer</span>
+            <span class="t">Word Sponsor in jouw Kern</span>
+            <span class="u">Vanaf € 50. Jouw bedrijf draagt de kosten, zodat elke gedeelde euro in jouw dorp of wijk aankomt. Je naam staat bij de Initiatieven in jouw Kern.</span>
+          </a>
+          <a class="menukeuze" href="#contact" data-rol="Gemeente">
+            <span class="k">Gemeente of fonds</span>
+            <span class="t">Word Partner</span>
+            <span class="u">Voor gemeenten en fondsen die lokaal geld delen mogelijk willen maken, met een bijdrage of subsidie. We plannen eerst een gesprek.</span>
+          </a>
+          <div class="menukeuze nog" aria-disabled="true">
+            <span class="k">Voor de lange termijn <em>Binnenkort</em></span>
+            <span class="t">Geef blijvend</span>
+            <span class="u">Met een Fonds op Naam breng je vermogen in en kies je een naam en een onderwerp dat je na aan het hart ligt. Het vermogen blijft staan, de opbrengst draagt jaar na jaar bij.</span>
+          </div>
+        </div>
+
+        <div class="menupaneel" id="startmenu" hidden>
+          <h2>Een Initiatief starten</h2>
+          <a class="menukeuze eerste" href="#/starten">
+            <span class="k">Eerst nagaan</span>
+            <span class="t">Kan mijn organisatie starten?</span>
+            <span class="u">Drie vragen over je organisatie en je plan. Daarna weet je of je bij Mondéall terecht kunt.</span>
+          </a>
+          <a class="menukeuze" href="#start-initiatief">
+            <span class="k">Zo werkt het</span>
+            <span class="t">Hoe werkt een Initiatief?</span>
+            <span class="u">Van aanmelden tot terugkoppeling: 21 dagen meedelen, binnen een jaar realiseren en laten zien wat ervan is geworden.</span>
+          </a>
+          <a class="menukeuze" href="#initiatieven">
+            <span class="k">Inspiratie</span>
+            <span class="t">Bekijk voorbeelden</span>
+            <span class="u">Voorzieningen waarvoor verenigingen, stichtingen, scholen en kerken een Initiatief kunnen starten.</span>
+          </a>
+          <a class="menukeuze" href="#werkplaats" data-login>
+            <span class="k">Direct beginnen</span>
+            <span class="t">Meld je organisatie aan</span>
+            <span class="u">Weet je dat je kunt starten? Maak een account aan en plaats je eerste Initiatief.</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="hero" id="hero">
@@ -1025,6 +1175,70 @@
     </div>
   </div>
 </header>
+
+<section id="starten" hidden>
+  <div class="hdr-wrap st-wrap">
+    <a class="id-back" href="#initiatieven">&larr; Terug naar de Initiatieven</a>
+    <div class="st-kop">
+      <p class="ini-eyebrow">Vereniging, stichting, school of kerk</p>
+      <h1 id="st-kop" tabindex="-1">Kan jouw organisatie starten bij Mondéall?</h1>
+      <p>Op Mondéall plaatst een organisatie een Initiatief voor één concrete Voorziening. Inwoners delen mee vanaf € 1, en alles komt bij jullie aan. Drie vragen bepalen of je kunt starten.</p>
+      <p class="klein">Plaats je het Initiatief als vrijwilliger namens je organisatie? Dan ben jij de Starter. Je organisatie is de Begunstigde: zij ontvangt het geld.</p>
+    </div>
+
+    <div class="st-vraag" role="group" aria-labelledby="st-q1">
+      <span class="n">VRAAG 1 VAN 3</span>
+      <h2 id="st-q1">Is jullie organisatie een vereniging, stichting, kerkgenootschap of school met een eigen bankrekening?</h2>
+      <p>De bankrekening staat op de naam van de organisatie zelf, niet op een privépersoon.</p>
+      <div class="st-opties">
+        <button type="button" class="st-opt" data-q="1" data-v="ja" aria-pressed="false">Ja</button>
+        <button type="button" class="st-opt" data-q="1" data-v="nee" aria-pressed="false">Nee</button>
+      </div>
+    </div>
+
+    <div class="st-vraag" role="group" aria-labelledby="st-q2">
+      <span class="n">VRAAG 2 VAN 3</span>
+      <h2 id="st-q2">Heeft jullie organisatie de ANBI-status, of de SBBI-status, of valt zij onder een steunstichting met SBBI-status?</h2>
+      <p>Weet je het niet? Kies dan &lsquo;Weet ik niet&rsquo;. Je kunt het navragen bij de penningmeester of de Belastingdienst.</p>
+      <div class="st-opties">
+        <button type="button" class="st-opt" data-q="2" data-v="ja" aria-pressed="false">Ja</button>
+        <button type="button" class="st-opt" data-q="2" data-v="nee" aria-pressed="false">Nee</button>
+        <button type="button" class="st-opt" data-q="2" data-v="twijfel" aria-pressed="false">Weet ik niet</button>
+      </div>
+    </div>
+
+    <div class="st-vraag" role="group" aria-labelledby="st-q3">
+      <span class="n">VRAAG 3 VAN 3</span>
+      <h2 id="st-q3">Wil je geld ophalen voor iets concreets dat mensen samen kunnen gebruiken?</h2>
+      <p>Denk aan een AED, een gereedschapbank, nieuwe kleedkamers of zonnepanelen op het dorpshuis. Zo&rsquo;n Voorziening is wat een Initiatief mogelijk maakt.</p>
+      <div class="st-opties">
+        <button type="button" class="st-opt" data-q="3" data-v="ja" aria-pressed="false">Ja</button>
+        <button type="button" class="st-opt" data-q="3" data-v="nee" aria-pressed="false">Nee</button>
+      </div>
+    </div>
+
+    <div id="st-uitkomst" class="st-uitkomst" aria-live="polite">
+      <div data-res="open"><h2>Beantwoord de drie vragen</h2><p>Dan zie je hier meteen of je bij Mondéall terecht kunt.</p></div>
+      <div data-res="ja" hidden><h2>Jouw organisatie kan starten</h2><p>Maak een account aan en plaats je eerste Initiatief. Je hebt geen wachtwoord nodig: je logt in met een code die we mailen.</p><a class="cta-btn" href="#werkplaats" data-login>Registreren</a></div>
+      <div data-res="nee1" hidden><h2>Zonder eigen rechtspersoon kun je niet starten</h2><p>Mondéall werkt alleen met verenigingen, stichtingen, kerkgenootschappen en scholen met een bankrekening op eigen naam. Het geld moet bij de organisatie zelf terechtkomen.</p></div>
+      <div data-res="twijfel2" hidden><h2>Ga eerst na welke status jullie hebben</h2><p>Vraag het na bij de penningmeester of kijk op de website van de Belastingdienst. Weet je het zeker? Kom dan terug en beantwoord de vraag opnieuw.</p></div>
+      <div data-res="nee2" hidden><h2>Dan kun je niet starten bij Mondéall</h2><p>Een organisatie heeft de ANBI-status of SBBI-status nodig, direct of via een steunstichting. Heeft een steunstichting die status wel? Dan kan het Initiatief via die stichting lopen.</p></div>
+      <div data-res="nee3" hidden><h2>Dan past het niet als Initiatief</h2><p>Een Initiatief is gericht op één concrete Voorziening die mensen samen gebruiken. Heb je een ander plan? Dan is Mondéall daar niet voor bedoeld.</p></div>
+    </div>
+
+    <div class="st-niet">
+      <h2>Hier kun je niet terecht bij Mondéall</h2>
+      <ul>
+        <li>Individuele personen en gezinnen, bijvoorbeeld voor een persoonlijke actie.</li>
+        <li>Bedrijven en commerciële initiatieven.</li>
+        <li>Politieke partijen.</li>
+        <li>Organisaties zonder bankrekening op eigen naam.</li>
+        <li>Plannen zonder concrete Voorziening, zoals exploitatiekosten of salarissen.</li>
+      </ul>
+      <p>Eén Initiatief is voor één Voorziening. Hebben jullie meer wensen, dan plaats je meer Initiatieven.</p>
+    </div>
+  </div>
+</section>
 
 <section id="initiatief-detail" hidden></section>
 
@@ -2103,8 +2317,10 @@
       '<div class="wp-login"><div class="wp-login-tekst"><h3>Naar je werkplaats</h3>' +
       '<p class="lead">Hier volg je je Initiatief, verleng je het en geef je straks de terugkoppeling.</p>' +
       '<p>Je hebt geen wachtwoord nodig. We sturen je bij elke keer inloggen een code van zes cijfers. Werkt je vereniging met een gedeeld mailadres, zoals het secretariaat? Dan kan iedereen met toegang tot die mailbox inloggen.</p>' +
-      '<p>Nog geen account? <a href="#start-initiatief">Start een Initiatief</a></p></div>' +
-      '<div class="wp-login-kaart">' + kaart + '</div></div>' +
+      '</div>' +
+      '<div class="wp-login-rechts"><div class="wp-login-kaart">' + kaart + '</div>' +
+      '<div class="wp-login-kaart"><h4>Nog geen account?</h4><p class="uitleg">Een account heb je nodig als je een Initiatief start, of als Sponsor of Partner meedoet.</p><a class="wp-reg" href="#start-initiatief">Registreren</a></div>' +
+      '<p class="hint">Wil je meedelen met een Initiatief? Daar heb je geen account voor nodig. <a href="#initiatieven">Bekijk de Initiatieven</a></p></div></div>' +
       '<p class="wp-voet">ALLEEN EEN FUNCTIONELE COOKIE VOOR JE INLOGSESSIE · GEEN TRACKING · GEEN INLOGGEN VIA GOOGLE OF FACEBOOK</p>';
   }
 
@@ -2320,7 +2536,17 @@
     var m = h.match(/^#\/initiatief\/([a-z0-9-]+)$/);
     var d = m ? INI_DATA.filter(function (x) { return x.slug === m[1]; })[0] : null;
     var hero = document.getElementById('hero');
-    if (d) {
+    var stEl = document.getElementById('starten');
+    var isSt = h === '#/starten';
+    stEl.hidden = !isSt;
+    if (isSt) {
+      detailEl.hidden = true;
+      hero.hidden = true;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
+      document.title = 'Kan jouw organisatie starten? · Mondéall';
+      window.scrollTo(0, 0);
+      document.getElementById('st-kop').focus({ preventScroll: true });
+    } else if (d) {
       renderDetail(d);
       detailEl.hidden = false;
       hero.hidden = true;
@@ -2340,6 +2566,64 @@
       }
     }
   }
+  /* LINT: keuzemenu's, inloggen-knoppen, Kan jouw organisatie starten? */
+  var menuKnoppen = document.querySelectorAll('header [data-menu]');
+  var hoofdnavEl = document.getElementById('hoofdmenu');
+  function sluitMenus(focusTerug) {
+    var terug = null;
+    menuKnoppen.forEach(function (b) {
+      if (b.getAttribute('aria-expanded') === 'true') terug = b;
+      b.setAttribute('aria-expanded', 'false');
+      if (b.dataset.menu !== 'nav') document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+    });
+    hoofdnavEl.classList.remove('open');
+    if (focusTerug && terug) terug.focus();
+  }
+  menuKnoppen.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = b.getAttribute('aria-expanded') === 'true';
+      sluitMenus(false);
+      if (open) return;
+      b.setAttribute('aria-expanded', 'true');
+      if (b.dataset.menu === 'nav') hoofdnavEl.classList.add('open');
+      else document.getElementById(b.getAttribute('aria-controls')).hidden = false;
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('header .menupaneel') && !e.target.closest('header [data-menu]')) sluitMenus(false);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') sluitMenus(true); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    if (a.closest('header')) sluitMenus(false);
+    if (a.hasAttribute('data-login')) { WP.weergave = 'inloggen'; WP.logstap = 'email'; wpRender(); }
+    if (a.dataset.rol) document.getElementById('rol').value = a.dataset.rol;
+  });
+
+  var ST = { 1: '', 2: '', 3: '' };
+  function stRender() {
+    document.querySelectorAll('#starten .st-opt').forEach(function (b) {
+      b.setAttribute('aria-pressed', ST[b.dataset.q] === b.dataset.v ? 'true' : 'false');
+    });
+    var nee1 = ST[1] === 'nee';
+    var nee2 = !nee1 && ST[2] === 'nee';
+    var tw2 = !nee1 && ST[2] === 'twijfel';
+    var nee3 = !nee1 && !nee2 && !tw2 && ST[3] === 'nee';
+    var ja = ST[1] === 'ja' && ST[2] === 'ja' && ST[3] === 'ja';
+    var res = nee1 ? 'nee1' : nee2 ? 'nee2' : tw2 ? 'twijfel2' : nee3 ? 'nee3' : ja ? 'ja' : 'open';
+    document.querySelectorAll('#st-uitkomst [data-res]').forEach(function (d) { d.hidden = d.dataset.res !== res; });
+    document.getElementById('st-uitkomst').classList.toggle('ja', res === 'ja');
+  }
+  document.getElementById('starten').addEventListener('click', function (e) {
+    var b = e.target.closest('.st-opt');
+    if (!b) return;
+    ST[b.dataset.q] = b.dataset.v;
+    stRender();
+  });
+  stRender();
+
   window.addEventListener('hashchange', toonPaginaRoute);
   toonPaginaRoute();
 

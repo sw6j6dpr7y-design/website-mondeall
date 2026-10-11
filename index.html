@@ -503,6 +503,9 @@
   .dl .p-voet b { font: 700 5cqw/1.1 var(--kop); color: #005248; }
   #dl-printvel { display: none; }
 
+  .flow-twee { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 520px) { .flow-twee { grid-template-columns: 1fr; } }
+
   /* WERKPLAATS (voorbeeld) */
   #werkplaats .stepper { margin-top: 4px; }
   .wp-app { border: 1px solid var(--lijn); border-radius: 18px; overflow: hidden; background: var(--achtergrond); }
@@ -1441,8 +1444,7 @@
       <p class="flow-hint" style="text-align:right;margin:0 0 14px">Heb je al een Mondéall-account? <a href="#werkplaats">Inloggen</a></p>
       <h3>Maak je account aan</h3>
       <p class="flow-hint">Zo kun je straks terugkomen in je werkplaats, verder werken aan je Initiatief en later de terugkoppeling geven.</p>
-      <span class="flow-label">Voornaam en achternaam</span>
-      <div class="flow-field">Jan Jansen</div>
+      <div class="flow-twee"><div><span class="flow-label">Voornaam</span><div class="flow-field">Jan</div></div><div><span class="flow-label">Achternaam</span><div class="flow-field">Jansen</div></div></div>
       <span class="flow-label">E-mailadres</span>
       <div class="flow-field">jij@voorbeeld.nl</div>
       <p class="flow-hint">Hierna typ je een code uit deze mail over. Zo log je ook later in: met een code, zonder wachtwoord.</p>
@@ -1452,9 +1454,10 @@
 
     <div class="flow-card" id="flow-4" data-panel="4" hidden>
       <h3>Bevestig je e-mailadres</h3>
-      <p class="flow-hint">We stuurden een code naar jij@voorbeeld.nl. Nog één ding: we willen zeker weten dat dit jouw e-mailadres is.</p>
+      <p class="flow-hint">Nog één ding: we willen zeker weten dat dit jouw e-mailadres is. We stuurden een code naar <strong>jij@voorbeeld.nl</strong>, <a href="#start-initiatief" data-goto-link="3">bewerken</a>.</p>
       <div class="code-boxes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <p class="flow-hint">Deze code is 10 minuten geldig.</p>
+      <p class="flow-hint">Deze code is 10 minuten geldig. Geen code gehad? Opnieuw versturen kan over 25 seconden.</p>
+      <div class="flow-foot"><button type="button" class="flow-next" disabled aria-disabled="true">Verifiëren</button></div>
     </div>
   </div>
 </section>
@@ -1857,6 +1860,9 @@
   });
   document.querySelectorAll('.flow-next').forEach(function (b) {
     b.addEventListener('click', function () { toonStap(b.getAttribute('data-goto')); });
+  });
+  document.querySelectorAll('[data-goto-link]').forEach(function (l) {
+    l.addEventListener('click', function (e) { e.preventDefault(); toonStap(l.getAttribute('data-goto-link')); });
   });
 
   var INI_ICON = {
@@ -2382,12 +2388,12 @@
       ? '<h4>Typ de code over</h4>' +
         '<p class="uitleg">Als dit adres bij ons bekend is, staat er nu een code in je mailbox. Kijk ook even bij ongewenste mail.</p>' +
         '<label class="wp-label" for="wp-code">Code van zes cijfers</label>' +
-        '<input id="wp-code" class="code" type="text" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="000000">' +
+        '<input id="wp-code" class="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000">' +
         '<p class="hint">De code is 10 minuten geldig.</p>' +
         '<button type="button" class="wp-knop" data-act="inloggen">Inloggen</button>' +
         '<div class="onder"><button type="button" class="wp-tekstknop" data-act="email">Ander e-mailadres</button><button type="button" class="wp-tekstknop" disabled>Nieuwe code sturen</button></div>'
       : '<h4>Inloggen</h4>' +
-        '<div class="veld"><label class="wp-label" for="wp-email">E-mailadres</label><input id="wp-email" type="email" autocomplete="off" placeholder="jij@voorbeeld.nl"></div>' +
+        '<div class="veld"><label class="wp-label" for="wp-email">E-mailadres</label><input id="wp-email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl"></div>' +
         '<div class="wp-accountchk"><input id="wp-onthoud" type="checkbox"><label for="wp-onthoud">Ingelogd blijven op dit apparaat (30 dagen). Niet aanvinken op een gedeelde computer.</label></div>' +
         '<button type="button" class="wp-knop" data-act="code">Stuur mij een code</button>';
     return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div></div>' +

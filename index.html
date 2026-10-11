@@ -426,6 +426,83 @@
   .wp-login-kaart a.wp-reg:hover { background: var(--nevel); }
 
 
+  /* DEELKNOP EN POSTER (Werkplaats) */
+  .dl { --inkt: #12211d; --vlak: #fff; --lichtvlak: var(--nevel); }
+  .dl-grid { display: grid; grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+  @media (max-width: 860px) { .dl-grid { grid-template-columns: 1fr; } }
+  .dl h2 { font-family: var(--kop); font-weight: 700; font-size: 1.35rem; line-height: 1.2; color: var(--diep); margin: 0 0 1rem; }
+  .dl fieldset { border: 0; border-top: 1px solid var(--lijn); margin: 0; padding: 1.1rem 0 1.25rem; min-width: 0; }
+  .dl legend { font: 500 .82rem/1 'IBM Plex Mono', monospace; color: var(--gedempt); padding: 0 .5rem 0 0; letter-spacing: .02em; }
+  .dl label.f { display: block; font: 500 .95rem/1.3 var(--kop); margin: .2rem 0 .35rem; }
+  .dl input[type=text], .dl select { width: 100%; font: 400 1rem/1.4 'IBM Plex Mono', monospace; padding: .55rem .65rem; border: 1px solid var(--lijn); border-radius: 6px; background: #fff; color: var(--inkt); }
+  .dl select { font-family: var(--kop); font-weight: 500; }
+  .dl .hint { font-size: .9rem; line-height: 1.5; color: var(--gedempt); margin: .35rem 0 0; }
+  .dl .choices { display: flex; flex-wrap: wrap; gap: .4rem; position: relative; }
+  .dl .choices input { position: absolute; left: 0; top: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .dl .choices label { cursor: pointer; font: 500 .92rem/1 var(--kop); padding: .65rem .85rem; border: 1px solid var(--lijn); border-radius: 999px; background: #fff; }
+  .dl .choices input:checked + label { background: var(--diep); border-color: var(--diep); color: #fff; }
+  .dl .choices input:focus-visible + label { outline: 3px solid var(--merktekst); outline-offset: 2px; }
+  .dl .colorrow { display: grid; grid-template-columns: 3rem 1fr; gap: .6rem; align-items: center; }
+  .dl input[type=color] { width: 3rem; height: 2.6rem; border: 1px solid var(--lijn); border-radius: 6px; padding: 2px; background: #fff; }
+  .dl .contrast { font: 400 .9rem/1.4 'IBM Plex Mono', monospace; margin: .5rem 0 0; }
+  .dl .contrast .ok { color: var(--merktekst); }
+  .dl .contrast .nee { color: #b3261e; }
+  .dl .check { display: flex; gap: .55rem; align-items: flex-start; font-size: .95rem; margin-top: .4rem; }
+  .dl .check input { margin-top: .35rem; accent-color: var(--diep); }
+  .dl .adres { margin: .9rem 0 .2rem; display: grid; grid-template-columns: 1fr; gap: .15rem; }
+  .dl .adres dt { font: 500 .9rem/1.3 var(--kop); margin-top: .45rem; }
+  .dl .adres dd { margin: 0; font: 400 .85rem/1.4 'IBM Plex Mono', monospace; color: var(--gedempt); word-break: break-all; }
+  .dl .stage { min-width: 0; }
+  .dl .club { border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; background: #fff; color: #1d1d1d; }
+  .dl .club-bar { display: flex; align-items: center; gap: 1rem; padding: .7rem 1rem; flex-wrap: wrap; }
+  .dl .club-bar .naam { font: 700 1.05rem/1 system-ui, sans-serif; margin-right: auto; }
+  .dl .club-bar nav { display: flex; gap: 1rem; font: 500 .92rem/1 system-ui, sans-serif; flex-wrap: wrap; }
+  .dl .club-body { padding: 1.5rem 1.25rem 1.75rem; font-family: system-ui, sans-serif; background: #fafafa; }
+  .dl .club-body .ph { height: .6rem; background: #e7e7e7; border-radius: 3px; margin: .45rem 0; max-width: 34rem; }
+  .dl .variant { border-top: 1px dashed #d9d9d9; padding: 1.1rem 0 .4rem; margin-top: 1.1rem; }
+  .dl .variant:first-of-type { border-top: 0; margin-top: .4rem; }
+  .dl .variant .tag { font: 500 .78rem/1 'IBM Plex Mono', monospace; color: #5d6b67; margin: 0 0 .7rem; display: flex; justify-content: space-between; gap: 1rem; }
+  .dl .variant button.kies { font: 500 .8rem/1 var(--kop); background: none; border: 1px solid #c9d1cd; border-radius: 999px; padding: .5rem .8rem; cursor: pointer; color: #244; }
+  .dl .variant button.kies[aria-pressed=true] { background: #005248; color: #fff; border-color: #005248; }
+  .dl .code { margin-top: 1.75rem; }
+  .dl .code h3, .dl .kantine h2 { font-family: var(--kop); }
+  .dl .code h3 { font-weight: 700; font-size: 1.1rem; line-height: 1.2; color: var(--diep); margin: 0 0 .5rem; }
+  .dl textarea { width: 100%; min-height: 9.5rem; font: 400 .82rem/1.5 'IBM Plex Mono', monospace; padding: .8rem; border: 1px solid var(--lijn); border-radius: 8px; background: #fff; color: var(--inkt); resize: vertical; box-sizing: border-box; }
+  .dl .copy { margin-top: .6rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .dl .copy button { font: 600 1rem/1 var(--kop); background: var(--diep); color: #fff; border: 0; border-radius: 999px; padding: .9rem 1.25rem; cursor: pointer; }
+  .dl .copy button.tweede { background: transparent; color: var(--diep); box-shadow: inset 0 0 0 2px var(--diep); }
+  .dl .copy span { font-size: .95rem; color: var(--gedempt); }
+  .dl .pinputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem 2rem; margin: 0 0 1.5rem; max-width: 44rem; }
+  .dl input[type=file] { font: 400 .9rem/1.3 var(--kop); max-width: 100%; }
+  .dl .linkknop { background: none; border: 0; padding: 0; margin: .4rem 0 0; min-height: 44px; font: 500 .9rem/1.2 var(--kop); color: var(--merktekst); text-decoration: underline; cursor: pointer; }
+  .dl .kantine { margin-top: 3rem; border-top: 1px solid var(--lijn); padding-top: 1.75rem; }
+  .dl .vermeld { list-style: none; margin: .5rem 0 0; padding: 0; font-size: .95rem; }
+  .dl .vermeld li { padding: .15rem 0; }
+  .dl .vermeld small { font-family: 'IBM Plex Mono', monospace; color: var(--gedempt); margin-left: .4rem; }
+  .dl .posterwrap { max-width: 26rem; box-shadow: 0 1px 0 var(--lijn), 0 12px 30px -18px rgba(18, 33, 29, .45); margin-bottom: .5rem; }
+  .dl .poster { container-type: inline-size; aspect-ratio: 210/297; background: #fff; color: #12211d; display: flex; flex-direction: column; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .dl .p-band { height: 2.4cqw; flex: none; }
+  .dl .p-logo { height: 17cqw; max-width: 46cqw; display: flex; align-items: center; justify-content: center; margin: 0 0 2.5cqw; }
+  .dl .p-logo img { max-height: 100%; max-width: 100%; object-fit: contain; display: block; }
+  .dl .p-logo .p-naam { font: 700 6cqw/1.1 var(--kop); color: #12211d; text-wrap: balance; }
+  .dl .p-spons { padding: 0 8cqw 3.5cqw; text-align: center; }
+  .dl .p-spons p { margin: 0 0 1.8cqw; font: 400 2.9cqw/1.2 'IBM Plex Mono', monospace; color: #4a5b56; }
+  .dl .p-spons-rij { display: flex; justify-content: center; gap: 3cqw; }
+  .dl .p-spons-rij div { width: 22cqw; height: 10cqw; display: flex; align-items: center; justify-content: center; border: .3cqw dashed #b9c3be; border-radius: 1.2cqw; font: 500 2.6cqw/1.2 var(--kop); color: #4a5b56; }
+  .dl .p-body { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3cqw 9cqw 2.5cqw; }
+  .dl .p-kicker { margin: 0; font: 400 4cqw/1.3 'Source Serif 4', serif; color: #4a5b56; }
+  .dl .p-titel { margin: 1.2cqw 0 2.2cqw; font: 700 7.6cqw/1.1 var(--kop); color: #005248; letter-spacing: -.01em; text-wrap: balance; }
+  .dl .p-sub { margin: 0 0 4cqw; font: 400 4.3cqw/1.4 'Source Serif 4', serif; }
+  .dl .p-qr { width: 44cqw; aspect-ratio: 1; line-height: 0; }
+  .dl .p-qr svg { width: 100%; height: 100%; display: block; }
+  .dl .p-scan { margin: 3cqw 0 1cqw; font: 600 3.6cqw/1.3 var(--kop); }
+  .dl .p-url { margin: 0; font: 400 3.1cqw/1.3 'IBM Plex Mono', monospace; color: #4a5b56; word-break: break-all; }
+  .dl .p-voet { display: flex; align-items: center; gap: 3.5cqw; padding: 3cqw 8cqw; border-top: .4cqw solid #d7ddd8; }
+  .dl .p-voet svg { width: 10cqw; height: auto; flex: none; }
+  .dl .p-voet p { margin: 0; display: flex; flex-direction: column; font: 400 3.3cqw/1.35 'Source Serif 4', serif; }
+  .dl .p-voet b { font: 700 5cqw/1.1 var(--kop); color: #005248; }
+  #dl-printvel { display: none; }
+
   /* WERKPLAATS (voorbeeld) */
   #werkplaats .stepper { margin-top: 4px; }
   .wp-app { border: 1px solid var(--lijn); border-radius: 18px; overflow: hidden; background: var(--achtergrond); }
@@ -2355,7 +2432,7 @@
         '<p class="n">' + (rest > 0 ? 'Je kunt nog ' + rest + ' keer met een week verlengen, uiterlijk tot 09-11-2026.' : 'Dit is de langste looptijd: 42 dagen.') + '</p></div>' +
         (rest > 0 ? '<button type="button" class="wp-knop" data-act="verleng">Met een week verlengen</button>' : '') + '</div>' +
       '<div class="wp-pillen"><a class="wp-pil" href="#/initiatief/renovatie-kleedkamers-sv-laren">Openbare pagina bekijken</a>' +
-        '<button type="button" class="wp-pil" disabled>Delen: link, deelknop en QR-poster</button><button type="button" class="wp-pil" disabled>Verhaal of foto bijwerken</button></div>' +
+        '<button type="button" class="wp-pil" data-act="scherm" data-arg="delen">Delen: link, deelknop en QR-poster</button><button type="button" class="wp-pil" disabled>Verhaal of foto bijwerken</button></div>' +
       '<p class="wp-noot" style="margin-top:-8px">Voorziening, sector en organisatie liggen vast zolang je Initiatief live is. Zo weet iedereen waaraan hij meedeelde.</p>' +
       '<div class="wp-twee"><section class="wp-sectie"><h2>Wat er binnenkwam</h2><p class="wp-sub">ALLEEN VOOR JOU ZICHTBAAR</p>' +
         '<p class="wp-bedrag">€ 231,50</p><p class="wp-org" style="margin-top:2px">in 9 giften, rechtstreeks naar de rekening van de vereniging</p>' +
@@ -2421,9 +2498,218 @@
         '<p class="wp-noot">Graag vóór 02-05-2027, 52 weken na livegang.</p></section>';
   }
 
+  /* Deelknop en poster: voorbeeld met verzonnen gegevens. Niets wordt opgeslagen of verstuurd. */
+  var DL_KLAVER = "M352 556C345 554 340 551 335 547C302 524 280 491 277 461C277 457 276 454 276 453C275 453 271 456 265 459C214 490 190 501 137 516C99 528 33 539 22 537C3 533 -2 512 13 501C16 498 17 498 30 497C75 494 162 470 198 451C212 443 240 427 259 416C288 398 300 387 313 369C327 349 344 325 345 323C346 322 347 321 347 320C347 320 348 319 348 318C349 317 350 315 351 313C351 310 350 311 336 323C309 348 285 364 254 380C247 384 219 393 209 395C168 405 137 393 125 363C120 350 116 331 116 317C116 300 121 272 124 272C125 272 125 272 125 271C124 270 131 257 133 256C134 255 135 254 135 253C135 253 140 248 146 242C157 231 169 223 179 217L185 215L181 210C158 178 150 159 150 138C149 125 152 114 155 114C156 114 156 114 155 113C154 111 169 98 176 94C193 86 213 81 233 80C276 77 302 92 328 136C333 144 337 151 360 200C368 218 373 227 374 227C374 226 372 215 367 189C355 129 364 59 389 27C412 -5 455 -3 504 32C527 48 539 76 541 115C541 131 541 131 543 131C548 129 576 128 586 129C629 131 651 150 649 184C647 222 629 258 602 277C595 283 585 287 568 291C554 295 523 294 464 289C432 286 428 287 443 291C475 300 505 314 537 333C561 348 589 377 600 398C607 413 608 433 602 446C587 474 547 501 514 505C494 507 460 498 442 484L436 480L434 484C433 487 429 494 425 501C404 544 378 563 352 556ZM368 515C378 509 405 456 404 444C402 429 411 418 424 418C433 418 436 420 446 434C459 449 470 457 490 462C498 464 514 465 517 464C518 464 522 461 527 459C559 444 572 427 562 413C543 384 516 364 471 344C447 333 413 324 398 324L391 324L387 331C385 335 376 348 368 360C326 421 323 427 318 447C315 459 321 477 333 491C342 502 358 517 362 517C363 517 365 516 368 515ZM193 358C227 352 266 332 306 297C321 284 342 260 342 256C342 255 340 250 337 245C331 234 304 177 298 164C291 148 275 130 264 125C249 118 232 118 210 124C197 128 190 132 190 136C188 145 196 162 214 186C222 197 227 202 236 207C249 216 252 230 241 240C237 245 236 245 226 246C196 252 192 253 175 270C169 276 163 282 163 283C156 294 155 326 160 343C165 358 171 361 193 358ZM389 276C389 276 388 275 388 274C387 272 387 272 385 274C383 276 384 277 386 277C388 277 389 277 389 276ZM557 253C558 252 560 252 561 252C562 251 565 250 568 249C577 247 589 237 596 225C602 216 608 195 608 183C608 176 608 176 605 173C600 170 596 169 577 169C550 169 531 172 522 178C510 186 495 182 490 168C488 163 490 156 495 142L500 128L500 116C500 87 492 71 470 58C449 45 432 41 424 47C415 54 407 79 403 109C401 138 402 160 409 195C414 220 416 226 422 238L426 248L434 247C438 247 455 248 472 249C489 251 510 252 518 253C527 254 535 254 535 254C535 255 553 253 557 253Z";
+  var DL = {
+    basis: 'https://mondeall.eu',
+    club: 'Voetbalvereniging Laren (fictief)',
+    slotregel: 'Elke euro komt aan, omdat lokale bedrijven de kosten dragen.',
+    slug: 'renovatie-kleedkamers-sv-laren',
+    titel: 'Renovatie kleedkamers',
+    vermeldingen: [{ naam: 'Bouwbedrijf Egberink & Zn.', soort: 'Sponsor' }],
+    gekozen: 'zegel', logoData: '', qrSvg: '', qrStatus: 0
+  };
+  var DL_MAAT = { s: { f: 14, z: 32 }, m: { f: 16, z: 40 }, l: { f: 19, z: 48 } };
+  var DL_VORM = { rond: '999px', zacht: '8px', recht: '0' };
+  var DL_FONT = "system-ui,-apple-system,'Segoe UI',Roboto,sans-serif";
+  function dlQ(s) { return wpEl.querySelector(s); }
+  function dlLum(hex) {
+    var n = parseInt(hex.slice(1), 16), w = [.2126, .7152, .0722];
+    return [n >> 16, (n >> 8) & 255, n & 255].map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); })
+      .reduce(function (a, v, i) { return a + v * w[i]; }, 0);
+  }
+  function dlRatio(a, b) { var x = dlLum(a), y = dlLum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); }
+  function dlTekstKleur(bg) {
+    var w = dlRatio(bg, '#ffffff'), i = dlRatio(bg, '#12211d');
+    return w >= i ? { c: '#ffffff', r: w, n: 'wit' } : { c: '#12211d', r: i, n: 'donker' };
+  }
+  function dlZegel(px, soort) {
+    var disc = soort === 'merk' ? '#009f8c' : '#ffffff', blad = soort === 'merk' ? '#ffffff' : '#009f8c';
+    return '<svg width="' + px + '" height="' + px + '" viewBox="0 0 100 100" aria-hidden="true" focusable="false" style="display:block;flex:none"><circle cx="50" cy="50" r="50" fill="' + disc + '"/><path transform="translate(20.7 24.8) scale(.09)" fill="' + blad + '" fill-rule="evenodd" d="' + DL_KLAVER + '"/></svg>';
+  }
+  function dlRadio(n) { return dlQ('input[name="dl-' + n + '"]:checked').value; }
+  function dlWaarden() {
+    return {
+      url: DL.basis + '/#/initiatief/' + DL.slug, vast: DL.basis + '/#initiatieven', titel: DL.titel, club: DL.club,
+      kleur: dlQ('#dl-kleurHex').value, zegel: dlRadio('zegel'), vorm: DL_VORM[dlRadio('vorm')], maat: DL_MAAT[dlRadio('maat')],
+      label: dlRadio('label'), nieuw: dlQ('#dl-nieuw').checked
+    };
+  }
+  function dlAttrs(o) { return 'href="' + iniEsc(o.url) + '" referrerpolicy="no-referrer"' + (o.nieuw ? ' target="_blank" rel="noopener"' : ''); }
+  function dlMaak(v, o) {
+    var t = dlTekstKleur(o.kleur), f = o.maat.f;
+    var knop = function (a) { return '<a ' + dlAttrs(a) + ' style="display:inline-flex;align-items:center;gap:.55em;padding:.35em 1.1em .35em .35em;background:' + o.kleur + ';color:' + t.c + ';border-radius:' + o.vorm + ';font:600 ' + f + 'px/1.2 ' + DL_FONT + ';text-decoration:none">' + dlZegel(Math.round(f * 2), o.zegel) + '<span>' + iniEsc(o.label) + '</span></a>'; };
+    if (v === 'zegel') {
+      var z = Object.assign({}, o, { url: o.vast });
+      return '<a ' + dlAttrs(z) + ' aria-label="Deel mee via Mondéall" title="Deel mee via Mondéall" style="display:inline-block;line-height:0;border-radius:50%">' + dlZegel(o.maat.z, o.zegel) + '</a>';
+    }
+    if (v === 'knop') return knop(o);
+    if (v === 'uitleg') {
+      return '<a ' + dlAttrs(o) + ' style="display:inline-flex;align-items:center;gap:.7em;padding:.5em 1.3em .5em .5em;background:' + o.kleur + ';color:' + t.c + ';border-radius:' + o.vorm + ';font:400 ' + f + 'px/1.25 ' + DL_FONT + ';text-decoration:none">' + dlZegel(Math.round(f * 2.6), o.zegel) +
+        '<span style="display:flex;flex-direction:column"><strong style="font-weight:700">' + iniEsc(o.label) + '</strong><span style="font-size:.82em">Elke euro komt aan, omdat sponsors de kosten dragen</span></span></a>';
+    }
+    if (v === 'blok') {
+      var r = o.vorm === '999px' ? '14px' : o.vorm;
+      return '<div style="max-width:24rem;border:2px solid ' + o.kleur + ';border-radius:' + r + ';padding:1.1em 1.2em;background:#ffffff;color:#12211d;font:400 ' + f + 'px/1.5 ' + DL_FONT + '"><p style="margin:0 0 .3em;font-weight:700;font-size:1.15em">' + iniEsc(o.titel) + '</p>' +
+        '<p style="margin:0 0 .9em">Deel mee vanaf € 1. Elke euro komt aan, omdat sponsors de kosten dragen. Je kunt ook anoniem delen.</p>' + knop(o) + '</div>';
+    }
+    return '<a ' + dlAttrs(o) + ' style="color:inherit;text-decoration:underline">' + iniEsc(o.label) + ' via Mondéall</a>';
+  }
+  function dlHtml() {
+    var rad = function (n, items, def, extra) {
+      return '<div class="choices" role="radiogroup" aria-label="' + extra + '">' + items.map(function (it, i) {
+        return '<input type="radio" name="dl-' + n + '" id="dl-' + n + i + '" value="' + iniEsc(it[0]) + '"' + (it[0] === def ? ' checked' : '') + '><label for="dl-' + n + i + '">' + iniEsc(it[1]) + '</label>';
+      }).join('') + '</div>';
+    };
+    var varnt = [['zegel', '1: Klavertje in het menu', false], ['knop', '2: Knop'], ['uitleg', '3: Knop met uitleg'], ['blok', '4: Blok voor een pagina'], ['link', '5: Tekstlink']].map(function (v) {
+      return '<div class="variant"><p class="tag"><span>Variant ' + v[1] + '</span><button type="button" class="kies" data-dl="' + v[0] + '">Kies deze</button></p><div data-out="' + v[0] + '"></div></div>';
+    }).join('');
+    return '<button type="button" class="wp-tekstknop wp-terug" data-act="scherm" data-arg="live">Terug naar Renovatie kleedkamers</button>' +
+      '<div class="dl"><div><h1>Deelknop en poster</h1><p class="wp-lead">Zet het klavertje van Mondéall op jullie eigen website, of print een poster voor de kantine. Wat het platform al weet, staat al ingevuld. Jij kiest alleen hoe het eruitziet.</p>' +
+      '<p class="wp-noot">Voorbeeld met verzonnen gegevens. De knoppen werken pas als het platform live gaat. Wat je hier kiest wordt niet opgeslagen.</p></div>' +
+      '<div class="dl-grid" style="margin-top:28px"><form id="dl-form" onsubmit="return false"><h2>Jullie knop</h2>' +
+      '<fieldset><legend>Initiatief</legend><label class="f" for="dl-ini">Voor welk Initiatief</label><select id="dl-ini"><option>Renovatie kleedkamers (live)</option><option disabled>Nieuwe pauken voor het orkest (in opbouw)</option><option disabled>AED bij het clubhuis (afgesloten)</option></select>' +
+      '<p class="hint">Alleen Initiatieven die live staan zijn te kiezen.</p>' +
+      '<dl class="adres"><dt>Klavertje in het menu</dt><dd id="dl-adresVast"></dd><dt>Knoppen en poster</dt><dd id="dl-adresIni"></dd></dl>' +
+      '<p class="hint">Het klavertje wijst naar een vaste plek en kan jaren blijven staan. Knoppen en poster horen bij één Initiatief: haal ze weg als het is afgerond.</p></fieldset>' +
+      '<fieldset><legend>Kleur van jullie vereniging</legend><div class="colorrow"><input type="color" id="dl-kleur" value="#1f4e9c" aria-label="Kies clubkleur"><input type="text" id="dl-kleurHex" value="#1f4e9c" aria-label="Clubkleur als hexcode" maxlength="7"></div>' +
+      '<p class="contrast" id="dl-contrast"></p><p class="hint">De tekstkleur kiezen we zelf, zodat de knop voor iedereen leesbaar blijft.</p></fieldset>' +
+      '<fieldset><legend>Het klavertje</legend>' + rad('zegel', [['merk', 'Wit op turquoise'], ['wit', 'Turquoise op wit']], 'merk', 'Uitvoering klavertje') +
+      '<p class="hint">Het klavertje zelf houdt altijd zijn eigen kleuren. Zo herkent iedereen het, op elke clubsite.</p></fieldset>' +
+      '<fieldset><legend>Vorm en maat</legend>' + rad('vorm', [['rond', 'Rond'], ['zacht', 'Zachte hoek'], ['recht', 'Recht']], 'rond', 'Hoeken') +
+      '<div style="margin-top:.6rem">' + rad('maat', [['s', 'Klein'], ['m', 'Normaal'], ['l', 'Groot']], 'm', 'Maat') + '</div></fieldset>' +
+      '<fieldset><legend>Tekst op de knop</legend>' + rad('label', [['Deel mee', 'Deel mee'], ['Deel mee vanaf € 1', 'Deel mee vanaf € 1'], ['Deel mee via Mondéall', 'Deel mee via Mondéall']], 'Deel mee', 'Knoptekst') +
+      '<label class="check"><input type="checkbox" id="dl-nieuw"> Openen in een nieuw tabblad</label></fieldset></form>' +
+      '<section class="stage" aria-labelledby="dl-vb"><h2 id="dl-vb">Zo ziet het eruit op jullie site</h2><div class="club"><div class="club-bar" id="dl-bar"><span class="naam" id="dl-barNaam"></span><nav aria-hidden="true"><span>Home</span><span>Agenda</span><span>Teams</span><span>Contact</span></nav><span id="dl-barZegel"></span></div>' +
+      '<div class="club-body"><div class="ph" style="width:60%"></div><div class="ph"></div><div class="ph" style="width:80%"></div>' + varnt + '</div></div>' +
+      '<div class="code"><h3 id="dl-codeKop">Code voor variant 1</h3><label for="dl-snip" class="hint" style="display:block;margin:0 0 .4rem">Plak deze code in je website, op de plek waar de knop moet komen. In WordPress gaat dat met een blok "Aangepaste HTML".</label>' +
+      '<textarea id="dl-snip" readonly spellcheck="false"></textarea><div class="copy"><button type="button" id="dl-kopieer">Kopieer code</button><span id="dl-gekopieerd" role="status"></span></div></div>' +
+      '<div class="kantine" aria-labelledby="dl-kk"><h2 id="dl-kk">Voor in de kantine: poster met QR-code</h2><p class="hint" style="margin:0 0 1rem;max-width:38rem">Print de poster op A4 en hang hem op waar mensen even stilstaan: bij de bar, het mededelingenbord of de ingang. De code is ook vanaf een paar meter te scannen.</p>' +
+      '<div class="pinputs"><div><label class="f" for="dl-logo">Logo</label><p class="hint" id="dl-logoBron" style="margin:0 0 .4rem"></p><input type="file" id="dl-logo" accept="image/png,image/jpeg,image/svg+xml,image/webp"><button type="button" id="dl-logoWeg" class="linkknop" hidden>Logo weghalen</button>' +
+      '<p class="hint">Een eigen logo voor deze poster blijft op je eigen computer en gaat niet naar Mondéall. Geen logo? Dan staat de naam er.</p></div>' +
+      '<div><label class="check" style="margin-top:0"><input type="checkbox" id="dl-spons" checked> Toon "Mede mogelijk gemaakt door"</label><ul class="vermeld" id="dl-vermeldLijst"></ul>' +
+      '<p class="hint">Sponsors en Partners die aan dit Initiatief of aan de sector gekoppeld zijn en betaald hebben. Het platform vult ze zelf in; je kunt ze niet toevoegen.</p></div></div>' +
+      '<div class="posterwrap">' + dlPosterHtml('dl-poster') + '</div>' +
+      '<div class="copy"><button type="button" id="dl-print">Print de poster (A4)</button><button type="button" id="dl-qrKopie" class="tweede">Kopieer QR-code als SVG</button><span id="dl-qrStatus" role="status"></span></div>' +
+      '<p class="hint">De SVG is handig voor het clubblad of een drukker: scherp op elk formaat. Houd de code minimaal 3 cm breed, met witruimte eromheen.</p></div></section></div></div>';
+  }
+  function dlPosterHtml(id) {
+    return '<article class="poster" ' + (id ? 'id="' + id + '" ' : '') + 'aria-label="Voorbeeld van de poster"><div class="p-band"></div><div class="p-body"><div class="p-logo"></div><p class="p-kicker"></p><h3 class="p-titel"></h3>' +
+      '<p class="p-sub">Deel mee vanaf € 1, ook anoniem.</p><div class="p-qr"></div><p class="p-scan">Scan met de camera van je telefoon</p><p class="p-url"></p></div>' +
+      '<div class="p-spons" hidden><p>Mede mogelijk gemaakt door</p><div class="p-spons-rij"></div></div>' +
+      '<div class="p-voet"><svg viewBox="0 0 652 560" aria-hidden="true"><path fill="#009f8c" fill-rule="evenodd" d="' + DL_KLAVER + '"/></svg><p><b>Mondéall</b><span class="p-slot"></span></p></div></article>';
+  }
+  function dlMaakQr(url) {
+    var q = qrcode(0, 'Q'); q.addData(url); q.make();
+    var n = q.getModuleCount(), m = 4, s = n + 2 * m, d = '';
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + m) + ' ' + (r + m) + 'h1v1h-1z';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + s + ' ' + s + '" shape-rendering="crispEdges" role="img" aria-label="QR-code naar ' + iniEsc(url) + '"><rect width="' + s + '" height="' + s + '" fill="#ffffff"/><path fill="#12211d" d="' + d + '"/></svg>';
+  }
+  function dlPas(p) {
+    var body = p.querySelector('.p-body'), tt = p.querySelector('.p-titel'), qr = p.querySelector('.p-qr');
+    var q = 42, f = parseFloat(tt.style.fontSize) || 7.6, guard = 0;
+    qr.style.width = q + 'cqw';
+    while (body.scrollHeight > body.clientHeight + 1 && guard++ < 40) {
+      if (q > 34) { q -= 1; qr.style.width = q + 'cqw'; }
+      else if (f > 5) { f -= .3; tt.style.fontSize = f.toFixed(1) + 'cqw'; }
+      else if (q > 30) { q -= 1; qr.style.width = q + 'cqw'; }
+      else break;
+    }
+  }
+  function dlVulPoster(p, o) {
+    var qs = function (s) { return p.querySelector(s); };
+    qs('.p-band').style.background = o.kleur;
+    qs('.p-kicker').textContent = 'Initiatief van ' + o.club;
+    qs('.p-logo').innerHTML = DL.logoData ? '<img alt="Logo ' + iniEsc(o.club) + '" src="' + iniEsc(DL.logoData) + '">' : '<span class="p-naam">' + iniEsc(o.club) + '</span>';
+    qs('.p-slot').textContent = DL.slotregel;
+    var sp = dlQ('#dl-spons').checked && DL.vermeldingen.length > 0;
+    qs('.p-spons').hidden = !sp;
+    qs('.p-spons-rij').innerHTML = sp ? DL.vermeldingen.slice(0, 3).map(function (v) { return '<div style="height:8.5cqw">' + iniEsc(v.naam) + '</div>'; }).join('') : '';
+    qs('.p-logo').style.height = sp ? '13cqw' : '17cqw';
+    qs('.p-titel').textContent = o.titel;
+    qs('.p-titel').style.fontSize = o.titel.length <= 30 ? '7.6cqw' : o.titel.length <= 50 ? '6.2cqw' : '5.2cqw';
+    qs('.p-url').textContent = o.url.replace(/^https:\/\//, '');
+    qs('.p-qr').innerHTML = DL.qrSvg;
+    dlPas(p);
+  }
+  function dlRender() {
+    if (!window.qrcode) return;
+    var o = dlWaarden(), t = dlTekstKleur(o.kleur), ok = t.r >= 4.5;
+    dlQ('#dl-contrast').innerHTML = 'Tekst ' + t.n + ', contrast ' + t.r.toFixed(2).replace('.', ',') + ' : 1 <span class="' + (ok ? 'ok' : 'nee') + '">' + (ok ? 'voldoet (AA)' : 'te laag, kies een iets donkerder of lichtere tint') + '</span>';
+    var bar = dlQ('#dl-bar'); bar.style.background = o.kleur; bar.style.color = t.c;
+    dlQ('#dl-barZegel').innerHTML = dlMaak('zegel', o);
+    wpEl.querySelectorAll('[data-out]').forEach(function (el) { el.innerHTML = dlMaak(el.getAttribute('data-out'), o); });
+    wpEl.querySelectorAll('.dl [data-out] a, #dl-barZegel a').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+    wpEl.querySelectorAll('.kies').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-dl') === DL.gekozen); });
+    dlQ('#dl-codeKop').textContent = 'Code voor variant ' + { zegel: 1, knop: 2, uitleg: 3, blok: 4, link: 5 }[DL.gekozen];
+    dlQ('#dl-snip').value = '<!-- Deelknop Mondéall: gewone HTML, geen script, geen tracking -->\n' + dlMaak(DL.gekozen, o);
+    dlQ('#dl-gekopieerd').textContent = '';
+    dlQ('#dl-barNaam').textContent = o.club;
+    dlQ('#dl-adresVast').textContent = o.vast.replace(/^https:\/\//, '');
+    dlQ('#dl-adresIni').textContent = o.url.replace(/^https:\/\//, '');
+    dlQ('#dl-vermeldLijst').innerHTML = DL.vermeldingen.map(function (v) { return '<li>' + iniEsc(v.naam) + '<small>' + iniEsc(v.soort) + '</small></li>'; }).join('');
+    dlQ('#dl-logoBron').textContent = DL.logoData ? 'Eigen logo voor deze poster.' : 'Er staat nog geen logo in jullie profiel.';
+    DL.qrSvg = dlMaakQr(o.url);
+    dlVulPoster(dlQ('#dl-poster'), o);
+    dlQ('#dl-qrStatus').textContent = '';
+  }
+  function dlPrint() {
+    var o = dlWaarden();
+    var vel = document.createElement('div');
+    vel.id = 'dl-printvel'; vel.className = 'dl'; vel.setAttribute('aria-hidden', 'true');
+    vel.innerHTML = dlPosterHtml('');
+    document.body.appendChild(vel);
+    dlVulPoster(vel.querySelector('.poster'), o);
+    var st = document.createElement('style');
+    st.textContent = '@page{size:A4;margin:0}@media print{html,body{margin:0;background:#fff}body > *:not(#dl-printvel){display:none!important}#dl-printvel{display:block!important}#dl-printvel .poster{width:210mm;height:296mm;aspect-ratio:auto}}';
+    document.head.appendChild(st);
+    var weg = function () { window.removeEventListener('afterprint', weg); vel.remove(); st.remove(); };
+    window.addEventListener('afterprint', weg);
+    window.print();
+  }
+  function dlLaadQr(klaar) {
+    if (window.qrcode) { klaar(); return; }
+    var s = document.createElement('script'); s.src = 'assets/qr.js'; s.onload = klaar;
+    s.onerror = function () { var m = dlQ('#dl-snip'); if (m) m.value = 'De QR-bibliotheek kon niet worden geladen. Ververs de pagina en probeer het opnieuw.'; };
+    document.head.appendChild(s);
+  }
+  function dlInit() {
+    if (!dlQ('#dl-form')) return;
+    DL.gekozen = 'zegel';
+    dlLaadQr(function () {
+      if (!dlQ('#dl-form')) return;
+      dlRender();
+      var form = dlQ('#dl-form');
+      dlQ('#dl-kleur').addEventListener('input', function (e) { dlQ('#dl-kleurHex').value = e.target.value; dlRender(); });
+      dlQ('#dl-kleurHex').addEventListener('input', function (e) { var v = e.target.value.trim(); if (/^#[0-9a-fA-F]{6}$/.test(v)) { dlQ('#dl-kleur').value = v.toLowerCase(); dlRender(); } });
+      form.addEventListener('input', function (e) { if (e.target.id !== 'dl-kleur' && e.target.id !== 'dl-kleurHex') dlRender(); });
+      wpEl.querySelectorAll('.kies').forEach(function (b) { b.addEventListener('click', function () { DL.gekozen = b.getAttribute('data-dl'); dlRender(); dlQ('#dl-snip').focus(); }); });
+      dlQ('#dl-kopieer').addEventListener('click', function () {
+        var ta = dlQ('#dl-snip'), st = dlQ('#dl-gekopieerd');
+        var terug = function () { ta.select(); try { document.execCommand('copy'); st.textContent = 'Gekopieerd.'; } catch (x) { st.textContent = 'Selecteer de code en kopieer met Ctrl+C.'; } };
+        if (navigator.clipboard) navigator.clipboard.writeText(ta.value).then(function () { st.textContent = 'Gekopieerd.'; }, terug); else terug();
+      });
+      dlQ('.pinputs').addEventListener('input', function (e) { if (e.target.id !== 'dl-logo') dlRender(); });
+      dlQ('#dl-logo').addEventListener('change', function (e) {
+        var f = e.target.files[0]; if (!f) return;
+        if (f.size > 3e6) { alert('Kies een logo kleiner dan 3 MB.'); e.target.value = ''; return; }
+        var r = new FileReader(); r.onload = function () { DL.logoData = r.result; dlQ('#dl-logoWeg').hidden = false; dlRender(); }; r.readAsDataURL(f);
+      });
+      dlQ('#dl-logoWeg').addEventListener('click', function () { DL.logoData = ''; dlQ('#dl-logo').value = ''; dlQ('#dl-logoWeg').hidden = true; dlRender(); });
+      dlQ('#dl-print').addEventListener('click', dlPrint);
+      dlQ('#dl-qrKopie').addEventListener('click', function () {
+        var st = dlQ('#dl-qrStatus');
+        if (navigator.clipboard) navigator.clipboard.writeText(DL.qrSvg).then(function () { st.textContent = 'QR-code gekopieerd.'; }, function () { st.textContent = 'Kopiëren lukte niet in deze browser.'; });
+        else st.textContent = 'Kopiëren lukte niet in deze browser.';
+      });
+      if (document.fonts) document.fonts.ready.then(function () { if (dlQ('#dl-form')) dlRender(); });
+    });
+  }
+  function wpDelen() { DL.logoData = ''; return dlHtml(); }
+
   function wpWerkplaats() {
-    var inIni = ['overzicht', 'live', 'opbouw', 'terugkoppeling'].indexOf(WP.scherm) > -1;
-    var scherm = { overzicht: wpOverzicht, live: wpLive, opbouw: wpOpbouw, organisaties: wpOrganisaties, account: wpAccount, terugkoppeling: wpTerugkoppeling }[WP.scherm]();
+    var inIni = ['overzicht', 'live', 'opbouw', 'terugkoppeling', 'delen'].indexOf(WP.scherm) > -1;
+    var scherm = { overzicht: wpOverzicht, live: wpLive, opbouw: wpOpbouw, organisaties: wpOrganisaties, account: wpAccount, terugkoppeling: wpTerugkoppeling, delen: wpDelen }[WP.scherm]();
     var nav = function (t, arg, actief) { return '<button type="button" data-act="scherm" data-arg="' + arg + '" aria-current="' + (actief ? 'page' : 'false') + '">' + t + '</button>'; };
     return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div>' +
       '<div class="wp-gebruiker"><span>Bas Bakker</span><button type="button" class="wp-tekstknop" data-act="uitloggen">Uitloggen</button></div></div>' +
@@ -2433,6 +2719,7 @@
 
   function wpRender(focus) {
     wpEl.innerHTML = WP.weergave === 'inloggen' ? wpInloggen() : wpWerkplaats();
+    if (WP.weergave === 'werkplaats' && WP.scherm === 'delen') dlInit();
     wpTabs.querySelectorAll('button').forEach(function (b) { if (b.getAttribute('data-w') === WP.weergave) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
     if (focus) { var f = wpEl.querySelector(focus); if (f) { if (!/^(BUTTON|INPUT|A|TEXTAREA)$/.test(f.tagName)) f.setAttribute('tabindex', '-1'); f.focus({ preventScroll: true }); } }
   }

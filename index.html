@@ -340,7 +340,7 @@
   .id-aside { position: sticky; top: 24px; background: #fff; border: 1px solid var(--lijn); border-radius: 16px; padding: 22px; }
   .id-aside h2 { font-size: 1.35rem; }
   .id-aside p { color: var(--gedempt); font-size: 0.97rem; margin: 10px 0 16px; }
-  @media (max-width: 900px) { .id-layout { grid-template-columns: 1fr; gap: 28px; } .id-aside { position: static; } }
+  @media (max-width: 900px) { .id-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; } .id-aside { position: static; } }
 
   /* LINT MET KEUZEMENU'S */
   header .bar-wrap { position: relative; }
@@ -505,6 +505,16 @@
 
   .flow-twee { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
   @media (max-width: 520px) { .flow-twee { grid-template-columns: 1fr; } }
+
+  /* Mobiel: kleine tekst nooit onder 12,5 px, zodat alles leesbaar blijft (de fotograaf blijft klein) */
+  @media (max-width: 720px) {
+    .ini-eyebrow, .ini-sortnote, .if-label, .ini-status, .ini-chip, .ini-plaats, .ini-beg, .flow-label, .status-tag, .wp-tag, .wp-label, .wp-voet, .id-step, .id-note, .id-sponsor-type, .id-bericht .naam, .st-vraag .n, .wp-sub, .wp-meta, .wp-noot, .kruim { font-size: .8rem !important; }
+    h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
+    #initiatief-detail h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+    .hdr-wrap, .wrap { padding-left: 16px; padding-right: 16px; }
+    .id-steps { flex-wrap: wrap; }
+    .id-step { flex: 1 1 45%; border-bottom: 1px solid var(--lijn); }
+  }
 
   /* WERKPLAATS (voorbeeld) */
   #werkplaats { padding: 0; border-bottom: 0; background: var(--achtergrond); min-height: 100vh; }
@@ -1133,6 +1143,12 @@
     color: var(--diep);
   }
   footer p { margin: 0.4em 0; }
+  footer .voet-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; }
+  footer .voet-nav a { color: var(--diep); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+  footer .voet-nav span { color: var(--gedempt); }
+  #juridisch { padding: 48px 0 72px; background: var(--achtergrond); border-bottom: 0; }
+  .jur-tekst h1 { font-family: var(--kop); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.1; letter-spacing: -.02em; color: var(--diep); margin: 0 0 18px; }
+  .jur-tekst p { margin: 0 0 14px; font-size: 1.05rem; line-height: 1.6; max-width: 40em; }
 
   @media (max-width: 720px) {
     section { padding: 56px 0; }
@@ -1324,6 +1340,16 @@
   </div>
 </section>
 
+<section id="juridisch" hidden>
+  <div class="hdr-wrap st-wrap">
+    <a class="id-back" href="#">&larr; Terug naar de beginpagina</a>
+    <div class="jur-tekst">
+      <h1 id="jur-kop" tabindex="-1"></h1>
+      <div id="jur-inhoud"></div>
+    </div>
+  </div>
+</section>
+
 <section id="initiatief-detail" hidden></section>
 
 <section id="initiatieven">
@@ -1452,7 +1478,7 @@
       <span class="flow-label">E-mailadres</span>
       <div class="flow-field">jij@voorbeeld.nl</div>
       <p class="flow-hint">Hierna typ je een code uit deze mail over. Zo log je ook later in: met een code, zonder wachtwoord.</p>
-      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik ga akkoord met de algemene voorwaarden en het privacybeleid van Mondéall.</span></div>
+      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik ga akkoord met de <a href="#/voorwaarden">algemene voorwaarden</a> en het <a href="#/privacy">privacybeleid</a> van Mondéall.</span></div>
       <div class="flow-foot"><button type="button" class="flow-next" data-goto="4">Volgende</button></div>
     </div>
 
@@ -1658,15 +1684,17 @@
       <button type="submit" class="submit-btn">Verstuur</button>
     </form>
 
+    <p class="contact-adres">Dit formulier verzamelt je e-mailadres en, indien opgegeven, je naam en rol, uitsluitend om je op de hoogte te houden over Mondéall. Geen tracking, geen doorverkoop van gegevens. <a href="#/privacy">Privacybeleid</a></p>
     <p class="contact-adres">Of mail direct: <a href="mailto:info@mondeall.eu">info@mondeall.eu</a></p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p><strong>Mondéall i.o.</strong></p>
-    <p>Dit formulier verzamelt je e-mailadres en, indien opgegeven, je naam en rol, uitsluitend om je op de hoogte te houden over Mondéall. Geen tracking, geen doorverkoop van gegevens.</p>
-    <p>© 2026 Mondéall i.o.</p>
+    <p>Copyright © 2026 Mondéall. Alle rechten voorbehouden.</p>
+    <nav class="voet-nav" aria-label="Juridische informatie">
+      <a href="#/voorwaarden">Algemene voorwaarden</a><span aria-hidden="true">|</span><a href="#/privacy">Privacybeleid</a><span aria-hidden="true">|</span><a href="#/cookies">Gebruik van cookies</a>
+    </nav>
   </div>
 </footer>
 
@@ -2823,6 +2851,11 @@
       '</div>';
   }
 
+  var JUR = {
+    '#/voorwaarden': ['Algemene voorwaarden', '<p>Mondéall is nog in opbouw. De algemene voorwaarden worden opgesteld voordat het platform live gaat. Je kunt ze hier lezen voordat je ze hoeft te accepteren.</p>'],
+    '#/privacy': ['Privacybeleid', '<p>Mondéall is nog in opbouw. Wat nu al geldt: je e-mailadres en, als je ze opgeeft, je naam en rol uit het contactformulier gebruiken we uitsluitend om je op de hoogte te houden over Mondéall. Geen tracking, geen doorverkoop van gegevens.</p><p>Het volledige privacybeleid volgt voordat het platform live gaat.</p>'],
+    '#/cookies': ['Gebruik van cookies', '<p>Deze website plaatst geen tracking- of advertentiecookies. Voor het inloggen in de Werkplaats is straks alleen een functionele cookie voor je inlogsessie nodig.</p>']
+  };
   function toonPaginaRoute() {
     var h = location.hash;
     var m = h.match(/^#\/initiatief\/([a-z0-9-]+)$/);
@@ -2831,6 +2864,9 @@
     var stEl = document.getElementById('starten');
     var isSt = h === '#/starten';
     var isWp = h === '#/inloggen' || h === '#/werkplaats';
+    var isJur = !!JUR[h];
+    var jurEl = document.getElementById('juridisch');
+    jurEl.hidden = !isJur;
     var wpSec = document.getElementById('werkplaats');
     stEl.hidden = !isSt;
     wpSec.hidden = !isWp;
@@ -2846,6 +2882,15 @@
       HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
       document.title = (wil === 'werkplaats' ? 'Werkplaats' : 'Inloggen') + ' · Mondéall';
       window.scrollTo(0, 0);
+    } else if (isJur) {
+      detailEl.hidden = true;
+      hero.hidden = true;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
+      document.getElementById('jur-kop').textContent = JUR[h][0];
+      document.getElementById('jur-inhoud').innerHTML = JUR[h][1];
+      document.title = JUR[h][0] + ' · Mondéall';
+      window.scrollTo(0, 0);
+      document.getElementById('jur-kop').focus({ preventScroll: true });
     } else if (isSt) {
       detailEl.hidden = true;
       hero.hidden = true;

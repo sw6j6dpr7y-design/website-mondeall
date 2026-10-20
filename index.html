@@ -343,7 +343,12 @@
   @media (max-width: 900px) { .id-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; } .id-aside { position: static; } }
 
   /* LINT MET KEUZEMENU'S */
-  header .bar-wrap { position: relative; }
+  header { display: contents; }
+  header[hidden] { display: none; }
+  html { scroll-padding-top: 88px; }
+  header .bar-wrap { position: sticky; top: 0; z-index: 1100; background: #fff; transition: transform .25s ease; }
+  header .bar-wrap.weg { transform: translateY(-100%); }
+  @media (prefers-reduced-motion: reduce) { header .bar-wrap { transition: none; } }
   header .hoofdnav { margin-left: 24px; margin-right: auto; }
   header .acties { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
   header .inlog { display: flex; align-items: center; height: 48px; padding: 0 12px; font-family: var(--kop); font-weight: 600; font-size: 1rem; color: var(--diep); text-decoration: none; }
@@ -3006,6 +3011,17 @@
     if (a.hasAttribute('data-login')) { WP.weergave = 'inloggen'; WP.logstap = 'email'; wpRender(); }
     if (a.dataset.rol) document.getElementById('rol').value = a.dataset.rol;
   });
+
+  /* Lint schuift weg bij naar beneden scrollen en komt terug bij omhoog scrollen (blijft staan als een menu open is) */
+  var kopEl = document.querySelector('header .bar-wrap'), kopY = 0;
+  function kopMenuOpen() { return !!document.querySelector('header [data-menu][aria-expanded="true"]'); }
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY || document.documentElement.scrollTop || 0, d = y - kopY;
+    if (Math.abs(d) < 6) return;
+    kopY = y;
+    kopEl.classList.toggle('weg', y > 80 && d > 0 && !kopMenuOpen());
+  }, { passive: true });
+  kopEl.addEventListener('focusin', function () { kopEl.classList.remove('weg'); });
 
   var ST = { 1: '', 2: '', 3: '' };
   function stRender() {

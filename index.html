@@ -116,7 +116,12 @@
   @keyframes naarBol { 0%, 17%, 79%, 100% { opacity: 1; transform: scale(1); } 29%, 67% { opacity: 0; transform: scale(2.2); } }
   @keyframes naarIcoon { 0%, 17%, 79%, 100% { opacity: 0; transform: scale(.55); } 29%, 67% { opacity: 1; transform: scale(1); } }
   header .paused .pop, header .paused .bloom, header .paused .ico { animation-play-state: paused; }
-  header .pauze { font: 600 .95rem/1 var(--kop); color: var(--merktekst); background: none; border: 0; padding: 0 8px; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+  header .pauze { align-self: flex-end; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 50%; background: none; color: #5d6b66; cursor: pointer; }
+  header .pauze:hover { color: var(--diep); background: rgba(0, 82, 72, .08); }
+  header .pauze svg { width: 18px; height: 18px; display: block; fill: currentColor; }
+  header .pauze .speel { display: none; }
+  header .paused .pauze .speel { display: block; }
+  header .paused .pauze .stop { display: none; }
   @media (prefers-reduced-motion: reduce) {
     header .pop { animation: none; }
     header .bloom { display: none; }
@@ -1312,7 +1317,7 @@
           <g transform="translate(120.1 61.5)"><g class="pop" style="--i:11"><path class="bloom" d="M-14.7 3.8 C-15.7 0.4 -15.1 -4.8 -13.3 -7.8 C-11.5 -10.9 -7.3 -13.6 -3.7 -14.5 C-0.2 -15.4 4.8 -15.1 7.9 -13.3 C10.9 -11.5 13.5 -7.3 14.4 -3.7 C15.3 -0.2 15.1 4.9 13.3 7.9 C11.5 10.8 7.0 13.1 3.6 13.8 C0.1 14.6 -4.2 14.0 -7.3 12.3 C-10.3 10.6 -13.7 7.2 -14.7 3.8Z" fill="#9b3b63"/><image class="ico" href="assets/iconen/kleur/sector-11-samenleving.svg" x="-23" y="-23" width="46" height="46"/></g></g>
           <image href="assets/klavertje-mondeall.png" x="114" y="122" width="176" height="150"/>
         </svg>
-        <button class="pauze" type="button" id="pauze">Beweging pauzeren</button>
+        <button class="pauze" type="button" id="pauze" aria-label="Beweging pauzeren" title="Beweging pauzeren"><svg class="stop" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="5" height="16" rx="1.2"/><rect x="14" y="4" width="5" height="16" rx="1.2"/></svg><svg class="speel" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z"/></svg></button>
       </div>
     </div>
   </div>
@@ -1817,7 +1822,9 @@
     if (!knop || !hero) return;
     knop.addEventListener('click', function () {
       var uit = hero.classList.toggle('paused');
-      knop.textContent = uit ? 'Beweging hervatten' : 'Beweging pauzeren';
+      var tekst = uit ? 'Beweging hervatten' : 'Beweging pauzeren';
+      knop.setAttribute('aria-label', tekst);
+      knop.setAttribute('title', tekst);
     });
   })();
 

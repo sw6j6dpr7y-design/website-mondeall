@@ -899,6 +899,9 @@
     margin-bottom: 4px;
   }
   .sector-card .toelichting { font-size: 0.92rem; }
+  .sector-card .label .nr, .sd-nr { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; letter-spacing: .06em; opacity: .9; }
+  .sector-card .label .nr { margin-right: 8px; }
+  .sd-nr { display: block; margin-bottom: 2px; }
 
   /* Sector cards mét foto */
   .sector-card.met-foto {
@@ -1795,7 +1798,7 @@
 
 <script>
   var sectoren = [
-    { nr: "01", naam: "Internationale Hulp", hex: "#2e6eb8", toelichting: "Hulp en samenwerking over grenzen heen.", foto: "assets/fotos/sector-01-internationale-hulp.jpg", credit: "Dalmar Travels / Pexels" },
+    { nr: "01", naam: "Internationale Hulp & Mensenrechten", hex: "#2e6eb8", toelichting: "Hulp en samenwerking over grenzen heen.", foto: "assets/fotos/sector-01-internationale-hulp.jpg", credit: "Dalmar Travels / Pexels" },
     { nr: "02", naam: "Sociale Hulp & Ondersteuning", hex: "#d94a3a", toelichting: "Steun voor mensen die het nodig hebben.", foto: "assets/fotos/sector-02-sociale-hulp.jpg", credit: "Julia M Cameron / Pexels" },
     { nr: "03", naam: "Sport & Recreatie", hex: "#e77123", toelichting: "Verenigingsleven en vrije tijd.", foto: "assets/fotos/sector-03-sport-recreatie.jpg", credit: "Sam Hofman / Pexels" },
     { nr: "04", naam: "Zorg & Welzijn", hex: "#e4a495", toelichting: "Zorg en welzijn dichtbij huis.", foto: "assets/fotos/sector-04-zorg-welzijn.jpg", credit: "Jsme Mila / Pexels" },
@@ -1850,6 +1853,10 @@
     img.alt = '';
     var label = document.createElement('div');
     label.className = 'sd-label';
+    var nrEl = document.createElement('span');
+    nrEl.className = 'sd-nr';
+    nrEl.textContent = 'Sector ' + s.nr;
+    label.appendChild(nrEl);
     var h = document.createElement('h2');
     h.id = 'sd-titel';
     h.textContent = s.naam;
@@ -1903,7 +1910,7 @@
         '<img src="' + s.foto + '" alt="">' +
         '<span class="overlay"></span>' +
         '<span class="label"><span class="dot" style="background:' + s.hex + '"></span>' +
-        '<span class="naam">' + s.naam + '</span></span>' +
+        '<span class="nr">' + s.nr + '</span><span class="naam">' + s.naam + '</span></span>' +
       '</span>' +
       '<span class="body">' +
         '<span class="toelichting">' + s.toelichting + '</span>' +

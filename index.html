@@ -98,12 +98,12 @@
   header .krans svg { width: min(100%, 440px); height: auto; display: block; overflow: visible; }
   header .pop, header .bloom { transform-box: fill-box; transform-origin: center; }
   header .pop { animation: pop .7s cubic-bezier(.2, .7, .3, 1.25) both; animation-delay: calc(var(--i) * .09s + .25s); }
-  /* Eerst verschijnen de gekleurde bolletjes; daarna vloeit elk bolletje over in het icoon van zijn sector */
-  header .bloom { animation: wordt .8s ease forwards; animation-delay: calc(var(--i) * .18s + 2.6s); }
-  header .ico { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.55); animation: verschijn .8s ease forwards; animation-delay: calc(var(--i) * .18s + 2.8s); }
+  /* Eerst verschijnen de gekleurde bolletjes. Daarna vloeit elk bolletje langzaam over in het icoon van zijn sector, en weer terug, steeds opnieuw */
+  header .bloom { animation: naarBol 18s ease-in-out infinite both; animation-delay: calc(var(--i) * .3s + 1.6s); }
+  header .ico { transform-box: fill-box; transform-origin: center; animation: naarIcoon 18s ease-in-out infinite both; animation-delay: calc(var(--i) * .3s + 1.6s); }
   @keyframes pop { from { opacity: 0; transform: scale(.15); } to { opacity: 1; transform: scale(1); } }
-  @keyframes wordt { to { transform: scale(2.2); opacity: 0; } }
-  @keyframes verschijn { to { opacity: 1; transform: scale(1); } }
+  @keyframes naarBol { 0%, 17%, 79%, 100% { opacity: 1; transform: scale(1); } 29%, 67% { opacity: 0; transform: scale(2.2); } }
+  @keyframes naarIcoon { 0%, 17%, 79%, 100% { opacity: 0; transform: scale(.55); } 29%, 67% { opacity: 1; transform: scale(1); } }
   header .paused .pop, header .paused .bloom, header .paused .ico { animation-play-state: paused; }
   header .pauze { font: 600 .95rem/1 var(--kop); color: var(--merktekst); background: none; border: 0; padding: 0 8px; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
   @media (prefers-reduced-motion: reduce) {

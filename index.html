@@ -507,7 +507,11 @@
   @media (max-width: 520px) { .flow-twee { grid-template-columns: 1fr; } }
 
   /* WERKPLAATS (voorbeeld) */
-  #werkplaats .stepper { margin-top: 4px; }
+  #werkplaats { padding: 0; border-bottom: 0; background: var(--achtergrond); min-height: 100vh; }
+  .wp-pagina { max-width: 1180px; margin: 0 auto; padding: 20px 24px 56px; }
+  .wp-pagina .preview-status { margin-bottom: 14px; }
+  @media (max-width: 720px) { .wp-pagina { padding: 12px 12px 32px; } }
+  a.wp-merk { text-decoration: none; }
   .wp-app { border: 1px solid var(--lijn); border-radius: 18px; overflow: hidden; background: var(--achtergrond); }
   .wp-app button:focus-visible, .wp-app a:focus-visible, .wp-app input:focus-visible, .wp-app textarea:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
   .wp-top { background: #fff; border-bottom: 1px solid var(--lijn); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; }
@@ -1152,11 +1156,11 @@
           <li><a href="#initiatieven">Initiatieven</a></li>
           <li><a href="#hoe-het-werkt">Hoe het werkt</a></li>
           <li><a href="#wat-is-mondeall">Over Mondéall</a></li>
-          <li class="alleenmobiel"><a href="#werkplaats" data-login>Inloggen</a></li>
+          <li class="alleenmobiel"><a href="#/inloggen" data-login>Inloggen</a></li>
         </ul>
       </nav>
       <div class="acties">
-        <a class="inlog" href="#werkplaats" data-login>Inloggen</a>
+        <a class="inlog" href="#/inloggen" data-login>Inloggen</a>
         <button type="button" class="mknop rand" data-menu="start" aria-expanded="false" aria-controls="startmenu" aria-label="Start een Initiatief">
           <span class="lang">Start een Initiatief</span><span class="kort" aria-hidden="true">Start</span>
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1214,7 +1218,7 @@
             <span class="t">Bekijk voorbeelden</span>
             <span class="u">Voorzieningen waarvoor verenigingen, stichtingen, scholen en kerken een Initiatief kunnen starten.</span>
           </a>
-          <a class="menukeuze" href="#werkplaats" data-login>
+          <a class="menukeuze" href="#/inloggen" data-login>
             <span class="k">Direct beginnen</span>
             <span class="t">Meld je organisatie aan</span>
             <span class="u">Weet je dat je kunt starten? Maak een account aan en plaats je eerste Initiatief.</span>
@@ -1299,7 +1303,7 @@
 
     <div id="st-uitkomst" class="st-uitkomst" aria-live="polite">
       <div data-res="open"><h2>Beantwoord de drie vragen</h2><p>Dan zie je hier meteen of je bij Mondéall terecht kunt.</p></div>
-      <div data-res="ja" hidden><h2>Jouw organisatie kan starten</h2><p>Maak een account aan en plaats je eerste Initiatief. Je hebt geen wachtwoord nodig: je logt in met een code die we mailen.</p><a class="cta-btn" href="#werkplaats" data-login>Registreren</a></div>
+      <div data-res="ja" hidden><h2>Jouw organisatie kan starten</h2><p>Maak een account aan en plaats je eerste Initiatief. Je hebt geen wachtwoord nodig: je logt in met een code die we mailen.</p><a class="cta-btn" href="#/inloggen" data-login>Registreren</a></div>
       <div data-res="nee1" hidden><h2>Zonder eigen rechtspersoon kun je niet starten</h2><p>Mondéall werkt alleen met verenigingen, stichtingen, kerkgenootschappen en scholen met een bankrekening op eigen naam. Het geld moet bij de organisatie zelf terechtkomen.</p></div>
       <div data-res="twijfel2" hidden><h2>Ga eerst na welke status jullie hebben</h2><p>Vraag het na bij de penningmeester of kijk op de website van de Belastingdienst. Weet je het zeker? Kom dan terug en beantwoord de vraag opnieuw.</p></div>
       <div data-res="nee2" hidden><h2>Dan kun je niet starten bij Mondéall</h2><p>Een organisatie heeft de ANBI-status of SBBI-status nodig, direct of via een steunstichting. Heeft een steunstichting die status wel? Dan kan het Initiatief via die stichting lopen.</p></div>
@@ -1441,7 +1445,7 @@
     </div>
 
     <div class="flow-card" id="flow-3" data-panel="3" hidden>
-      <p class="flow-hint" style="text-align:right;margin:0 0 14px">Heb je al een Mondéall-account? <a href="#werkplaats">Inloggen</a></p>
+      <p class="flow-hint" style="text-align:right;margin:0 0 14px">Heb je al een Mondéall-account? <a href="#/inloggen">Inloggen</a></p>
       <h3>Maak je account aan</h3>
       <p class="flow-hint">Zo kun je straks terugkomen in je werkplaats, verder werken aan je Initiatief en later de terugkoppeling geven.</p>
       <div class="flow-twee"><div><span class="flow-label">Voornaam</span><div class="flow-field">Jan</div></div><div><span class="flow-label">Achternaam</span><div class="flow-field">Jansen</div></div></div>
@@ -1462,15 +1466,10 @@
   </div>
 </section>
 
-<section id="werkplaats">
-  <div class="wrap">
-    <h2>Zo werkt je werkplaats straks</h2>
-    <p>Na het starten van je Initiatief log je in met een code per mail, zonder wachtwoord. In je werkplaats houd je het Initiatief bij, verleng je het met een week en geef je later de terugkoppeling.</p>
+<section id="werkplaats" hidden>
+  <div class="wp-pagina">
     <span class="preview-status">Voorbeeld: het platform wordt gebouwd. Er wordt niets opgeslagen of verstuurd.</span>
-    <div class="stepper" id="wp-tabs" role="group" aria-label="Voorbeeldschermen">
-      <button type="button" data-w="inloggen" aria-current="step">Inloggen</button>
-      <button type="button" data-w="werkplaats">Werkplaats</button>
-    </div>
+    <div id="wp-tabs" hidden></div>
     <div class="wp-app" id="wp-app"></div>
   </div>
 </section>
@@ -2396,7 +2395,7 @@
         '<div class="veld"><label class="wp-label" for="wp-email">E-mailadres</label><input id="wp-email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl"></div>' +
         '<div class="wp-accountchk"><input id="wp-onthoud" type="checkbox"><label for="wp-onthoud">Ingelogd blijven op dit apparaat (30 dagen). Niet aanvinken op een gedeelde computer.</label></div>' +
         '<button type="button" class="wp-knop" data-act="code">Stuur mij een code</button>';
-    return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div></div>' +
+    return '<div class="wp-top"><div class="wp-merkwrap"><a class="wp-merk" href="/" aria-label="Mondéall, naar de beginpagina"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></a><span class="wp-tag">WERKPLAATS</span></div></div>' +
       '<div class="wp-login"><div class="wp-login-tekst"><h3>Naar je werkplaats</h3>' +
       '<p class="lead">Hier volg je je Initiatief, verleng je het en geef je straks de terugkoppeling.</p>' +
       '<p>Je hebt geen wachtwoord nodig. We sturen je bij elke keer inloggen een code van zes cijfers. Werkt je vereniging met een gedeeld mailadres, zoals het secretariaat? Dan kan iedereen met toegang tot die mailbox inloggen.</p>' +
@@ -2717,7 +2716,7 @@
     var inIni = ['overzicht', 'live', 'opbouw', 'terugkoppeling', 'delen'].indexOf(WP.scherm) > -1;
     var scherm = { overzicht: wpOverzicht, live: wpLive, opbouw: wpOpbouw, organisaties: wpOrganisaties, account: wpAccount, terugkoppeling: wpTerugkoppeling, delen: wpDelen }[WP.scherm]();
     var nav = function (t, arg, actief) { return '<button type="button" data-act="scherm" data-arg="' + arg + '" aria-current="' + (actief ? 'page' : 'false') + '">' + t + '</button>'; };
-    return '<div class="wp-top"><div class="wp-merkwrap"><div class="wp-merk"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></div><span class="wp-tag">WERKPLAATS</span></div>' +
+    return '<div class="wp-top"><div class="wp-merkwrap"><a class="wp-merk" href="/" aria-label="Mondéall, naar de beginpagina"><img src="assets/klavertje-mondeall.png" alt="" width="28" height="24"><span>Mondéall</span></a><span class="wp-tag">WERKPLAATS</span></div>' +
       '<div class="wp-gebruiker"><span>Bas Bakker</span><button type="button" class="wp-tekstknop" data-act="uitloggen">Uitloggen</button></div></div>' +
       '<div class="wp-body"><nav class="wp-nav" aria-label="Werkplaats">' + nav('Mijn Initiatieven', 'overzicht', inIni) + nav('Organisaties', 'organisaties', WP.scherm === 'organisaties') + nav('Account', 'account', WP.scherm === 'account') +
       '<a class="wp-nieuw" href="#start-initiatief">Nieuw Initiatief</a></nav><main class="wp-main">' + scherm + '</main></div>';
@@ -2740,8 +2739,8 @@
     var a = b.getAttribute('data-act'), arg = b.getAttribute('data-arg');
     if (a === 'code') { WP.logstap = 'code'; wpRender('#wp-code'); }
     else if (a === 'email') { WP.logstap = 'email'; wpRender('#wp-email'); }
-    else if (a === 'inloggen') { WP.weergave = 'werkplaats'; WP.scherm = 'overzicht'; wpRender('.wp-main h1'); }
-    else if (a === 'uitloggen') { WP.weergave = 'inloggen'; WP.logstap = 'email'; wpRender('#wp-email'); }
+    else if (a === 'inloggen') { WP.weergave = 'werkplaats'; WP.scherm = 'overzicht'; wpRender('.wp-main h1'); location.hash = '#/werkplaats'; }
+    else if (a === 'uitloggen') { WP.weergave = 'inloggen'; WP.logstap = 'email'; wpRender('#wp-email'); location.hash = '#/inloggen'; }
     else if (a === 'scherm') { WP.scherm = arg; wpRender('.wp-main h1, .wp-terug'); }
     else if (a === 'verleng') { WP.verlengingen = Math.min(3, WP.verlengingen + 1); wpRender('[data-act="verleng"], .wp-terug'); }
     else if (a === 'verberg') { WP.verborgen[arg] = !WP.verborgen[arg]; wpRender('[data-act="verberg"][data-arg="' + arg + '"]'); }
@@ -2753,7 +2752,7 @@
   });
   wpRender();
 
-  var HOME_IDS = ['initiatieven', 'start-initiatief', 'werkplaats', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
+  var HOME_IDS = ['initiatieven', 'start-initiatief', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
   var BASIS_TITEL = document.title;
   var detailEl = document.getElementById('initiatief-detail');
 
@@ -2831,8 +2830,23 @@
     var hero = document.getElementById('hero');
     var stEl = document.getElementById('starten');
     var isSt = h === '#/starten';
+    var isWp = h === '#/inloggen' || h === '#/werkplaats';
+    var wpSec = document.getElementById('werkplaats');
     stEl.hidden = !isSt;
-    if (isSt) {
+    wpSec.hidden = !isWp;
+    document.querySelector('header').hidden = isWp;
+    document.querySelector('footer').hidden = isWp;
+    if (isWp) {
+      var wil = h === '#/werkplaats' ? 'werkplaats' : 'inloggen';
+      if (wil === 'werkplaats' && WP.weergave !== 'werkplaats') { history.replaceState(null, '', '#/inloggen'); wil = 'inloggen'; }
+      if (WP.weergave !== wil) { WP.weergave = wil; WP.logstap = 'email'; WP.scherm = 'overzicht'; wpRender(); }
+      detailEl.hidden = true;
+      stEl.hidden = true;
+      hero.hidden = true;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
+      document.title = (wil === 'werkplaats' ? 'Werkplaats' : 'Inloggen') + ' · Mondéall';
+      window.scrollTo(0, 0);
+    } else if (isSt) {
       detailEl.hidden = true;
       hero.hidden = true;
       HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });

@@ -1168,6 +1168,8 @@
   .ini-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px 40px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--lijn); }
   .ini-info h3 { margin: 0 0 6px; font-family: var(--kop); font-size: 1rem; color: var(--diep); }
   .ini-info p { margin: 0; font-size: .95rem; line-height: 1.55; color: var(--gedempt); max-width: 40em; }
+  .subnav { padding-top: 28px; padding-bottom: 0; }
+  #wat-is-mondeall, #hoe-het-werkt, #sectoren, #vertrouwen, #stelsel, #gemeenten, #verhaal { border-bottom: 0; }
   footer .voetkol { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px 40px; padding-bottom: 28px; }
   footer .voetkol h2 { margin: 0 0 4px; font-family: var(--kop); font-size: 1rem; font-weight: 700; color: var(--tekst); }
   footer .voetkol ul { list-style: none; margin: 0; padding: 0; }
@@ -1195,7 +1197,7 @@
 </head>
 <body>
 
-<a class="skip" href="#wat-is-mondeall">Naar de inhoud</a>
+<a class="skip" href="#initiatieven">Naar de inhoud</a>
 
 <header>
   <div class="bar-wrap">
@@ -1207,8 +1209,8 @@
       <nav class="hoofdnav" id="hoofdmenu" aria-label="Hoofdmenu">
         <ul>
           <li><a href="#initiatieven">Initiatieven</a></li>
-          <li><a href="#hoe-het-werkt">Hoe het werkt</a></li>
-          <li><a href="#wat-is-mondeall">Over Mondéall</a></li>
+          <li><a href="#/hoe-het-werkt">Hoe het werkt</a></li>
+          <li><a href="#/wat-is-mondeall">Over Mondéall</a></li>
           <li class="alleenmobiel"><a href="#/inloggen" data-login>Inloggen</a></li>
         </ul>
       </nav>
@@ -1287,7 +1289,7 @@
         <h1 id="kop">Een euro blijft een euro.</h1>
         <p class="lead">Straks deel je vanaf één euro geld met een Initiatief in je eigen buurt. Lokale ondernemers dragen de kosten, dus er gaat niets af.</p>
         <p class="status">Het platform is nog in opbouw. Op deze pagina lees je wat Mondéall wordt.</p>
-        <a class="knop" href="#wat-is-mondeall">Lees wat Mondéall wordt</a>
+        <a class="knop" href="#/wat-is-mondeall">Lees wat Mondéall wordt</a>
       </div>
 
       <div class="krans">
@@ -1386,6 +1388,8 @@
     </div>
   </div>
 </section>
+
+<div id="subnav" class="wrap subnav" hidden><a class="id-back" href="#">&larr; Terug naar de beginpagina</a></div>
 
 <section id="initiatief-detail" hidden></section>
 
@@ -1544,7 +1548,7 @@
     <div class="wp-app" id="wp-app"></div>
   </div>
 </section>
-<section id="wat-is-mondeall">
+<section id="wat-is-mondeall" hidden>
   <div class="wrap">
     <h2>Wat is Mondéall</h2>
     <p>Geld komt niet altijd waar het nodig is. Systemen zijn te complex geworden, te commercieel, of te onpersoonlijk. Mondéall maakt delen weer eenvoudig en menselijk.</p>
@@ -1577,7 +1581,7 @@
   </div>
 </section>
 
-<section id="hoe-het-werkt">
+<section id="hoe-het-werkt" hidden>
   <div class="wrap">
     <h2>Hoe het werkt</h2>
 
@@ -1620,7 +1624,7 @@
   </div>
 </section>
 
-<section id="sectoren">
+<section id="sectoren" hidden>
   <div class="wrap">
     <h2>De twaalf sectoren</h2>
     <p>Elk Initiatief valt binnen één van de twaalf sectoren. Klik op een sector voor de aandachtsgebieden.</p>
@@ -1630,7 +1634,7 @@
 
 <dialog id="sector-dialog" aria-labelledby="sd-titel"></dialog>
 
-<section id="vertrouwen">
+<section id="vertrouwen" hidden>
   <div class="wrap">
     <h2>Vertrouwen en transparantie</h2>
     <div class="vertrouwen-list">
@@ -1650,7 +1654,7 @@
   </div>
 </section>
 
-<section id="stelsel">
+<section id="stelsel" hidden>
   <div class="wrap">
     <h2>Het stelsel</h2>
     <p>Voor wie meer wil weten. Elke entiteit heeft één functie; Stichting Mondéall komt nooit in de giftstroom.</p>
@@ -1671,15 +1675,15 @@
   </div>
 </section>
 
-<section id="gemeenten">
+<section id="gemeenten" hidden>
   <div class="wrap">
     <h2>Voor gemeenten en partners</h2>
-    <p>Mondéall is een aanvulling op bestaande subsidies en regelingen, geen vervanging. Wil je samenwerken? Neem contact op via de contactsectie hieronder.</p>
+    <p>Mondéall is een aanvulling op bestaande subsidies en regelingen, geen vervanging. Wil je samenwerken? Neem contact op via het contactformulier.</p>
     <a class="cta-btn" href="#contact">Neem contact op</a>
   </div>
 </section>
 
-<section id="verhaal">
+<section id="verhaal" hidden>
   <div class="wrap">
     <h2>Verhaal</h2>
     <div class="stappen">
@@ -1746,20 +1750,20 @@
       <nav aria-label="Zo werkt het">
         <h2>Zo werkt het</h2>
         <ul>
-          <li><a href="#wat-is-mondeall">Volwaardig geld delen</a></li>
-          <li><a href="#hoe-het-werkt">Elke euro komt aan</a></li>
-          <li><a href="#sectoren">De twaalf sectoren</a></li>
-          <li><a href="#gemeenten">Kernen en gemeenten</a></li>
+          <li><a href="#/wat-is-mondeall">Volwaardig geld delen</a></li>
+          <li><a href="#/hoe-het-werkt">Elke euro komt aan</a></li>
+          <li><a href="#/sectoren">De twaalf sectoren</a></li>
+          <li><a href="#/gemeenten">Kernen en gemeenten</a></li>
           <li><a href="#/starten">Wie kan Begunstigde zijn</a></li>
         </ul>
       </nav>
       <nav aria-label="Over Mondéall">
         <h2>Over Mondéall</h2>
         <ul>
-          <li><a href="#verhaal">Missie en kernwaarden</a></li>
-          <li><a href="#stelsel">Organisatie en status</a></li>
+          <li><a href="#/verhaal">Missie en kernwaarden</a></li>
+          <li><a href="#/stelsel">Organisatie en status</a></li>
           <li><span class="voet-nog">Onze Sponsors en Partners <em>Binnenkort</em></span></li>
-          <li><a href="#vertrouwen">Verantwoording</a></li>
+          <li><a href="#/vertrouwen">Verantwoording</a></li>
           <li><span class="voet-nog">Nieuws <em>Binnenkort</em></span></li>
         </ul>
       </nav>
@@ -2880,7 +2884,8 @@
   });
   wpRender();
 
-  var HOME_IDS = ['initiatieven', 'start-initiatief', 'wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
+  var HOME_IDS = ['initiatieven', 'start-initiatief', 'contact'];
+  var INFO_IDS = ['wat-is-mondeall', 'hoe-het-werkt', 'sectoren', 'vertrouwen', 'stelsel', 'gemeenten', 'verhaal'];
   var BASIS_TITEL = document.title;
   var detailEl = document.getElementById('initiatief-detail');
 
@@ -2965,6 +2970,9 @@
     var isSt = h === '#/starten';
     var isWp = h === '#/inloggen' || h === '#/werkplaats';
     var isJur = !!JUR[h];
+    var infoId = h.indexOf('#/') === 0 && INFO_IDS.indexOf(h.slice(2)) >= 0 ? h.slice(2) : '';
+    INFO_IDS.forEach(function (id) { document.getElementById(id).hidden = id !== infoId; });
+    document.getElementById('subnav').hidden = !infoId;
     var jurEl = document.getElementById('juridisch');
     jurEl.hidden = !isJur;
     var wpSec = document.getElementById('werkplaats');
@@ -2982,6 +2990,14 @@
       HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
       document.title = (wil === 'werkplaats' ? 'Werkplaats' : 'Inloggen') + ' · Mondéall';
       window.scrollTo(0, 0);
+    } else if (infoId) {
+      detailEl.hidden = true;
+      hero.hidden = true;
+      HOME_IDS.forEach(function (id) { document.getElementById(id).hidden = true; });
+      var ik = document.querySelector('#' + infoId + ' h2');
+      document.title = (ik ? ik.textContent : 'Mondéall') + ' · Mondéall';
+      window.scrollTo(0, 0);
+      if (ik) { ik.setAttribute('tabindex', '-1'); ik.focus({ preventScroll: true }); }
     } else if (isJur) {
       detailEl.hidden = true;
       hero.hidden = true;

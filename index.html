@@ -1138,10 +1138,20 @@
 
   /* FOOTER */
   footer {
-    padding: 48px 0 64px;
+    padding: 40px 0 48px;
     font-size: 0.85rem;
     color: var(--diep);
   }
+  footer { background: #fff; border-top: 1px solid var(--lijn); }
+  footer .voetkol { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px 40px; padding-bottom: 28px; }
+  footer .voetkol h2 { margin: 0 0 4px; font-family: var(--kop); font-size: 1rem; font-weight: 700; color: var(--tekst); }
+  footer .voetkol ul { list-style: none; margin: 0; padding: 0; }
+  footer .voetkol a, footer .voet-nog { font-size: .95rem; line-height: 1.35; min-height: 44px; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0 8px; }
+  footer .voetkol a { color: var(--tekst); text-decoration: underline; text-decoration-color: #b9c3be; text-underline-offset: 3px; }
+  footer .voet-nog { color: var(--gedempt); }
+  footer .voet-nog em { font-style: normal; font-size: .8rem; border: 1px solid var(--lijn); border-radius: 999px; padding: 0 8px; background: var(--achtergrond); }
+  footer .voetlijn { border: 0; border-top: 1px solid var(--lijn); margin: 0 0 14px; }
+  @media (max-width: 720px) { footer .voetkol { grid-template-columns: 1fr 1fr; gap: 20px 16px; } footer .voetkol a, footer .voet-nog { font-size: .9rem; } }
   footer p { margin: 0.4em 0; }
   footer .voet-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px; }
   footer .voet-nav a { color: var(--diep); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
@@ -1691,6 +1701,49 @@
 
 <footer>
   <div class="wrap">
+    <div class="voetkol">
+      <nav aria-label="Meedoen">
+        <h2>Meedoen</h2>
+        <ul>
+          <li><a href="#initiatieven">Deel mee met een Initiatief</a></li>
+          <li><a href="#start-initiatief">Start een Initiatief</a></li>
+          <li><a href="#contact" data-rol="Sponsor">Word Sponsor</a></li>
+          <li><a href="#contact" data-rol="Gemeente">Word Partner</a></li>
+          <li><span class="voet-nog">Geef aan Mondéall <em>Binnenkort</em></span></li>
+        </ul>
+      </nav>
+      <nav aria-label="Zo werkt het">
+        <h2>Zo werkt het</h2>
+        <ul>
+          <li><a href="#wat-is-mondeall">Volwaardig geld delen</a></li>
+          <li><a href="#hoe-het-werkt">Elke euro komt aan</a></li>
+          <li><a href="#sectoren">De twaalf sectoren</a></li>
+          <li><a href="#gemeenten">Kernen en gemeenten</a></li>
+          <li><a href="#/starten">Wie kan Begunstigde zijn</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Over Mondéall">
+        <h2>Over Mondéall</h2>
+        <ul>
+          <li><a href="#verhaal">Missie en kernwaarden</a></li>
+          <li><a href="#stelsel">Organisatie en status</a></li>
+          <li><span class="voet-nog">Onze Sponsors en Partners <em>Binnenkort</em></span></li>
+          <li><a href="#vertrouwen">Verantwoording</a></li>
+          <li><span class="voet-nog">Nieuws <em>Binnenkort</em></span></li>
+        </ul>
+      </nav>
+      <nav aria-label="Hulp en contact">
+        <h2>Hulp en contact</h2>
+        <ul>
+          <li><span class="voet-nog">Veelgestelde vragen <em>Binnenkort</em></span></li>
+          <li><a href="#/inloggen" data-login>Werkplaats voor Starters</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><span class="voet-nog">Een melding doen <em>Binnenkort</em></span></li>
+          <li><span class="voet-nog">Toegankelijkheid <em>Binnenkort</em></span></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class="voetlijn">
     <p>Copyright © 2026 Mondéall. Alle rechten voorbehouden.</p>
     <nav class="voet-nav" aria-label="Juridische informatie">
       <a href="#/voorwaarden">Algemene voorwaarden</a><span aria-hidden="true">|</span><a href="#/privacy">Privacybeleid</a><span aria-hidden="true">|</span><a href="#/cookies">Gebruik van cookies</a>

@@ -2053,9 +2053,8 @@
   ];
   var IF_KERNBUURT = ["0000", "0001", "0002", "0003", "0004", "0005", "0006", "0200", "0201", "0300", "0400", "0401", "0402", "0500", "0501"];
   function ifKern(id) { return IF_KERNEN.filter(function (k) { return k.id === id; })[0]; }
-  var IF_SOORTEN = [];
-  INI_DATA.forEach(function (d) { if (IF_SOORTEN.indexOf(d.soort) < 0) IF_SOORTEN.push(d.soort); });
-  IF_SOORTEN.sort(function (a, b) { return a.localeCompare(b, 'nl'); });
+  /* Alle soorten Begunstigde, ook als er nu geen voorbeeld-Initiatief van die soort is (zelfde keuze als bij Start een Initiatief) */
+  var IF_SOORTEN = ['Vereniging', 'Stichting', 'School', 'Kerk', 'Anders'];
 
   var ifPerKern = {};
   INI_DATA.forEach(function (d) {

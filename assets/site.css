@@ -1226,3 +1226,33 @@ header .hoofdnav ul { gap: 0 22px; }
 header .hoofdnav { margin-left: 8px; }
 header .acties { flex-wrap: nowrap; }
 @media (max-width: 720px) { footer .voetkol { grid-template-columns: 1fr 1fr; } }
+
+/* Tekstpagina's uit inhoud/teksten */
+.tekstpagina .wrap { max-width: 860px; }
+.tekst { margin-top: 20px; }
+.tekst h2 { font-size: 1.5rem; margin: 36px 0 10px; }
+.tekst h3 { font-size: 1.2rem; margin: 28px 0 8px; }
+.tekst h4 { font-size: 1.05rem; margin: 22px 0 6px; }
+.tekst p, .tekst li { font-size: 1.05rem; line-height: 1.65; max-width: 44em; }
+.tekst p { margin: 0 0 14px; }
+.tekst ul, .tekst ol { margin: 0 0 16px; padding-left: 1.3rem; }
+.tekst li { margin-bottom: 6px; }
+.tekst blockquote { margin: 20px 0; padding: 4px 0 4px 18px; border-left: 4px solid var(--merk); color: var(--gedempt); }
+.tekst blockquote p { margin: 0; }
+.tekst hr { border: 0; border-top: 1px solid var(--lijn); margin: 28px 0; }
+.tekst a { color: var(--merktekst); text-underline-offset: 3px; }
+.tekst .cta-btn { color: #fff; text-decoration: none; }
+.tabel { overflow-x: auto; margin: 20px 0; border: 1px solid var(--lijn); border-radius: 12px; background: #fff; }
+.tabel table { border-collapse: collapse; width: 100%; min-width: 520px; }
+.tabel th, .tabel td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--lijn); font-size: .98rem; line-height: 1.5; }
+.tabel th { font-family: var(--kop); font-weight: 700; color: var(--diep); background: var(--nevel); }
+.tabel tr:last-child td { border-bottom: 0; }
+.sponsor-voorbeelden { margin: 24px 0; padding: 18px 20px; background: #fff; border: 1px solid var(--lijn); border-radius: 14px; display: flex; flex-direction: column; gap: 14px; }
+.mailformulier { max-width: 640px; }
+.mailformulier fieldset { border: 0; padding: 0; margin: 20px 0 0; min-width: 0; }
+.mailformulier legend { font-family: var(--kop); font-weight: 600; padding: 0; margin-bottom: 8px; }
+.vinklijst { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 16px; }
+.vink { display: flex; align-items: flex-start; gap: 10px; margin: 0; min-height: 44px; padding: 8px 0; font-family: 'Source Serif 4', serif; font-size: 1rem; font-weight: 400; cursor: pointer; }
+.vink input[type="checkbox"] { width: 22px; height: 22px; margin: 2px 0 0; flex: none; accent-color: var(--diep); padding: 0; }
+.vink.akkoord { margin-top: 18px; }
+.formulier-uitleg { margin: 14px 0 0; font-size: .9rem; color: var(--gedempt); }

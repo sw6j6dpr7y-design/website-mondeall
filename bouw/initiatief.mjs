@@ -7,6 +7,15 @@ export const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;')
 export const tint = (hex, a) => { const n = parseInt(hex.slice(1), 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')'; };
 export const sectorVan = (nr) => sectoren.find((x) => x.nr === nr);
 
+export function sponsorHtml(sp) {
+  return '<div class="id-sponsor">' +
+    '<span class="id-logo" style="background:' + sp.kleur + ';border-radius:' + (sp.vorm === 'vierkant' ? '12px' : '50%') + '">' +
+      '<svg viewBox="0 0 48 48" aria-hidden="true">' + SP_MARK[sp.logo](sp.kleur) + '</svg></span>' +
+    '<span><span class="id-sponsor-naam" style="' + sp.stijl + '">' + esc(sp.naam) + '</span>' +
+    '<span class="id-sponsor-type">' + esc(sp.type) + '</span></span>' +
+  '</div>';
+}
+
 export function initiatiefHtml(d) {
   const s = sectorVan(d.sector);
   const steps = INI_STAPPEN.map((st, i) => '<div class="id-step' + (i === (d.afgesloten ? 3 : 2) ? ' on' : '') + '"><small>' + st[0] + '</small>' + st[1] + '</div>').join('');

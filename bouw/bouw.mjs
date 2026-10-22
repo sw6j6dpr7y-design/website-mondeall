@@ -11,7 +11,9 @@ import { sectoren, AANDACHT } from '../inhoud/data/sectoren.mjs';
 import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
 import { IF_KERNEN, IF_KERNBUURT } from '../inhoud/data/kernen.mjs';
 import { hoofdnav, voetkolommen, onderbalk, auteursrecht } from '../inhoud/navigatie.mjs';
-import { initiatiefHtml, esc, sectorVan } from './initiatief.mjs';
+import { initiatiefHtml, sponsorHtml, esc, sectorVan } from './initiatief.mjs';
+import { leesTeksten, renderMd } from './tekst.mjs';
+import { formulieren } from './formulieren.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -47,6 +49,21 @@ const activa = (rel) => '/' + rel + '?v=' + versie(rel);
 // ---------- stukken ----------
 const stuk = (naam) => lees('inhoud', 'fragmenten', naam + '.html').trimEnd();
 const hero = lees('inhoud', 'sjabloon', 'hero.html').trimEnd();
+
+// ---------- teksten uit inhoud/teksten/*.md ----------
+// Een tekstbestand hoort bij het adres dat de bestandsnaam aangeeft (sponsoren/treden.md = /sponsoren/treden).
+// status: plaatshouder (zichtbare plaatshouder, noindex) | concept (tekst zichtbaar, noindex) | klaar (openbaar en indexeerbaar)
+const teksten = leesTeksten(path.join(ROOT, 'inhoud', 'teksten'));
+for (const [url, t] of teksten) {
+  let p = paginas.find((x) => x.url === url);
+  if (!p) { p = { url, titel: t.meta.titel || url, fase: t.meta.fase || 'B' }; paginas.push(p); }
+  if (t.meta.titel) p.titel = t.meta.titel;
+  if (t.meta.beschrijving) p.beschrijving = t.meta.beschrijving;
+  const status = t.meta.status || 'plaatshouder';
+  p.tekst = t; p.status = status;
+  if (status === 'plaatshouder') { p.plaatshouder = true; p.noindex = true; }
+  else { p.plaatshouder = false; p.hub = false; p.noindex = status !== 'klaar'; }
+}
 
 // ---------- alle pagina's (voor kruimels, hubs en sitemap) ----------
 const alle = [...paginas, ...afgeleidePaginas()];
@@ -210,7 +227,18 @@ for (const p of paginas) {
     schrijf(utf8Url(p.url), schil(p, binnen, { scripts: ['werkplaats'] }));
     continue;
   }
-  if (p.colofon) {
+  if (p.tekst && !p.plaatshouder) {
+    const ctx = {
+      knop: ([doel, label]) => '<p><a class="cta-btn" href="' + esc(doel) + '">' + esc(label || doel) + '</a></p>',
+      formulier: ([naam]) => (formulieren[naam] ? formulieren[naam]() : '<p class="preview-status">Onbekend formulier: ' + esc(naam) + '</p>'),
+      sponsorvoorbeeld: () => '<div class="sponsor-voorbeelden"><p class="ini-eyebrow">Voorbeeld: zo staat een Sponsor bij een Initiatief</p>' +
+        INI_DATA.slice(0, 4).map((d) => sponsorHtml(d.sponsor)).join('') + '<p class="id-note">Voorbeelden van fictieve bedrijven en logo\'s.</p></div>',
+      subpaginas: () => '<ul class="hub-lijst">' + kinderen(p.url).map((k) => '<li><a href="' + k.url + '">' + esc(k.titel) + '</a><span>' + esc(k.beschrijving || '') + '</span></li>').join('') + '</ul>',
+    };
+    binnen = '<section class="tekstpagina"><div class="wrap"><h1 class="pagina-kop">' + esc(p.titel) + '</h1>' +
+      (p.status === 'concept' ? '<span class="preview-status">Conceptversie: de tekst op deze pagina is nog niet definitief.</span>' : '') +
+      '<div class="tekst">' + renderMd(p.tekst.body, ctx) + '</div></div></section>';
+  } else if (p.colofon) {
     binnen = `<section id="juridisch">
   <div class="hdr-wrap st-wrap">
     <div class="jur-tekst">

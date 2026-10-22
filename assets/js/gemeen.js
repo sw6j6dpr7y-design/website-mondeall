@@ -103,3 +103,18 @@
     var doel = m ? '/initiatieven/' + m[1] : kaart[h];
     if (doel) location.replace(doel);
   })();
+
+  /* Formulieren met data-mailto: openen het e-mailprogramma met de ingevulde gegevens (niets wordt opgeslagen of verstuurd door de site) */
+  document.querySelectorAll('form[data-mailto]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var regels = [], groepen = {};
+      f.querySelectorAll('[data-label]').forEach(function (el) {
+        var label = el.getAttribute('data-label');
+        if (el.type === 'checkbox') { if (el.checked) (groepen[label] = groepen[label] || []).push(el.value === 'on' ? 'ja' : el.value); }
+        else if (el.value.trim()) regels.push(label + ': ' + el.value.trim());
+      });
+      Object.keys(groepen).forEach(function (k) { regels.push(k + ': ' + groepen[k].join(', ')); });
+      window.location.href = 'mailto:' + f.getAttribute('data-mailto') + '?subject=' + encodeURIComponent(f.getAttribute('data-onderwerp') || 'Aanmelding') + '&body=' + encodeURIComponent(regels.join('\n'));
+    });
+  });

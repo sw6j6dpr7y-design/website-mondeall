@@ -30,7 +30,7 @@ function splits(ruw) {
   if (m) {
     body = ruw.slice(m[0].length);
     for (const regel of m[1].split('\n')) {
-      const k = regel.match(/^([a-zA-Z]+):\s*(.*)$/);
+      const k = regel.match(/^([a-zA-Z0-9]+):\s*(.*)$/);
       if (k) meta[k[1]] = k[2].replace(/^["']|["']$/g, '').trim();
     }
   }

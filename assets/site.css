@@ -1255,4 +1255,5 @@ header .acties { flex-wrap: nowrap; }
 .vink { display: flex; align-items: flex-start; gap: 10px; margin: 0; min-height: 44px; padding: 8px 0; font-family: 'Source Serif 4', serif; font-size: 1rem; font-weight: 400; cursor: pointer; }
 .vink input[type="checkbox"] { width: 22px; height: 22px; margin: 2px 0 0; flex: none; accent-color: var(--diep); padding: 0; }
 .vink.akkoord { margin-top: 18px; }
-.formulier-uitleg { margin: 14px 0 0; font-size: .9rem; color: var(--gedempt); }
+.formulier-uitleg { margin: 14px 0 0; font-size: .9rem; color: var(--gedempt); }.veldhulp { margin: 6px 0 0; font-size: .9rem; color: var(--gedempt); }
+.mailformulier textarea { width: 100%; box-sizing: border-box; padding: 14px 16px; border: 1.5px solid var(--lijn); border-radius: 10px; font-family: 'Source Serif 4', serif; font-size: 1.05rem; }

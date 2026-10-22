@@ -1,10 +1,39 @@
 ---
-titel: Ondernemer werft ondernemer
-beschrijving: Korte verhalen van Sponsors uit de gemeente.
+titel: Ondernemers vertellen
+h1: Ondernemers vertellen
+titeltag: Ondernemers vertellen · Mondéall
+beschrijving: Lokale ondernemers vertellen waarom ze Sponsor zijn van Mondéall. Echte verhalen, zonder beloning en zonder reclame.
 status: plaatshouder
 ---
+<!-- Fase L: pas vullen als er echte verhalen zijn. In fase I niet publiceren. -->
 
-<!--
-Voor: Sponsor. Fase L (pas vullen als er echte verhalen zijn).
-Wat hier komt (uit de sitemap, 3.7): korte verhalen van Sponsors uit de gemeente, zonder financiele prikkel. Laat de status op plaatshouder tot er echte verhalen zijn.
--->
+Waarom draagt een ondernemer mee aan het geld delen in zijn eigen gemeente? Op deze pagina vertellen Sponsors het zelf.
+
+Elk verhaal is van de ondernemer. Er hangt geen beloning aan, ook niet voor wie een andere ondernemer meebrengt. Een verhaal staat hier alleen met toestemming en zonder reclameboodschap.
+
+<!-- [Hier komen de verhalen. Vul ze alleen met echte verhalen van Sponsors, met hun toestemming. Geen verzonnen citaten en geen voorbeeldverhalen.] -->
+
+# Zo vertellen we jouw verhaal
+
+We stellen je vijf vragen. Jij vertelt, wij schrijven op en jij leest mee voordat het online komt.
+
+1. Wat doet je bedrijf en waar zit het?
+2. Welke plek of vereniging in je omgeving ken je persoonlijk?
+3. Waarom draag je mee?
+4. Wat heb je gezien sinds je meedoet?
+5. Wat zou je een andere ondernemer zeggen?
+
+Dit zijn onze regels:
+
+- Er staat niets in wat jij niet hebt gezegd.
+- Je geeft toestemming vóór publicatie en kunt je verhaal laten weghalen.
+- Geen aanbevelingen van producten en geen vergelijking met andere bedrijven.
+- Geen beloning, korting of voordeel, voor jou niet en niet voor wie een andere ondernemer meebrengt.
+
+<!-- [VOORSTEL: deze regels zijn nieuw en nog niet vastgesteld.] -->
+
+# Vertel het verder
+
+Ken je een ondernemer die dit ook zou willen? Stuur de pagina Sponsor worden door. Je kunt deze tekst gebruiken:
+
+“Ik doe mee aan Mondéall in [gemeente]. Lokale ondernemers dragen de kosten, zodat elke euro die inwoners delen heel aankomt. Kijk eens op [link].”

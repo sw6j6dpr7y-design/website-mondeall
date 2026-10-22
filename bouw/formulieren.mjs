@@ -16,19 +16,21 @@ export const formulieren = {
     const sec = sectoren.map((s) => `<label class="vink"><input type="checkbox" name="sector" value="${esc(s.naam)}" data-label="Sectoren"><span>${esc(s.naam)}</span></label>`).join('\n          ');
     return `<form class="mailformulier" data-mailto="${EMAIL}" data-onderwerp="Aanmelding startgroep Sponsors" aria-labelledby="sponsor-formulier-kop">
       <h2 id="sponsor-formulier-kop">Aanmelden als Sponsor</h2>
-      ${veld('s-bedrijf', 'Naam van het bedrijf', { verplicht: true, auto: 'organization' })}
-      ${veld('s-contact', 'Contactpersoon', { verplicht: true, auto: 'name' })}
+      ${veld('s-bedrijf', 'Naam van je onderneming', { verplicht: true, auto: 'organization' })}
+      ${veld('s-contact', 'Jouw naam', { verplicht: true, auto: 'name' })}
       ${veld('s-email', 'E-mailadres', { type: 'email', verplicht: true, plaats: 'naam@voorbeeld.nl', auto: 'email' })}
-      ${veld('s-telefoon', 'Telefoonnummer', { type: 'tel', auto: 'tel' })}
-      ${veld('s-gemeente', 'Gemeente waar je Sponsor wilt worden', { verplicht: true, plaats: 'Bijvoorbeeld: Lochem' })}
-      ${veld('s-trede', 'Trede of vraag over de treden', { plaats: 'Bijvoorbeeld: welke trede past bij een bedrijf van mijn grootte?' })}
-      <fieldset>
-        <legend>Sectoren waar je graag aan bijdraagt (optioneel)</legend>
-        <div class="vinklijst">
-          ${sec}
-        </div>
-      </fieldset>
-      <label class="vink akkoord"><input type="checkbox" required data-label="Privacyverklaring gelezen"><span>Ik heb de <a href="/privacy">privacyverklaring</a> gelezen. Mijn gegevens worden alleen gebruikt om contact op te nemen over deze aanmelding. *</span></label>
+      <p class="veldhulp">We gebruiken dit alleen voor berichten over de startgroep.</p>
+      <label for="s-gemeente">Gemeente *</label>
+      <select id="s-gemeente" name="s-gemeente" data-label="Gemeente" required><option value="">Kies een gemeente</option><option>Lochem</option><option>Andere gemeente</option></select>
+      <p class="veldhulp">Kies de gemeente waar je zichtbaar wilt zijn. Staat jouw gemeente er niet bij, kies Andere gemeente en vul haar naam hieronder in.</p>
+      ${veld('s-gemeente-naam', 'Naam van je gemeente (bij Andere gemeente)')}
+      <label for="s-trede">Waar heb je belangstelling voor? (optioneel)</label>
+      <select id="s-trede" name="s-trede" data-label="Belangstelling"><option value="">Weet ik nog niet</option><option>Vriend, € 50</option><option>Sponsor, € 175</option><option>Hoofdsponsor, € 750</option><option>Maatwerk, vanaf € 2.000</option></select>
+      <p class="veldhulp">Per jaar, exclusief btw. Je zit nergens aan vast.</p>
+      <label for="s-vraag">Wil je iets kwijt? (optioneel)</label>
+      <textarea id="s-vraag" name="s-vraag" rows="4" data-label="Vraag of wens"></textarea>
+      <p class="veldhulp">Een vraag of een wens.</p>
+      <label class="vink akkoord"><input type="checkbox" required data-label="Toestemming"><span>Ik geef toestemming dat Mondéall mij mailt over de startgroep in mijn gemeente. Ik kan dit altijd intrekken. *</span></label>
       <button type="submit" class="submit-btn">Verstuur per e-mail</button>
       <p class="formulier-uitleg">Dit formulier opent je e-mailprogramma met je gegevens al ingevuld. Je verstuurt het bericht zelf; er wordt niets op de website opgeslagen.</p>
     </form>`;

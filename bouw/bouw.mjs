@@ -58,8 +58,13 @@ for (const [url, t] of teksten) {
   let p = paginas.find((x) => x.url === url);
   if (!p) { p = { url, titel: t.meta.titel || url, fase: t.meta.fase || 'B' }; paginas.push(p); }
   if (t.meta.titel) p.titel = t.meta.titel;
-  if (t.meta.beschrijving) p.beschrijving = t.meta.beschrijving;
   const status = t.meta.status || 'plaatshouder';
+  // Van een plaatshouder komt niets van de tekst naar buiten, ook niet in de beschrijving of de titel van het tabblad
+  if (status !== 'plaatshouder') {
+    if (t.meta.beschrijving) p.beschrijving = t.meta.beschrijving;
+    if (t.meta.h1) p.h1 = t.meta.h1;
+    if (t.meta.titeltag) p.titeltag = t.meta.titeltag;
+  }
   p.tekst = t; p.status = status;
   if (status === 'plaatshouder') { p.plaatshouder = true; p.noindex = true; }
   else { p.plaatshouder = false; p.hub = false; p.noindex = status !== 'klaar'; }
@@ -160,7 +165,7 @@ function jsonLd(p) {
 
 // ---------- paginaschil ----------
 function schil(p, binnen, opties = {}) {
-  const titel = p.url === '/' ? BASISTITEL : p.titel + ' · ' + NAAM;
+  const titel = p.url === '/' ? BASISTITEL : (p.titeltag || p.titel + ' · ' + NAAM);
   const canoniek = DOMEIN + (p.url === '/' ? '/' : p.url);
   const scripts = ['gemeen', ...(p.scripts || []), ...(opties.scripts || [])];
   const metData = scripts.some((s) => ['initiatieven', 'sectoren', 'starten'].includes(s));
@@ -235,7 +240,7 @@ for (const p of paginas) {
         INI_DATA.slice(0, 4).map((d) => sponsorHtml(d.sponsor)).join('') + '<p class="id-note">Voorbeelden van fictieve bedrijven en logo\'s.</p></div>',
       subpaginas: () => '<ul class="hub-lijst">' + kinderen(p.url).map((k) => '<li><a href="' + k.url + '">' + esc(k.titel) + '</a><span>' + esc(k.beschrijving || '') + '</span></li>').join('') + '</ul>',
     };
-    binnen = '<section class="tekstpagina"><div class="wrap"><h1 class="pagina-kop">' + esc(p.titel) + '</h1>' +
+    binnen = '<section class="tekstpagina"><div class="wrap"><h1 class="pagina-kop">' + esc(p.h1 || p.titel) + '</h1>' +
       (p.status === 'concept' ? '<span class="preview-status">Conceptversie: de tekst op deze pagina is nog niet definitief.</span>' : '') +
       '<div class="tekst">' + renderMd(p.tekst.body, ctx) + '</div></div></section>';
   } else if (p.colofon) {

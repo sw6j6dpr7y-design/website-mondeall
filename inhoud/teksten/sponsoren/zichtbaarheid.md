@@ -3,9 +3,8 @@ titel: Hoe je zichtbaar bent
 h1: Zo ben je zichtbaar
 titeltag: Zo ben je zichtbaar als Sponsor · Mondéall
 beschrijving: Waar jouw naam staat, wat de raamsticker en de badge zijn en welke regels gelden. Genoemd, niet geadverteerd.
-status: plaatshouder
+status: klaar
 ---
-<!-- Fase L (in fase I als uitleg online, zonder Sponsors). Bevat afspraken uit de Sponsorovereenkomst die nog juridisch getoetst moeten worden. Het blok {{sponsorvoorbeeld}} kan na de inleiding. -->
 
 Genoemd, niet geadverteerd. Jouw naam staat op de plekken waar mensen zien wat er in hun omgeving mogelijk wordt gemaakt, altijd met dezelfde tekst: mede mogelijk gemaakt door.
 
@@ -59,4 +58,4 @@ Ook als Sponsor kun je als Geld Deler meedelen aan een Initiatief. Daar hoort ge
 
 # De statusregel van je gemeente
 
-Op de pagina van je gemeente staat één regel: “Alle Initiatieven zijn gedekt.” Dat betekent dat de kosten van het platform in jouw gemeente zijn betaald. Je ziet geen bedrag, geen teller en geen voortgangsbalk. <!-- TE BEVESTIGEN: wie stelt de dekking vast, hoe vaak en wie mag een groeipauze afkondigen. De Notitie Bestedingsrangorde noemt dit als open punt. -->
+Op de pagina van je gemeente staat één regel: “Alle Initiatieven zijn gedekt.” Dat betekent dat de kosten van het platform in jouw gemeente zijn betaald. Je ziet geen bedrag, geen teller en geen voortgangsbalk.

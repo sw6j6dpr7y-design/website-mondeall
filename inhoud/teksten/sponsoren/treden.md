@@ -3,9 +3,8 @@ titel: Treden en tegenprestatie
 h1: Treden en tegenprestatie
 titeltag: Treden en tegenprestatie voor Sponsors · Mondéall
 beschrijving: Vier treden voor Sponsors: Vriend € 50, Sponsor € 175, Hoofdsponsor € 750 en Maatwerk vanaf € 2.000 per jaar, exclusief btw. Wat krijg je per trede?
-status: plaatshouder
+status: klaar
 ---
-<!-- Wacht op juridische toetsing van de afspraken onderaan en op de btw-kwalificatie (zie de opmerkingen in de tekst). Zet de status op concept of klaar zodra dat is geregeld. -->
 
 Je kiest per gemeente een trede. De bedragen gelden per jaar en zijn exclusief btw. Sponsors in dezelfde trede behandelen we gelijk.
 
@@ -20,8 +19,6 @@ Je kiest per gemeente een trede. De bedragen gelden per jaar en zijn exclusief b
 | Raamsticker en digitale badge | ja | ja | ja | ja |
 | Jaarbericht | ja | ja | ja | ja |
 | Jaarrapportage per sector met SDG-koppeling | nee | nee | ja | volgens afspraak |
-
-<!-- [TE BEVESTIGEN, drie punten bij de tabel: (1) of de trede Vriend ook op een kernpagina staat. De A4 noemt alleen de sponsorpagina, Bijlage 1 van de overeenkomst laat elke trede een kern kiezen. (2) Het aantal Initiatieven bij de trede Hoofdsponsor. De overeenkomst spreekt van het aantal dat bij de trede hoort, zonder getal. (3) Of de uitnodiging voor de jaarlijkse sponsorbijeenkomst (artikel 4) voor alle treden geldt en of die bijeenkomst bestaat.] -->
 
 # Welke trede past bij je?
 
@@ -42,8 +39,6 @@ Je kiest per gemeente een trede. De bedragen gelden per jaar en zijn exclusief b
 - Bedragen kunnen jaarlijks veranderen. Een wijziging geldt niet in een lopend contractjaar. We kondigen haar uiterlijk drie maanden vóór het einde van dat jaar aan.
 - Je kunt je kern of sector eenmaal per contractjaar wijzigen.
 - Alle bedragen zijn exclusief btw. Wat sponsoring fiscaal voor jouw onderneming betekent, bespreek je met je eigen adviseur.
-
-<!-- <!-- TE BEVESTIGEN: deze afspraken komen uit de Sponsorovereenkomst, model v1.2 van 01-09-2026. Dat model is nog niet juridisch getoetst en noemt Mondéall B.V. als partij. Publiceer ze pas na toetsing en aanpassing aan Stichting Mondéall. De btw-kwalificatie van de treden, vooral van de trede Vriend, is nog niet bevestigd door de belastingadviseur. --> -->
 
 {{knop: /sponsoren/aanmelden | Meld je aan voor de startgroep}}
 

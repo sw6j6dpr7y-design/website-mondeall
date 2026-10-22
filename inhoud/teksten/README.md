@@ -62,6 +62,10 @@ Zet een blok op een eigen regel:
 - Noem LustrumMoment nergens. Stichting Naberschap alleen op `/over/stelsel`, met één zin.
 - Bedragen en voorwaarden alleen overnemen uit goedgekeurde bronnen (Sponsorovereenkomst, Stelselherziening). Twijfel je, zet dan een opmerking tussen `<!--` en `-->` en laat de status op `plaatshouder`.
 
+## Open punten
+
+Openstaande vragen en besluiten staan niet in de pagina's maar centraal in `inhoud/open-punten.md`. Zet in een tekst geen markering als [TE BEVESTIGEN]: een opmerking tussen `<!--` en `-->` kan, maar de lijst in `open-punten.md` is leidend.
+
 ## Wat ik daarna doe
 
 Claude Code bouwt de site (`node bouw/bouw.mjs`), controleert de pagina's en publiceert ze. Het volstaat om de bestanden hier aan te passen.

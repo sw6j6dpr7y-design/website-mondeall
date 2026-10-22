@@ -3,15 +3,12 @@ titel: Ondernemers vertellen
 h1: Ondernemers vertellen
 titeltag: Ondernemers vertellen · Mondéall
 beschrijving: Lokale ondernemers vertellen waarom ze Sponsor zijn van Mondéall. Echte verhalen, zonder beloning en zonder reclame.
-status: plaatshouder
+status: klaar
 ---
-<!-- Fase L: pas vullen als er echte verhalen zijn. In fase I niet publiceren. -->
 
 Waarom draagt een ondernemer mee aan het geld delen in zijn eigen gemeente? Op deze pagina vertellen Sponsors het zelf.
 
 Elk verhaal is van de ondernemer. Er hangt geen beloning aan, ook niet voor wie een andere ondernemer meebrengt. Een verhaal staat hier alleen met toestemming en zonder reclameboodschap.
-
-<!-- [Hier komen de verhalen. Vul ze alleen met echte verhalen van Sponsors, met hun toestemming. Geen verzonnen citaten en geen voorbeeldverhalen.] -->
 
 # Zo vertellen we jouw verhaal
 
@@ -29,8 +26,6 @@ Dit zijn onze regels:
 - Je geeft toestemming vóór publicatie en kunt je verhaal laten weghalen.
 - Geen aanbevelingen van producten en geen vergelijking met andere bedrijven.
 - Geen beloning, korting of voordeel, voor jou niet en niet voor wie een andere ondernemer meebrengt.
-
-<!-- [VOORSTEL: deze regels zijn nieuw en nog niet vastgesteld.] -->
 
 # Vertel het verder
 

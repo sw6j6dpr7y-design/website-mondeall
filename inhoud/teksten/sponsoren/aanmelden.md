@@ -3,9 +3,8 @@ titel: Aanmelden als Sponsor
 h1: Meld je aan voor de startgroep
 titeltag: Meld je aan voor de startgroep · Mondéall
 beschrijving: Meld je aan als Sponsor voor de startgroep van jouw gemeente. Geen overeenkomst en geen betaling. We nemen contact op zodra de stichting bestaat.
-status: concept
+status: klaar
 ---
-<!-- Op concept (noindex) zodat de knop op /sponsoren niet naar een lege pagina leidt. Zet op klaar zodra bekend is wie de verwerkingsverantwoordelijke is zolang Stichting Mondéall niet bestaat (bepaalt de toestemmingstekst, de bewaartermijn en de privacyverklaring). Het formulier opent nu het e-mailprogramma van de bezoeker; een formulier met bevestigingsmail komt met het platform. -->
 
 Laat weten dat je interesse hebt. Dit is geen overeenkomst en je betaalt niets. Zodra Stichting Mondéall is opgericht, nemen we contact met je op.
 

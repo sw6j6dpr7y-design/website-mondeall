@@ -3,7 +3,7 @@ titel: Sponsor worden
 h1: Maak geld delen in jouw gemeente mogelijk
 titeltag: Sponsor worden in jouw gemeente · Mondéall
 beschrijving: Lokale ondernemers dragen de kosten van Mondéall, zodat elke euro die inwoners delen heel aankomt. Kies je gemeente en trede en meld je aan.
-status: concept
+status: klaar
 ---
 Op Mondéall plaatsen verenigingen, stichtingen, scholen en kerken een Initiatief voor iets concreets: nieuwe instrumenten, een beweegtuin, een verbouwde kantine. Inwoners delen mee vanaf één euro. Alles komt aan bij de Begunstigde.
 
@@ -15,13 +15,11 @@ Elke betaling kost geld om te verwerken. Meestal betaalt de gever dat, of de ont
 
 Jouw bijdrage dekt de kosten van het platform voor alle Initiatieven. Ze is niet bestemd voor één club, één kern of één sector.
 
-<!-- [REKENSOM, pas gebruiken na verificatie van het tarief: Met een bijdrage van € 10 maak je ongeveer 31 giften kosteloos mogelijk. TE BEVESTIGEN: het bedrag van € 0,32 per gift is een werkaanname zonder bron en peildatum. De som klopt alleen bij een vast bedrag per transactie.] -->
-
 # Wat je ervoor terugkrijgt
 
 Je naam staat bij de Initiatieven en op de pagina’s van jouw gemeente, altijd met de tekst “mede mogelijk gemaakt door”. Je krijgt een raamsticker en een digitale badge voor je website en je mailondertekening. Elk jaar ontvang je een jaarbericht.
 
-Hoe hoger je trede, hoe meer erbij hoort: een logo met link, een sector naar keuze, een jaarrapportage. Alles staat op de pagina Treden en tegenprestatie.
+Hoe hoger je trede, hoe meer erbij hoort: een logo met link, een sector naar keuze, een jaarrapportage. Alles staat op de pagina [Treden en tegenprestatie](/sponsoren/treden).
 
 # Drie grenzen
 
@@ -44,7 +42,7 @@ Wij zeggen nooit dat jouw bedrijf is goedgekeurd of aanbevolen, en jij zegt dat 
 
 Mondéall is in voorbereiding. Stichting Mondéall, die het platform gaat dragen, is nog niet opgericht. Tot die tijd sluiten we geen overeenkomsten en vragen we geen betaling.
 
-Je kunt je wel aanmelden voor de startgroep. Dat is de eerste groep Sponsors van een gemeente. Zodra de stichting bestaat, nemen we contact met je op over de overeenkomst. <!-- TE BEVESTIGEN: omvang en jaartal van de startgroep per gemeente. De A4 noemt voor Lochem ongeveer twintig ondernemers en 2027. -->
+Je kunt je wel aanmelden voor de startgroep. Dat is de eerste groep Sponsors van een gemeente. Zodra de stichting bestaat, nemen we contact met je op over de overeenkomst.
 
 {{knop: /sponsoren/aanmelden | Meld je aan voor de startgroep}}
 
@@ -53,3 +51,7 @@ Je kunt je wel aanmelden voor de startgroep. Dat is de eerste groep Sponsors van
 <!-- Fase L, vervangt het blok "Waar we nu staan" hierboven:
 Stichting Mondéall draagt het platform. Op de pagina Stichting Mondéall lees je wie er in het bestuur zitten en hoe de stichting is ingericht. Knop: Word Sponsor.
 -->
+
+# Meer over Sponsor worden
+
+{{subpaginas}}

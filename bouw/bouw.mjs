@@ -5,11 +5,12 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-import { DOMEIN, NAAM, BASISTITEL, BESCHRIJVING, DEELBEELD } from '../inhoud/config.mjs';
+import { DOMEIN, NAAM, BASISTITEL, BESCHRIJVING, DEELBEELD, EMAIL } from '../inhoud/config.mjs';
 import { paginas, afgeleidePaginas, sectorPad, tekstVolgtZin } from '../inhoud/paginas.mjs';
 import { sectoren, AANDACHT } from '../inhoud/data/sectoren.mjs';
 import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
 import { IF_KERNEN, IF_KERNBUURT } from '../inhoud/data/kernen.mjs';
+import { hoofdnav, voetkolommen, onderbalk, auteursrecht } from '../inhoud/navigatie.mjs';
 import { initiatiefHtml, esc, sectorVan } from './initiatief.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -45,15 +46,69 @@ const activa = (rel) => '/' + rel + '?v=' + versie(rel);
 
 // ---------- stukken ----------
 const stuk = (naam) => lees('inhoud', 'fragmenten', naam + '.html').trimEnd();
-const lint = lees('inhoud', 'sjabloon', 'lint.html').trimEnd();
 const hero = lees('inhoud', 'sjabloon', 'hero.html').trimEnd();
-const voet = lees('inhoud', 'sjabloon', 'footer.html').trimEnd();
 
 // ---------- alle pagina's (voor kruimels, hubs en sitemap) ----------
 const alle = [...paginas, ...afgeleidePaginas()];
 const perUrl = new Map(alle.map((p) => [p.url, p]));
+const bestaat = (u) => perUrl.has(u);
+const zoekIcoon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>';
+const zoekForm = (id, klasse) => '<form class="zoek ' + klasse + '" role="search" action="/initiatieven" method="get"><label class="verborgen" for="' + id + '">Zoek je dorp of wijk</label><input id="' + id + '" type="search" name="q" placeholder="Zoek je dorp of wijk" autocomplete="off" maxlength="80"><button type="submit" aria-label="Zoeken">' + zoekIcoon + '</button></form>';
+const actief = (p, href) => p.url === href || p.url.startsWith(href + '/');
+
+function lintHtml(p) {
+  const links = hoofdnav.map(([t, h]) => '<li><a href="' + h + '"' + (actief(p, h) ? ' aria-current="page"' : '') + '>' + esc(t) + '</a></li>').join('\n          ');
+  return `  <div class="bar-wrap">
+    <div class="hdr-wrap bar">
+      <a class="merk" href="/" aria-label="Mondéall, naar de beginpagina">
+        <img src="/assets/klavertje-mondeall.png" alt="" width="42" height="37">
+        <span>Mondéall</span>
+      </a>
+      <nav class="hoofdnav" id="hoofdmenu" aria-label="Hoofdmenu">
+        <ul>
+          ${links}
+          <li class="alleenmobiel"><a href="/inloggen">Inloggen</a></li>
+        </ul>
+        ${zoekForm('zoek-m', 'alleenmobiel')}
+      </nav>
+      <div class="acties">
+        ${zoekForm('zoek-d', '')}
+        <a class="inlog" href="/inloggen">Inloggen</a>
+        <button type="button" class="burger" data-menu="nav" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 6h12M4 10h12M4 14h12" stroke="#005248" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>`;
+}
+
+const linkOfBinnenkort = ([t, h]) => bestaat(h) ? '<li><a href="' + h + '">' + esc(t) + '</a></li>' : '<li><span class="voet-nog">' + esc(t) + ' <em>Binnenkort</em></span></li>';
+function voetHtml() {
+  const kolommen = voetkolommen.map(([kop, items]) => '      <nav aria-label="' + esc(kop) + '">\n        <h2>' + esc(kop) + '</h2>\n        <ul>\n          ' + items.map(linkOfBinnenkort).join('\n          ') + '\n        </ul>\n      </nav>').join('\n');
+  const onder = onderbalk.map(([t, h]) => '<a href="' + h + '">' + esc(t) + '</a>').join('<span aria-hidden="true">|</span>');
+  return `<footer>
+  <div class="wrap">
+    <div class="voetkol">
+${kolommen}
+    </div>
+    <hr class="voetlijn">
+    <div class="voet">
+      <div>
+        <p>${esc(auteursrecht)}</p>
+        <nav class="voet-nav" aria-label="Juridische informatie">
+          ${onder}
+        </nav>
+      </div>
+      <nav class="voetsoc" aria-label="Mondéall op sociale media">
+        <a href="https://www.linkedin.com/company/mond%C3%A9all/" target="_blank" rel="me noopener" aria-label="Mondéall op LinkedIn (opent in een nieuw tabblad)" title="Mondéall op LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3.5" fill="#005248"/><circle cx="7.6" cy="7.4" r="1.7" fill="#ffffff"/><rect x="6.1" y="10" width="3" height="8" fill="#ffffff"/><path d="M11 10h2.9v1.3c.5-.9 1.6-1.5 2.9-1.5 2.3 0 3.2 1.4 3.2 3.9V18h-3v-3.8c0-1.1-.3-1.9-1.4-1.9s-1.6.8-1.6 1.9V18h-3z" fill="#ffffff"/></svg></a>
+      </nav>
+    </div>
+  </div>
+</footer>`;
+}
+
 const segmenten = (u) => u.split('/').filter(Boolean).length;
-const kinderen = (url) => alle.filter((p) => p.url.startsWith(url + '/') && segmenten(p.url) === segmenten(url) + 1 && !p.noindex && !p.initiatief && !p.sector);
+const kinderen = (url) => alle.filter((p) => p.url.startsWith(url + '/') && segmenten(p.url) === segmenten(url) + 1 && !p.werkplaats && !p.initiatief && !p.sector);
 
 function ouders(url) {
   const delen = url.split('/').filter(Boolean);
@@ -123,11 +178,11 @@ ${p.noindex ? '<meta name="robots" content="noindex">\n' : ''}<meta property="og
 ${jsonLd(p)}
 </head>
 <body>
-${kaal ? '' : '<a class="skip" href="#inhoud">Naar de inhoud</a>\n\n<header>\n' + lint + (p.hero ? '\n\n' + hero : '') + '\n</header>\n'}
+${kaal ? '' : '<a class="skip" href="#inhoud">Naar de inhoud</a>\n\n<header>\n' + lintHtml(p) + (p.hero ? '\n\n' + hero : '') + '\n</header>\n'}
 ${kaal ? '' : kruimels(p) + '\n'}<main id="inhoud">
 ${binnen}
 </main>
-${kaal ? '' : '\n' + voet + '\n'}
+${kaal ? '' : '\n' + voetHtml() + '\n'}
 ${js}
 </body>
 </html>
@@ -155,7 +210,23 @@ for (const p of paginas) {
     schrijf(utf8Url(p.url), schil(p, binnen, { scripts: ['werkplaats'] }));
     continue;
   }
-  if (p.juridisch) {
+  if (p.colofon) {
+    binnen = `<section id="juridisch">
+  <div class="hdr-wrap st-wrap">
+    <div class="jur-tekst">
+      <h1>Colofon</h1>
+      <dl class="colofon">
+        <dt>Naam</dt><dd>Stichting Mondéall (in oprichting)</dd>
+        <dt>E-mail</dt><dd><a href="mailto:${EMAIL}">${EMAIL}</a></dd>
+        <dt>KvK-nummer</dt><dd>volgt na de oprichting</dd>
+        <dt>RSIN</dt><dd>volgt na de oprichting</dd>
+        <dt>Btw-nummer</dt><dd>volgt na de oprichting</dd>
+        <dt>Adres</dt><dd>volgt na de oprichting</dd>
+      </dl>
+    </div>
+  </div>
+</section>`;
+  } else if (p.juridisch) {
     binnen = `<section id="juridisch">
   <div class="hdr-wrap st-wrap">
     <div class="jur-tekst">
@@ -164,15 +235,15 @@ for (const p of paginas) {
     </div>
   </div>
 </section>`;
-  } else if (p.hub) {
+  } else if (p.hub || p.plaatshouder) {
     const lijst = kinderen(p.url);
     binnen = `<section class="hub">
   <div class="wrap">
     <h1 class="pagina-kop">${esc(p.titel)}</h1>
-    <p>${esc(p.beschrijving)}</p>
-    <ul class="hub-lijst">
+    ${p.plaatshouder ? '' : '<p>' + esc(p.beschrijving) + '</p>'}
+    ${lijst.length ? '<ul class="hub-lijst">' : ''}
 ${lijst.map((k) => `      <li><a href="${k.url}">${esc(k.titel)}</a><span>${esc(k.beschrijving)}</span></li>`).join('\n')}
-    </ul>
+    ${lijst.length ? '</ul>' : ''}
     <span class="preview-status">${tekstVolgtZin}</span>
   </div>
 </section>`;
@@ -222,16 +293,16 @@ for (const s of sectoren) {
 
 // ---------- /sitemap, sitemap.xml, robots.txt, 404 ----------
 const groepen = [
-  ['Initiatieven', '/initiatieven'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'],
-  ['Over Mondéall', '/over'], ['Partners', '/partners'], ['Hulp en contact', '/contact'], ['Juridisch', null],
+  ['Initiatieven', '/initiatieven'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'], ['Sponsoren', '/sponsoren'],
+  ['Over Mondéall', '/over'], ['Partners', '/partners'], ['Hulp', '/hulp'], ['Contact en melden', null],
 ];
-const juridischeUrls = ['/voorwaarden', '/privacy', '/cookies'];
+const juridischeUrls = ['/contact', '/melden', '/klachten', '/toegankelijkheid', '/kernen', '/colofon', '/voorwaarden', '/voorwaarden/sponsoren', '/privacy', '/cookies'];
 function sitemapHtml() {
   const lijst = (urls) => '<ul>' + urls.map((p) => '<li><a href="' + p.url + '">' + esc(p.titel) + '</a></li>').join('') + '</ul>';
   const blok = ([titel, kop]) => {
     const leden = kop === null ? alle.filter((p) => juridischeUrls.includes(p.url))
       : alle.filter((p) => p.url === kop || p.url.startsWith(kop + '/'));
-    return '<section class="sitemap-groep"><h2>' + esc(titel) + '</h2>' + lijst(leden.filter((p) => !p.noindex)) + '</section>';
+    return '<section class="sitemap-groep"><h2>' + esc(titel) + '</h2>' + lijst(leden.filter((p) => !p.werkplaats)) + '</section>';
   };
   return '<section id="sitemap"><div class="wrap"><h1 class="pagina-kop">Sitemap</h1><p>Alle pagina\'s van mondeall.eu.</p><p><a href="/">Home</a></p>' + groepen.map(blok).join('') + '</div></section>';
 }

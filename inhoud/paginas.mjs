@@ -51,3 +51,47 @@ export function afgeleidePaginas() {
   for (const d of INI_DATA) lijst.push({ url: '/initiatieven/' + d.slug, titel: d.titel, beschrijving: d.vz, fase: 'L', initiatief: d });
   return lijst;
 }
+
+// Pagina's uit de sitemap waarvan de tekst nog ontbreekt: zichtbare plaatshouders, noindex en niet in sitemap.xml.
+// (Regel uit de sitemap: zonder teksten blijft een pagina een plaatshouder, nooit een verzonnen tekst.)
+const ph = (url, titel, extra = {}) => ({ url, titel, beschrijving: titel + '. Deze pagina wordt nog uitgewerkt.', plaatshouder: true, noindex: true, fase: 'B', ...extra });
+export const plaatshouders = [
+  ph('/hoe-het-werkt/meedelen', 'Zo deel je mee'),
+  ph('/hoe-het-werkt/geldstromen', 'Hoe het geld loopt'),
+  ph('/hoe-het-werkt/een-euro-blijft-een-euro', 'Een euro blijft een euro'),
+  ph('/hoe-het-werkt/wie-kan-ontvangen', 'Wie kan ontvangen'),
+  ph('/hoe-het-werkt/spelregels', 'Spelregels'),
+  ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),
+  ph('/starten/voorbeelden', 'Voorbeelden per sector'),
+  ph('/starten/deelpakket', 'Het deelpakket'),
+  ph('/starten/verantwoorden', 'Verantwoorden'),
+  ph('/starten/startgids', 'Startgids'),
+  ph('/starten/aanmelden', 'Aanmelden'),
+  ph('/sponsoren', 'Sponsor worden', { hub: true }),
+  ph('/sponsoren/treden', 'Treden en tegenprestatie'),
+  ph('/sponsoren/zichtbaarheid', 'Hoe je zichtbaar bent'),
+  ph('/sponsoren/ondernemers-vertellen', 'Ondernemer werft ondernemer'),
+  ph('/sponsoren/aanmelden', 'Aanmelden als Sponsor'),
+  ph('/partners/fondsen', 'Fondsen'),
+  ph('/partners/strategisch', 'Strategische partners'),
+  ph('/partners/contact', 'Gesprek aanvragen'),
+  ph('/over/stichting', 'Stichting Mondéall'),
+  ph('/over/bestuur', 'Bestuur en governance'),
+  ph('/over/cijfers', 'Cijfers'),
+  ph('/over/jaarverslag', 'Jaarverslag'),
+  ph('/over/waar-we-staan', 'Waar we staan'),
+  ph('/over/pers', 'Pers'),
+  ph('/hulp', 'Veelgestelde vragen', { hub: true }),
+  ph('/hulp/geld-delers', 'Vragen van Geld Delers'),
+  ph('/hulp/starters', 'Vragen van Starters'),
+  ph('/hulp/sponsoren', 'Vragen van Sponsors'),
+  ph('/hulp/partners', 'Vragen van Partners'),
+  ph('/melden', 'Iets niet pluis'),
+  ph('/klachten', 'Klachtenregeling'),
+  ph('/voorwaarden/sponsoren', 'Algemene voorwaarden Sponsors'),
+  ph('/toegankelijkheid', 'Toegankelijkheid'),
+  ph('/kernen', 'Zoek je kern'),
+];
+
+paginas.push(...plaatshouders);
+paginas.push({ url: '/colofon', titel: 'Colofon', beschrijving: 'Wie achter Mondéall zit.', colofon: true, fase: 'I' });

@@ -1,12 +1,19 @@
-# website-mondeall
+﻿# Website mondeall.eu
 
-Bron voor mondeall.eu — een statische informatie- en merkpagina voor Mondéall, gebouwd volgens de vastgestelde huisstijl (kleuren, typografie, sectorindeling).
+De site wordt gebouwd met een klein bouwscript zonder externe pakketten (Node.js 20 of hoger).
 
-## Structuur
+- `inhoud/paginas.mjs`: de paginabron. Eén lijst voedt de pagina's, de kruimels, `/sitemap` en `/sitemap.xml`.
+- `inhoud/config.mjs`: het domein en vaste gegevens op één plek.
+- `inhoud/data/`: gegevens (sectoren, voorbeeld-Initiatieven, kernen).
+- `inhoud/fragmenten/` en `inhoud/sjabloon/`: de HTML-stukken van de pagina's, het lint en de footer.
+- `assets/`: stijl (`site.css`), scripts (`js/`), foto's en iconen.
+- `bouw/bouw.mjs`: maakt `dist/`. Vercel draait `node bouw/bouw.mjs` bij elke wijziging (zie `vercel.json`).
 
-- `index.html` — de volledige pagina (één scrollende pagina met ankersecties)
-- `assets/` — logo en sfeerfoto's per sector
+Lokaal bekijken:
 
-## Deploy
+```
+node bouw/bouw.mjs
+node bouw/serveer.mjs
+```
 
-Gehost via Vercel, gekoppeld aan dit GitHub-repository. Elke push naar `main` triggert een nieuwe deploy.
+Dan staat de site op http://localhost:8791.

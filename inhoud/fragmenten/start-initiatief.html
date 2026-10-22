@@ -1,0 +1,58 @@
+<section id="start-initiatief">
+  <div class="wrap">
+    <h2>Zo start je straks een Initiatief</h2>
+    <p>In vier korte stappen. Zo ziet het eruit als het platform er is.</p>
+    <span class="preview-status">Preview: het platform wordt gebouwd. Er wordt hier niets opgeslagen of verstuurd.</span>
+
+    <div class="stepper" id="stepper" role="group" aria-label="Stappen">
+      <button type="button" data-step="1" aria-current="step">1 · Plaats en sector</button>
+      <button type="button" data-step="2">2 · Organisatie</button>
+      <button type="button" data-step="3">3 · Account</button>
+      <button type="button" data-step="4">4 · Bevestigen</button>
+    </div>
+
+    <div class="flow-card" id="flow-1" data-panel="1">
+      <h3>Waar staat je Initiatief?</h3>
+      <p class="flow-hint">Zo laten we je Initiatief zien bij de juiste gemeente en Kern.</p>
+      <span class="flow-label">Plaats</span>
+      <div class="flow-field">Bijvoorbeeld: Lochem, Laren of Barchem</div>
+      <h3>Bij welke sector past jouw Initiatief het beste?</h3>
+      <p class="flow-hint">Kies er één. Klik op een sector voor een korte toelichting.</p>
+      <div class="sector-tiles" id="start-tiles"></div>
+      <div class="sector-uitleg" id="start-uitleg">Klik hierboven op een sector. Hier verschijnt een korte toelichting.</div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="2">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-2" data-panel="2" hidden>
+      <h3>Voor welke organisatie start je dit Initiatief?</h3>
+      <p class="flow-hint">Dit is altijd een vereniging, stichting, school of kerk, nooit een privépersoon of privérekening. Het geld dat mensen delen komt straks rechtstreeks bij deze organisatie terecht.</p>
+      <div class="flow-pills" aria-hidden="true">
+        <span class="flow-pill on">Vereniging</span><span class="flow-pill">Stichting</span><span class="flow-pill">School</span><span class="flow-pill">Kerk</span><span class="flow-pill">Anders</span>
+      </div>
+      <span class="flow-label">Naam van de organisatie</span>
+      <div class="flow-field">Bijvoorbeeld: Voetbalvereniging Lochem</div>
+      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik heb toestemming van deze organisatie om namens hen dit Initiatief te starten.</span></div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="3">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-3" data-panel="3" hidden>
+      <p class="flow-hint" style="text-align:right;margin:0 0 14px">Heb je al een Mondéall-account? <a href="/inloggen">Inloggen</a></p>
+      <h3>Maak je account aan</h3>
+      <p class="flow-hint">Zo kun je straks terugkomen in je werkplaats, verder werken aan je Initiatief en later de terugkoppeling geven.</p>
+      <div class="flow-twee"><div><span class="flow-label">Voornaam</span><div class="flow-field">Jan</div></div><div><span class="flow-label">Achternaam</span><div class="flow-field">Jansen</div></div></div>
+      <span class="flow-label">E-mailadres</span>
+      <div class="flow-field">jij@voorbeeld.nl</div>
+      <p class="flow-hint">Hierna typ je een code uit deze mail over. Zo log je ook later in: met een code, zonder wachtwoord.</p>
+      <div class="flow-check"><span class="flow-box" aria-hidden="true"></span><span>Ik ga akkoord met de <a href="/voorwaarden">algemene voorwaarden</a> en het <a href="/privacy">privacybeleid</a> van Mondéall.</span></div>
+      <div class="flow-foot"><button type="button" class="flow-next" data-goto="4">Volgende</button></div>
+    </div>
+
+    <div class="flow-card" id="flow-4" data-panel="4" hidden>
+      <h3>Bevestig je e-mailadres</h3>
+      <p class="flow-hint">Nog één ding: we willen zeker weten dat dit jouw e-mailadres is. We stuurden een code naar <strong>jij@voorbeeld.nl</strong>, <a href="/starten/zo-werkt-het" data-goto-link="3">bewerken</a>.</p>
+      <div class="code-boxes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="flow-hint">Deze code is 10 minuten geldig. Geen code gehad? Opnieuw versturen kan over 25 seconden.</p>
+      <div class="flow-foot"><button type="button" class="flow-next" disabled aria-disabled="true">Verifiëren</button></div>
+    </div>
+  </div>
+</section>

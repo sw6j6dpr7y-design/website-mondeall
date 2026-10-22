@@ -1,0 +1,88 @@
+<section id="initiatieven">
+  <div class="hdr-wrap">
+    <p class="ini-eyebrow">Initiatieven · gemeente Lochem</p>
+    <h2>Wat speelt er in jouw dorp of wijk?</h2>
+
+    <nav class="if-kernen" aria-label="Kies een Kern in gemeente Lochem"><ul id="if-kernen"></ul></nav>
+
+    <div role="search" aria-label="Zoeken en filteren">
+      <div class="if-row">
+        <div class="if-field if-search">
+          <label class="if-label" for="if-q">Zoek een Initiatief, Begunstigde of Kern</label>
+          <input id="if-q" type="search" autocomplete="off" placeholder="Bijvoorbeeld kleedkamers, bijen of Laren">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        </div>
+        <div class="if-field if-sectorwrap">
+          <span class="if-label" id="if-sector-label">Sector</span>
+          <button type="button" class="if-ctl" id="if-sector-btn" aria-expanded="false" aria-controls="if-panel" aria-describedby="if-sector-label"><span id="if-sector-txt">Alle sectoren</span> <span class="if-count" id="if-sector-count" hidden>0</span></button>
+          <div class="if-panel" id="if-panel" hidden>
+            <fieldset>
+              <legend>Kies een of meer sectoren</legend>
+              <div id="if-opts"></div>
+            </fieldset>
+            <div class="if-panelfoot">
+              <button type="button" class="if-textbtn" id="if-sector-clear">Wis sectoren</button>
+              <button type="button" class="if-textbtn" id="if-sector-close">Klaar</button>
+            </div>
+          </div>
+        </div>
+        <div class="if-field">
+          <label class="if-label" for="if-soort">Soort Begunstigde</label>
+          <select id="if-soort" class="if-ctl"><option value="">Alle soorten</option></select>
+        </div>
+        <div class="if-field">
+          <span class="if-label" id="if-status-label">Status</span>
+          <div class="if-seg" role="group" aria-labelledby="if-status-label" id="if-status">
+            <button type="button" data-v="" aria-pressed="true">Alle</button>
+            <button type="button" data-v="open" aria-pressed="false">Open voor delen</button>
+            <button type="button" data-v="afgesloten" aria-pressed="false">Afgesloten</button>
+          </div>
+        </div>
+      </div>
+      <div class="if-chips" id="if-chips"></div>
+    </div>
+
+    <div class="if-switch">
+      <div class="if-seg" role="group" aria-label="Weergave" id="if-view">
+        <button type="button" data-view="lijst" aria-pressed="true">Lijst</button>
+        <button type="button" data-view="kaart" aria-pressed="false">Kaart</button>
+      </div>
+    </div>
+
+    <div class="if-explore" id="if-explore" data-view="lijst">
+      <div class="if-listcol">
+        <div class="if-head">
+          <h3 id="if-titel">Initiatieven in gemeente Lochem</h3>
+          <p id="if-result" aria-live="polite"></p>
+        </div>
+        <div class="if-leeg" id="if-leeg" hidden>
+          <h4>Geen Initiatieven bij deze keuze</h4>
+          <p id="if-leeg-txt">Haal een filter weg of kies een andere Kern. Of start zelf een Initiatief voor jouw vereniging, stichting of school.</p>
+          <button type="button" class="if-textbtn" id="if-leeg-wis">Wis alle filters</button> &nbsp; <a href="/starten/zo-werkt-het">Start een Initiatief</a>
+        </div>
+        <div class="ini-grid" id="ini-grid" role="list"></div>
+      </div>
+      <section class="if-mapcol" aria-label="Kaart met Initiatieven">
+        <div class="if-mapframe">
+          <div id="if-map" role="region" aria-label="Kaart van gemeente Lochem met Initiatieven. De lijst bevat dezelfde informatie."></div>
+          <div class="if-maptools">
+            <label class="if-mapcheck"><input type="checkbox" id="if-inview"> Toon alleen wat op de kaart staat</label>
+          </div>
+          <aside class="if-kernpanel" id="if-kernpanel" hidden aria-labelledby="if-kp-titel"></aside>
+          <div class="if-maplaad" id="if-maplaad"><p>De kaart wordt geladen.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="ini-info">
+      <div>
+        <h3>Meedelen vanaf € 1</h3>
+        <p>Kies een Initiatief en deel mee vanaf € 1. Alles komt aan, omdat Sponsors de kosten dragen.</p>
+      </div>
+      <div>
+        <h3>Eerlijke volgorde</h3>
+        <p>De volgorde wisselt bij elk bezoek. Zo krijgt geen Initiatief vaste voorrang. Geen ranglijst, geen doelbedrag.</p>
+      </div>
+    </div>
+  </div>
+</section>

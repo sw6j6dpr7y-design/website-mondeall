@@ -6,3 +6,5 @@ Mondeall_sectoricoontjes_svg.zip
 # OS
 .DS_Store
 Thumbs.db
+dist/
+node_modules/

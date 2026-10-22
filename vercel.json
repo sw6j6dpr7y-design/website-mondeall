@@ -1,0 +1,6 @@
+{
+  "buildCommand": "node bouw/bouw.mjs",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

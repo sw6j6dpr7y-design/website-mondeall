@@ -49,7 +49,53 @@ export const INI_DATA = [
     vz: "Een hellingbaan en een automatische deur, zodat iedereen de kerk in kan, ook met rolstoel of rollator.",
     kop: "Een kerk die voor iedereen open is.",
     tekst: "Voor onze kerk liggen drie treden. Voor mensen met een rolstoel of rollator is de kerk daardoor onbereikbaar. Met een hellingbaan en een automatische deur kan iedereen binnen, bij een dienst, een concert of een kopje koffie.",
-    berichten: [["Joke", "Mijn moeder komt hier al zestig jaar. Nu kan ze blijven komen."]], sponsor: { naam: "Timmerwerk Hoogland", type: "Familiebedrijf", kleur: "#7a5a2e", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } }
+    berichten: [["Joke", "Mijn moeder komt hier al zestig jaar. Nu kan ze blijven komen."]], sponsor: { naam: "Timmerwerk Hoogland", type: "Familiebedrijf", kleur: "#7a5a2e", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
+  // Volledig uitgewerkte Initiatiefpagina (ontwerp van 25-10-2026). Het veld v2 maakt dat de pagina met bouw/initiatiefpagina.mjs wordt gemaakt.
+  { slug: "netten-klavertje", soort: "Vereniging", mensen: 47, bedrag: "", sinds: "18 oktober", eerste: "", afgesloten: "", foto: "/assets/fotos/sector-03-sport-recreatie.jpg", credit: "Sam Hofman / Pexels", pos: "50%", sector: "03", kern: "Laren", titel: "Nieuwe doelnetten voor de jeugdvelden", beg: "SV Het Klavertje", starter: "de jeugdcoördinator",
+    vz: "Zes nieuwe doelnetten voor de pupillenvelden, zodat de trainers weer gewoon kunnen trainen.",
+    kop: "Zes nieuwe doelnetten voor de pupillenvelden.",
+    tekst: "De doelnetten die er nu hangen, zijn versleten en zitten vol gaten. Met nieuwe netten kunnen de trainers weer gewoon trainen.",
+    berichten: [["Familie Jansen", "Succes jongens, die netten komen er!"]],
+    sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" },
+    v2: {
+      deadline: "zondag 8 november 2026",
+      sdg: { nr: 3, naam: "Goede gezondheid en welzijn", kleur: "#4c9f38" },
+      fase: 3,
+      verhaalKop: "Waarom nieuwe netten",
+      verhaal: [
+        "Op zaterdagochtend lopen er op onze jeugdvelden meer kinderen rond dan ooit. De doelnetten die er nu hangen, zijn versleten en zitten vol gaten. Ballen schieten erdoorheen, de sloot in. Onze vrijwilligers knopen ze elke week weer dicht, maar dat houdt niet lang.",
+        "Met nieuwe netten voor zes pupillendoelen kunnen de trainers weer gewoon trainen. Ook de kinderen uit de buurt die doordeweeks op het veld spelen, hebben er plezier van. De netten blijven van de vereniging en gaan jaren mee.",
+        "Alles wat je deelt, komt bij de vereniging aan. Binnen een jaar hangen de netten, en dan laten we hier zien hoe het geworden is."
+      ],
+      feiten: [
+        ["Wat er komt", "Zes nieuwe doelnetten voor de pupillenvelden"],
+        ["Voor wie", "Alle jeugdleden, en de kinderen uit de buurt die op het veld spelen"]
+      ],
+      berichtenIntro: "Hier houdt Ellen, jeugdcoördinator, je op de hoogte. Nieuwste eerst.",
+      berichtenVereniging: [
+        ["25 oktober 2026", "We hebben bij twee leveranciers offertes opgevraagd en kiezen voor netten die tegen weer en wind kunnen. Op de ledenvergadering lieten we de oude netten zien. Iedereen schrok een beetje."],
+        ["18 oktober 2026", "We zijn gestart. Dank aan iedereen die de link al in de teamapp heeft gezet."]
+      ],
+      weldoeners: {
+        max: 10, perGeldDeler: 100, ruimte: 640,
+        lijst: [["Familie De Vries", "Verdubbeling vol", "vol"], ["Een anonieme weldoener", "Verdubbelt nu", "nu"], ["Gerard en Annie", "Volgt hierna", "volgt"]]
+      },
+      delers: [
+        ["Familie Jansen", "Succes jongens, die netten komen er!"],
+        ["Anoniem", ""],
+        ["Opa Henk", "Voor mijn kleinzoon en zijn team."],
+        ["Anoniem", "Voor de kinderen van Laren."],
+        ["Garage Op de Hoek", ""]
+      ],
+      zozit: [
+        ["Wie je gift ontvangt", "SV Het Klavertje"],
+        ["Waar je geld heen gaat", "Via de betaalprovider naar de bankrekening op naam van de vereniging. Het komt nooit op een rekening van Mondéall."],
+        ["Fiscale status", "Opgegeven door de vereniging: sociaal belang behartigende instelling (SBBI). Mondéall beoordeelt deze status niet."],
+        ["Wie dit Initiatief plaatste", "Ellen, jeugdcoördinator, namens de vereniging."],
+        ["Wat de vereniging belooft", "De netten hangen binnen een jaar. Binnen 52 weken laat de vereniging hier zien wat er met het geld is gedaan."],
+        ["Wat het jou kost", "Alleen wat je deelt. Een gift is onvoorwaardelijk. De kosten van het delen worden betaald uit sponsorgeld."]
+      ]
+    } }
 ];
 
 export const INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];

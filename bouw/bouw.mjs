@@ -12,6 +12,7 @@ import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
 import { IF_KERNEN, IF_KERNBUURT } from '../inhoud/data/kernen.mjs';
 import { hoofdnav, voetkolommen, onderbalk, auteursrecht } from '../inhoud/navigatie.mjs';
 import { initiatiefHtml, sponsorHtml, esc, sectorVan } from './initiatief.mjs';
+import { initiatiefPaginaHtml } from './initiatiefpagina.mjs';
 import { leesTeksten, renderMd } from './tekst.mjs';
 import { formulieren } from './formulieren.mjs';
 
@@ -39,7 +40,7 @@ schrijf('assets/data.js',
   '/* Gegenereerd door bouw/bouw.mjs uit inhoud/data. Niet met de hand aanpassen. */\n' +
   'var sectoren = ' + JSON.stringify(sectorenMetPad) + ';\n' +
   'var AANDACHT = ' + JSON.stringify(AANDACHT) + ';\n' +
-  'var INI_DATA = ' + JSON.stringify(INI_DATA) + ';\n' +
+  'var INI_DATA = ' + JSON.stringify(INI_DATA.map(({ v2, ...rest }) => rest)) + ';\n' +
   'var IF_KERNEN = ' + JSON.stringify(IF_KERNEN) + ';\n' +
   'var IF_KERNBUURT = ' + JSON.stringify(IF_KERNBUURT) + ';\n');
 
@@ -299,7 +300,9 @@ function sectorenLijst() {
 // ---------- Initiatiefpagina's ----------
 for (const d of INI_DATA) {
   const p = perUrl.get('/initiatieven/' + d.slug);
-  schrijf(utf8Url(p.url), schil(p, initiatiefHtml(d)));
+  schrijf(utf8Url(p.url), d.v2
+    ? schil(p, initiatiefPaginaHtml(d, INI_DATA), { scripts: ['deelmee'] })
+    : schil(p, initiatiefHtml(d)));
 }
 
 // ---------- sectorpagina's ----------

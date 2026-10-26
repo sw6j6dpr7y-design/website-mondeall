@@ -31,7 +31,8 @@ export function initiatiefPaginaHtml(d, alle) {
 
   // Sponsors van deze Kern: elk bedrijf een keer.
   const gezien = new Set();
-  const sponsors = alle.filter((x) => x.kern === d.kern).map((x) => x.sponsor).filter((sp) => !gezien.has(sp.naam) && gezien.add(sp.naam)).map(sponsorHtml).join('');
+  const sponsors = alle.filter((x) => x.kern === d.kern).map((x) => x.sponsor).concat(v.extraSponsors || [])
+    .filter((sp) => !gezien.has(sp.naam) && gezien.add(sp.naam)).map(sponsorHtml).join('');
 
   const andere = alle.filter((x) => x.kern === d.kern && x.slug !== d.slug && !x.afgesloten).slice(0, 2);
   const meer = andere.length
@@ -95,7 +96,7 @@ export function initiatiefPaginaHtml(d, alle) {
 
 <section id="sponsors" aria-labelledby="sponsor-kop" class="ip-sponsors"><h2 id="sponsor-kop" class="ip-h3">Mede mogelijk gemaakt door</h2>
 <p class="ip-intro">Deze bedrijven dragen de kosten van geld delen in ${esc(d.kern)}. Daardoor komt elke euro aan. Ze beslissen niet mee over welke Initiatieven er komen.</p>
-<div class="id-sponsorrow">${sponsors}</div><p class="id-note">Voorbeeld-Sponsor: een fictief bedrijf en logo.</p></section>
+<div class="id-sponsorrow">${sponsors}</div><p class="id-note">Voorbeeld-Sponsors: fictieve bedrijven en logo's.</p></section>
 
 <section id="doorvertellen" aria-labelledby="door-kop"><h2 id="door-kop" class="ip-h2">Vertel het door</h2>
 <p class="ip-intro">De meeste mensen delen mee omdat iemand die ze kennen het doorstuurt.</p>
@@ -137,6 +138,12 @@ ${meer}
   <p id="ip-bedankt-regel" class="ip-intro"></p>
   <p class="ip-kleinnoot">Dit was een voorbeeld: er is niets afgeschreven.</p>
   <a href="#top">Terug naar boven</a>
+</div>
+<div class="ip-aside-sponsors" role="group" aria-labelledby="aside-sponsor-kop">
+  <h3 id="aside-sponsor-kop" class="ip-label">Mede mogelijk gemaakt door</h3>
+  <div class="id-sponsorrow">${sponsors}</div>
+  <p class="id-note">Voorbeeld-Sponsors: fictieve bedrijven en logo's.</p>
+  <p class="ip-kleinnoot">Zij dragen de kosten van geld delen in ${esc(d.kern)}. Daardoor komt elke euro aan. <a href="#sponsors">Lees meer</a></p>
 </div>
 </aside>
 

@@ -1379,3 +1379,6 @@ header .acties { flex-wrap: nowrap; }
 #ip-bedankt img { width: 64px; height: auto; }
 #ip-bedankt h2:focus { outline: none; }
 #ip-bedankt .ip-verdubbeling { margin: 0; }
+.ip-aside-sponsors { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--lijn); }
+.ip-aside-sponsors .id-sponsorrow { display: flex; flex-direction: column; gap: 10px; margin: 0 0 4px; }
+.ip-aside-sponsors .id-sponsor { display: flex; width: 100%; box-sizing: border-box; }

@@ -58,6 +58,10 @@ export const INI_DATA = [
     berichten: [["Familie Jansen", "Succes jongens, die netten komen er!"]],
     sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" },
     v2: {
+      extraSponsors: [
+        { naam: "Fysiotherapie Veldzicht", type: "Lokale ondernemer", kleur: "#1b7f8c", logo: "kruis", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" },
+        { naam: "Installatiebedrijf Bolwerk", type: "Familiebedrijf", kleur: "#35577d", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" }
+      ],
       deadline: "zondag 8 november 2026",
       sdg: { nr: 3, naam: "Goede gezondheid en welzijn", kleur: "#4c9f38" },
       fase: 3,

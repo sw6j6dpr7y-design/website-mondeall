@@ -82,7 +82,7 @@
     var naam = document.getElementById('naam').value.trim();
     var rol = document.getElementById('rol').value;
 
-    var subject = encodeURIComponent('Aanmelding mondeall.eu');
+    var subject = encodeURIComponent('Aanmelding mondeall.nl');
     var bodyLines = ['E-mailadres: ' + email];
     if (naam) bodyLines.push('Naam: ' + naam);
     if (rol) bodyLines.push('Rol: ' + rol);

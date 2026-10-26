@@ -1,4 +1,4 @@
-// Bouwscript van mondeall.eu: maakt van de paginabron en de stukken in inhoud/ de HTML-pagina's in dist/.
+// Bouwscript van mondeall.nl: maakt van de paginabron en de stukken in inhoud/ de HTML-pagina's in dist/.
 // Geen externe pakketten; draait met een gewone Node.js (versie 20 of hoger).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -337,9 +337,9 @@ function sitemapHtml() {
       : alle.filter((p) => p.url === kop || p.url.startsWith(kop + '/'));
     return '<section class="sitemap-groep"><h2>' + esc(titel) + '</h2>' + lijst(leden.filter((p) => !p.werkplaats)) + '</section>';
   };
-  return '<section id="sitemap"><div class="wrap"><h1 class="pagina-kop">Sitemap</h1><p>Alle pagina\'s van mondeall.eu.</p><p><a href="/">Home</a></p>' + groepen.map(blok).join('') + '</div></section>';
+  return '<section id="sitemap"><div class="wrap"><h1 class="pagina-kop">Sitemap</h1><p>Alle pagina\'s van mondeall.nl.</p><p><a href="/">Home</a></p>' + groepen.map(blok).join('') + '</div></section>';
 }
-const sitemapPagina = { url: '/sitemap', titel: 'Sitemap', beschrijving: 'Alle pagina\'s van mondeall.eu.' };
+const sitemapPagina = { url: '/sitemap', titel: 'Sitemap', beschrijving: 'Alle pagina\'s van mondeall.nl.' };
 perUrl.set('/sitemap', sitemapPagina);
 schrijf('sitemap/index.html', schil(sitemapPagina, sitemapHtml()));
 

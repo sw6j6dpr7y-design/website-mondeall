@@ -1,4 +1,6 @@
-# Website mondeall.eu
+# Website mondeall.nl
+
+Hoofdadres is mondeall.nl. mondeall.eu wijst naar dezelfde site; de canonieke adressen in de pagina's en de sitemap verwijzen naar mondeall.nl.
 
 De site wordt gebouwd met een klein bouwscript zonder externe pakketten (Node.js 20 of hoger).
 

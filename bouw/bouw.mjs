@@ -193,9 +193,9 @@ ${p.noindex ? '<meta name="robots" content="noindex">\n' : ''}<meta property="og
 <meta property="og:image:alt" content="Mondéall. Wat speelt er in jouw dorp of wijk? Deel mee met een Initiatief vanaf één euro. Elke euro komt aan, omdat Sponsors de kosten dragen.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="/assets/klavertje-mondeall.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-v9-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-serif-4-v15-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="${activa('assets/fonts.css')}">
 <link rel="stylesheet" href="${activa('assets/site.css')}">
 ${jsonLd(p)}
 </head>

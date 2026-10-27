@@ -23,6 +23,7 @@ export const paginas = [
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Wil je als vereniging, stichting, school of kerk een Initiatief starten? Hier begin je.', hub: true, fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },
   { url: '/starten/zo-werkt-het', titel: 'Zo werkt het, in vier stappen', beschrijving: 'Zo ziet het starten van een Initiatief eruit, in vier stappen.', stukken: ['start-initiatief'], scripts: ['starten'], fase: 'I' },
+  { url: '/starten/voorbeelden', titel: 'Voorbeelden per sector', beschrijving: 'Fictieve voorbeelden van Initiatieven in alle twaalf sectoren, zodat je ziet wat er past.', stukken: ['voorbeelden'], fase: 'I' },
 
   { url: '/over', titel: 'Over Mondéall', beschrijving: 'Missie, verhaal en stelsel van Mondéall.', hub: true, fase: 'I' },
   { url: '/over/missie', titel: 'Missie en kernwaarden', beschrijving: 'De missie en de kernwaarden van Mondéall, en waar we vertrouwen en transparantie voor staan.', stukken: ['wat-is-mondeall', 'vertrouwen'], fase: 'I' },
@@ -69,7 +70,6 @@ export const plaatshouders = [
   ph('/hoe-het-werkt/wie-kan-ontvangen', 'Wie kan ontvangen'),
   ph('/hoe-het-werkt/spelregels', 'Spelregels'),
   ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),
-  ph('/starten/voorbeelden', 'Voorbeelden per sector'),
   ph('/starten/deelpakket', 'Het deelpakket'),
   ph('/starten/verantwoorden', 'Verantwoorden'),
   ph('/starten/startgids', 'Startgids'),

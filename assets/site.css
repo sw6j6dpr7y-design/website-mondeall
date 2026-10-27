@@ -1727,3 +1727,65 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .vb-kaart dl div { display: flex; flex-direction: column; }
 .vb-kaart dt { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); }
 .vb-kaart dd { margin: 0; }
+/* ---------- Landingspagina Start een Initiatief (/starten) ---------- */
+.sl-hero { background: linear-gradient(180deg, var(--nevel) 0, var(--achtergrond) 100%); }
+.sl-hero-rij .pt-main { flex-basis: 440px; }
+.sl-stappen { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.sl-kop { font-family: var(--kop); font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3.1rem); line-height: 1.04; letter-spacing: -.03em; color: var(--diep); margin: 0 0 22px; max-width: 15em; }
+.sl-status { display: flex; gap: 10px; align-items: baseline; margin: 22px 0 0; font-size: .95rem; color: var(--gedempt); max-width: 34em; }
+.sl-stip { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; background: #e4af44; transform: translateY(1px); }
+.sl-kaart-fig { flex: 0 1 360px; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.sl-kaart-fig figcaption, .sl-deel-fig figcaption { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--gedempt); text-align: center; }
+.sl-kaart { background: #fff; border: 1px solid var(--lijn); border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px -24px rgba(0, 82, 72, .45); transform: rotate(1.2deg); }
+.sl-kaart-foto { position: relative; aspect-ratio: 16 / 10; background: var(--nevel); }
+.sl-kaart-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sl-label { position: absolute; top: 12px; left: 12px; background: #fff; color: var(--diep); font-family: 'IBM Plex Mono', monospace; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; padding: 4px 8px; border-radius: 3px; }
+.sl-kaart-tekst { padding: 18px 20px 20px; }
+.sl-sector { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--gedempt); }
+.sl-kaart-titel { font-family: var(--kop); font-weight: 800; font-size: 1.35rem; line-height: 1.15; color: var(--diep); margin: 0 0 4px; }
+.sl-kaart-beg { margin: 0 0 10px; font-size: .95rem; color: var(--gedempt); }
+.sl-kaart-zin { margin: 0 0 16px; font-size: 1rem; line-height: 1.5; }
+.sl-kaart-knop { display: flex; justify-content: center; align-items: center; min-height: 46px; background: var(--merk); color: #fff; font-family: var(--kop); font-weight: 700; border-radius: 4px; }
+.sl-kaart-klein { margin: 10px 0 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; color: var(--gedempt); }
+
+.sl-feiten { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; margin: 32px 0 0; border-top: 1px solid var(--lijn); }
+.sl-feiten > div { padding: 22px 22px 22px 0; border-bottom: 1px solid var(--lijn); }
+.sl-feiten dt { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gedempt); margin: 0 0 6px; }
+.sl-feiten dd { margin: 0; font-size: 1rem; line-height: 1.5; }
+.sl-getal { display: block; font-family: var(--kop); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1; letter-spacing: -.03em; color: var(--merktekst); margin: 0 0 10px; }
+
+.sl-redenen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.sl-redenen .sp-vak { padding: 22px; }
+.sl-redenen .sp-vak { border-top: 6px solid var(--merk); }
+.sl-redenen .sp-vak h3 { font-size: 1.25rem; }
+
+.sl-deel-rij .pt-main { flex-basis: 380px; }
+.sl-deel-fig { flex: 1 1 440px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.sl-deel { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; justify-content: center; background: var(--achtergrond); border: 1px solid var(--lijn); border-radius: 14px; padding: 22px; }
+.sl-app { flex: 1 1 220px; max-width: 280px; background: #e9e2d6; border-radius: 18px; padding: 14px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: .92rem; line-height: 1.4; }
+.sl-app-kop { margin: -14px -14px 12px; padding: 10px 14px; background: var(--diep); color: #fff; border-radius: 18px 18px 0 0; font-weight: 600; font-size: .85rem; }
+.sl-bel { background: #fff; margin: 0 24px 10px 0; padding: 9px 12px; border-radius: 4px 12px 12px 12px; color: var(--tekst); }
+.sl-bel-terug { background: #d6f1e9; margin: 0 0 0 48px; border-radius: 12px 4px 12px 12px; }
+.sl-poster { flex: 0 0 170px; background: #fff; border: 1px solid var(--lijn); border-top: 8px solid var(--merk); padding: 14px 14px 10px; text-align: center; box-shadow: 0 10px 24px -18px rgba(0, 0, 0, .5); transform: rotate(-2deg); }
+.sl-poster-kop { margin: 0; font-family: var(--kop); font-weight: 800; font-size: 1.1rem; line-height: 1.1; color: var(--diep); }
+.sl-poster-sub { margin: 4px 0 10px; font-size: .85rem; }
+.sl-qr { width: 120px; height: 120px; display: block; margin: 0 auto; }
+.sl-poster-link { margin: 8px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: .62rem; color: var(--gedempt); }
+
+.sl-meer { margin: 24px 0 0; }
+.sl-sectoren { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 10px; }
+.sl-sectoren a { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 14px; background: #fff; border: 1px solid var(--lijn); border-left: 6px solid var(--sk); border-radius: 6px; color: var(--tekst); text-decoration: none; font-family: var(--kop); font-weight: 600; font-size: 1rem; line-height: 1.25; }
+.sl-sectoren a:hover { background: var(--nevel); }
+.sl-sectoren a:focus-visible { outline: 3px solid var(--merktekst); outline-offset: 2px; }
+.sl-sectoren img { flex: 0 0 auto; }
+.sl-sectoren b { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: .85rem; color: var(--gedempt); margin-right: 4px; }
+.pt-poorten + .pt-knop { margin-top: 8px; }
+.sl-knop-op-diep { background: transparent; border-color: #fff; color: #fff; }
+.sl-knop-op-diep:hover { background: #003d36; color: #fff; }
+
+@media (max-width: 720px) {
+  .sl-kaart { transform: none; }
+  .sl-kaart-fig { flex-basis: 100%; }
+  .sl-feiten > div { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .sl-kaart, .sl-poster { transform: none; } }

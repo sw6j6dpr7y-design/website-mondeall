@@ -29,7 +29,7 @@ export const paginas = [
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
-  { url: '/partners', titel: 'Partners', beschrijving: 'Voor gemeenten, fondsen en andere organisaties die lokaal delen mogelijk willen maken.', hub: true, fase: 'I' },
+  { url: '/partners', titel: 'Partners', beschrijving: 'Voor gemeenten, fondsen en andere organisaties die lokaal delen mogelijk willen maken.', stukken: ['partners'], fase: 'I' },
   { url: '/partners/gemeenten', titel: 'Gemeenten', beschrijving: 'Mondéall is een aanvulling op bestaande subsidies en regelingen, geen vervanging.', stukken: ['gemeenten'], fase: 'I' },
 
   { url: '/contact', titel: 'Contact', beschrijving: 'Blijf op de hoogte van Mondéall of neem contact op.', stukken: ['contact'], fase: 'I' },

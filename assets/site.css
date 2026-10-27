@@ -1555,3 +1555,78 @@ header .acties { flex-wrap: nowrap; }
   #wn, #wn section { padding: 0; border-bottom: 0; }
   #wn section.wn-sect { padding: 20px 22px; }
   .wn-titelrij > .wn-knop { flex: none; }
+
+/* Partnerpagina */
+.pt { border-top: 1px solid var(--lijn); padding: 56px 0; }
+.pt-hero { border-top: 0; padding: 64px 0 56px; }
+.pt-wit { background: #fff; border-bottom: 1px solid var(--lijn); }
+.pt h2 { font-family: var(--kop); font-weight: 700; font-size: 2rem; letter-spacing: -.02em; color: var(--tekst); margin: 0 0 14px; }
+.pt-hero h2 { font-weight: 800; font-size: clamp(2.5rem, 5.4vw, 4.1rem); line-height: 1.02; letter-spacing: -.03em; color: var(--diep); margin: 0 0 24px; }
+.pt h2.pt-groot { font-weight: 800; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.08; color: var(--diep); max-width: 22em; }
+.pt-eyebrow, .pt-nr { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gedempt); margin: 0 0 8px; display: block; }
+.pt-nr { letter-spacing: 0; text-transform: none; font-size: .88rem; margin: 0; }
+.pt-lead { font-size: 1.3rem; max-width: 34em; margin: 0 0 18px; }
+.pt-gedempt { color: var(--gedempt); max-width: 34em; margin: 0 0 30px; }
+.pt-intro { max-width: 40em; margin: 0 0 30px; }
+.pt-split { display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start; }
+.pt-main { flex: 1 1 520px; min-width: 0; }
+.pt-kort { flex: 1 1 340px; min-width: 0; background: #fff; border: 1px solid var(--lijn); border-top: 6px solid var(--merk); padding: 26px 28px 16px; box-sizing: border-box; }
+.pt-kort h3 { font-family: var(--kop); font-size: 1.25rem; margin: 0 0 14px; }
+.pt-kort dl { margin: 0; font-size: 1rem; line-height: 1.5; }
+.pt-kort dl > div { padding: 10px 0; border-top: 1px solid var(--lijn); }
+.pt-kort dt { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gedempt); }
+.pt-kort dd { margin: 2px 0 0; }
+.pt-routes { display: flex; flex-wrap: wrap; gap: 12px; }
+.pt-knop { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; background: var(--diep); color: #fff; text-decoration: none; font-family: var(--kop); font-weight: 700; font-size: 1.05rem; border: 2px solid var(--diep); border-radius: 4px; box-sizing: border-box; }
+.pt-knop:hover { background: #003d36; color: #fff; }
+.pt-knop-rand { background: transparent; color: var(--diep); }
+.pt-knop-rand:hover { background: var(--nevel); color: var(--diep); }
+.pt-knop-licht { background: #fff; color: var(--diep); border-color: #fff; }
+.pt-knop-licht:hover { background: var(--nevel); color: var(--diep); }
+.pt-kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.pt-kaart { display: block; background: #fff; border: 1px solid var(--lijn); padding: 26px; text-decoration: none; color: var(--tekst); font-size: 1rem; line-height: 1.5; }
+.pt-kaart strong { display: block; font-family: var(--kop); font-size: 1.4rem; color: var(--diep); margin-bottom: 8px; }
+.pt-link { display: block; margin-top: 14px; font-family: var(--kop); color: var(--merktekst); text-decoration: underline; text-underline-offset: 3px; }
+.pt-pillen { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 48px; font-family: 'IBM Plex Mono', monospace; font-size: .88rem; }
+.pt-pillen a { padding: 8px 14px; background: var(--nevel); color: var(--diep); border-radius: 20px; text-decoration: none; }
+.pt-pillen a:hover { background: #cfe9e6; }
+.pt-art { display: flex; flex-wrap: wrap; gap: 12px 48px; padding-top: 32px; border-top: 1px solid var(--lijn); margin-top: 56px; }
+.pt-pillen + .pt-art { margin-top: 0; }
+.pt-duo .pt-art { border-top: 0; padding-top: 0; margin-top: 0; }
+.pt-art-kop { flex: 1 1 260px; min-width: 0; }
+.pt-art-kop h3, .pt-art-kop h2 { font-family: var(--kop); font-weight: 700; font-size: 1.6rem; line-height: 1.2; color: var(--tekst); margin: 4px 0 0; letter-spacing: 0; }
+.pt-duo .pt-art-kop h2 { font-size: 1.9rem; color: var(--diep); }
+.pt-art-tekst { flex: 999 1 560px; min-width: 0; }
+.pt-art-tekst p { margin: 0 0 14px; }
+.pt-art-tekst p:last-child { margin-bottom: 0; }
+.pt-stromen { margin: 0 0 22px; display: flex; flex-direction: column; gap: 16px; }
+.pt-stroom { border: 1px solid var(--lijn); background: var(--achtergrond); padding: 20px; }
+.pt-stroom p { font-size: 1rem; line-height: 1.5; margin: 12px 0 0; }
+.pt-stroom p.pt-eyebrow { margin: 0 0 12px; }
+.pt-keten { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.pt-keten span { background: #fff; border: 1px solid #b9c4bf; padding: 10px 16px; font-family: var(--kop); font-weight: 700; font-size: 1.05rem; }
+.pt-poorten, .pt-stappen { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.pt-poorten li { border: 1px solid var(--lijn); padding: 18px; font-size: 1rem; line-height: 1.5; }
+.pt-poorten strong, .pt-stappen strong { display: block; font-family: var(--kop); font-size: 1.15rem; margin: 4px 0 6px; }
+.pt-stappen { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin: 28px 0 0; }
+.pt-stappen li { border-top: 3px solid var(--diep); padding-top: 16px; font-size: 1rem; line-height: 1.5; }
+.pt-stappen strong { font-size: 1.25rem; }
+.pt-niet { background: var(--nevel); padding: 22px 26px; margin-bottom: 16px; }
+.pt-niet ul { margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; }
+.pt-art .tabel caption { text-align: left; padding: 12px 16px; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gedempt); background: var(--achtergrond); border-bottom: 1px solid var(--lijn); }
+.pt-art .tabel td.pt-status { font-family: 'IBM Plex Mono', monospace; font-size: .88rem; color: var(--diep); white-space: nowrap; }
+.pt-faq { border-top: 1px solid var(--lijn); max-width: 860px; margin-top: 24px; }
+.pt-faq details { border-bottom: 1px solid var(--lijn); padding: 18px 0; }
+.pt-faq summary { display: flex; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; font-family: var(--kop); font-weight: 700; font-size: 1.2rem; }
+.pt-faq summary::-webkit-details-marker { display: none; }
+.pt-faq summary:focus-visible, .pt-pillen a:focus-visible, .pt-knop:focus-visible, .pt-kaart:focus-visible { outline: 3px solid var(--merktekst); outline-offset: 2px; }
+.pt-plus { color: var(--diep); font-size: 1.5rem; line-height: 1; transition: transform .15s; }
+.pt-faq details[open] .pt-plus { transform: rotate(45deg); }
+.pt-faq p { margin: 12px 0 0; }
+.pt-cta { background: var(--diep); color: #fff; border-top: 0; padding: 0; }
+.pt-cta-in { padding-top: 64px; padding-bottom: 64px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; justify-content: space-between; }
+.pt-cta-in > div:first-child { flex: 1 1 480px; min-width: 0; }
+.pt-cta h2 { color: #fff; font-weight: 800; font-size: clamp(1.9rem, 3.6vw, 2.6rem); line-height: 1.1; }
+.pt-cta p { margin: 0; font-size: 1.2rem; max-width: 32em; }
+.pt-cta-actie { display: flex; flex-direction: column; gap: 12px; flex: 0 1 320px; }
+.pt-cta-actie p { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: #d6ece9; text-align: center; }

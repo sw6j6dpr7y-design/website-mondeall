@@ -97,7 +97,7 @@
     var h = location.hash.slice(2), kaart = {
       'starten': '/starten/check', 'inloggen': '/inloggen', 'werkplaats': '/inloggen', 'hoe-het-werkt': '/hoe-het-werkt',
       'wat-is-mondeall': '/over/missie', 'vertrouwen': '/over/missie', 'sectoren': '/sectoren', 'stelsel': '/over/stelsel',
-      'gemeenten': '/partners/gemeenten', 'verhaal': '/over/verhaal', 'voorwaarden': '/voorwaarden', 'privacy': '/privacy', 'cookies': '/cookies'
+      'gemeenten': '/partners#gemeenten', 'verhaal': '/over/verhaal', 'voorwaarden': '/voorwaarden', 'privacy': '/privacy', 'cookies': '/cookies'
     };
     var m = h.match(/^initiatief\/([a-z0-9-]+)$/);
     var doel = m ? '/initiatieven/' + m[1] : kaart[h];

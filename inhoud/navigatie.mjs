@@ -29,9 +29,9 @@ export const voetkolommen = [
   ['Sponsoren en Partners', [
     ['Sponsor worden', '/sponsoren'],
     ['Treden en tegenprestatie', '/sponsoren/treden'],
-    ['Gemeenten', '/partners/gemeenten'],
-    ['Fondsen', '/partners/fondsen'],
-    ['Strategische partners', '/partners/strategisch'],
+    ['Gemeenten', '/partners#gemeenten'],
+    ['Fondsen', '/partners#fondsen'],
+    ['Strategische partners', '/partners#strategisch'],
   ]],
   ['Mondéall', [
     ['Missie en kernwaarden', '/over/missie'],

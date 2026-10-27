@@ -6,7 +6,29 @@
   "headers": [
     {
       "source": "/assets/fonts/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/partners/gemeenten",
+      "destination": "/partners#gemeenten",
+      "permanent": true
+    },
+    {
+      "source": "/partners/fondsen",
+      "destination": "/partners#fondsen",
+      "permanent": true
+    },
+    {
+      "source": "/partners/strategisch",
+      "destination": "/partners#strategisch",
+      "permanent": true
     }
   ]
 }

@@ -74,7 +74,7 @@ for (const [url, t] of teksten) {
 // ---------- alle pagina's (voor kruimels, hubs en sitemap) ----------
 const alle = [...paginas, ...afgeleidePaginas()];
 const perUrl = new Map(alle.map((p) => [p.url, p]));
-const bestaat = (u) => perUrl.has(u);
+const bestaat = (u) => perUrl.has(u.split('#')[0]);
 const zoekIcoon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>';
 const zoekForm = (id, klasse) => '<form class="zoek ' + klasse + '" role="search" action="/initiatieven" method="get"><label class="verborgen" for="' + id + '">Zoek je dorp of wijk</label><input id="' + id + '" type="search" name="q" placeholder="Zoek je dorp of wijk" autocomplete="off" maxlength="80"><button type="submit" aria-label="Zoeken">' + zoekIcoon + '</button></form>';
 const actief = (p, href) => p.url === href || p.url.startsWith(href + '/');

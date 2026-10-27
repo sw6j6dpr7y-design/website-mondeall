@@ -172,7 +172,7 @@ function schil(p, binnen, opties = {}) {
   const metData = scripts.some((s) => ['initiatieven', 'sectoren', 'starten'].includes(s));
   const js = [metData ? '<script src="' + activa('assets/data.js') + '"></script>' : '']
     .concat(scripts.map((s) => '<script src="' + activa('assets/js/' + s + '.js') + '"></script>')).filter(Boolean).join('\n');
-  const kaal = !!p.werkplaats;
+  const kaal = !!(p.werkplaats || p.wn);
   const beschrijving = p.beschrijving || BESCHRIJVING;
   return `<!DOCTYPE html>
 <html lang="nl">
@@ -223,6 +223,14 @@ function utf8Url(u) { return u === '/' ? 'index.html' : u.slice(1) + '/index.htm
 // ---------- pagina's uit de paginabron ----------
 for (const p of paginas) {
   let binnen;
+  if (p.wn) {
+    binnen = `<section id="wn">
+  <p class="wn-banner">Klikbaar voorbeeld: het platform wordt gebouwd. Er wordt niets verstuurd en je invoer blijft alleen in dit tabblad.</p>
+  <div id="wn-app" data-weergave="${p.wn}"></div>
+</section>`;
+    schrijf(utf8Url(p.url), schil(p, binnen, { scripts: ['wn'] }));
+    continue;
+  }
   if (p.werkplaats) {
     binnen = `<section id="werkplaats">
   <div class="wp-pagina">
@@ -338,7 +346,7 @@ function sitemapHtml() {
   const blok = ([titel, kop]) => {
     const leden = kop === null ? alle.filter((p) => juridischeUrls.includes(p.url))
       : alle.filter((p) => p.url === kop || p.url.startsWith(kop + '/'));
-    return '<section class="sitemap-groep"><h2>' + esc(titel) + '</h2>' + lijst(leden.filter((p) => !p.werkplaats)) + '</section>';
+    return '<section class="sitemap-groep"><h2>' + esc(titel) + '</h2>' + lijst(leden.filter((p) => !p.werkplaats && !p.wn)) + '</section>';
   };
   return '<section id="sitemap"><div class="wrap"><h1 class="pagina-kop">Sitemap</h1><p>Alle pagina\'s van mondeall.nl.</p><p><a href="/">Home</a></p>' + groepen.map(blok).join('') + '</div></section>';
 }
@@ -350,7 +358,7 @@ const vandaag = new Date().toISOString().slice(0, 10);
 const publiek = [...alle.filter((p) => !p.noindex && p.url !== '/sitemap'), sitemapPagina];
 schrijf('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   publiek.map((p) => '  <url><loc>' + DOMEIN + (p.url === '/' ? '/' : p.url) + '</loc><lastmod>' + vandaag + '</lastmod></url>').join('\n') + '\n</urlset>\n');
-schrijf('robots.txt', 'User-agent: *\nAllow: /\nDisallow: /inloggen\nDisallow: /mijn\n\nSitemap: ' + DOMEIN + '/sitemap.xml\n');
+schrijf('robots.txt', 'User-agent: *\nAllow: /\nDisallow: /inloggen\nDisallow: /mijn\nDisallow: /werkplaats\nDisallow: /starten/nieuw\n\nSitemap: ' + DOMEIN + '/sitemap.xml\n');
 
 const nietGevonden = { url: '/404', titel: 'Pagina niet gevonden', beschrijving: 'Deze pagina bestaat niet.', noindex: true };
 schrijf('404.html', schil(nietGevonden, `<section id="juridisch"><div class="hdr-wrap st-wrap"><div class="jur-tekst"><h1>Deze pagina bestaat niet</h1><p>Misschien is het adres veranderd, of staat er een tikfout in. Ga terug naar de <a href="/">beginpagina</a> of zoek een Initiatief in jouw dorp of wijk op <a href="/initiatieven">de pagina met alle Initiatieven</a>.</p></div></div></section>`));

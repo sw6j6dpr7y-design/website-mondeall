@@ -36,6 +36,11 @@ export const paginas = [
 
   { url: '/inloggen', titel: 'Inloggen', beschrijving: 'Inloggen in de Werkplaats voor Starters (voorbeeld).', werkplaats: 'inloggen', noindex: true, fase: 'L' },
   { url: '/mijn', titel: 'Werkplaats', beschrijving: 'De Werkplaats van de Starter (voorbeeld).', werkplaats: 'werkplaats', noindex: true, fase: 'L' },
+  { url: '/starten/nieuw', titel: 'Start een Initiatief', beschrijving: 'Klikbaar voorbeeld van het starten van een Initiatief.', wn: 'snel', noindex: true, fase: 'L' },
+  { url: '/werkplaats', titel: 'Werkplaats', beschrijving: 'Klikbaar voorbeeld van de Werkplaats voor Starters.', wn: 'dash', noindex: true, fase: 'L' },
+  { url: '/werkplaats/initiatief', titel: 'Werkplaats: Initiatief bewerken', beschrijving: 'Klikbaar voorbeeld van het bewerken van een Initiatief.', wn: 'ini', noindex: true, fase: 'L' },
+  { url: '/werkplaats/begunstigden', titel: 'Werkplaats: Begunstigden', beschrijving: 'Klikbaar voorbeeld van de gegevens van de Begunstigde.', wn: 'beg', noindex: true, fase: 'L' },
+  { url: '/werkplaats/voorzitter', titel: 'De voorzitter bevestigt', beschrijving: 'Klikbaar voorbeeld van wat de voorzitter van een organisatie te zien krijgt.', wn: 'vz', noindex: true, fase: 'L' },
 
   { url: '/voorwaarden', titel: 'Algemene voorwaarden', beschrijving: 'De algemene voorwaarden van Mondéall.', juridisch: '<p>Mondéall is nog in opbouw. De algemene voorwaarden worden opgesteld voordat het platform live gaat. Je kunt ze hier lezen voordat je ze hoeft te accepteren.</p>', fase: 'L' },
   { url: '/privacy', titel: 'Privacybeleid', beschrijving: 'Hoe Mondéall met je gegevens omgaat.', juridisch: '<p>Mondéall is nog in opbouw. Wat nu al geldt: je e-mailadres en, als je ze opgeeft, je naam en rol uit het contactformulier gebruiken we uitsluitend om je op de hoogte te houden over Mondéall. Geen tracking, geen doorverkoop van gegevens.</p><p>Het volledige privacybeleid volgt voordat het platform live gaat.</p>', fase: 'I' },

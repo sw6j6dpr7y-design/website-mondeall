@@ -1630,3 +1630,70 @@ header .acties { flex-wrap: nowrap; }
 .pt-cta p { margin: 0; font-size: 1.2rem; max-width: 32em; }
 .pt-cta-actie { display: flex; flex-direction: column; gap: 12px; flex: 0 1 320px; }
 .pt-cta-actie p { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: #d6ece9; text-align: center; }
+
+/* Sponsorpagina's */
+.sp-check { align-self: flex-start; }
+.sp-vraag { display: block; margin-bottom: 8px; font-family: var(--kop); font-weight: 700; font-size: 1.25rem; }
+.sp-rij { display: flex; flex-wrap: wrap; gap: 10px; }
+.sp-rij input, .sp-form input { flex: 1 1 200px; min-height: 48px; padding: 0 14px; font: inherit; font-size: 1.05rem; border: 1px solid #8a9792; border-radius: 4px; background: #fff; box-sizing: border-box; width: 100%; }
+.sp-rij input:focus-visible, .sp-form input:focus-visible { outline: 3px solid var(--merktekst); outline-offset: 2px; }
+.sp-klein { margin: 10px 0 0; font-size: .95rem; color: var(--gedempt); }
+.sp-uitslag { margin-top: 22px; padding: 20px; background: var(--achtergrond); border: 1px solid var(--lijn); }
+.sp-uitslag[hidden] { display: none; }
+.sp-actief { background: var(--nevel); border-color: var(--nevel); }
+.sp-uitslag p { margin: 0 0 12px; }
+.sp-kop { font-family: var(--kop); font-weight: 700; font-size: 1.15rem; }
+.sp-verborgen { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.sp-drie { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.sp-drie h2 { font-size: 1.4rem; color: var(--diep); margin: 0 0 8px; }
+.sp-drie p { margin: 0; line-height: 1.55; }
+.sp-midden { align-items: center; }
+.sp-onder { margin-top: 18px; }
+.sp-figuur { flex: 0 1 380px; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.sp-figuur figcaption, .sp-kern figcaption { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--gedempt); text-align: center; }
+.sp-sticker { width: 300px; height: 300px; max-width: 100%; border-radius: 50%; background: #fff; border: 10px solid var(--merk); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; }
+.sp-sticker img { width: 84px; height: auto; margin-bottom: 8px; }
+.sp-sticker-naam { font-family: var(--kop); font-weight: 800; font-size: 1.8rem; color: var(--diep); letter-spacing: -.02em; line-height: 1.1; margin: 4px 0; }
+.sp-sticker-sub { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; }
+.sp-vak { background: #fff; border: 1px solid var(--lijn); padding: 26px; line-height: 1.55; }
+.sp-vast .sp-vak { border-top: 6px solid var(--merk); padding: 28px; }
+.sp-vak h3 { font-family: var(--kop); font-weight: 700; font-size: 1.4rem; color: var(--diep); margin: 0 0 10px; }
+.sp-vak p { margin: 0; }
+.sp-kern { flex: 1 1 480px; min-width: 0; margin: 0; background: var(--achtergrond); border: 1px solid var(--lijn); padding: 24px; box-sizing: border-box; }
+.sp-kern-kaart { background: #fff; border: 1px solid var(--lijn); padding: 22px 24px; }
+.sp-kern-naam { margin: 0 0 16px; font-family: var(--kop); font-weight: 800; font-size: 1.9rem; color: var(--diep); letter-spacing: -.02em; }
+.sp-kern-zin { margin: 0 0 18px; font-family: var(--kop); font-weight: 700; font-size: 1.2rem; }
+.sp-kern-lijst { border-top: 1px solid var(--lijn); padding-top: 14px; }
+.sp-kern-lijst div { display: flex; flex-wrap: wrap; gap: 8px; }
+.sp-kern-lijst span { border: 1px solid #b9c4bf; padding: 6px 12px; font-size: .95rem; }
+.sp-kern figcaption { margin-top: 10px; text-align: left; }
+.sp-uiting { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; }
+.sp-uiting h3 { margin: 0; }
+.sp-rond { width: 88px; height: 88px; flex: none; border-radius: 50%; border: 5px solid var(--merk); box-sizing: border-box; background: #fff; display: flex; align-items: center; justify-content: center; }
+.sp-rond img { width: 44px; height: auto; }
+.sp-badge { display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--merk); border-radius: 40px; padding: 8px 16px 8px 10px; background: #fff; }
+.sp-badge img { width: 30px; height: auto; }
+.sp-badge span { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; line-height: 1.3; color: var(--diep); }
+.sp-tredes { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.sp-trede { border: 1px solid var(--lijn); padding: 26px; display: flex; flex-direction: column; background: #fff; }
+.sp-trede h3 { margin: 0; font-family: var(--kop); font-weight: 700; font-size: 1.4rem; }
+.sp-prijs { margin: 6px 0 18px; font-family: var(--kop); font-weight: 800; font-size: 2.2rem; color: var(--diep); letter-spacing: -.02em; }
+.sp-prijs small { font-size: 1.2rem; font-weight: 700; }
+.sp-trede dl { margin: 0 0 16px; font-size: .95rem; line-height: 1.45; font-family: 'IBM Plex Mono', monospace; }
+.sp-trede dl div { display: flex; gap: 8px; }
+.sp-trede dt { color: var(--gedempt); }
+.sp-trede dd { margin: 0; }
+.sp-trede ul { margin: 0; padding: 0 0 0 18px; line-height: 1.5; display: flex; flex-direction: column; gap: 4px; }
+.sp-half { flex: 1 1 480px; min-width: 0; margin: 0; padding: 32px; }
+.sp-half h2 { color: var(--diep); font-size: 1.75rem; }
+.sp-half p { margin: 14px 0 0; }
+.sp-form { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px; background: var(--achtergrond); border: 1px solid var(--lijn); padding: 28px; box-sizing: border-box; }
+.sp-form label { display: block; margin-bottom: 6px; font-family: var(--kop); font-weight: 700; font-size: 1rem; }
+.sp-form label span { font-weight: 500; color: var(--gedempt); }
+.sp-form .sp-klein { margin: 0; }
+.sp-form .pt-knop { align-self: flex-start; }
+.sp-rij2 { display: flex; flex-wrap: wrap; gap: 16px; }
+.sp-rij2 > div { flex: 1 1 180px; }
+.pt-knop-lichtrand { background: transparent; color: #fff; border-color: #fff; }
+.pt-knop-lichtrand:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+button.pt-knop { font-family: var(--kop); cursor: pointer; }

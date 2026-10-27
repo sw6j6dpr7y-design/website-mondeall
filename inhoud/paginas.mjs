@@ -29,6 +29,9 @@ export const paginas = [
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
+  { url: '/sponsoren', titel: 'Word Sponsor', beschrijving: 'Als Sponsor draag je de kosten van Mondéall in jouw gemeente. Zo komt elke euro die een inwoner deelt helemaal aan.', stukken: ['sponsor-algemeen'], scripts: ['sponsoren'], fase: 'I' },
+  { url: '/sponsoren/lochem', titel: 'Word Sponsor in Lochem', beschrijving: 'Maak geld delen in Lochem gratis. Bekijk de tredes en meld je aan voor de Startgroep van Sponsors.', stukken: ['sponsor-lochem'], scripts: ['sponsoren'], fase: 'I' },
+
   { url: '/partners', titel: 'Partners', beschrijving: 'Voor gemeenten, fondsen en andere organisaties die lokaal delen mogelijk willen maken.', stukken: ['partners'], fase: 'I' },
 
   { url: '/contact', titel: 'Contact', beschrijving: 'Blijf op de hoogte van Mondéall of neem contact op.', stukken: ['contact'], fase: 'I' },
@@ -71,7 +74,6 @@ export const plaatshouders = [
   ph('/starten/verantwoorden', 'Verantwoorden'),
   ph('/starten/startgids', 'Startgids'),
   ph('/starten/aanmelden', 'Aanmelden'),
-  ph('/sponsoren', 'Sponsor worden', { hub: true }),
   ph('/sponsoren/treden', 'Treden en tegenprestatie'),
   ph('/sponsoren/zichtbaarheid', 'Hoe je zichtbaar bent'),
   ph('/sponsoren/ondernemers-vertellen', 'Ondernemer werft ondernemer'),

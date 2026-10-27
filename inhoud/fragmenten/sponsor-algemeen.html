@@ -4,30 +4,32 @@
       <p class="pt-eyebrow">Voor lokale ondernemers</p>
       <h2>Maak geld delen in jouw gemeente gratis.</h2>
       <p class="pt-lead">Als Sponsor draag je de kosten van Mondéall in jouw gemeente. Daardoor komt elke euro die een inwoner deelt met een Initiatief helemaal aan bij de organisatie die de Voorziening realiseert.</p>
-      <p class="pt-gedempt">Sponsoring geldt altijd voor één gemeente. Vul in waar je onderneming zit, dan zie je wat er in jouw gemeente mogelijk is.</p>
+      <p class="pt-gedempt">Sponsoring geldt altijd voor één gemeente. Kies de gemeente waar je geld delen gratis wilt maken. Dat hoeft niet de plaats te zijn waar je onderneming gevestigd is.</p>
     </div>
-    <div class="pt-kort sp-check">
-      <label for="plaats" class="sp-vraag">In welke plaats zit je onderneming?</label>
-      <form class="sp-rij" id="plaatsForm" novalidate>
-        <input id="plaats" type="text" placeholder="Bijvoorbeeld Laren" autocomplete="address-level2">
-        <button type="submit" class="pt-knop">Bekijk</button>
-      </form>
-      <p class="sp-klein">Je typt een plaatsnaam, wij zoeken de gemeente erbij. We slaan niets op en kijken niet waar je bent.</p>
-
-      <div id="uitslagActief" class="sp-uitslag sp-actief" role="status" hidden>
-        <p class="pt-eyebrow">Gemeente Lochem</p>
-        <p><span class="sp-plaats"></span> valt onder de gemeente Lochem. Hier start Mondéall met de pilot.</p>
-        <a class="pt-knop" href="/sponsoren/lochem">Word Sponsor in Lochem</a>
+    <div class="sp-kolom">
+      <div class="pt-kort sp-actiefblok">
+        <p class="pt-eyebrow">Hier is Mondéall actief</p>
+        <ul class="sp-gemeenten">
+          <li><a href="/sponsoren/lochem"><span>Word Sponsor in Lochem</span><span class="sp-status" aria-hidden="true">pilot in voorbereiding</span></a></li>
+        </ul>
       </div>
 
-      <div id="uitslagNiet" class="sp-uitslag" role="status" hidden>
-        <p class="sp-kop">Mondéall is nog niet actief in <span class="sp-plaats"></span>.</p>
-        <p class="sp-klein">We starten in de gemeente Lochem. Laat je e-mailadres achter als je wilt horen wanneer Mondéall naar jouw gemeente komt. We gebruiken het alleen daarvoor. Het opent een e-mail aan ons, er wordt niets op deze pagina opgeslagen.</p>
-        <form class="sp-rij" id="interesseForm">
-          <label for="interesse" class="sp-verborgen">E-mailadres</label>
-          <input id="interesse" type="email" autocomplete="email" placeholder="je@onderneming.nl" required>
-          <button type="submit" class="pt-knop pt-knop-rand">Houd me op de hoogte</button>
-        </form>
+      <div class="sp-zoek">
+        <label for="plaats" class="sp-vraag">Zoek op plaats</label>
+        <input id="plaats" type="text" placeholder="Typ een dorp, wijk of stad" autocomplete="off">
+        <p class="sp-klein">Weet je niet onder welke gemeente een plaats valt? Typ de plaatsnaam, wij zoeken de gemeente erbij. We slaan niets op.</p>
+
+        <ul id="plaatsLijst" class="sp-treffers" aria-label="Gevonden plaatsen" hidden></ul>
+
+        <div id="uitslagNiet" class="sp-uitslag" role="status" hidden>
+          <p class="sp-kop">Daar is Mondéall nog niet actief.</p>
+          <p class="sp-klein">Laat je e-mailadres achter als je wilt horen wanneer Mondéall naar die gemeente komt. We gebruiken het alleen daarvoor. Het opent een e-mail aan ons, er wordt niets op deze pagina opgeslagen.</p>
+          <form class="sp-rij" id="interesseForm">
+            <label for="interesse" class="sp-verborgen">E-mailadres</label>
+            <input id="interesse" type="email" autocomplete="email" placeholder="je@onderneming.nl" required>
+            <button type="submit" class="pt-knop pt-knop-rand">Houd me op de hoogte</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

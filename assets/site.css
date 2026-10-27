@@ -1697,3 +1697,22 @@ header .acties { flex-wrap: nowrap; }
 .pt-knop-lichtrand { background: transparent; color: #fff; border-color: #fff; }
 .pt-knop-lichtrand:hover { background: rgba(255, 255, 255, .12); color: #fff; }
 button.pt-knop { font-family: var(--kop); cursor: pointer; }
+
+.sp-kolom { flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.sp-gemeenten, .sp-treffers { list-style: none; margin: 0; padding: 0; }
+.sp-gemeenten { display: flex; flex-direction: column; gap: 10px; }
+.sp-gemeenten a { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px; background: var(--diep); color: #fff; text-decoration: none; border-radius: 4px; font-family: var(--kop); font-weight: 700; font-size: 1.1rem; }
+.sp-gemeenten a:hover { background: #003d36; color: #fff; }
+.sp-gemeenten .sp-status { color: #d6ece9; }
+.sp-status { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; font-weight: 400; }
+.sp-zoek { background: #fff; border: 1px solid var(--lijn); padding: 24px 28px; box-sizing: border-box; }
+.sp-zoek .sp-vraag { font-size: 1.1rem; }
+.sp-zoek input { width: 100%; min-height: 50px; padding: 0 14px; font: inherit; font-size: 1.05rem; border: 1px solid #8a9792; border-radius: 4px; background: #fff; box-sizing: border-box; }
+.sp-zoek input:focus-visible { outline: 3px solid var(--merktekst); outline-offset: 2px; }
+.sp-treffers { margin-top: 14px; border: 1px solid var(--lijn); }
+.sp-treffers[hidden] { display: none; }
+.sp-treffers li { border-bottom: 1px solid #e3e8e5; }
+.sp-treffers li:last-child { border-bottom: 0; }
+.sp-treffers a { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 0 16px; text-decoration: none; color: var(--tekst); font-family: var(--kop); font-weight: 700; }
+.sp-treffers a:hover { background: var(--nevel); }
+.sp-treffers .sp-status { color: var(--diep); }

@@ -18,7 +18,7 @@ export const paginas = [
   { url: '/sectoren', titel: 'De twaalf sectoren', beschrijving: 'Elk Initiatief valt binnen één van de twaalf sectoren. Bekijk de aandachtsgebieden per sector.', stukken: ['sectoren', 'sector-dialog'], scripts: ['sectoren'], fase: 'I' },
   // /sectoren/[code]-[naam] wordt gemaakt uit de gegevens
 
-  { url: '/hoe-het-werkt', titel: 'Hoe het werkt', beschrijving: 'Hoe Mondéall werkt voor Geld Delers, verenigingen en Sponsors.', stukken: ['hoe-het-werkt'], fase: 'I' },
+  { url: '/hoe-het-werkt', titel: 'Hoe het werkt', beschrijving: 'Hoe Mondéall werkt: organisaties plaatsen een Initiatief, inwoners delen mee vanaf € 1 en Sponsors dragen de kosten, zodat alles aankomt.', stukken: ['hoe-het-werkt-landing'], fase: 'I' },
 
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Zet als vereniging, stichting, school of kerk een Initiatief op Mondéall. Mensen delen mee vanaf € 1 en alles komt bij jullie aan.', stukken: ['starten-landing'], fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },

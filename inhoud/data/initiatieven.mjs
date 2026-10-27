@@ -58,6 +58,11 @@ export const INI_DATA = [
     berichten: [["Familie Jansen", "Succes jongens, die netten komen er!"]],
     sponsor: { naam: "Bouwbedrijf Egberink & Zn.", type: "Familiebedrijf", kleur: "#b5533c", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" },
     v2: {
+      // Foto op de Initiatiefpagina zelf. De foto op het kaartje (hierboven, veld foto) blijft de hockeyfoto.
+      foto: "/assets/fotos/initiatief-netten-klavertje.jpg",
+      fotoAlt: "Een versleten doelnet vol gaten en rafelige touwen in het ochtendlicht",
+      fotoPos: "50%",
+      fotoCredit: "Pexels",
       extraSponsors: [
         { naam: "Fysiotherapie Veldzicht", type: "Lokale ondernemer", kleur: "#1b7f8c", logo: "kruis", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" },
         { naam: "Installatiebedrijf Bolwerk", type: "Familiebedrijf", kleur: "#35577d", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" }
@@ -80,9 +85,9 @@ export const INI_DATA = [
         ["25 oktober 2026", "We hebben bij twee leveranciers offertes opgevraagd en kiezen voor netten die tegen weer en wind kunnen. Op de ledenvergadering lieten we de oude netten zien. Iedereen schrok een beetje."],
         ["18 oktober 2026", "We zijn gestart. Dank aan iedereen die de link al in de teamapp heeft gezet."]
       ],
-      weldoeners: {
+      verdubbelaars: {
         max: 10, perGeldDeler: 100, ruimte: 640,
-        lijst: [["Familie De Vries", "Verdubbeling vol", "vol"], ["Een anonieme weldoener", "Verdubbelt nu", "nu"], ["Gerard en Annie", "Volgt hierna", "volgt"]]
+        lijst: [["Familie De Vries", "Plafond bereikt", "vol"], ["Een anonieme verdubbelaar", "Verdubbelt nu", "nu"], ["Gerard en Annie", "Verdubbelt nu", "nu"]]
       },
       delers: [
         ["Familie Jansen", "Succes jongens, die netten komen er!"],
@@ -92,7 +97,7 @@ export const INI_DATA = [
         ["Garage Op de Hoek", ""]
       ],
       zozit: [
-        ["Wie je gift ontvangt", "SV Het Klavertje"],
+        ["Wie je gift ontvangt", "SV Het Klavertje", "www.svhetklavertje.example"],
         ["Waar je geld heen gaat", "Via de betaalprovider naar de bankrekening op naam van de vereniging. Het komt nooit op een rekening van Mondéall."],
         ["Fiscale status", "Opgegeven door de vereniging: sociaal belang behartigende instelling (SBBI). Mondéall beoordeelt deze status niet."],
         ["Wie dit Initiatief plaatste", "Ellen, jeugdcoördinator, namens de vereniging."],

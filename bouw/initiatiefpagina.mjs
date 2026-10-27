@@ -17,17 +17,24 @@ export function initiatiefPaginaHtml(d, alle) {
   const v = d.v2;
   const s = sectorVan(d.sector);
   const url = DOMEIN + '/initiatieven/' + d.slug;
-  const wd = v.weldoeners;
-  const resterend = wd.lijst.length;
+  // De Initiatiefpagina mag een eigen foto hebben; het kaartje in het overzicht gebruikt altijd d.foto.
+  const foto = v.foto || d.foto;
+  const fotoAlt = v.fotoAlt || 'Sfeerbeeld bij ' + d.titel;
+  const fotoPos = v.fotoPos || d.pos;
+  const fotoCredit = v.foto ? (v.fotoCredit || '') : d.credit;
+  const vd = v.verdubbelaars;
+  const resterend = vd.lijst.length;
 
   const fasen = FASEN.map((f, i) => '<li' + (i + 1 === v.fase ? ' class="nu"' : '') + '>' + (i + 1) + '. ' + esc(f) + (i + 1 === v.fase ? ' (nu)' : '') + '</li>').join('');
 
   const verhaal = v.verhaal.map((t) => '<p>' + esc(t) + '</p>').join('');
   const feiten = v.feiten.map(([k, t]) => '<div><dt>' + esc(k) + '</dt><dd>' + esc(t) + '</dd></div>').join('');
   const berichten = v.berichtenVereniging.map(([datum, tekst]) => '<article class="ip-bericht"><p class="ip-datum">' + esc(datum) + '</p><p>' + esc(tekst) + '</p></article>').join('');
-  const weldoeners = wd.lijst.map(([naam, status, soort]) => '<li><span class="ip-naam">' + esc(naam) + '</span><span class="ip-status ' + soort + '">' + esc(status) + '</span></li>').join('');
+  const verdubbelaars = vd.lijst.map(([naam, status, soort]) => '<li><span class="ip-naam">' + esc(naam) + '</span><span class="ip-status ' + soort + '">' + esc(status) + '</span></li>').join('');
   const delers = v.delers.map(([naam, bericht]) => '<li><span class="ip-naam">' + esc(naam) + '</span>' + (bericht ? '<span class="ip-citaat">' + esc(bericht) + '</span>' : '') + '</li>').join('');
-  const zozit = v.zozit.map(([k, t]) => '<div><dt>' + esc(k) + '</dt><dd>' + esc(t) + '</dd></div>').join('');
+  // Het derde onderdeel is het webadres van de Begunstigde. Dit voorbeeldadres is fictief en daarom geen link.
+  const zozit = v.zozit.map(([k, t, site]) => '<div><dt>' + esc(k) + '</dt><dd>' + esc(t) +
+    (site ? '<br><span class="ip-site">' + esc(site) + '</span> <span class="ip-fictief">(fictief adres)</span>' : '') + '</dd></div>').join('');
 
   // Sponsors van deze Kern: elk bedrijf een keer.
   const gezien = new Set();
@@ -49,8 +56,8 @@ export function initiatiefPaginaHtml(d, alle) {
 <span class="preview-status">Voorbeeldpagina met fictieve gegevens. Er wordt niets afgeschreven.</span>
 
 <div class="ip-top">
-  <figure class="ip-foto"><div class="ip-hero" style="background:${tint(s.hex, 0.12)}"><img src="${esc(d.foto)}" alt="Sfeerbeeld bij ${esc(d.titel)}" style="object-position:center ${esc(d.pos)}"></div>
-  <figcaption class="foto-credit">Sfeerbeeld ter illustratie. Foto: ${esc(d.credit)}</figcaption></figure>
+  <figure class="ip-foto"><div class="ip-hero" style="background:${tint(s.hex, 0.12)}"><img src="${esc(foto)}" alt="${esc(fotoAlt)}" style="object-position:center ${esc(fotoPos)}"></div>
+  <figcaption class="foto-credit">Sfeerbeeld ter illustratie.${fotoCredit ? ' Foto: ' + esc(fotoCredit) : ''}</figcaption></figure>
   <div class="ip-kopblok">
     <p class="ip-chips">
       <a class="ip-chip kern" href="#meer">${esc(d.kern)}</a>
@@ -67,7 +74,7 @@ export function initiatiefPaginaHtml(d, alle) {
     </div>
     <div class="ip-telling">
       <p class="ip-telregel" id="ip-telregel">${d.mensen} Geld Delers deelden al mee.</p>
-      <p><a href="#weldoeners">Weldoeners verdubbelen je gift</a></p>
+      <p><a href="#verdubbelaars">Verdubbelaars verdubbelen je gift</a></p>
     </div>
     <div class="ip-einde"><p>Meedelen kan tot en met</p><p class="ip-datumgroot">${esc(v.deadline)}</p></div>
   </div>
@@ -82,11 +89,11 @@ export function initiatiefPaginaHtml(d, alle) {
 
 <section aria-labelledby="berichten-kop"><h2 id="berichten-kop" class="ip-h2">Berichten van de vereniging</h2><p class="ip-intro">${esc(v.berichtenIntro)}</p><div class="ip-berichten">${berichten}</div></section>
 
-<section id="weldoeners" aria-labelledby="weldoeners-kop"><h2 id="weldoeners-kop" class="ip-h2">Weldoeners</h2>
-<p class="ip-intro">Weldoeners verdubbelen elke euro die jij deelt, tot ${euro(wd.perGeldDeler)} per Geld Deler. Ze vullen elkaar aan in de volgorde waarin ze zich aanmeldden. Per Initiatief kunnen er maximaal ${wd.max === 10 ? 'tien' : wd.max} zijn.</p>
-<div class="ip-ruimte"><p class="ip-ruimtegroot">Nog te verdubbelen: <span id="ip-ruimte">${euro(wd.ruimte)}</span></p><p class="ip-ruimteklein">${resterend} van maximaal ${wd.max} weldoeners</p></div>
-<ul class="ip-lijst">${weldoeners}</ul>
-<a href="/contact">Word weldoener bij dit Initiatief</a></section>
+<section id="verdubbelaars" aria-labelledby="verdubbelaars-kop"><h2 id="verdubbelaars-kop" class="ip-h2">Verdubbelaars</h2>
+<p class="ip-intro">Verdubbelaars verdubbelen elke euro die jij deelt, tot ${euro(vd.perGeldDeler)} per Geld Deler. Per Initiatief kunnen er maximaal ${vd.max === 10 ? 'tien' : vd.max} zijn.</p>
+<div class="ip-ruimte"><p class="ip-ruimtegroot">Nog te verdubbelen: <span id="ip-ruimte">${euro(vd.ruimte)}</span></p><p class="ip-ruimteklein">${resterend} van maximaal ${vd.max} verdubbelaars</p></div>
+<ul class="ip-lijst">${verdubbelaars}</ul>
+<a href="/contact">Word verdubbelaar bij dit Initiatief</a></section>
 
 <section aria-labelledby="deelden-kop"><h2 id="deelden-kop" class="ip-h2">Wie deelden</h2>
 <div class="ip-groot"><p class="ip-getal" id="ip-getal">${d.mensen}</p><p class="ip-getalregel">Geld Delers deelden al mee</p><p class="ip-getalnoot">Met naam of anoniem, allebei even welkom. Bedragen tonen we niet.</p></div>
@@ -115,7 +122,7 @@ ${meer}
 <div id="ip-formulierblok">
 <h2 id="delen-kop">Deel mee</h2>
 <p class="ip-intro klein">Vanaf € 1. Je hebt geen account nodig.</p>
-<p class="ip-verdubbeling" id="ip-verdubbeling" data-ruimte="${wd.ruimte}" data-max="${wd.perGeldDeler}">Je gift wordt verdubbeld door de <a href="#weldoeners">weldoeners</a>, tot ${euro(wd.perGeldDeler)}.</p>
+<p class="ip-verdubbeling" id="ip-verdubbeling" data-ruimte="${vd.ruimte}" data-max="${vd.perGeldDeler}">Je gift wordt verdubbeld door de <a href="#verdubbelaars">verdubbelaars</a>, tot ${euro(vd.perGeldDeler)}.</p>
 <form id="ip-formulier" novalidate>
   <label for="ip-bedrag" class="ip-label">Bedrag</label>
   <div class="ip-bedragveld"><span aria-hidden="true">€</span><input id="ip-bedrag" name="bedrag" type="text" inputmode="decimal" value="10" autocomplete="off"></div>
@@ -134,7 +141,7 @@ ${meer}
   <img src="/assets/klavertje-mondeall.png" alt="" width="64" height="56">
   <h2 id="ip-bedankt-kop" tabindex="-1">Dank je wel</h2>
   <p>Je gift van <span id="ip-bedankt-bedrag"></span> gaat naar ${esc(d.beg)}.</p>
-  <p class="ip-verdubbeling" id="ip-bedankt-verdubbeld" hidden>Een weldoener legt er <span id="ip-bedankt-extra"></span> bij.</p>
+  <p class="ip-verdubbeling" id="ip-bedankt-verdubbeld" hidden>Een verdubbelaar legt er <span id="ip-bedankt-extra"></span> bij.</p>
   <p id="ip-bedankt-regel" class="ip-intro"></p>
   <p class="ip-kleinnoot">Dit was een voorbeeld: er is niets afgeschreven.</p>
   <a href="#top">Terug naar boven</a>

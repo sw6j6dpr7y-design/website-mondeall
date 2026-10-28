@@ -1929,3 +1929,8 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
   .ee-rij-label { display: block; font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); margin-bottom: 6px; }
   .ee-keuze { position: static; align-self: flex-start; }
 }
+.ee-impact { max-width: 760px; margin: 32px 0 0; padding: 24px 28px; background: var(--nevel); border-left: 4px solid var(--diep); border-radius: 0 12px 12px 0; }
+.ee-impact h3 { font-family: var(--kop); font-weight: 800; font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.25; color: var(--diep); margin: 0 0 10px; }
+.ee-impact p { margin: 0; font-size: 1.08rem; line-height: 1.6; }
+.ee-impact .ee-impact-noot { margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); }
+@media (max-width: 720px) { .ee-impact { padding: 20px; } }

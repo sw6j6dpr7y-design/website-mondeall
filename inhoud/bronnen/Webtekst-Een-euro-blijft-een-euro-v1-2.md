@@ -85,3 +85,7 @@ We keken naar de tarieven die de platforms zelf publiceren, voor een betaling me
 - [ ] Een jurist laat de tabel met bedragen van andere platforms toetsen op vergelijkende reclame. Zonder namen is herkenning moeilijk, maar de bedragen zijn exact.
 - [ ] Voor elk bedrag staan bron-URL en datum in de kostenvergelijking; bij een aantal schermafbeeldingen ontbreken die nog.
 - [ ] Bij elke nieuwe run: bedragen en de datum "Laatst bijgewerkt" bijwerken.
+
+## Aanvulling na v1.2 (28 oktober 2026, op de site)
+
+Op verzoek van Mathieu staat na de tabel een blok "Welke euro heeft de meeste impact?". De zin "Juist daar gaat het ons om: een bijdrage telt niet door de hoogte, maar doordat iemand ziet wat er nodig is en meedoet." is daarheen verplaatst en aangevuld met "Niet per se de grootste." en "Daarom moet juist de kleinste euro heel aankomen.", met de noot "Dit is onze overtuiging, geen meting." Neem dit mee in een volgende versie van de webtekst.

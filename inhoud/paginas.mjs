@@ -20,6 +20,9 @@ export const paginas = [
 
   { url: '/hoe-het-werkt', titel: 'Hoe het werkt', beschrijving: 'Hoe Mondéall werkt: organisaties plaatsen een Initiatief, inwoners delen mee vanaf € 1 en Sponsors dragen de kosten, zodat alles aankomt.', stukken: ['hoe-het-werkt-landing'], fase: 'I' },
 
+  // Tekst: Webtekst Een euro blijft een euro v1.2 (28-10-2026). noindex tot de interne controle in inhoud/open-punten.md is afgerond.
+  { url: '/hoe-het-werkt/een-euro-blijft-een-euro', titel: 'Een euro blijft een euro', titeltag: 'Een euro blijft een euro: wie betaalt de kosten van een gift? · Mondéall', beschrijving: 'Deel je één euro, dan ontvangt het Initiatief één euro. Zo zit het met de kosten van online geven, wie ze betaalt en hoe het elders werkt.', stukken: ['een-euro'], noindex: true, fase: 'I' },
+
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Zet als vereniging, stichting, school of kerk een Initiatief op Mondéall. Mensen delen mee vanaf € 1 en alles komt bij jullie aan.', stukken: ['starten-landing'], fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },
   { url: '/starten/zo-werkt-het', titel: 'Zo werkt het, in vier stappen', beschrijving: 'Zo ziet het starten van een Initiatief eruit, in vier stappen.', stukken: ['start-initiatief'], scripts: ['starten'], fase: 'I' },
@@ -66,7 +69,6 @@ const ph = (url, titel, extra = {}) => ({ url, titel, beschrijving: titel + '. D
 export const plaatshouders = [
   ph('/hoe-het-werkt/meedelen', 'Zo deel je mee'),
   ph('/hoe-het-werkt/geldstromen', 'Hoe het geld loopt'),
-  ph('/hoe-het-werkt/een-euro-blijft-een-euro', 'Een euro blijft een euro'),
   ph('/hoe-het-werkt/wie-kan-ontvangen', 'Wie kan ontvangen'),
   ph('/hoe-het-werkt/spelregels', 'Spelregels'),
   ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),

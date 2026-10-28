@@ -74,3 +74,12 @@ Alle [TE BEVESTIGEN]-markeringen uit de teksten, gegroepeerd naar wie ze oplost.
 - **Reactietermijn** na een aanmelding. In de teksten staat bewust geen termijn.
 - **Domein en adressen.** sponsoren@mondeall.eu, het kaartje voor klanten en de sticker pas drukken en publiceren als het definitieve domein vaststaat.
 - **Startgroep.** Omvang en jaartal per gemeente. De A4 noemt ongeveer twintig ondernemers en 2027 voor Lochem.
+
+# Open punten bij Een euro blijft een euro
+
+Bron: Webtekst Een euro blijft een euro v1.2 (28-10-2026), "Interne controle vóór publicatie". De pagina /hoe-het-werkt/een-euro-blijft-een-euro staat online met noindex tot deze punten zijn afgerond.
+
+- Een jurist laat de tabel met bedragen van andere platforms toetsen op vergelijkende reclame. Zonder namen is herkenning moeilijk, maar de bedragen zijn exact.
+- Voor elk bedrag staan bron-URL en datum in de kostenvergelijking; bij een aantal schermafbeeldingen ontbreken die nog.
+- Bij elke nieuwe run: bedragen en de datum "Laatst bijgewerkt" bijwerken (in inhoud/fragmenten/een-euro.html).
+- Bij DonoLink en GoFundMe is het minimumbedrag nog niet vastgesteld (zie de verantwoording).

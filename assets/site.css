@@ -1845,3 +1845,87 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
   .hw-tijdlijn li::before { top: 4px; left: -9px; }
   .hw-plaat { padding: 20px 16px 16px; }
 }
+
+/* Een euro blijft een euro (/hoe-het-werkt/een-euro-blijft-een-euro) */
+.ee-hero { background: linear-gradient(180deg, var(--nevel) 0, var(--achtergrond) 100%); }
+.ee-hero-in { display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: center; }
+.ee-hero-tekst { flex: 1 1 480px; min-width: 0; }
+.ee-hero-tekst > p:not(.pt-eyebrow):not(.pt-lead):not(.sl-status) { max-width: 34em; margin: 0; }
+.ee-som { flex: 1 1 340px; margin: 0; background: #fff; border: 1px solid var(--lijn); border-radius: 14px; padding: 26px; box-shadow: 0 18px 40px -28px rgba(0, 82, 72, .45); }
+.ee-som-rij { display: flex; align-items: center; gap: 14px; }
+.ee-som-vak { flex: 1 1 0; min-width: 0; margin: 0; padding: 16px; border: 1px solid var(--lijn); border-radius: 10px; background: var(--achtergrond); display: flex; flex-direction: column; gap: 4px; }
+.ee-som-doel { background: var(--nevel); border-color: #b9dfda; }
+.ee-som-label { font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); }
+.ee-som-bedrag { white-space: nowrap; font-family: var(--kop); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--diep); letter-spacing: -.02em; }
+.ee-som-pijl { flex: 0 0 26px; height: 2px; background: var(--diep); position: relative; }
+.ee-som-pijl::after { content: ""; position: absolute; right: -2px; top: -5px; border: 6px solid transparent; border-left: 7px solid var(--diep); border-right: 0; }
+.ee-som figcaption { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--lijn); font-size: 1rem; line-height: 1.5; }
+
+.ee-h3 { font-family: var(--kop); font-weight: 700; font-size: 1.4rem; color: var(--tekst); margin: 8px 0 16px; }
+.ee-manieren { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.ee-manier { position: relative; display: flex; flex-direction: column; gap: 10px; background: var(--achtergrond); border: 1px solid var(--lijn); padding: 22px; }
+.ee-manier strong { font-family: var(--kop); font-weight: 700; font-size: 1.25rem; color: var(--tekst); }
+.ee-manier p { margin: 0; font-size: 1rem; line-height: 1.5; }
+.ee-manier-nr { font-family: 'IBM Plex Mono', monospace; font-size: .85rem; color: var(--gedempt); }
+.ee-gekozen { background: var(--nevel); border: 2px solid var(--merk); }
+.ee-gekozen strong { color: var(--diep); }
+.ee-keuze { position: absolute; top: -12px; right: 16px; background: var(--merk); color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 3px; }
+.ee-balk { display: flex; height: 30px; border-radius: 4px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: .72rem; letter-spacing: .04em; }
+.ee-deel { display: flex; align-items: center; justify-content: center; padding: 0 8px; white-space: nowrap; }
+.ee-gift { flex: 0 0 78%; background: var(--diep); color: #fff; }
+.ee-gift.ee-heel { flex-basis: 78%; }
+.ee-af { flex: 1 1 auto; background: repeating-linear-gradient(135deg, #f3d9d3, #f3d9d3 6px, #fff 6px, #fff 12px); color: #8a2f1f; border: 1px dashed #c76b58; border-left: 0; }
+.ee-extra { flex: 1 1 auto; background: #f6e7c4; color: #6b4a00; border: 1px dashed #c99a2e; border-left: 0; }
+.ee-balk-los { height: 26px; margin-top: -4px; }
+.ee-sponsor { flex: 1 1 auto; background: #fff; color: var(--diep); border: 1px dashed var(--merk); border-radius: 4px; }
+.ee-conclusie { margin: 22px 0 0; font-size: 1.15rem; max-width: 40em; }
+
+.ee-tekst { max-width: 44em; }
+.ee-tekst p { margin: 0 0 14px; }
+.ee-tabel { margin: 20px 0 24px; background: #fff; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; }
+.ee-tabel table { width: 100%; border-collapse: collapse; }
+.ee-tabel caption { text-align: left; padding: 12px 18px; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); background: var(--achtergrond); border-bottom: 1px solid var(--lijn); }
+.ee-tabel th, .ee-tabel td { text-align: left; vertical-align: middle; padding: 16px 18px; border-bottom: 1px solid var(--lijn); font-size: 1rem; line-height: 1.45; }
+.ee-tabel tbody tr:last-child th, .ee-tabel tbody tr:last-child td { border-bottom: 0; }
+.ee-tabel thead th { font-family: var(--kop); font-weight: 700; color: var(--tekst); background: #fff; }
+.ee-tabel tbody th { font-family: var(--kop); font-weight: 800; font-size: 1.3rem; color: var(--diep); white-space: nowrap; width: 1%; }
+.ee-sub { display: block; font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gedempt); margin-top: 2px; }
+.ee-tabel .ee-mo { background: var(--nevel); width: 22%; }
+.ee-tabel thead .ee-mo { color: var(--diep); }
+.ee-heel-bedrag { font-family: var(--kop); font-weight: 800; font-size: 1.3rem; color: var(--diep); }
+.ee-bedragen { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.ee-bedragen li { font-family: 'IBM Plex Mono', monospace; font-size: .92rem; padding: 4px 9px; border: 1px solid var(--lijn); border-radius: 3px; background: var(--achtergrond); }
+.ee-geen { color: var(--gedempt); }
+.ee-rij-label { display: none; }
+.ee-let-op { background: #fff; border-left: 4px solid #e4af44; padding: 14px 18px; }
+
+.ee-afspraken { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; max-width: 980px; }
+.ee-tabel thead th:first-child { white-space: nowrap; }
+.ee-afspraken li { border-top: 3px solid var(--merk); padding-top: 16px; font-size: 1rem; line-height: 1.5; }
+.ee-afspraken strong { display: block; font-family: var(--kop); font-size: 1.15rem; line-height: 1.3; color: var(--diep); margin: 0 0 6px; }
+
+.ee-plaat { margin-top: 28px; }
+.hw-keten.ee-keten-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ee-nietlijst { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--lijn); }
+.ee-nietlijst li { padding: 14px 0; border-bottom: 1px solid var(--lijn); font-size: 1.05rem; line-height: 1.5; }
+.ee-nietlijst strong { font-family: var(--kop); color: var(--tekst); }
+.ee-methode p { margin: 0 0 12px; font-size: 1rem; line-height: 1.55; }
+.ee-bijgewerkt { font-family: 'IBM Plex Mono', monospace; font-size: .82rem; color: var(--gedempt); }
+
+@media (max-width: 720px) {
+  .ee-afspraken { grid-template-columns: 1fr; }
+  .ee-som-rij { flex-direction: column; align-items: stretch; }
+  .ee-som-pijl { flex-basis: 22px; width: 2px; height: 22px; align-self: center; }
+  .ee-som-pijl::after { right: auto; left: -5px; top: auto; bottom: -2px; border: 6px solid transparent; border-top: 7px solid var(--diep); border-bottom: 0; }
+  .ee-tabel thead { display: none; }
+  .ee-tabel table, .ee-tabel tbody, .ee-tabel tr, .ee-tabel th, .ee-tabel td { display: block; width: auto; }
+  .ee-tabel tbody tr { border-bottom: 1px solid var(--lijn); }
+  .ee-tabel tbody tr:last-child { border-bottom: 0; }
+  .ee-tabel tbody th, .ee-tabel td { border-bottom: 0; padding: 10px 16px; white-space: normal; }
+  .ee-tabel caption { display: block; }
+  .ee-tabel tbody th, .ee-tabel .ee-mo { width: auto; }
+  .ee-tabel tbody th { padding-top: 16px; white-space: nowrap; }
+  .ee-tabel td.ee-mo { padding-bottom: 16px; }
+  .ee-rij-label { display: block; font-family: 'IBM Plex Mono', monospace; font-weight: 400; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); margin-bottom: 6px; }
+  .ee-keuze { position: static; align-self: flex-start; }
+}

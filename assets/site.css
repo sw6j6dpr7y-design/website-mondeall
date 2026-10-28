@@ -1934,3 +1934,11 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .ee-impact p { margin: 0; font-size: 1.08rem; line-height: 1.6; }
 .ee-impact .ee-impact-noot { margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gedempt); }
 @media (max-width: 720px) { .ee-impact { padding: 20px; } }
+.ee-voorbeeld { margin: -4px 0 18px; font-size: .98rem; color: var(--gedempt); }
+.ee-voorbeeld-label { display: inline-block; margin-right: 6px; padding: 2px 8px; border: 1px solid var(--lijn); border-radius: 3px; font-family: 'IBM Plex Mono', monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tekst); background: #fff; }
+.ee-balk .ee-gift { flex: 1 1 auto; }
+.ee-balk .ee-af, .ee-balk .ee-extra { flex: 0 0 auto; padding: 0 10px; }
+.ee-manier .ee-uitkomst { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; line-height: 1.5; color: var(--gedempt); }
+.ee-uitkomst b { font-weight: 600; color: var(--tekst); white-space: nowrap; }
+.ee-uitkomst .ee-min { color: #8a2f1f; }
+.ee-uitkomst .ee-meer { color: #6b4a00; }

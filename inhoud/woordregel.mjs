@@ -17,7 +17,8 @@ export const termen = [
   { naam: 'schenking', patroon: 'schenkingen?', soort: 'fout' },
   { naam: 'collecteren', patroon: 'collect(?:e|es|eren|eert|eerde|eerden|ant|anten)', soort: 'fout' },
   { naam: 'goed doel', patroon: 'goede? doelen?', soort: 'fout' },
-  { naam: 'klant', patroon: 'klanten?', soort: 'fout' },
+  // Op de Sponsorpagina van Lochem gaat het over de klanten van de Sponsor zelf: toegestaan (besluit Mathieu, 29-10-2026)
+  { naam: 'klant', patroon: 'klanten?', soort: 'fout', toegestaanOp: ['/sponsoren/lochem'] },
   { naam: 'gebruiker', patroon: 'gebruikers?', soort: 'fout' },
   { naam: 'Drager', patroon: 'dragers?', soort: 'fout' },
   { naam: 'Supporter', patroon: 'supporters?', soort: 'fout' },
@@ -31,6 +32,6 @@ export const termen = [
 
   // Waarschuwingen
   { naam: 'inzamelingsactie', patroon: 'inzamelingsacties?', soort: 'waarschuwing' },
-  { naam: 'inzamelen', patroon: 'inzamel(?:en|t|de|den)|ingezameld', soort: 'waarschuwing' },
+  { naam: 'inzamelen', patroon: 'inzamel(?:en|t|de|den)|ingezameld', soort: 'waarschuwing', toegestaanOp: VERSCHIL },
   { naam: 'Mondeall zonder accent', patroon: '(?<![@/.\\p{L}\\d-])Mondeall(?![\\p{L}\\d-]|\\.(?:nl|eu|com))', soort: 'waarschuwing', hoofdlettergevoelig: true, alleenZichtbaar: true },
 ];

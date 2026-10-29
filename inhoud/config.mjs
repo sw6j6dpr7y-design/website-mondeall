@@ -10,6 +10,6 @@ export const EMAIL = 'info@mondeall.eu';
 // Statusregel boven pagina's die dat vragen (frontmatter: statusregel: ja). Pas aan op wat bij publicatie waar is; haal de regel weg bij livegang.
 export const STATUSREGEL = 'Mondéall is in opbouw. Delen kan nog niet. Zodra de eerste Initiatieven starten, lees je dat hier.';
 
-// De drie /verschil/-pagina's (crowdfunding, doneren, geld inzamelen) staan op noindex en buiten sitemap.xml zolang dit false is.
+// De drie /verschil/-pagina's (crowdfunding, doneren, geld inzamelen) staan op noindex en buiten sitemap.xml zolang dit false is. Aangezet op 29-10-2026.
 // Zet op true zodra de statusregel definitief is en de akkoorden er zijn (zie inhoud/open-punten.md).
-export const verschilIndexeren = false;
+export const verschilIndexeren = true;

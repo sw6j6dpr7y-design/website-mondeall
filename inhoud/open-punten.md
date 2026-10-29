@@ -83,3 +83,18 @@ Bron: Webtekst Een euro blijft een euro v1.2 (28-10-2026), "Interne controle vó
 - Voor elk bedrag staan bron-URL en datum in de kostenvergelijking; bij een aantal schermafbeeldingen ontbreken die nog.
 - Bij elke nieuwe run: bedragen en de datum "Laatst bijgewerkt" bijwerken (in inhoud/fragmenten/een-euro.html).
 - Bij DonoLink en GoFundMe is het minimumbedrag nog niet vastgesteld (zie de verantwoording).
+
+# Open punten bij de uitlegpagina's /verschil/ (SEO-stap 3)
+
+Bron: Teksten uitlegpagina's /verschil/ v0.3 (28-10-2026). De drie pagina's staan op noindex en niet in de sitemap zolang `verschilIndexeren` in `inhoud/config.mjs` op false staat.
+
+- **Statusregel:** de definitieve tekst staat open (`STATUSREGEL` in `inhoud/config.mjs`). Bij livegang van het platform de regel verwijderen.
+- **Aanzetten:** zet `verschilIndexeren = true` zodra de statusregel definitief is en de punten hieronder zijn afgehandeld.
+- **Achtergehouden passage op /verschil/doneren: fonds van de steunstichting.** De alinea over wat er gebeurt als een Voorziening niet doorgaat staat niet op de pagina. Pas plaatsen als de steunstichting is opgericht en de algemene voorwaarden dit vastleggen. De jurist bevestigt.
+- **Achtergehouden sectie op /verschil/doneren: "Is je gift aftrekbaar?"** Pas plaatsen als de belastingadviseur de formulering bevestigt. Bedragen en percentages gelden voor 2026 en worden elk jaar gecontroleerd. Stelselnotitie v1.1 §5 laten toetsen: die zegt dat bij een ANBI geen aftrek bij de gever bestaat, terwijl de Belastingdienst gewone giften aan een ANBI wel aftrekbaar noemt boven de drempel.
+- **Woordregel (keuze 7):** crowdfunding, doneren en geld inzamelen als woord van de bezoeker op deze drie pagina's wijkt af van de besluitenlijstregel van 28-10 ("alleen als beschrijving van het verschil"). Akkoord van Mathieu nodig.
+- **Bewering over een betaalstroom die nog niet is gebouwd:** "Het geld komt nooit op een rekening van Mondéall" (/verschil/crowdfunding). Volgt uit de eerste ijzeren regel en het Mollie-model. Toetsen bij livegang van Mollie.
+- **Geen account, geen nieuwsbrief:** uitgangspunt in /verschil/doneren. Toetsen tegen de gebouwde site en de Mollie-inrichting.
+- **Terugkoppeling:** of de site mag zeggen dat Mondéall de besteding niet controleert (komt nu niet op de pagina's voor).
+- **Links vanaf /hoe-het-werkt:** de linkteksten gebruiken de drie termen bewust niet, omdat de woordregel ze buiten /verschil/ verbiedt. Wil je de termen in de linktekst (beter voor zoekmachines), dan moet de woordregel een uitzondering krijgen voor die ene sectie.
+- **Doelgroepnavigatie:** er is geen plek in de hoofdnavigatie voor Starters en Geld Delers naar deze pagina's. Nog niet aangepast.

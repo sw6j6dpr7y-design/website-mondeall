@@ -5,7 +5,8 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
-import { DOMEIN, NAAM, BASISTITEL, BESCHRIJVING, DEELBEELD, EMAIL } from '../inhoud/config.mjs';
+import { DOMEIN, NAAM, BASISTITEL, BESCHRIJVING, DEELBEELD, EMAIL, STATUSREGEL, verschilIndexeren } from '../inhoud/config.mjs';
+import { statusregel } from './onderdelen.mjs';
 import { paginas, afgeleidePaginas, sectorPad, tekstVolgtZin } from '../inhoud/paginas.mjs';
 import { sectoren, AANDACHT } from '../inhoud/data/sectoren.mjs';
 import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
@@ -69,6 +70,17 @@ for (const [url, t] of teksten) {
   p.tekst = t; p.status = status;
   if (status === 'plaatshouder') { p.plaatshouder = true; p.noindex = true; }
   else { p.plaatshouder = false; p.hub = false; p.noindex = status !== 'klaar'; }
+  if (t.meta.ouder) p.ouder = t.meta.ouder;
+  if (t.meta.statusregel === 'ja') p.statusregel = true;
+  // De uitlegpagina's /verschil/: indexeren hangt aan één schakelaar in inhoud/config.mjs
+  if (url.startsWith('/verschil/') && status !== 'plaatshouder') { p.noindex = !verschilIndexeren; p.jsonLdWebPage = true; }
+}
+
+// Lengte van title en meta description op de /verschil/-pagina's: waarschuwing bij overschrijding
+for (const p of paginas.filter((x) => x.url.startsWith('/verschil/'))) {
+  const titel = p.titeltag || p.titel, beschr = p.beschrijving || '';
+  if (titel.length > 60) console.warn('Waarschuwing: title van ' + p.url + ' is ' + titel.length + ' tekens (maximaal 60).');
+  if (beschr.length > 155) console.warn('Waarschuwing: description van ' + p.url + ' is ' + beschr.length + ' tekens (maximaal 155).');
 }
 
 // ---------- alle pagina's (voor kruimels, hubs en sitemap) ----------
@@ -144,9 +156,15 @@ function ouders(url) {
   return lijst;
 }
 
+// De ouders voor kruimelpad en structured data: de ouder uit de tekst (frontmatter: ouder) of anders het pad zelf
+function keten(p) {
+  const o = p.ouder && perUrl.get(p.ouder);
+  return o ? [...ouders(p.ouder), { url: p.ouder, titel: o.titel }] : ouders(p.url);
+}
+
 function kruimels(p) {
   if (p.url === '/') return '';
-  const ks = ouders(p.url);
+  const ks = keten(p);
   return '<nav class="kruimels wrap" aria-label="Kruimelpad"><ol>' +
     ks.map((k) => '<li><a href="' + k.url + '">' + esc(k.titel) + '</a></li>').join('') +
     '<li aria-current="page">' + esc(p.titel) + '</li></ol></nav>';
@@ -158,8 +176,9 @@ function jsonLd(p) {
     blokken.push({ '@context': 'https://schema.org', '@type': 'Organization', name: NAAM, url: DOMEIN + '/', logo: DOMEIN + '/assets/klavertje-mondeall.png' });
     blokken.push({ '@context': 'https://schema.org', '@type': 'WebSite', name: NAAM, url: DOMEIN + '/' });
   } else {
-    const ks = [...ouders(p.url), { url: p.url, titel: p.titel }];
+    const ks = [...keten(p), { url: p.url, titel: p.titel }];
     blokken.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: ks.map((k, i) => ({ '@type': 'ListItem', position: i + 1, name: k.titel, item: DOMEIN + (k.url === '/' ? '/' : k.url) })) });
+    if (p.jsonLdWebPage) blokken.push({ '@context': 'https://schema.org', '@type': 'WebPage', '@id': DOMEIN + p.url, url: DOMEIN + p.url, name: p.titeltag || p.titel, description: p.beschrijving, inLanguage: 'nl-NL', isPartOf: { '@type': 'WebSite', name: NAAM, url: DOMEIN } });
   }
   return blokken.map((b) => '<script type="application/ld+json">' + JSON.stringify(b) + '</script>').join('\n');
 }
@@ -249,7 +268,7 @@ for (const p of paginas) {
         INI_DATA.slice(0, 4).map((d) => sponsorHtml(d.sponsor)).join('') + '<p class="id-note">Voorbeelden van fictieve bedrijven en logo\'s.</p></div>',
       subpaginas: () => '<ul class="hub-lijst">' + kinderen(p.url).map((k) => '<li><a href="' + k.url + '">' + esc(k.titel) + '</a><span>' + esc(k.beschrijving || '') + '</span></li>').join('') + '</ul>',
     };
-    binnen = '<section class="tekstpagina"><div class="wrap"><h1 class="pagina-kop">' + esc(p.h1 || p.titel) + '</h1>' +
+    binnen = '<section class="tekstpagina"><div class="wrap">' + (p.statusregel ? statusregel(STATUSREGEL) : '') + '<h1 class="pagina-kop">' + esc(p.h1 || p.titel) + '</h1>' +
       (p.status === 'concept' ? '<span class="preview-status">Conceptversie: de tekst op deze pagina is nog niet definitief.</span>' : '') +
       '<div class="tekst">' + renderMd(p.tekst.body, ctx) + '</div></div></section>';
   } else if (p.colofon) {

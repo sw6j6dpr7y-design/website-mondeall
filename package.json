@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "node bouw/bouw.mjs",
-    "serve": "node bouw/serveer.mjs"
+    "serve": "node bouw/serveer.mjs",
+    "controleer": "node bouw/woordcontrole.mjs --meld",
+    "controleer:streng": "node bouw/woordcontrole.mjs --streng"
   },
   "engines": { "node": ">=20" }
 }

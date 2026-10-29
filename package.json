@@ -5,7 +5,7 @@
   "description": "Website van Mondéall. Bouwscript zonder externe pakketten.",
   "type": "module",
   "scripts": {
-    "build": "node bouw/bouw.mjs",
+    "build": "node bouw/bouw.mjs && node bouw/woordcontrole.mjs --streng",
     "serve": "node bouw/serveer.mjs",
     "controleer": "node bouw/woordcontrole.mjs --meld",
     "controleer:streng": "node bouw/woordcontrole.mjs --streng"

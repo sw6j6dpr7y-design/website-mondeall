@@ -354,10 +354,9 @@ const sitemapPagina = { url: '/sitemap', titel: 'Sitemap', beschrijving: 'Alle p
 perUrl.set('/sitemap', sitemapPagina);
 schrijf('sitemap/index.html', schil(sitemapPagina, sitemapHtml()));
 
-const vandaag = new Date().toISOString().slice(0, 10);
 const publiek = [...alle.filter((p) => !p.noindex && p.url !== '/sitemap'), sitemapPagina];
 schrijf('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  publiek.map((p) => '  <url><loc>' + DOMEIN + (p.url === '/' ? '/' : p.url) + '</loc><lastmod>' + vandaag + '</lastmod></url>').join('\n') + '\n</urlset>\n');
+  publiek.map((p) => '  <url><loc>' + DOMEIN + (p.url === '/' ? '/' : p.url) + '</loc></url>').join('\n') + '\n</urlset>\n');
 schrijf('robots.txt', 'User-agent: *\nAllow: /\nDisallow: /inloggen\nDisallow: /mijn\nDisallow: /werkplaats\nDisallow: /starten/nieuw\n\nSitemap: ' + DOMEIN + '/sitemap.xml\n');
 
 const nietGevonden = { url: '/404', titel: 'Pagina niet gevonden', beschrijving: 'Deze pagina bestaat niet.', noindex: true };

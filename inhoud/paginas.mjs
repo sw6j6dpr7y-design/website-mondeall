@@ -59,7 +59,7 @@ export const tekstVolgtZin = tekstVolgt;
 export function afgeleidePaginas() {
   const lijst = [];
   for (const s of sectoren) lijst.push({ url: sectorPad(s), titel: s.nr + ' ' + s.naam, beschrijving: s.toelichting, fase: 'I', sector: s });
-  for (const d of INI_DATA) lijst.push({ url: '/initiatieven/' + d.slug, titel: d.titel, beschrijving: d.vz, fase: 'L', initiatief: d });
+  for (const d of INI_DATA) lijst.push({ url: '/initiatieven/' + d.slug, titel: d.titel, beschrijving: d.vz, fase: 'L', initiatief: d, noindex: !!d.voorbeeld });
   return lijst;
 }
 

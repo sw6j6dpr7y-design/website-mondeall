@@ -26,6 +26,9 @@ export const paginas = [
   // Tekst: mockup Zo deel je mee (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/hoe-het-werkt/meedelen', titel: 'Zo deel je mee', beschrijving: 'Deel vanaf één euro mee met een Initiatief in je buurt. Je kiest je bedrag en of je naam laat zien. Elke euro komt aan, omdat Sponsors de kosten dragen.', stukken: ['meedelen'], fase: 'I' },
 
+  // Tekst: mockup Hoe het geld loopt (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
+  { url: '/hoe-het-werkt/geldstromen', titel: 'Hoe het geld loopt', beschrijving: 'Op Mondéall lopen twee geldstromen gescheiden. Een gift gaat rechtstreeks naar de Begunstigde. Sponsors dragen de kosten van het platform.', stukken: ['geldstromen'], fase: 'I' },
+
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Zet als vereniging, stichting, school of kerk een Initiatief op Mondéall. Mensen delen mee vanaf € 1 en alles komt bij jullie aan.', stukken: ['starten-landing'], fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },
   { url: '/starten/zo-werkt-het', titel: 'Zo werkt het, in vier stappen', beschrijving: 'Zo ziet het starten van een Initiatief eruit, in vier stappen.', stukken: ['start-initiatief'], scripts: ['starten'], fase: 'I' },
@@ -70,7 +73,6 @@ export function afgeleidePaginas() {
 // (Regel uit de sitemap: zonder teksten blijft een pagina een plaatshouder, nooit een verzonnen tekst.)
 const ph = (url, titel, extra = {}) => ({ url, titel, beschrijving: titel + '. Deze pagina wordt nog uitgewerkt.', plaatshouder: true, noindex: true, fase: 'B', ...extra });
 export const plaatshouders = [
-  ph('/hoe-het-werkt/geldstromen', 'Hoe het geld loopt'),
   ph('/hoe-het-werkt/wie-kan-ontvangen', 'Wie kan ontvangen'),
   ph('/hoe-het-werkt/spelregels', 'Spelregels'),
   ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),

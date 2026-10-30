@@ -108,3 +108,16 @@ Bron: mockup "Zo deel je mee" (Artifact, 30-10-2026). De pagina /hoe-het-werkt/m
 - **FAQ over aftrek:** doet geen fiscale claim, maar moet door de belastingadviseur worden getoetst (zelfde punt als de achtergehouden sectie op /verschil/doneren).
 - **De keuzerondjes in stap 3** (met naam of anoniem) doen nog niets: er is geen formulier. Ze zijn bedoeld als voorbeeld van wat er straks komt.
 - **Titel:** de mockup had "Zo deel je mee | Mondéall"; de site gebruikt het scheidingsteken "·" zoals overal. Het beeldmerk uit de mockup is niet overgenomen (de site heeft het eigen klavertje).
+
+# Open punten bij Hoe het geld loopt
+
+Bron: mockup "Hoe het geld loopt" (Artifact, 30-10-2026). De pagina /hoe-het-werkt/geldstromen staat online en is indexeerbaar.
+
+- **Entiteit:** de pagina noemt alleen Stichting Mondéall (Mondéall BV is vervallen, besluit 10-10-2026, Lexicon v2.0). De Stelselnotitie v1.1 loopt nog achter. Controleer of /over/stelsel en andere pagina's hetzelfde zeggen.
+- **Btw:** alleen "in beginsel belast". De btw-behandeling van sponsoring en de Vpb-positie van Stichting Mondéall liggen bij de belastingadviseur.
+- **Betaalbeschrijving en "geen tussenstop":** toetsen zodra de Mollie-koppeling live gaat.
+- **"We betalen niets terug":** zelfde juridische punt als bij Zo deel je mee (achtergehouden passage op /verschil/doneren). Jurist.
+- **"Dat controleren we bij het aanmaken van een Initiatief":** beschrijft een proces dat er nog niet is. Bevestigen of zachter formuleren.
+- **Weggelaten uit de mockup:** het blok over Stichting Naberschap in "Waar we nu staan" (Naberschap hooguit één zin, alleen op /over/stelsel). Ook de giftknop voor Stichting Mondéall uit de besluitenlijst moet strikt los blijven van delen met een Initiatief.
+- **Sponsorbedragen:** staan bewust niet op de pagina (minimum €50 per jaar volgens de mockup; Bouwspecificatie noemt elders nog €10).
+- **Titel:** de mockup had "|"; de site gebruikt "·".

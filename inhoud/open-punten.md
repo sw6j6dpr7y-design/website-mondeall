@@ -236,3 +236,16 @@ Bron: mockup "Klachtenregeling" (Artifact, 30-10-2026), gebaseerd op het concept
 - **Stichting Naberschap en Helper weggelaten:** de mockup had een tabelrij "Stichting Naberschap of een Helper" met verwijzing naar de klachtenregeling van Naberschap. Naberschap mag hooguit één zin op /over/stelsel. De rij is niet overgenomen. Beslissen waar klachten over een Helper heen moeten.
 - **Geen namen:** de uitvoerend bestuurder en andere personen staan niet op de pagina.
 - **Titel en links:** de mockup had "|"; de site gebruikt "·". Het menu zegt "Klachten", de pagina "Klachtenregeling". Lettertypen worden zelf gehost.
+
+# Open punten bij Toegankelijkheid
+
+Bron: mockup "Toegankelijkheid" (Artifact, 30-10-2026). De pagina /toegankelijkheid staat online en is indexeerbaar. Bronnen: Huisstijl v1.0 §7, Bouwuitgangspunten v0.2 §2.4, Besluitnotitie Platformroute.
+
+- **Bijhouden:** de pagina draagt een datum ("Stand per 30 oktober 2026"). Bijwerken als er een toets is geweest of de ontwerpregels veranderen.
+- **Geen onafhankelijke toets:** de pagina zegt dat de site is ontworpen op deze regels en dat de praktijk nog niet is getoetst. Bevestigen dat er nog geen toets is gedaan. Is die er wel, dan de statusregel aanpassen.
+- **"Voorgenomen: laten toetsen vóór de pilot":** voorstel uit de Besluitnotitie (test op toestellen en WCAG), geen besluit. Bevestigen of de zin mag staan.
+- **Claims gecontroleerd op de live site:** lettertypen komen van eigen server en er worden geen scripts van derden geladen (alleen eigen scripts en JSON-LD). Opnieuw controleren voor de pilot.
+- **Kaart en filters:** de live kaart (besluit 25-10) en de filters zijn een risico voor toegankelijkheid. Niet op de pagina genoemd, want er is geen besluit over een lijst als alternatief. Meenemen in de toets.
+- **Juridisch:** of een formele toegankelijkheidsverklaring of de wet voor digitale producten en diensten voor Stichting Mondéall geldt, is niet vastgesteld. Jurist. De pagina doet geen juridische claim en noemt geen reactietermijn.
+- **Kleurproef:** de mockup gebruikte een div-tabel; op de site is het een echte tabel (kop, kolomkoppen) die onder 760 px onder elkaar staat. Contrastwaarden uit de Huisstijl, nagerekend in de mockup.
+- **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

@@ -2147,3 +2147,17 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .kl-tabel p { margin: 0; }
 .kl-na { margin: 20px 0 0; max-width: 40em; }
 @media (max-width: 760px) { .kl-tabel li { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Toegankelijkheid */
+.tg-kaarten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tg-lijst { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 8px; }
+.tg-proef { width: 100%; max-width: 920px; border-collapse: collapse; border: 1px solid var(--lijn); background: #fff; color: #12211d; }
+.tg-kop { caption-side: top; text-align: left; padding: 12px 20px; background: var(--nevel); color: var(--diep); font-family: var(--kop); font-weight: 700; }
+.tg-proef th { text-align: left; padding: 10px 20px; font-family: var(--kop); font-size: .9rem; color: var(--diep); border-bottom: 1px solid var(--lijn); }
+.tg-proef td { padding: 16px 20px; border-top: 1px solid var(--lijn); vertical-align: middle; font-size: 1.1rem; }
+.tg-proef td:last-child { font-family: 'IBM Plex Mono', monospace; font-size: .8125rem; color: #4a5b56; }
+.tg-vlak { display: block; height: 44px; border-radius: 10px; background: #009f8c; }
+.tg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.tg-bron { margin: 12px 0 0; font-size: .9rem; color: var(--gedempt); max-width: 40em; }
+@media (max-width: 1000px) { .tg-kaarten { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .tg-kaarten { grid-template-columns: 1fr; } .tg-proef, .tg-proef tbody, .tg-proef tr, .tg-proef td { display: block; } .tg-proef thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .tg-proef td { border-top: 0; padding: 12px 20px 2px; } .tg-proef td:last-child { padding: 0 20px 14px; } .tg-proef tr { border-top: 1px solid var(--lijn); } }

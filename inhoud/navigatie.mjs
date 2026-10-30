@@ -46,8 +46,6 @@ export const voetkolommen = [
     ['Contact', '/contact'],
     ['Iets niet pluis melden', '/melden'],
     ['Klachten', '/klachten'],
-    ['Toegankelijkheid', '/toegankelijkheid'],
-    ['Pers', '/over/pers'],
   ]],
 ];
 
@@ -56,7 +54,9 @@ export const onderbalk = [
   ['Voorwaarden', '/voorwaarden'],
   ['Privacy', '/privacy'],
   ['Cookies', '/cookies'],
+  ['Toegankelijkheid', '/toegankelijkheid'],
   ['Colofon', '/colofon'],
+  ['Pers', '/over/pers'],
 ];
 
 export const auteursrecht = '© 2026 Stichting Mondéall (in oprichting). Alle rechten voorbehouden.';

@@ -117,10 +117,11 @@ function lintHtml(p) {
   </div>`;
 }
 
-const linkOfBinnenkort = ([t, h]) => bestaat(h) ? '<li><a href="' + h + '">' + esc(t) + '</a></li>' : '<li><span class="voet-nog">' + esc(t) + ' <em>Binnenkort</em></span></li>';
-function voetHtml() {
-  const kolommen = voetkolommen.map(([kop, items]) => '      <nav aria-label="' + esc(kop) + '">\n        <h2>' + esc(kop) + '</h2>\n        <ul>\n          ' + items.map(linkOfBinnenkort).join('\n          ') + '\n        </ul>\n      </nav>').join('\n');
-  const onder = onderbalk.map(([t, h]) => '<a href="' + h + '">' + esc(t) + '</a>').join('<span aria-hidden="true">|</span>');
+const hier = (p, h) => p.url === h ? ' aria-current="page"' : '';
+const linkOfBinnenkort = (p) => ([t, h]) => bestaat(h) ? '<li><a href="' + h + '"' + hier(p, h) + '>' + esc(t) + '</a></li>' : '<li><span class="voet-nog">' + esc(t) + ' <em>Binnenkort</em></span></li>';
+function voetHtml(p) {
+  const kolommen = voetkolommen.map(([kop, items]) => '      <nav aria-label="' + esc(kop) + '">\n        <h2>' + esc(kop) + '</h2>\n        <ul>\n          ' + items.map(linkOfBinnenkort(p)).join('\n          ') + '\n        </ul>\n      </nav>').join('\n');
+  const onder = onderbalk.map(([t, h]) => '<a href="' + h + '"' + hier(p, h) + '>' + esc(t) + '</a>').join('<span aria-hidden="true">|</span>');
   return `<footer>
   <div class="wrap">
     <div class="voetkol">
@@ -224,7 +225,7 @@ ${kaal ? '' : '<a class="skip" href="#inhoud">Naar de inhoud</a>\n\n<header>\n' 
 ${kaal ? '' : kruimels(p) + '\n'}<main id="inhoud">
 ${binnen}
 </main>
-${kaal ? '' : '\n' + voetHtml() + '\n'}
+${kaal ? '' : '\n' + voetHtml(p) + '\n'}
 ${js}
 </body>
 </html>

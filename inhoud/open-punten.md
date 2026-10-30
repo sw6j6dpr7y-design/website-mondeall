@@ -249,3 +249,15 @@ Bron: mockup "Toegankelijkheid" (Artifact, 30-10-2026). De pagina /toegankelijkh
 - **Juridisch:** of een formele toegankelijkheidsverklaring of de wet voor digitale producten en diensten voor Stichting Mondéall geldt, is niet vastgesteld. Jurist. De pagina doet geen juridische claim en noemt geen reactietermijn.
 - **Kleurproef:** de mockup gebruikte een div-tabel; op de site is het een echte tabel (kop, kolomkoppen) die onder 760 px onder elkaar staat. Contrastwaarden uit de Huisstijl, nagerekend in de mockup.
 - **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Pers
+
+Bron: mockup "Pers" (Artifact, 30-10-2026). De pagina /over/pers staat online en is indexeerbaar.
+
+- **Geen perscontact:** in het Project staat niets over perswerk (geen woordvoerder, persbericht of persfoto's). De pagina belooft niets daarvan; vragen lopen via Contact. Voorstel van de mockup. Bevestigen, of een perscontact en e-mailadres geven.
+- **"Mondéall in het kort" is een concept** uit Lexicon v2.0, Uitgangspunten v1 en de Bouwspecificatie, bedoeld om letterlijk over te nemen. Goedkeuren of aanpassen; de kopieerknop levert precies deze tekst.
+- **Bijhouden:** de feitenlijst draagt een datum ("Stand per 30 oktober 2026"). Spreek af wie hem bijwerkt; pers die oude feiten overneemt is moeilijk terug te halen.
+- **Beeldmerk:** drie varianten uit Huisstijl §2, hergebruik van de klavertjes in assets/deelpakket. Downloadbare bestanden (SVG en PNG) bestaan nog niet; de pagina zegt "volgt".
+- **Stichting Naberschap weggelaten:** de mockup had in de feitentabel een rij "Stichting Naberschap, in oprichting, ANBI nog aan te vragen". Naberschap mag hooguit één zin op /over/stelsel. De rij is niet overgenomen.
+- **Woordenlijst:** noemt alleen de woorden die wij gebruiken, zodat het woordfilter niet afkeurt. De pagina somt niet op welke woorden wij niet gebruiken.
+- **Geen personen:** geen oprichter, bestuurder of naam op de pagina. Titel: de mockup had "|"; de site gebruikt "·".

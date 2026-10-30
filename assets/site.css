@@ -2161,3 +2161,18 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .tg-bron { margin: 12px 0 0; font-size: .9rem; color: var(--gedempt); max-width: 40em; }
 @media (max-width: 1000px) { .tg-kaarten { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .tg-kaarten { grid-template-columns: 1fr; } .tg-proef, .tg-proef tbody, .tg-proef tr, .tg-proef td { display: block; } .tg-proef thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .tg-proef td { border-top: 0; padding: 12px 20px 2px; } .tg-proef td:last-child { padding: 0 20px 14px; } .tg-proef tr { border-top: 1px solid var(--lijn); } }
+
+/* Pers */
+.pe-citaat { background: #fff; border: 1px solid var(--lijn); border-left: 6px solid var(--merk); border-radius: 12px; padding: 22px 24px; max-width: 760px; }
+.pe-citaat p { margin: 0 0 12px; }
+.pe-citaat p:last-child { margin-bottom: 0; }
+.pe-kopieer { margin: 18px 0 0; }
+.pe-status { margin-left: 12px; color: var(--gedempt); font-size: .95rem; }
+.pe-merken { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 920px; }
+.pe-tegel { margin: 0; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: #fff; }
+.pe-vlak { display: grid; place-items: center; height: 160px; background: #fff; }
+.pe-merkvlak { background: #009f8c; }
+.pe-tegel figcaption { padding: 14px 18px; font-size: .95rem; }
+.pe-tegel figcaption strong { display: block; font-family: var(--kop); color: var(--diep); }
+.pe-regels { max-width: 720px; margin-top: 24px; }
+@media (max-width: 760px) { .pe-merken { grid-template-columns: 1fr; } }

@@ -59,6 +59,8 @@ export const paginas = [
   { url: '/klachten', titel: 'Klachtenregeling', beschrijving: 'Zo gaat Stichting Mondéall met klachten om: hoe je klaagt, wat we binnen welke tijd doen en wie een tweede keer meekijkt. De regeling is in voorbereiding.', stukken: ['klachten'], fase: 'I' },
   // Tekst: mockup Toegankelijkheid (Artifact, 30-10-2026). Statuspagina met datum: bijhouden. Open punten staan in inhoud/open-punten.md.
   { url: '/toegankelijkheid', titel: 'Toegankelijkheid', beschrijving: 'Mondéall is er voor iedereen. Lees waar we naar streven, hoe we de site ontwerpen en wat nog niet is getoetst.', stukken: ['toegankelijkheid'], fase: 'I' },
+  // Tekst: mockup Pers (Artifact, 30-10-2026). Statuspagina met datum: bijhouden. Open punten staan in inhoud/open-punten.md.
+  { url: '/over/pers', titel: 'Pers', beschrijving: 'Schrijf je over Mondéall? Lees hoe wij ons noemen, wat al vaststaat en hoe je ons bereikt.', stukken: ['pers'], scripts: ['pers'], fase: 'I' },
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
@@ -106,7 +108,6 @@ export const plaatshouders = [
   ph('/sponsoren/aanmelden', 'Aanmelden als Sponsor'),
   ph('/partners/contact', 'Gesprek aanvragen'),
   ph('/over/jaarverslag', 'Jaarverslag'),
-  ph('/over/pers', 'Pers'),
   ph('/hulp', 'Veelgestelde vragen', { hub: true }),
   ph('/hulp/geld-delers', 'Vragen van Geld Delers'),
   ph('/hulp/starters', 'Vragen van Starters'),

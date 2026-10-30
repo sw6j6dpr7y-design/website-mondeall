@@ -51,6 +51,8 @@ export const paginas = [
   { url: '/over/bestuur', titel: 'Bestuur en governance', beschrijving: 'Mondéall heeft geen eigenaren en is niet te koop. Lees hoe de borging is bedoeld, wat al vaststaat en wat nog moet worden vastgelegd.', stukken: ['bestuur'], fase: 'I' },
   // Tekst: mockup Cijfers en jaarverslag (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/over/cijfers', titel: 'Cijfers en jaarverslag', beschrijving: 'Alle geldstromen van Mondéall zijn transparant. Hier lees je straks wat er is gebeurd, zonder ranglijsten en zonder tracking.', stukken: ['cijfers'], fase: 'I' },
+  // Tekst: mockup Waar we staan (Artifact, 30-10-2026). Statuspagina met datum: bijhouden. Open punten staan in inhoud/open-punten.md.
+  { url: '/over/waar-we-staan', titel: 'Waar we staan', beschrijving: 'Wat er nu is, wat er nog niet kan en in welke volgorde Mondéall wordt gebouwd. Stand per 30 oktober 2026.', stukken: ['waar-we-staan'], fase: 'I' },
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
@@ -98,7 +100,6 @@ export const plaatshouders = [
   ph('/sponsoren/aanmelden', 'Aanmelden als Sponsor'),
   ph('/partners/contact', 'Gesprek aanvragen'),
   ph('/over/jaarverslag', 'Jaarverslag'),
-  ph('/over/waar-we-staan', 'Waar we staan'),
   ph('/over/pers', 'Pers'),
   ph('/hulp', 'Veelgestelde vragen', { hub: true }),
   ph('/hulp/geld-delers', 'Vragen van Geld Delers'),

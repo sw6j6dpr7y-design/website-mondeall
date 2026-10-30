@@ -2106,3 +2106,16 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .cj-label { display: inline-block; margin-top: 14px; padding: 4px 12px; border: 1px dashed var(--gedempt); border-radius: 999px; color: var(--gedempt); font-family: 'IBM Plex Mono', monospace; font-size: .8125rem; }
 .cj-regels { max-width: 820px; }
 @media (max-width: 760px) { .cj-kaarten { grid-template-columns: 1fr; } }
+
+/* Waar we staan */
+.ws-stand { margin: 8px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: .85rem; color: var(--gedempt); }
+.ws-st { display: inline-block; padding: 3px 10px; border: 1px solid var(--diep); border-radius: 999px; color: var(--diep); font-family: 'IBM Plex Mono', monospace; font-size: .8125rem; white-space: nowrap; }
+.ws-er { background: var(--nevel); }
+.ws-niet { border-style: dashed; border-color: var(--gedempt); color: var(--gedempt); }
+.ws-tabel { list-style: none; margin: 0; padding: 0; max-width: 920px; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: var(--achtergrond); }
+.ws-tabel li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: start; padding: 18px 22px; border-top: 1px solid var(--lijn); }
+.ws-tabel li:first-child { border-top: 0; }
+.ws-tabel h3 { font-family: var(--kop); font-size: 1.1rem; font-weight: 700; color: var(--diep); margin: 0; }
+.ws-tabel p { margin: 4px 0 0; color: var(--gedempt); font-size: .95rem; }
+.ws-route .ws-st { margin-bottom: 8px; }
+@media (max-width: 640px) { .ws-tabel li { grid-template-columns: 1fr; gap: 8px; } }

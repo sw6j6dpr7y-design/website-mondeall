@@ -201,3 +201,16 @@ Bron: mockup "Cijfers en jaarverslag" (Artifact, 30-10-2026). De pagina /over/ci
 - **Stichting Naberschap weggelaten:** de mockup noemde "een verslag van Stichting Naberschap" bij het jaarverslag. Naberschap mag hooguit één zin op /over/stelsel; de kaart zegt nu alleen "Jaarverslag van Stichting Mondéall".
 - **"Geen bezoekersaantallen":** volgt uit geen tracking (Bouwuitgangspunten §2.4). Controleren dat dit ook geldt voor de beheerkant.
 - **Titel:** de pagina heet "Cijfers en jaarverslag" (de plaatshouder zei "Cijfers"; het menu zegt al "Cijfers en jaarverslag"). De plaatshouder /over/jaarverslag blijft bestaan. De mockup had "|"; de site gebruikt "·".
+
+# Open punten bij Waar we staan
+
+Bron: mockup "Waar we staan" (Artifact, 30-10-2026). De pagina /over/waar-we-staan staat online en is indexeerbaar.
+
+- **Bijhouden:** dit is de statuspagina van de hele site en draagt een datum ("Stand per 30 oktober 2026", ook in de description). Spreek af wie hem bijwerkt en wanneer; een verouderde statuspagina is erger dan geen.
+- **Bronnen lopen achter:** de Besluitnotitie en de Architectuurschets noemen Stichting Mondéall nog "nog op te richten" of de BV. De pagina volgt de laatste uitspraak (in oprichting). Die bronnen bijwerken.
+- **Geen pilotplanning:** de route staat als volgorde zonder data. De besluitenlijst (28-10, punt 5) wacht op de planning. Toevoegen zodra die er is.
+- **Geen Mollie, Next.js of route A/B genoemd:** dat zijn nog geen besluiten. De pagina zegt "een betaalkoppeling".
+- **"Sponsor worden kan nog niet"** volgt uit Architectuurschets §0 en §12. De regel dat gemeenten, bedrijven en fondsen nu al contact kunnen opnemen is een voorstel van de mockup. Bevestigen of Mondéall dat gesprek nu al wil voeren.
+- **Voorbeeld-Initiatieven:** staan als fictief genoemd, zonder getal. Ze zijn uit index en sitemap gehouden (besluit 29-10) maar wel bereikbaar.
+- **Stichting Naberschap weggelaten:** de mockup had een tabelrij "Stichting Naberschap, in oprichting, ANBI nog aan te vragen". Naberschap mag hooguit één zin op /over/stelsel. De tabel noemt alleen Stichting Mondéall en de route spreekt van "de stichting oprichten".
+- **Geen bouwkosten, tarieven of bedragen** op de pagina. Titel: de mockup had "|"; de site gebruikt "·".

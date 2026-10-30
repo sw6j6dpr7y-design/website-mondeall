@@ -189,3 +189,15 @@ Bron: mockup "Bestuur en governance" (Artifact, 30-10-2026). De pagina /over/bes
 - **Geen namen en foto's:** het bestuur is niet vastgesteld; de pagina toont een lege plek ("Namen volgen"). De fiscale inrichting staat niet inhoudelijk op de pagina. LustrumMoment staat niet op de site.
 - **Footer:** de mockup toonde "Stichting Mondéall (in oprichting)"; de footer van de site doet dat al.
 - **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Cijfers en jaarverslag
+
+Bron: mockup "Cijfers en jaarverslag" (Artifact, 30-10-2026). De pagina /over/cijfers staat online en is indexeerbaar. Er staan bewust geen cijfers op, ook geen voorbeeldcijfers: een fictief cijfer zou misleiden en een norm suggereren. De pagina toont lege vakken met "Nog geen cijfers".
+
+- **Wat Mondéall publiceert is niet besloten:** alles onder "Wat je hier straks vindt" is voorgenomen, op basis van Uitgangspunten v1 ("alle geldstromen zijn transparant"), het Lexicon, de Notitie Kernkoppeling (jaarbericht met kernparagraaf) en Bouwspecificatie §14 (jaarbericht vanaf trede Vriend). Besluit nodig over de inhoud van het jaarverslag.
+- **Aantal Geld Delers:** of dat bekend is zonder extra persoonsgegevens hangt af van de Mollie-inrichting (Bouwuitgangspunten §1.4, open). De pagina belooft geen totaal van giften of Geld Delers.
+- **Geen ranglijst of vergelijking:** volgt uit Kernkoppeling v1 en Uitgangspunten v1. Het besluit van 25-10 staat het aantal Geld Delers per Initiatief toe, maar geen aantal per Kern of gemeente. Dat sluit aan.
+- **Jaarrekening en ANBI-verplichtingen:** staan niet op de pagina. De jurist stelt vast wat per stichting verplicht is en wanneer. Ook de sponsorpot (per gemeente of één pot, open) en de fiscale inrichting staan er niet.
+- **Stichting Naberschap weggelaten:** de mockup noemde "een verslag van Stichting Naberschap" bij het jaarverslag. Naberschap mag hooguit één zin op /over/stelsel; de kaart zegt nu alleen "Jaarverslag van Stichting Mondéall".
+- **"Geen bezoekersaantallen":** volgt uit geen tracking (Bouwuitgangspunten §2.4). Controleren dat dit ook geldt voor de beheerkant.
+- **Titel:** de pagina heet "Cijfers en jaarverslag" (de plaatshouder zei "Cijfers"; het menu zegt al "Cijfers en jaarverslag"). De plaatshouder /over/jaarverslag blijft bestaan. De mockup had "|"; de site gebruikt "·".

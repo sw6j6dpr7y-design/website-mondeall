@@ -2064,3 +2064,30 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .am-vinklijst svg { color: var(--diep); }
 .am-vinklijst strong { font-family: var(--kop); color: var(--diep); }
 @media (max-width: 900px) { .am-twee { grid-template-columns: 1fr; gap: 32px; } .am-formkaart { padding: 24px 20px; } }
+
+/* Stichting Mondéall */
+.st-tabel { margin: 0; max-width: 920px; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: #fff; }
+.st-tabel > div { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 18px 22px; border-top: 1px solid var(--lijn); }
+.st-tabel > div:first-child { border-top: 0; }
+.st-tabel dt { font-family: var(--kop); font-weight: 700; font-size: 1.1rem; color: var(--diep); }
+.st-tabel dd { margin: 0; }
+.st-na { margin: 20px 0 0; }
+.st-kolom2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 920px; }
+.st-kolom2 ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.st-voorbeeld { display: inline-block; margin: 0 0 16px; padding: 4px 10px; background: var(--nevel); color: var(--diep); border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: .8rem; }
+.st-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 28px; }
+.st-filter { font: inherit; font-family: var(--kop); font-weight: 600; cursor: pointer; min-height: 44px; padding: 8px 18px; border-radius: 999px; border: 2px solid var(--diep); background: transparent; color: var(--diep); }
+.st-filter[aria-pressed="true"] { background: var(--diep); color: #fff; }
+.st-filter[aria-pressed="true"]::before { content: "\2713\00a0"; }
+.st-groepkop { font-family: var(--kop); font-size: 1.25rem; font-weight: 700; color: var(--diep); margin: 36px 0 4px; }
+.st-groeptekst { color: var(--gedempt); margin: 0 0 16px; }
+.st-tegels { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.st-tegels.st-drie { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.st-tegels li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; background: #fff; border: 1px solid var(--lijn); border-radius: 12px; padding: 16px; min-height: 92px; }
+.st-tegels li[hidden], .st-tegels[hidden], .st-groepkop[hidden], .st-groeptekst[hidden] { display: none; }
+.st-teken { width: 56px; height: 56px; border-radius: 12px; background: var(--nevel); color: var(--diep); display: grid; place-items: center; font-family: var(--kop); font-weight: 800; font-size: 1.15rem; letter-spacing: .02em; }
+.st-tegels strong { display: block; font-family: var(--kop); color: var(--diep); line-height: 1.2; }
+.st-plek { display: block; color: var(--gedempt); font-size: .9rem; margin-top: 2px; }
+@media (max-width: 960px) { .st-tegels, .st-tegels.st-drie { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .st-tabel > div { grid-template-columns: 1fr; gap: 4px; } .st-kolom2 { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .st-tegels, .st-tegels.st-drie { grid-template-columns: 1fr; } }

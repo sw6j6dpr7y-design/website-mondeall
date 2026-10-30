@@ -160,3 +160,18 @@ Bron: mockup "Aanmelden" (Artifact, 30-10-2026). De pagina /starten/aanmelden st
 - **"Je hoeft geen bestuurslid te zijn"** volgt uit het besluit van 27-10 (de Starter kan een vrijwilliger zijn). **"Niemand ziet je Initiatief voordat het live gaat"** volgt uit de statusmachine (Architectuurschets §6.3).
 - **Statusregel:** aanpassen zodra de pilotplanning vastligt.
 - **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Stichting Mondéall
+
+Bron: mockup "Stichting Mondéall" (Artifact, 30-10-2026). De pagina /over/stichting staat online en is indexeerbaar.
+
+- **Status "in oprichting":** volgens Mathieu zijn beide stichtingen in oprichting. Lexicon v2.0 en het Inkomstenkader zeggen voor Stichting Mondéall nog "nog op te richten, vóór de pilot"; die bronnen bijwerken. Voor het breed delen van de pagina: bevestigen dat het notariële traject echt loopt, want dit is een statusclaim.
+- **Borging als voorgenomen:** het notarisadvies van 07-10-2026 kwam van een kantoor zonder specialisatie in stichtingenrecht. Alleen "geen eigenaren" en het uitkeringsverbod (art. 2:285 lid 3 BW) staan als feit. Jurist of notaris toetst "Dit moet nog gebeuren" (statuten) voor de pagina breed gedeeld wordt.
+- **Niet aftrekbaar:** "Een bijdrage aan Stichting Mondéall is geen aftrekbare gift" komt uit Lexicon §4; de belastingadviseur bevestigt dit nog. Over btw, Vpb en schenkbelasting staat niets op de pagina.
+- **"Geen invloed op welke Initiatieven worden geplaatst":** komt uit het Inkomstenkader (randvoorwaarde bij publieke partners), niet uit een vastgesteld besluit. Bevestigen of het zo mag staan.
+- **Stichting Naberschap weggelaten:** de mockup had een kaart over Naberschap (met "ANBI-status moet nog worden aangevraagd"). Naberschap hoort alleen als hooguit één zin op /over/stelsel; de pagina verwijst daarheen. Zeg het als je de kaart toch terug wilt.
+- **Giftknop voor Stichting Mondéall (besluit 10-10):** staat niet op deze pagina. Het besluit plaatst hem in het lint van de site; jurist toetst of een knop met "gift" past bij het Lexicon.
+- **Blok "Wie Stichting Mondéall steunt":** alle organisaties en gemeenten (Beekdal, Heidemeer) zijn fictief en gelabeld als Voorbeeld. Vervangen door echte Sponsors en Partners zodra die er zijn, of het blok verbergen. Geen bedragen, geen trede, alfabetisch, even grote tegels.
+- **Logo-upload (Bouwspecificatie):** pas vanaf trede Sponsor; een Sponsor onder die trede zou alleen een naam krijgen en daarmee de trede zichtbaar maken. Voorstel: iedereen een tegel met letterteken, logo's vervangen dat zonder verschil in grootte of plek. Bevestigen.
+- **Sponsorminimum:** blijft buiten beeld (€ 50 volgens het besluit van 28-10, € 10 in het Inkomstenkader). Geen personen, bestuursnamen of bedragen op de pagina; het bestuur is nog niet vastgesteld.
+- **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

@@ -2176,3 +2176,19 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .pe-tegel figcaption strong { display: block; font-family: var(--kop); color: var(--diep); }
 .pe-regels { max-width: 720px; margin-top: 24px; }
 @media (max-width: 760px) { .pe-merken { grid-template-columns: 1fr; } }
+
+/* Foto's insturen */
+.fi-aantal { font-family: var(--tekst-font, inherit); font-weight: 400; color: var(--gedempt); font-size: .95rem; }
+.fi-lijst { margin: 12px 0 0; padding-left: 2.2em; }
+.fi-lijst li { padding: 3px 0; }
+.fi-voorbeeld-kop { margin: 24px 0 8px; font-family: var(--kop); font-weight: 700; }
+.fi-bijschrift { margin: 0; display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 16px; align-items: center; max-width: 560px; background: #fff; border: 1px solid var(--lijn); border-radius: 12px; padding: 12px; }
+.fi-ph { aspect-ratio: 4 / 3; border-radius: 8px; background: var(--nevel); }
+.fi-bijschrift strong { display: block; font-family: var(--kop); color: var(--diep); }
+.fi-bijschrift small { display: block; color: var(--gedempt); font-size: .9rem; }
+.fi-sub { margin-top: 18px; }
+.fi-form { max-width: 640px; }
+.fi-bestand { padding: 14px; background: #fff; }
+.fi-set { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
+.fi-leg { font-family: var(--kop); font-weight: 700; color: var(--diep); font-size: 1.05rem; padding: 0; margin-bottom: 8px; }
+@media (max-width: 520px) { .fi-bijschrift { grid-template-columns: 1fr; } }

@@ -61,6 +61,8 @@ export const paginas = [
   { url: '/toegankelijkheid', titel: 'Toegankelijkheid', beschrijving: 'Mondéall is er voor iedereen. Lees waar we naar streven, hoe we de site ontwerpen en wat nog niet is getoetst.', stukken: ['toegankelijkheid'], fase: 'I' },
   // Tekst: mockup Pers (Artifact, 30-10-2026). Statuspagina met datum: bijhouden. Open punten staan in inhoud/open-punten.md.
   { url: '/over/pers', titel: 'Pers', beschrijving: 'Schrijf je over Mondéall? Lees hoe wij ons noemen, wat al vaststaat en hoe je ons bereikt.', stukken: ['pers'], scripts: ['pers'], fase: 'I' },
+  // Tekst: mockup Foto's insturen (Fotobrief v0.1 Deel A, 30-10-2026). Open punten staan in inhoud/open-punten.md.
+  { url: '/foto-insturen', titel: 'Foto\'s insturen', beschrijving: 'Maak jij foto\'s in je eigen dorp of wijk? Lees wat we zoeken, wat niet kan en hoe je een foto instuurt. Insturen kan nog niet.', stukken: ['foto-insturen'], scripts: ['foto-insturen'], fase: 'I' },
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 

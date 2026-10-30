@@ -55,6 +55,8 @@ export const paginas = [
   { url: '/over/waar-we-staan', titel: 'Waar we staan', beschrijving: 'Wat er nu is, wat er nog niet kan en in welke volgorde Mondéall wordt gebouwd. Stand per 30 oktober 2026.', stukken: ['waar-we-staan'], fase: 'I' },
   // Tekst: mockup Iets niet pluis melden (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/melden', titel: 'Iets niet pluis melden', beschrijving: 'Klopt een Initiatief niet, of staat er iets op wat er niet hoort? Meld het. Je hebt er geen account voor nodig.', stukken: ['melden'], scripts: ['melden'], fase: 'I' },
+  // Tekst: mockup Klachtenregeling (Artifact, 30-10-2026), op basis van concept v0.1. Open punten staan in inhoud/open-punten.md.
+  { url: '/klachten', titel: 'Klachtenregeling', beschrijving: 'Zo gaat Stichting Mondéall met klachten om: hoe je klaagt, wat we binnen welke tijd doen en wie een tweede keer meekijkt. De regeling is in voorbereiding.', stukken: ['klachten'], fase: 'I' },
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
@@ -108,7 +110,6 @@ export const plaatshouders = [
   ph('/hulp/starters', 'Vragen van Starters'),
   ph('/hulp/sponsoren', 'Vragen van Sponsors'),
   ph('/hulp/partners', 'Vragen van Partners'),
-  ph('/klachten', 'Klachtenregeling'),
   ph('/voorwaarden/sponsoren', 'Algemene voorwaarden Sponsors'),
   ph('/toegankelijkheid', 'Toegankelijkheid'),
   ph('/kernen', 'Zoek je kern'),

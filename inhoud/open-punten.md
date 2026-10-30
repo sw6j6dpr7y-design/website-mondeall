@@ -224,3 +224,15 @@ Bron: mockup "Iets niet pluis melden" (Artifact, 30-10-2026). De pagina /melden 
 - **"Wat wij kunnen doen":** in de mogelijkheidsvorm, omdat de procedure nog niet bestaat. Open punt uit de werksessie: de beslissing over offline halen zou bij meer dan één persoon moeten liggen. Meenemen naar de statuten en de Klachtenregeling.
 - **Noodkader (112, aangifte):** algemeen en neutraal, maar laten controleren.
 - **Links:** /klachten is nog een plaatshouder. Titel: de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Klachtenregeling
+
+Bron: mockup "Klachtenregeling" (Artifact, 30-10-2026), gebaseerd op het concept Klachtenregeling Stichting Mondéall v0.1. De pagina /klachten staat online en is indexeerbaar.
+
+- **Nog niet vastgesteld:** de regeling treedt pas in werking na de oprichting (artikel 11). Alle termijnen staan als voorgenomen. Na vaststelling vervallen de statusregel en de banner "voorgenomen" en komt de datum van vaststelling erbij.
+- **Geen formulier of adres:** formulier, e-mailadres en postadres volgen na de oprichting (artikel 4). Tot die tijd verwijst de pagina naar Contact. Dat is een voorstel van de mockup, geen artikel uit het concept. Bevestigen of de zin blijft.
+- **Tweede toetsing:** klachtenfunctionaris of commissie is niet gekozen. De pagina zegt alleen "iemand buiten Stichting Mondéall".
+- **Bewaartermijn twee jaar:** voorgenomen. Jurist stelt grondslag en termijn vast en toetst of de DSA en de P2B-verordening gelden.
+- **Stichting Naberschap en Helper weggelaten:** de mockup had een tabelrij "Stichting Naberschap of een Helper" met verwijzing naar de klachtenregeling van Naberschap. Naberschap mag hooguit één zin op /over/stelsel. De rij is niet overgenomen. Beslissen waar klachten over een Helper heen moeten.
+- **Geen namen:** de uitvoerend bestuurder en andere personen staan niet op de pagina.
+- **Titel en links:** de mockup had "|"; de site gebruikt "·". Het menu zegt "Klachten", de pagina "Klachtenregeling". Lettertypen worden zelf gehost.

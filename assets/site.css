@@ -2135,3 +2135,15 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .am-zijkant .mb-zoek { margin-top: 32px; }
 .mb-kaarten2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 920px; }
 @media (max-width: 760px) { .mb-kaarten2 { grid-template-columns: 1fr; } }
+
+/* Klachtenregeling */
+.kl-banner { display: inline-block; margin: 16px 0 0; padding: 10px 16px; background: #fff; border: 1px solid var(--lijn); border-radius: 12px; max-width: 40em; font-size: .975rem; }
+.kl-stap { font-family: 'IBM Plex Mono', monospace; font-size: .8125rem; color: var(--gedempt); margin: 0 0 4px; }
+.kl-schaal { margin: 28px 0 0; font-size: .9rem; color: var(--gedempt); }
+.kl-tabel { list-style: none; margin: 0; padding: 0; max-width: 920px; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; background: #fff; }
+.kl-tabel li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; padding: 18px 22px; border-top: 1px solid var(--lijn); }
+.kl-tabel li:first-child { border-top: 0; }
+.kl-tabel h3 { font-family: var(--kop); font-size: 1.05rem; font-weight: 700; color: var(--diep); margin: 0; }
+.kl-tabel p { margin: 0; }
+.kl-na { margin: 20px 0 0; max-width: 40em; }
+@media (max-width: 760px) { .kl-tabel li { grid-template-columns: 1fr; gap: 6px; } }

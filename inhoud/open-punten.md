@@ -267,7 +267,7 @@ Bron: mockup "Pers" (Artifact, 30-10-2026). De pagina /over/pers staat online en
 Bron: mockup "Foto's insturen" (Fotobrief v0.1 Deel A, 30-10-2026). De pagina /foto-insturen staat online en is indexeerbaar. Het formulier controleert alleen en verstuurt niets; het toont "Foto's insturen kan nog niet". Er wordt geen bestand geüpload.
 
 - **De dagelijkse foto bestaat nog niet:** de mockup zei "Op de voorpagina staat elke dag een andere foto". Dat is er niet. De site zegt nu "Mondéall wil op de voorpagina ... laten zien" en heeft een statusregel. Pas aan zodra de voorpagina dat doet.
-- **Geen plek in het menu:** de pagina heeft geen link in de footer of het menu. De mockup zette "Foto's insturen" in de footerkolom Hulp, maar die kolom is net vastgezet op vier links. Beslissen waar de pagina komt, of dat ze alleen via de voorpagina bereikbaar is. Adres: /foto-insturen (de mockup had Hulp als bovenliggende pagina; /hulp is nog een plaatshouder).
+- **Menu:** de pagina staat onderaan de footerkolom Hulp, onder Klachten (besluit 30-10-2026). Adres /foto-insturen; /hulp is nog een plaatshouder.
 - **Juridisch (jurist):** toestemming van herkenbare mensen en ouders, de kosteloze niet-exclusieve licentie met naamsvermelding, intrekken ("binnen een redelijke termijn"), bewaartermijn en grondslag voor naam, e-mailadres en woonplaats, en wie de foto beoordeelt. De pagina belooft "Je hoort van ons", maar er is geen vastgestelde procedure of termijn.
 - **Link naar eigen profiel:** bezoekers gaan naar een externe site. Beslissen of er regels voor die links komen (geen commerciële of politieke pagina's).
 - **Geen tracking:** de pagina zegt "geen gegevens over wie je foto bekijkt". Past bij het besluit, maar controleren zodra de voorpagina de foto's toont.

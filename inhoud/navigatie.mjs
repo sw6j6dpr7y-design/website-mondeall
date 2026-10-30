@@ -46,6 +46,7 @@ export const voetkolommen = [
     ['Contact', '/contact'],
     ['Iets niet pluis melden', '/melden'],
     ['Klachten', '/klachten'],
+    ["Foto's insturen", '/foto-insturen'],
   ]],
 ];
 

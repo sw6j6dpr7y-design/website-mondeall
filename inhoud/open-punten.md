@@ -133,3 +133,16 @@ Bron: mockup "Het deelpakket" (Artifact, 30-10-2026). De pagina /starten/deelpak
 - **"Zonder account" en "gratis voor elke Begunstigde":** hangen af van de Mollie-inrichting en het besluit over kosten. Toetsen.
 - **Lettertypen** laadden in de mockup via Google Fonts; op de site worden ze zelf gehost.
 - **Titel:** de mockup had "|"; de site gebruikt "·".
+
+# Open punten bij Verantwoorden
+
+Bron: mockup "Verantwoorden" (Artifact, 30-10-2026). De pagina /starten/verantwoorden staat online en is indexeerbaar. De Werkplaats bestaat nog niet; de pagina zegt dat in de statusregel.
+
+- **"Mondéall controleert de besteding niet":** open punt op de besluitenlijst. De pagina laat die zin weg zolang het besluit openstaat. Voorstel na akkoord: "Mondéall controleert de besteding niet. De verantwoording ligt bij de gemeenschap."
+- **Openbare terugkoppeling (keuze 4a):** staat op de lijst "te heroverwegen". "Komt op de pagina van het Initiatief" valt mee als dat verandert.
+- **Niet vastgelegd, dus niet op de pagina:** wat er gebeurt als een terugkoppeling uitblijft, of er herinneringen komen, of de Starter bewijsstukken moet meesturen, en de gevolgen bij vermoeden van misbruik (Uitgangspunten v1 noemt offline halen en uitsluiten van een Begunstigde). Dat hoort in de voorwaarden en moet eerst bevestigd worden.
+- **Looptijd:** "standaard 3 weken" volgt het besluit van 11-10-2026 (verlengen, herstart, maximaal 12 weken) en wijkt af van Bouwspecificatie §10 (21 en 42 dagen). De details staan op "Zo werkt het, in vier stappen". Bouwspecificatie rechtzetten.
+- **"Een gift is onvoorwaardelijk":** zelfde juridische punt als bij Zo deel je mee en Hoe het geld loopt (achtergehouden passage op /verschil/doneren). De mockup zei "staat in de voorwaarden"; op de site "staat straks in de voorwaarden".
+- **Helper:** de term staat in de mockup ("Een Helper kan je meehelpen in de Werkplaats") maar nergens anders op de site. Bevestigen dat dit een erkende rol is en dat de term in het Lexicon staat.
+- **Voorbeeld-terugkoppeling:** verzonnen, bevat bewust geen bedrag, en is als Voorbeeld gelabeld.
+- **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

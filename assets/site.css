@@ -2015,3 +2015,20 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .dp-stappen p { margin: 0; }
 @media (max-width: 860px) { .dp-onderdelen { grid-template-columns: 1fr; } .dp-posterzone { grid-template-columns: 1fr; gap: 32px; } .dp-poster { margin: 0 auto; } }
 @media (max-width: 640px) { .dp-stage { grid-template-columns: 1fr; } .dp-lab { padding: 20px; } }
+
+/* Verantwoorden */
+.vw-tijdlijn { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.vw-tijdlijn li { position: relative; padding-top: 44px; font-size: 1rem; line-height: 1.5; }
+.vw-tijdlijn li::before { content: ""; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--merk); border: 4px solid #fff; box-shadow: 0 0 0 2px var(--merk); }
+.vw-tijdlijn li::after { content: ""; position: absolute; left: 30px; right: -24px; top: 10px; height: 2px; background: var(--lijn); }
+.vw-tijdlijn li:last-child::after { display: none; }
+.vw-tijdlijn h3 { font-family: var(--kop); font-weight: 700; font-size: 1.2rem; line-height: 1.2; color: var(--diep); margin: 4px 0 6px; }
+.vw-tijdlijn p { margin: 0; }
+.vw-tweekol { display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: 48px; align-items: start; }
+.vw-label { display: inline-block; margin-bottom: 12px; padding: 4px 10px; background: var(--nevel); color: var(--diep); border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: .8rem; }
+.vw-bericht { background: #fff; border: 1px solid var(--lijn); border-radius: 12px; overflow: hidden; }
+.vw-foto { aspect-ratio: 16 / 9; background: var(--nevel); display: grid; place-items: center; color: var(--diep); }
+.vw-tekst { padding: 20px 22px 24px; }
+.vw-tekst h3 { font-family: var(--kop); font-size: 1.2rem; font-weight: 700; color: var(--diep); margin: 6px 0 8px; }
+.vw-tekst p { margin: 0; }
+@media (max-width: 900px) { .vw-tijdlijn { grid-template-columns: 1fr; gap: 0; } .vw-tijdlijn li { padding: 0 0 26px 44px; } .vw-tijdlijn li::after { left: 10px; right: auto; top: 28px; bottom: 0; width: 2px; height: auto; } .vw-tweekol { grid-template-columns: 1fr; gap: 32px; } }

@@ -10,7 +10,7 @@ export const sectorPad = (s) => '/sectoren/' + s.nr + '-' + slugify(s.naam);
 const tekstVolgt = 'Deze pagina wordt nog uitgewerkt.';
 
 export const paginas = [
-  { url: '/', titel: 'Home', titelTag: null, beschrijving: 'Mondéall maakt het mogelijk om altijd met een goed gevoel volwaardig geld te delen. 100% komt aan, Sponsors dragen de kosten.', hero: true, stukken: ['initiatieven', 'start-initiatief', 'contact'], scripts: ['initiatieven', 'starten'], fase: 'I' },
+  { url: '/', titel: 'Home', titelTag: null, beschrijving: 'Mondéall maakt het mogelijk om altijd met een goed gevoel volwaardig geld te delen. 100% komt aan, Sponsors dragen de kosten.', hero: true, stukken: ['initiatieven', 'start-initiatief', 'contact'], scripts: ['initiatieven', 'starten', 'hero-fotos'], fase: 'I' },
 
   { url: '/initiatieven', titel: 'Alle Initiatieven', beschrijving: 'Zoek een Initiatief in jouw dorp of wijk, filter op Kern, sector, soort Begunstigde en status.', stukken: ['initiatieven'], scripts: ['initiatieven'], fase: 'L' },
   // /initiatieven/[slug] wordt gemaakt uit de gegevens (zie bouw.mjs)

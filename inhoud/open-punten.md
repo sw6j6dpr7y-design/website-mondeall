@@ -275,3 +275,15 @@ Bron: mockup "Foto's insturen" (Fotobrief v0.1 Deel A, 30-10-2026). De pagina /f
 - **Naberschap:** komt in de mockup niet voor. Titel: de mockup had "|"; de site gebruikt "·". Mockupbalk, eigen kop en footer zijn niet overgenomen; lettertypen worden zelf gehost.
 
 - **Woord aangepast in de ideeënlijst:** nr. 6 "Supporters langs de lijn" is "Toeschouwers langs de lijn" geworden, omdat Supporter een verboden term is. Pas de Fotobrief aan.
+
+# Open punten bij de header (voorpagina)
+
+Bron: Header-mockup v0.2 (30-10-2026). De hero van de voorpagina toont nu tien wisselende foto's in plaats van de krans met sectoriconen.
+
+- **Rechten:** de mockup noemde de foto's zelf "niet bedoeld voor de live site" (herkenbare, deels jonge mensen en merknamen). Mathieu bevestigde op 30-10-2026 dat alle foto's rechtenvrij zijn en wil ze toch live. Leg per foto de bron en de licentie vast (maker, link, licentievoorwaarden en of naamsvermelding verplicht is). Dat staat nu nergens in het project.
+- **Herkenbare personen en merken:** rechtenvrij is niet hetzelfde als toestemming van de afgebeelde personen of vrij van merkrechten. Dit botst met de eigen regels van /foto-insturen (geen herkenbare kinderen zonder toestemming van ouders, geen merknamen, geen stockfoto's). Jurist laten kijken, of vervang door foto's van inzenders.
+- **Onderschrift:** de mockup had als plaatsvervanger "Foto: naam fotograaf, woonplaats". Dat zou iets beweren dat niet klopt. De site zegt "Voorbeeldfoto, rechtenvrij beeld". Vervang door de echte naam en woonplaats zodra er inzenders zijn. De carrousel heet "Voorbeeldfoto's" en niet "Foto van de dag", want er wisselt niets per dag.
+- **Tekst aangepast:** de mockup zei "Op Mondéall deel je ..." en "Lees hoe dat kan". De site houdt "Straks deel je ..." en de statusregel "Het platform is nog in opbouw", met het AED-voorbeeld uit de mockup. De knop "Lees hoe dat kan" gaat naar /hoe-het-werkt/een-euro-blijft-een-euro.
+- **Menu uit de mockup niet overgenomen:** de mockup had een eenvoudig menu (Zo werkt het, Sponsors, Voor verenigingen, Hulp). De site houdt de eigen lint met hoofdmenu, zoekveld en inloggen.
+- **Omvang:** tien foto's, samen circa 2 MB; alleen de eerste laadt meteen. Verklein zodra echte foto's er zijn. De oude krans (sectoriconen) is uit de hero gehaald; de bijbehorende CSS en pauzeknop-code staan er nog en kunnen later weg.
+- **Wisselen:** elke 5 seconden, met pauzeknop, stippen en rustige stand bij "minder beweging".

@@ -2192,3 +2192,24 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .fi-set { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
 .fi-leg { font-family: var(--kop); font-weight: 700; color: var(--diep); font-size: 1.05rem; padding: 0; margin-bottom: 8px; }
 @media (max-width: 520px) { .fi-bijschrift { grid-template-columns: 1fr; } }
+
+/* Voorpagina: voorbeeldfoto's in de hero */
+header .fh-podium { min-width: 0; }
+header .fh-lijst { position: relative; aspect-ratio: 4 / 3; border-radius: 42% 58% 46% 54% / 38% 44% 56% 62%; overflow: hidden; background: #cfe8e2; box-shadow: 0 20px 50px rgba(0, 60, 50, .18); }
+header .fh-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .9s; }
+header .fh-slide.on { opacity: 1; }
+header .fh-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+header .fh-slide figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+header .fh-balk { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; margin-top: 14px; min-height: 48px; }
+header .fh-tekst { flex: 1 1 200px; min-width: 0; font-size: .95rem; color: var(--gedempt); }
+header .fh-tekst strong { display: block; font-family: var(--kop); font-weight: 800; color: var(--diep); font-size: 1rem; }
+header .fh-tekst span { display: block; }
+header .fh-bedien { display: flex; align-items: center; flex: none; }
+header .fh-stip { position: relative; width: 24px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; }
+header .fh-stip::before { content: ""; position: absolute; left: 6px; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: #a9cfc7; }
+header .fh-stip.on::before { background: var(--diep); }
+header .fh-pauze { width: 44px; height: 44px; margin-left: 6px; border: 2px solid var(--diep); border-radius: 50%; background: none; color: var(--diep); font: 800 .8rem system-ui, sans-serif; cursor: pointer; }
+header .fh-stip:focus-visible, header .fh-pauze:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+@media (max-width: 820px) { header .fh-lijst { aspect-ratio: 1 / 1; } }
+@media (max-width: 380px) { header .fh-stip { width: 20px; } header .fh-stip::before { left: 4px; } }
+@media (prefers-reduced-motion: reduce) { header .fh-slide { transition: none; } }

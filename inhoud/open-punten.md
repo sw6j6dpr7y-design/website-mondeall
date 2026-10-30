@@ -121,3 +121,15 @@ Bron: mockup "Hoe het geld loopt" (Artifact, 30-10-2026). De pagina /hoe-het-wer
 - **Weggelaten uit de mockup:** het blok over Stichting Naberschap in "Waar we nu staan" (Naberschap hooguit één zin, alleen op /over/stelsel). Ook de giftknop voor Stichting Mondéall uit de besluitenlijst moet strikt los blijven van delen met een Initiatief.
 - **Sponsorbedragen:** staan bewust niet op de pagina (minimum €50 per jaar volgens de mockup; Bouwspecificatie noemt elders nog €10).
 - **Titel:** de mockup had "|"; de site gebruikt "·".
+
+# Open punten bij Het deelpakket
+
+Bron: mockup "Het deelpakket" (Artifact, 30-10-2026). De pagina /starten/deelpakket staat online en is indexeerbaar. De generator bestaat nog niet (Werkplaats, fase 2); de pagina zegt dat in de statusregel.
+
+- **Klavertje in andere kleuren (Huisstijl §2):** alleen merkkleur op wit, wit op merkkleur en inkt op wit zijn toegestaan. Een wit of inktkleurig klavertje op een clubkleur is een uitbreiding. Beslissen of dat mag.
+- **Niet vastgelegd, dus niet op de pagina:** welke Sponsors op de poster staan (per gemeente, Kern of Initiatief) en in welke volgorde; wat de link toont nadat een Initiatief is gesloten; of de knop een gewone link of een script wordt. Aanbeveling uit de mockup: een gewone link met afbeelding, zonder script van Mondéall op de site van de club.
+- **QR-code op de poster:** een tekening, geen werkende code (staat er ook bij). De poster toont een Begunstigde-logo; Geld Delers krijgen nooit een logo (Bouwspecificatie §13).
+- **Bron is alleen de besluitenlijst van 10-10-2026:** er is geen apart document over het deelpakket. De besluitenlijst noemt de knop "donatiebutton"; op de site heet het een deelknop.
+- **"Zonder account" en "gratis voor elke Begunstigde":** hangen af van de Mollie-inrichting en het besluit over kosten. Toetsen.
+- **Lettertypen** laadden in de mockup via Google Fonts; op de site worden ze zelf gehost.
+- **Titel:** de mockup had "|"; de site gebruikt "·".

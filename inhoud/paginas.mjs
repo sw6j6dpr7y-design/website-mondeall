@@ -29,6 +29,9 @@ export const paginas = [
   // Tekst: mockup Hoe het geld loopt (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/hoe-het-werkt/geldstromen', titel: 'Hoe het geld loopt', beschrijving: 'Op Mondéall lopen twee geldstromen gescheiden. Een gift gaat rechtstreeks naar de Begunstigde. Sponsors dragen de kosten van het platform.', stukken: ['geldstromen'], fase: 'I' },
 
+  // Tekst: mockup Het deelpakket (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
+  { url: '/starten/deelpakket', titel: 'Het deelpakket', beschrijving: 'Een gratis deelknop voor je website, het klavertje voor je menu en een poster voor de kantine. Zo laat je zien dat jouw organisatie meedoet.', stukken: ['deelpakket'], scripts: ['deelpakket'], fase: 'I' },
+
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Zet als vereniging, stichting, school of kerk een Initiatief op Mondéall. Mensen delen mee vanaf € 1 en alles komt bij jullie aan.', stukken: ['starten-landing'], fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },
   { url: '/starten/zo-werkt-het', titel: 'Zo werkt het, in vier stappen', beschrijving: 'Zo ziet het starten van een Initiatief eruit, in vier stappen.', stukken: ['start-initiatief'], scripts: ['starten'], fase: 'I' },
@@ -76,7 +79,6 @@ export const plaatshouders = [
   ph('/hoe-het-werkt/wie-kan-ontvangen', 'Wie kan ontvangen'),
   ph('/hoe-het-werkt/spelregels', 'Spelregels'),
   ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),
-  ph('/starten/deelpakket', 'Het deelpakket'),
   ph('/starten/verantwoorden', 'Verantwoorden'),
   ph('/starten/startgids', 'Startgids'),
   ph('/starten/aanmelden', 'Aanmelden'),

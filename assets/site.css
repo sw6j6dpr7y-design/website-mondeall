@@ -1942,3 +1942,22 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .ee-uitkomst b { font-weight: 600; color: var(--tekst); white-space: nowrap; }
 .ee-uitkomst .ee-min { color: #8a2f1f; }
 .ee-uitkomst .ee-meer { color: #6b4a00; }
+
+/* Zo deel je mee */
+.mp-stappen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.mp-stap { background: var(--achtergrond); border: 1px solid var(--lijn); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; align-items: flex-start; }
+.mp-stap h3, .mp-kaart h3 { font-family: var(--kop); font-weight: 700; font-size: 1.3rem; line-height: 1.2; color: var(--diep); margin: 10px 0 10px; }
+.mp-stap p, .mp-kaart p { margin: 0; line-height: 1.6; }
+.mp-chip { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 6px 12px; background: var(--nevel); border-radius: 999px; font-size: .95rem; }
+.mp-sw { width: 12px; height: 12px; border-radius: 3px; background: #e77123; flex: none; }
+.mp-chip-nr { font-family: 'IBM Plex Mono', monospace; font-size: .85rem; }
+.mp-keuze { width: 100%; margin: 16px 0 0; padding: 0; border: 0; display: grid; gap: 10px; }
+.mp-keuze legend { padding: 0; margin-bottom: 8px; font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--gedempt); }
+.mp-keuze label, .mp-keuze label span, .mp-keuze small { font: inherit; letter-spacing: normal; text-transform: none; }
+.mp-keuze label { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: #fff; border: 1px solid var(--lijn); border-radius: 10px; cursor: pointer; }
+.mp-keuze input { flex: none; width: 18px; height: 18px; margin-top: 4px; accent-color: var(--diep); }
+.mp-keuze small { display: block; color: var(--gedempt); font-size: .95rem; }
+.mp-kaarten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mp-kaart { background: #fff; border: 1px solid var(--lijn); border-radius: 12px; padding: 26px; }
+@media (max-width: 860px) { .mp-kaarten { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .mp-stappen { grid-template-columns: 1fr; } .mp-stap, .mp-kaart { padding: 22px; } }

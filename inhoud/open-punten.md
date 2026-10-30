@@ -98,3 +98,13 @@ Bron: Teksten uitlegpagina's /verschil/ v0.3 (28-10-2026). De drie pagina's staa
 - **Terugkoppeling:** of de site mag zeggen dat Mondéall de besteding niet controleert (komt nu niet op de pagina's voor).
 - **Links vanaf /hoe-het-werkt:** de linkteksten gebruiken de drie termen bewust niet, omdat de woordregel ze buiten /verschil/ verbiedt. Wil je de termen in de linktekst (beter voor zoekmachines), dan moet de woordregel een uitzondering krijgen voor die ene sectie.
 - **Doelgroepnavigatie:** er is geen plek in de hoofdnavigatie voor Starters en Geld Delers naar deze pagina's. Nog niet aangepast.
+
+# Open punten bij Zo deel je mee
+
+Bron: mockup "Zo deel je mee" (Artifact, 30-10-2026). De pagina /hoe-het-werkt/meedelen staat online en is indexeerbaar. De mockup noemde zelf deze punten; de eerste twee zijn extra.
+
+- **Beweringen over een platform dat nog niet draait:** "geen account nodig", "betaalmethode die we bij de lancering aanbieden" en "geen nieuwsbrief tenzij je dat aanvinkt" hangen af van de Mollie-inrichting en zijn nog niet bevestigd. De pagina heeft een statusregel ("Delen kan nog niet").
+- **"We betalen niets terug, ook niet als een Initiatief niet doorgaat":** dit raakt de passage over wat er gebeurt als een Voorziening niet doorgaat, die op /verschil/doneren bewust is achtergehouden tot de jurist akkoord geeft. Jurist bevestigt vóór de pagina breed gedeeld wordt. De mockup zei "staat in de voorwaarden"; op de site staat "staat straks in de voorwaarden", omdat /voorwaarden nog geen tekst heeft.
+- **FAQ over aftrek:** doet geen fiscale claim, maar moet door de belastingadviseur worden getoetst (zelfde punt als de achtergehouden sectie op /verschil/doneren).
+- **De keuzerondjes in stap 3** (met naam of anoniem) doen nog niets: er is geen formulier. Ze zijn bedoeld als voorbeeld van wat er straks komt.
+- **Titel:** de mockup had "Zo deel je mee | Mondéall"; de site gebruikt het scheidingsteken "·" zoals overal. Het beeldmerk uit de mockup is niet overgenomen (de site heeft het eigen klavertje).

@@ -2032,3 +2032,35 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .vw-tekst h3 { font-family: var(--kop); font-size: 1.2rem; font-weight: 700; color: var(--diep); margin: 6px 0 8px; }
 .vw-tekst p { margin: 0; }
 @media (max-width: 900px) { .vw-tijdlijn { grid-template-columns: 1fr; gap: 0; } .vw-tijdlijn li { padding: 0 0 26px 44px; } .vw-tijdlijn li::after { left: 10px; right: auto; top: 28px; bottom: 0; width: 2px; height: auto; } .vw-tweekol { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Aanmelden */
+.am-twee { display: grid; gap: 40px; grid-template-columns: minmax(0, 540px) minmax(0, 1fr); align-items: start; }
+.am-formkaart { background: var(--achtergrond); border: 1px solid var(--lijn); border-radius: 12px; padding: 32px; }
+.am-formkop { font-family: var(--kop); font-size: 1.5rem; font-weight: 800; color: var(--diep); margin: 0 0 20px; }
+.am-veld { margin-bottom: 22px; position: relative; }
+.am-veld label { display: block; font-family: var(--kop); font-weight: 700; color: var(--diep); margin-bottom: 6px; font-size: 1.05rem; }
+.am-hulp { display: block; color: var(--gedempt); font-size: .925rem; margin-bottom: 8px; }
+.am-veld input { width: 100%; font: inherit; color: inherit; background: #fff; border: 2px solid #4a5b56; border-radius: 8px; padding: 12px 14px; min-height: 48px; box-sizing: border-box; }
+.am-veld input:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+.am-veld input[aria-invalid="true"] { border-color: #b3261e; }
+.am-fout { color: #b3261e; font-size: .925rem; margin: 6px 0 0; display: none; }
+.am-fout.zichtbaar { display: block; }
+.am-suggesties { list-style: none; margin: 6px 0 0; padding: 4px; background: #fff; border: 1px solid var(--lijn); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.12); position: absolute; left: 0; right: 0; z-index: 5; }
+.am-suggesties[hidden] { display: none; }
+.am-suggesties li { padding: 10px 12px; border-radius: 6px; cursor: pointer; }
+.am-suggesties li small { display: block; color: var(--gedempt); font-size: .875rem; }
+.am-suggesties li[aria-selected="true"], .am-suggesties li:hover { background: var(--nevel); }
+.am-gemeente { display: none; align-items: center; gap: 10px; margin: 10px 0 0; padding: 10px 14px; background: var(--nevel); border-radius: 8px; color: var(--diep); }
+.am-gemeente.zichtbaar { display: flex; }
+.am-mono { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; }
+.am-klein { font-size: .925rem; color: var(--gedempt); margin: 16px 0 0; }
+.am-melding { display: none; margin-top: 20px; padding: 16px 18px; border-radius: 8px; border: 1px solid var(--lijn); background: var(--nevel); }
+.am-melding.zichtbaar { display: block; }
+.am-melding p { margin: 0; }
+.am-form-knop { cursor: pointer; }
+.am-zijkant h2 { font-family: var(--kop); font-size: 1.35rem; font-weight: 800; color: var(--diep); margin: 0 0 14px; }
+.am-vinklijst { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.am-vinklijst li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; }
+.am-vinklijst svg { color: var(--diep); }
+.am-vinklijst strong { font-family: var(--kop); color: var(--diep); }
+@media (max-width: 900px) { .am-twee { grid-template-columns: 1fr; gap: 32px; } .am-formkaart { padding: 24px 20px; } }

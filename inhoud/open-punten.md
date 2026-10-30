@@ -146,3 +146,17 @@ Bron: mockup "Verantwoorden" (Artifact, 30-10-2026). De pagina /starten/verantwo
 - **Helper:** de term staat in de mockup ("Een Helper kan je meehelpen in de Werkplaats") maar nergens anders op de site. Bevestigen dat dit een erkende rol is en dat de term in het Lexicon staat.
 - **Voorbeeld-terugkoppeling:** verzonnen, bevat bewust geen bedrag, en is als Voorbeeld gelabeld.
 - **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Aanmelden
+
+Bron: mockup "Aanmelden" (Artifact, 30-10-2026). De pagina /starten/aanmelden staat online en is indexeerbaar. Het formulier controleert alleen de invoer; er wordt niets opgeslagen of verstuurd, en de pagina zegt dat ("Aanmelden kan nog niet").
+
+- **Snelstart:** volgens het besluit van 27-10-2026 alleen naam organisatie, plaats (gemeente verschijnt) en titel, plus een e-mailadres voor de Werkplaats. Bewust niets over KvK-nummer of IBAN; dat volgt in de Werkplaats. De poort is "Kan mijn organisatie starten?".
+- **Plaatszoeker:** de lijst heeft vijf voorbeeldplaatsen (twee keer Laren, Lochem, Eibergen, Goor). Koppelingen plaats naar gemeente controleren tegen de CBS-lijst. In productie komt de lijst uit de gegevens van Mondéall. Het formulier zegt "gemeente", niet "Kern".
+- **Inloggen (Platformroute §7):** open punt hoe Starters inloggen zonder tracking en zonder extra gegevens. De pagina noemt daarom geen wachtwoord of inloglink; het veld heet "e-mailadres".
+- **Voorwaarden accepteren:** er is geen aanvinkvak. Of een Starter de voorwaarden bij het beginnen moet accepteren is niet besloten en de voorwaarden bestaan nog niet; nu alleen links naar Voorwaarden en Privacy. Jurist bevestigt.
+- **Weggelaten uit de mockup:** de regel "Heb je al een Werkplaats? Inloggen". Er is nog geen Werkplaats; de regel zou iets beschrijven wat niet bestaat. Terugplaatsen zodra inloggen kan.
+- **Helper:** zelfde vraag als bij Verantwoorden. De term staat nergens anders op de site; bevestigen dat het een erkende rol is.
+- **"Je hoeft geen bestuurslid te zijn"** volgt uit het besluit van 27-10 (de Starter kan een vrijwilliger zijn). **"Niemand ziet je Initiatief voordat het live gaat"** volgt uit de statusmachine (Architectuurschets §6.3).
+- **Statusregel:** aanpassen zodra de pilotplanning vastligt.
+- **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

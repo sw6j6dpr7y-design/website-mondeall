@@ -35,6 +35,9 @@ export const paginas = [
   // Tekst: mockup Verantwoorden (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/starten/verantwoorden', titel: 'Verantwoorden', beschrijving: 'Na je Initiatief laat je kort zien wat er is gebeurd. Een bericht, een foto of een korte update, binnen 52 weken na livegang.', stukken: ['verantwoorden'], fase: 'I' },
 
+  // Tekst: mockup Aanmelden (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
+  { url: '/starten/aanmelden', titel: 'Aanmelden', beschrijving: 'Begin met je Initiatief. Je hebt alleen de naam van je organisatie, je plaats en een titel nodig.', stukken: ['aanmelden'], scripts: ['aanmelden'], fase: 'I' },
+
   { url: '/starten', titel: 'Start een Initiatief', beschrijving: 'Zet als vereniging, stichting, school of kerk een Initiatief op Mondéall. Mensen delen mee vanaf € 1 en alles komt bij jullie aan.', stukken: ['starten-landing'], fase: 'I' },
   { url: '/starten/check', titel: 'Kan mijn organisatie starten?', beschrijving: 'Drie vragen om te zien of jouw organisatie een Initiatief kan starten bij Mondéall.', stukken: ['starten'], scripts: ['starten'], fase: 'I' },
   { url: '/starten/zo-werkt-het', titel: 'Zo werkt het, in vier stappen', beschrijving: 'Zo ziet het starten van een Initiatief eruit, in vier stappen.', stukken: ['start-initiatief'], scripts: ['starten'], fase: 'I' },
@@ -83,7 +86,6 @@ export const plaatshouders = [
   ph('/hoe-het-werkt/spelregels', 'Spelregels'),
   ph('/hoe-het-werkt/veilig-betalen', 'Veilig betalen'),
   ph('/starten/startgids', 'Startgids'),
-  ph('/starten/aanmelden', 'Aanmelden'),
   ph('/sponsoren/treden', 'Treden en tegenprestatie'),
   ph('/sponsoren/zichtbaarheid', 'Hoe je zichtbaar bent'),
   ph('/sponsoren/ondernemers-vertellen', 'Ondernemer werft ondernemer'),

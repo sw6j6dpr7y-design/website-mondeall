@@ -1,0 +1,64 @@
+<section class="pt pt-hero" aria-labelledby="am-kop">
+  <div class="wrap">
+    <p class="pt-eyebrow">Start een Initiatief</p>
+    <h1 id="am-kop" class="hw-kop">Aanmelden</h1>
+    <p class="pt-lead">Begin met je Initiatief. Drie dingen is genoeg: de naam van je organisatie, je plaats en een titel. De rest vul je later in, in je eigen tempo.</p>
+    <p class="sl-status"><span class="sl-stip" aria-hidden="true"></span><span><strong>In opbouw.</strong> Aanmelden kan nog niet. Hieronder zie je hoe het gaat werken.</span></p>
+  </div>
+</section>
+
+<section class="pt pt-wit" aria-labelledby="am-form-h">
+  <div class="wrap">
+    <div class="am-twee">
+      <div class="am-formkaart">
+        <h2 id="am-form-h" class="am-formkop">Begin je Initiatief</h2>
+        <form id="am-start" novalidate>
+          <div class="am-veld">
+            <label for="am-org">Naam van de organisatie</label>
+            <input id="am-org" name="org" type="text" autocomplete="organization" aria-describedby="am-org-fout" required>
+            <p class="am-fout" id="am-org-fout">Vul de naam van je organisatie in.</p>
+          </div>
+
+          <div class="am-veld">
+            <label for="am-plaats">Plaats</label>
+            <span class="am-hulp" id="am-plaats-hulp">Begin te typen. Wij laten zien bij welke gemeente het hoort.</span>
+            <input id="am-plaats" name="plaats" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="am-sug" aria-describedby="am-plaats-hulp am-plaats-fout" autocomplete="off" required>
+            <ul class="am-suggesties" id="am-sug" role="listbox" aria-label="Plaatsen" hidden></ul>
+            <p class="am-gemeente" id="am-gem" aria-live="polite"><span class="am-mono">Gemeente</span> <strong id="am-gemnaam"></strong></p>
+            <p class="am-fout" id="am-plaats-fout">Kies een plaats uit de lijst.</p>
+          </div>
+
+          <div class="am-veld">
+            <label for="am-titel">Titel van je Initiatief</label>
+            <span class="am-hulp" id="am-titel-hulp">Kort en concreet, bijvoorbeeld: Een nieuw dak voor het clubhuis. Je kunt de titel later aanpassen.</span>
+            <input id="am-titel" name="titel" type="text" aria-describedby="am-titel-hulp am-titel-fout" required>
+            <p class="am-fout" id="am-titel-fout">Geef je Initiatief een titel.</p>
+          </div>
+
+          <div class="am-veld">
+            <label for="am-mail">E-mailadres</label>
+            <span class="am-hulp" id="am-mail-hulp">Hiermee open je je Werkplaats. Een persoonlijk adres mag. Je kunt het later wijzigen.</span>
+            <input id="am-mail" name="mail" type="email" autocomplete="email" aria-describedby="am-mail-hulp am-mail-fout" required>
+            <p class="am-fout" id="am-mail-fout">Vul een geldig e-mailadres in.</p>
+          </div>
+
+          <button class="pt-knop am-form-knop" type="submit">Begin je Initiatief</button>
+          <div class="am-melding" id="am-melding" role="status" aria-live="polite" tabindex="-1">
+            <p>Aanmelden kan nog niet. Er is niets opgeslagen of verstuurd.</p>
+          </div>
+          <p class="am-klein">Je gebruikt Mondéall gratis. Lees ook onze <a href="/voorwaarden">voorwaarden</a> en <a href="/privacy">privacyverklaring</a>. Je krijgt geen nieuwsbrief tenzij je daar zelf voor kiest.</p>
+        </form>
+      </div>
+
+      <div class="am-zijkant">
+        <h2>Goed om te weten</h2>
+        <ul class="am-vinklijst">
+          <li><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L19 11"/></svg><div><strong>Je hoeft geen bestuurslid te zijn</strong><br>Een vrijwilliger kan ook een Initiatief starten, namens de organisatie.</div></li>
+          <li><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L19 11"/></svg><div><strong>Niemand ziet je Initiatief voordat het live gaat</strong><br>Je werkt eerst aan een concept in de Werkplaats. Alles kun je later aanpassen.</div></li>
+          <li><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L19 11"/></svg><div><strong>Een Initiatief hoort bij een Voorziening</strong><br>Iets concreets voor de gemeenschap, zoals een nieuw dak, een speeltuin of een kookgroep. <a href="/starten/check">Kan mijn organisatie starten?</a></div></li>
+          <li><svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M9 14.5l3.5 3.5L19 11"/></svg><div><strong>Kom je er in de Werkplaats niet uit?</strong><br>Daar kan een Helper met je meekijken.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

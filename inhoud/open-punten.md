@@ -175,3 +175,17 @@ Bron: mockup "Stichting Mondéall" (Artifact, 30-10-2026). De pagina /over/stich
 - **Logo-upload (Bouwspecificatie):** pas vanaf trede Sponsor; een Sponsor onder die trede zou alleen een naam krijgen en daarmee de trede zichtbaar maken. Voorstel: iedereen een tegel met letterteken, logo's vervangen dat zonder verschil in grootte of plek. Bevestigen.
 - **Sponsorminimum:** blijft buiten beeld (€ 50 volgens het besluit van 28-10, € 10 in het Inkomstenkader). Geen personen, bestuursnamen of bedragen op de pagina; het bestuur is nog niet vastgesteld.
 - **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.
+
+# Open punten bij Bestuur en governance
+
+Bron: mockup "Bestuur en governance" (Artifact, 30-10-2026). De pagina /over/bestuur staat online en is indexeerbaar.
+
+- **Stichting Naberschap weggelaten:** de mockup had Naberschap in regel 2, in het schema met twee stichtingen, als eigen bestuurskaart (voorgenomen: ten minste drie onafhankelijke leden, oprichter niet in dat bestuur) en bij "Tussen de twee stichtingen". Naberschap mag hooguit één zin op /over/stelsel. Op deze pagina staat alleen Stichting Mondéall; het schema is vervallen en de pagina verwijst naar /over/stelsel. Zeg het als de pagina toch over beide stichtingen moet gaan, dan pas ik de regel aan.
+- **Geen Governance-kader in het Project:** het kader van 24-07-2026 is volgens de Bouwspecificatie vervallen; dat van 25-09-2026 noemt volgens het Lexicon de BV en de Helper nog verkeerd. De pagina rust op Lexicon v2.0 (§1), Inkomstenkader v1.0, Fundament v2, Uitgangspunten v1 §5 en Stelselnotitie v1.1.
+- **Statuten als voorgenomen:** onafhankelijke meerderheid, coöptatie, vermogen bij ontbinding, doelwijziging. De notaris legt de formulering vast; het notarisadvies van 07-10-2026 kwam van een kantoor zonder specialisatie in stichtingenrecht. Jurist of notaris toetst voor de pagina breed gedeeld wordt.
+- **"Niet te koop":** volgt uit het ontbreken van aandelen en eigenaren (Lexicon §1) en Fundament v2. De stichting bestaat nog niet, daarom zegt de pagina "bedoeld" waar het om borging gaat.
+- **"Geen invloed op welke Initiatieven worden geplaatst":** komt uit het Inkomstenkader, niet uit een vastgesteld besluit. Ook gemarkeerd bij Stichting Mondéall.
+- **Raad van Toezicht:** staat bij de notaris open (Stelselnotitie v1.1); de pagina noemt het als open vraag.
+- **Geen namen en foto's:** het bestuur is niet vastgesteld; de pagina toont een lege plek ("Namen volgen"). De fiscale inrichting staat niet inhoudelijk op de pagina. LustrumMoment staat niet op de site.
+- **Footer:** de mockup toonde "Stichting Mondéall (in oprichting)"; de footer van de site doet dat al.
+- **Titel:** de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

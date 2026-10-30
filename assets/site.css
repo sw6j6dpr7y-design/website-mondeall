@@ -2091,3 +2091,11 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 @media (max-width: 960px) { .st-tegels, .st-tegels.st-drie { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .st-tabel > div { grid-template-columns: 1fr; gap: 4px; } .st-kolom2 { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .st-tegels, .st-tegels.st-drie { grid-template-columns: 1fr; } }
+
+/* Bestuur en governance */
+.bg-breed { max-width: 920px; }
+.bg-bestuur { display: grid; grid-template-columns: minmax(0, 560px); gap: 20px; }
+.bg-chip { display: inline-block; margin-bottom: 12px; padding: 4px 12px; border: 1px solid var(--diep); border-radius: 999px; background: var(--nevel); color: var(--diep); font-family: 'IBM Plex Mono', monospace; font-size: .8125rem; }
+.bg-naamloos { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--lijn); color: var(--gedempt); }
+.bg-naamloos .st-teken { background: transparent; border: 2px dashed var(--lijn); color: var(--gedempt); }
+.bg-na { margin: 20px 0 0; }

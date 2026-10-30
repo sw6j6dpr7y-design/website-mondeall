@@ -47,6 +47,8 @@ export const paginas = [
   { url: '/over/missie', titel: 'Missie en kernwaarden', beschrijving: 'De missie en de kernwaarden van Mondéall, en waar we vertrouwen en transparantie voor staan.', stukken: ['wat-is-mondeall', 'vertrouwen'], fase: 'I' },
   // Tekst: mockup Stichting Mondéall (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
   { url: '/over/stichting', titel: 'Stichting Mondéall', beschrijving: 'Stichting Mondéall draagt het platform: exploitatie, merk en missieborging. Zij komt nooit in de giftstroom. Status: in oprichting, vóór de pilot.', stukken: ['stichting'], scripts: ['stichting'], fase: 'I' },
+  // Tekst: mockup Bestuur en governance (Artifact, 30-10-2026). Open punten staan in inhoud/open-punten.md.
+  { url: '/over/bestuur', titel: 'Bestuur en governance', beschrijving: 'Mondéall heeft geen eigenaren en is niet te koop. Lees hoe de borging is bedoeld, wat al vaststaat en wat nog moet worden vastgelegd.', stukken: ['bestuur'], fase: 'I' },
   { url: '/over/verhaal', titel: 'Het verhaal', beschrijving: 'Waar Mondéall vandaan komt.', stukken: ['verhaal'], fase: 'I' },
   { url: '/over/stelsel', titel: 'Het stelsel', beschrijving: 'Welke organisaties horen bij het stelsel rond Mondéall, en wat elk doet.', stukken: ['stelsel'], fase: 'L' },
 
@@ -93,7 +95,6 @@ export const plaatshouders = [
   ph('/sponsoren/ondernemers-vertellen', 'Ondernemer werft ondernemer'),
   ph('/sponsoren/aanmelden', 'Aanmelden als Sponsor'),
   ph('/partners/contact', 'Gesprek aanvragen'),
-  ph('/over/bestuur', 'Bestuur en governance'),
   ph('/over/cijfers', 'Cijfers'),
   ph('/over/jaarverslag', 'Jaarverslag'),
   ph('/over/waar-we-staan', 'Waar we staan'),

@@ -2119,3 +2119,19 @@ button.pt-knop { font-family: var(--kop); cursor: pointer; }
 .ws-tabel p { margin: 4px 0 0; color: var(--gedempt); font-size: .95rem; }
 .ws-route .ws-st { margin-bottom: 8px; }
 @media (max-width: 640px) { .ws-tabel li { grid-template-columns: 1fr; gap: 8px; } }
+
+/* Iets niet pluis melden */
+.mb-set { border: 0; padding: 0; margin: 0 0 22px; min-width: 0; }
+.mb-set legend { font-family: var(--kop); font-weight: 700; color: var(--diep); font-size: 1.05rem; padding: 0; margin-bottom: 8px; }
+.mb-keuze { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; padding: 10px 12px; border: 1px solid var(--lijn); border-radius: 8px; margin-bottom: 8px; cursor: pointer; background: #fff; }
+.mb-keuze input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--diep); }
+.mb-keuze small { display: block; color: var(--gedempt); font-size: .9rem; }
+.mb-tekst { width: 100%; font: inherit; color: inherit; background: #fff; border: 2px solid #4a5b56; border-radius: 8px; padding: 12px 14px; min-height: 140px; resize: vertical; box-sizing: border-box; }
+.mb-tekst:focus-visible { outline: 3px solid var(--diep); outline-offset: 2px; }
+.mb-tekst[aria-invalid="true"] { border-color: #b3261e; }
+.mb-nood { border: 2px solid var(--diep); border-radius: 12px; padding: 16px 18px; background: var(--nevel); }
+.mb-nood strong { font-family: var(--kop); color: var(--diep); }
+.mb-nood p { margin: 4px 0 0; }
+.am-zijkant .mb-zoek { margin-top: 32px; }
+.mb-kaarten2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 920px; }
+@media (max-width: 760px) { .mb-kaarten2 { grid-template-columns: 1fr; } }

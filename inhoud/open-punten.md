@@ -214,3 +214,13 @@ Bron: mockup "Waar we staan" (Artifact, 30-10-2026). De pagina /over/waar-we-sta
 - **Voorbeeld-Initiatieven:** staan als fictief genoemd, zonder getal. Ze zijn uit index en sitemap gehouden (besluit 29-10) maar wel bereikbaar.
 - **Stichting Naberschap weggelaten:** de mockup had een tabelrij "Stichting Naberschap, in oprichting, ANBI nog aan te vragen". Naberschap mag hooguit één zin op /over/stelsel. De tabel noemt alleen Stichting Mondéall en de route spreekt van "de stichting oprichten".
 - **Geen bouwkosten, tarieven of bedragen** op de pagina. Titel: de mockup had "|"; de site gebruikt "·".
+
+# Open punten bij Iets niet pluis melden
+
+Bron: mockup "Iets niet pluis melden" (Artifact, 30-10-2026). De pagina /melden staat online en is indexeerbaar. Het formulier verstuurt niets; het toont "Melden kan nog niet".
+
+- **Geen vastgestelde meldprocedure:** niet vastgelegd is wie een melding behandelt, binnen welke termijn, of er een reactie komt, wat er met het geld van een offline gehaald Initiatief gebeurt en hoe lang een melding wordt bewaard. De pagina belooft geen reactietermijn en geen terugbetaling.
+- **E-mailadres optioneel:** voorstel passend bij dataminimalisme. Bevestigen of anonieme meldingen zijn toegestaan. AVG-grondslag, bewaartermijn en verwerkersrol: jurist.
+- **"Wat wij kunnen doen":** in de mogelijkheidsvorm, omdat de procedure nog niet bestaat. Open punt uit de werksessie: de beslissing over offline halen zou bij meer dan één persoon moeten liggen. Meenemen naar de statuten en de Klachtenregeling.
+- **Noodkader (112, aangifte):** algemeen en neutraal, maar laten controleren.
+- **Links:** /klachten is nog een plaatshouder. Titel: de mockup had "|"; de site gebruikt "·". Lettertypen worden zelf gehost.

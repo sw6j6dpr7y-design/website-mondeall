@@ -76,6 +76,7 @@
   header .hero { background: var(--nevel); border-top: 1px solid var(--lijn); }
   header .hero .hdr-wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 24px 56px; align-items: center; padding-top: 72px; padding-bottom: 72px; }
   header h1 { font-family: var(--kop); font-weight: 800; color: var(--diep); font-size: clamp(2.75rem, 7.2vw, 5.5rem); line-height: .98; letter-spacing: -.04em; margin: 0 0 28px; text-wrap: balance; }
+  header h1 .kop-regel { display: block; }
   header .lead { font-size: clamp(1.2rem, 2.2vw, 1.45rem); line-height: 1.5; max-width: 34em; margin: 0 0 16px; }
   header .status { max-width: 34em; margin: 0 0 32px; color: var(--tekst); }
   header .knop { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: var(--diep); color: #fff; font-family: var(--kop); font-weight: 700; font-size: 1.05rem; text-decoration: none; }

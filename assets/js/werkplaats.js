@@ -76,7 +76,7 @@ function wpLive() {
     '<div class="wp-live wp-rij"><div><div class="k">LIVE</div><p>Live sinds 28-09-2026. Sluit op <strong>' + WP_SLUIT[WP.verlengingen] + '</strong>.</p>' +
       '<p class="n">' + (rest > 0 ? 'Je kunt nog ' + rest + ' keer met een week verlengen, uiterlijk tot 09-11-2026.' : 'Dit is de langste looptijd: 42 dagen.') + '</p></div>' +
       (rest > 0 ? '<button type="button" class="wp-knop" data-act="verleng">Met een week verlengen</button>' : '') + '</div>' +
-    '<div class="wp-pillen"><a class="wp-pil" href="/initiatieven/aangepast-sportmateriaal-laren">Openbare pagina bekijken</a>' +
+    '<div class="wp-pillen"><a class="wp-pil" href="/initiatieven/renovatie-kleedkamers-sv-laren">Openbare pagina bekijken</a>' +
       '<button type="button" class="wp-pil" data-act="scherm" data-arg="delen">Delen: link, deelknop en QR-poster</button><button type="button" class="wp-pil" disabled>Verhaal of foto bijwerken</button></div>' +
     '<p class="wp-noot" style="margin-top:-8px">Voorziening, sector en organisatie liggen vast zolang je Initiatief live is. Zo weet iedereen waaraan hij meedeelde.</p>' +
     '<div class="wp-twee"><section class="wp-sectie"><h2>Wat er binnenkwam</h2><p class="wp-sub">ALLEEN VOOR JOU ZICHTBAAR</p>' +

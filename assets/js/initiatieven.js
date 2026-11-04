@@ -2,7 +2,15 @@
 (function () {
   if (!document.getElementById('ini-grid')) return;
 var iniGrid = document.getElementById('ini-grid');
-var iniOrder = INI_DATA.slice();
+// Op de voorpagina staan niet alle voorbeelden: wat daar ontbreekt (nietOpHome) staat op /initiatieven.
+var iniHome = !!document.getElementById('hero');
+var iniOrder = INI_DATA.filter(function (d) { return !(iniHome && d.nietOpHome); });
+if (iniHome && iniOrder.length < INI_DATA.length) {
+  var iniAlle = document.createElement('p');
+  iniAlle.className = 'ini-alle';
+  iniAlle.innerHTML = '<a class="knop" href="/initiatieven">Bekijk alle ' + INI_DATA.length + ' Initiatieven</a>';
+  iniGrid.parentNode.insertBefore(iniAlle, iniGrid.nextSibling);
+}
 for (var si = iniOrder.length - 1; si > 0; si--) { var sj = Math.floor(Math.random() * (si + 1)); var stmp = iniOrder[si]; iniOrder[si] = iniOrder[sj]; iniOrder[sj] = stmp; }
 function ifNorm(t) { return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
 function ifId(naam) { return ifNorm(naam).replace(/[^a-z0-9]+/g, '-'); }

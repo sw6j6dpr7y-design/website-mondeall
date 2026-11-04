@@ -191,6 +191,7 @@
   .if-leeg p { margin: 0 0 12px; color: var(--gedempt); }
   .if-leeg a { font-weight: 600; }
   .ini-grid { padding-top: 22px; }
+  .ini-alle { margin: 28px 0 0; text-align: center; }
   @media (max-width: 720px) { .if-row .if-seg, .if-row .if-ctl, .if-row .if-sectorwrap { flex: 1 1 auto; } .if-row .if-field:last-child { flex: 1 1 100%; } .if-seg button { flex: 1; padding: 0 10px; } }
 
   /* LIJST / KAART */

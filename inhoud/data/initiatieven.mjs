@@ -47,7 +47,7 @@ export const INI_DATA = [
     tekst: "Elke maand repareren vrijwilligers samen met bezoekers kapotte spullen, van strijkijzers tot fietsverlichting. We werken nu aan een geleende tafel met gereedschap van thuis. Met eigen werktafels en gereedschap kunnen we meer repareren en blijft er minder in de afvalbak.",
     berichten: [["Anoniem", "Repareren in plaats van weggooien. Dat is de goede kant op."]],
     sponsor: { naam: "HandigMarkt", type: "Franchisenemer", kleur: "#d2691e", logo: "moer", vorm: "vierkant", stijl: STIJL_BRICO + "text-transform:uppercase;" } },
-  { voorbeeld: true, slug: "weerstation-schoolplein-joppe", soort: "School", mensen: 37, bedrag: "865", sinds: "14 september", eerste: "Lotte", afgesloten: "", foto: "/assets/fotos/voorbeeld-08-weerstation.jpg", credit: "Tima Miroshnichenko / Pexels", pos: "50%", sector: "08", kern: "Joppe", titel: "Een weerstation op het schoolplein", beg: "Basisschool De Regenboog", starter: "een leerkracht",
+  { voorbeeld: true, slug: "weerstation-schoolplein-joppe", soort: "School", mensen: 37, bedrag: "865", sinds: "14 september", eerste: "Lotte", afgesloten: "", foto: "/assets/fotos/voorbeeld-08-weerstation.jpg", credit: "Mondéall", pos: "50%", sector: "08", kern: "Joppe", titel: "Een weerstation op het schoolplein", beg: "Basisschool De Regenboog", starter: "een leerkracht",
     vz: "Een weerstation op het schoolplein dat de kinderen zelf kunnen aflezen en gebruiken in de les.",
     kop: "Een weerstation voor de les en het schoolplein.",
     tekst: "Hoe hard waait het vandaag? Is het kouder dan gisteren? Met een weerstation op het schoolplein meten de kinderen het zelf en gebruiken ze de cijfers in de les. Leren wordt zo iets wat je buiten kunt zien en voelen.",
@@ -59,7 +59,7 @@ export const INI_DATA = [
     tekst: "Een bankzaken-app, een afspraak met de huisarts, een bericht van de gemeente: steeds meer gaat digitaal. In het dorpshuis geven vrijwilligers een training voor wie er wel hulp bij kan gebruiken. Met tablets, laptops en lesmateriaal kunnen we meer mensen helpen.",
     berichten: [["Gerda", "Fijn dat je dit gewoon in het dorp kunt leren."], ["Anoniem", "Ik help graag mee met oefenen."]],
     sponsor: { naam: "Computerhulp Hofstede", type: "Lokale ondernemer", kleur: "#2e419e", logo: "klank", vorm: "vierkant", stijl: STIJL_MONO } },
-  { voorbeeld: true, slug: "stilteruimte-dorpshuis-kring-van-dorth", soort: "Stichting", mensen: 41, bedrag: "1.105", sinds: "11 september", eerste: "Joke", afgesloten: "", foto: "/assets/fotos/voorbeeld-10-stilteruimte.jpg", credit: "Leo Zhao / Pexels", pos: "60%", sector: "10", kern: "Kring van Dorth", titel: "Een stilteruimte in het dorpshuis", beg: "Stichting Dorpshuis Kring van Dorth", starter: "een bestuurslid",
+  { voorbeeld: true, slug: "stilteruimte-dorpshuis-kring-van-dorth", soort: "Stichting", mensen: 41, bedrag: "1.105", sinds: "11 september", eerste: "Joke", afgesloten: "", foto: "/assets/fotos/voorbeeld-10-stilteruimte.jpg", credit: "Mondéall", pos: "50%", sector: "10", kern: "Kring van Dorth", titel: "Een stilteruimte in het dorpshuis", beg: "Stichting Dorpshuis Kring van Dorth", starter: "een bestuurslid",
     vz: "Een rustige stilte- en bezinningsruimte in het dorpshuis, open voor iedereen.",
     kop: "Een plek voor stilte, voor iedereen.",
     tekst: "Soms wil je even weg uit de drukte, om na te denken, te rouwen of gewoon stil te zijn. In het dorpshuis richten we een kleine ruimte in met zachte verlichting, zitplekken en rust. Voor iedereen, ongeacht wat je gelooft of niet gelooft.",
@@ -77,7 +77,7 @@ export const INI_DATA = [
     tekst: "Bij een hartstilstand telt elke minuut. Met een AED in de buurt en buren die hebben geoefend, kan er direct geholpen worden. We plaatsen de AED op een plek die altijd toegankelijk is en schaffen oefenmiddelen aan voor reanimatietraining.",
     berichten: [["Marijke", "Kan levens redden. Vanzelfsprekend dat ik meedeel."]],
     sponsor: { naam: "Apotheek Hofstede", type: "Franchisenemer", kleur: "#1b8f5a", logo: "kruis", vorm: "vierkant", stijl: STIJL_BRICO } },
-  { voorbeeld: true, nietOpHome: true, slug: "renovatie-kleedkamers-sv-laren", soort: "Vereniging", mensen: 63, bedrag: "1.845", sinds: "8 september", eerste: "Karin", afgesloten: "", foto: "/assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Sam Hofman / Pexels", pos: "40%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
+  { voorbeeld: true, nietOpHome: true, slug: "renovatie-kleedkamers-sv-laren", soort: "Vereniging", mensen: 63, bedrag: "1.845", sinds: "8 september", eerste: "Karin", afgesloten: "", foto: "/assets/fotos/initiatief-renovatie-kleedkamers-sv-laren.jpg", credit: "Mondéall", pos: "50%", sector: "03", kern: "Laren", titel: "Renovatie kleedkamers", beg: "sv Laren", starter: "een bestuurslid",
     vz: "Ruime, toegankelijke kleedruimtes voor elk kind en elke vrijwilliger.",
     kop: "Gerenoveerde, toegankelijke kleedruimtes.",
     tekst: "Onze kleedkamers zijn ruim veertig jaar oud. De douches lekken en er is geen ruimte voor iemand met een rolstoel. We knappen ze samen op, zodat elk kind en elke vrijwilliger zich thuis voelt bij de club.",
@@ -128,7 +128,7 @@ export const INI_DATA = [
     tekst: "Voor onze kerk liggen drie treden. Voor mensen met een rolstoel of rollator is de kerk daardoor onbereikbaar. Met een hellingbaan en een automatische deur kan iedereen binnen, bij een dienst, een concert of een kopje koffie.",
     berichten: [["Joke", "Mijn moeder komt hier al zestig jaar. Nu kan ze blijven komen."]], sponsor: { naam: "Timmerwerk Hoogland", type: "Familiebedrijf", kleur: "#7a5a2e", logo: "huis", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" } },
   // Volledig uitgewerkte Initiatiefpagina (ontwerp van 25-10-2026). Het veld v2 maakt dat de pagina met bouw/initiatiefpagina.mjs wordt gemaakt.
-  { voorbeeld: true, slug: "netten-klavertje", soort: "Vereniging", mensen: 47, bedrag: "", sinds: "18 oktober", eerste: "", afgesloten: "", foto: "/assets/fotos/sector-03-sport-recreatie.jpg", credit: "Sam Hofman / Pexels", pos: "50%", sector: "03", kern: "Laren", titel: "Nieuwe doelnetten voor de jeugdvelden", beg: "SV Het Klavertje", starter: "de jeugdcoördinator",
+  { voorbeeld: true, slug: "netten-klavertje", soort: "Vereniging", mensen: 47, bedrag: "", sinds: "18 oktober", eerste: "", afgesloten: "", foto: "/assets/fotos/initiatief-netten-klavertje.jpg", credit: "Mondéall", pos: "50%", sector: "03", kern: "Laren", titel: "Nieuwe doelnetten voor de jeugdvelden", beg: "SV Het Klavertje", starter: "de jeugdcoördinator",
     vz: "Zes nieuwe doelnetten voor de pupillenvelden, zodat de trainers weer gewoon kunnen trainen.",
     kop: "Zes nieuwe doelnetten voor de pupillenvelden.",
     tekst: "De doelnetten die er nu hangen, zijn versleten en zitten vol gaten. Met nieuwe netten kunnen de trainers weer gewoon trainen.",
@@ -137,9 +137,9 @@ export const INI_DATA = [
     v2: {
       // Foto op de Initiatiefpagina zelf. De foto op het kaartje (hierboven, veld foto) blijft de hockeyfoto.
       foto: "/assets/fotos/initiatief-netten-klavertje.jpg",
-      fotoAlt: "Een versleten doelnet vol gaten en rafelige touwen in het ochtendlicht",
+      fotoAlt: "Een kapot doelnet met gaten op een voetbalveld",
       fotoPos: "50%",
-      fotoCredit: "Pexels",
+      fotoCredit: "Mondéall",
       extraSponsors: [
         { naam: "Fysiotherapie Veldzicht", type: "Lokale ondernemer", kleur: "#1b7f8c", logo: "kruis", vorm: "rond", stijl: "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;" },
         { naam: "Installatiebedrijf Bolwerk", type: "Familiebedrijf", kleur: "#35577d", logo: "moer", vorm: "vierkant", stijl: "font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.01em;" }

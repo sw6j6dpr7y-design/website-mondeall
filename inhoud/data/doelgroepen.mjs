@@ -15,7 +15,7 @@ export const DOELGROEPEN = [
   { id: 'zieken', naam: 'Zieken & patiënten', omschrijving: 'Inclusief chronisch zieken, psychiatrische kwetsbaarheid en verslaving' },
   { id: 'gezinnen', naam: 'Gezinnen', omschrijving: 'Inclusief eenoudergezinnen' },
   { id: 'mantelzorgers', naam: 'Mantelzorgers', omschrijving: 'Mensen die langdurig en onbetaald zorgen voor een naaste met een ziekte, beperking of verslaving, ook jonge mantelzorgers' },
-  { id: 'inheems', naam: 'Inheemse volken', omschrijving: 'Vooral sector 01' },
+  { id: 'inheems', naam: 'Inheemse volken', omschrijving: 'Vooral sector Internationale Hulp & Mensenrechten' },
   { id: 'veteranen', naam: 'Militairen & veteranen', omschrijving: 'Actief dienende en voormalige militairen, en hun naasten en nabestaanden' }
 ];
 

@@ -1,3 +1,4 @@
+import { AFBAKENING } from './aandachtsgebieden.mjs';
 // De twaalf sectoren (bron: Sectoren Mondeall v4)
 export const sectoren = [
   { nr: "01", naam: "Internationale Hulp & Mensenrechten", hex: "#2e6eb8", toelichting: "Hulp en samenwerking over grenzen heen.", foto: "/assets/fotos/sector-01-internationale-hulp.jpg", credit: "Dalmar Travels / Pexels" },
@@ -14,17 +15,5 @@ export const sectoren = [
   { nr: "12", naam: "Gezondheid & Preventie", hex: "#f3cf3f", toelichting: "Gezond blijven en gezond worden.", foto: "/assets/fotos/sector-12-gezondheid-preventie.jpg", credit: "Tima Miroshnichenko / Pexels" }
 ];
 
-export const AANDACHT = {
-  "01": ["Inheemse volken", "Ontwikkelingswerk", "Vluchtelingenhulp internationaal", "Drinkwater & sanitatie", "Internationale huisvesting", "Internationale scholing", "Noodhulp & rampen", "Juridische hulp internationaal", "Mensenrechten & advocacy", "Internationale voedselhulp"],
-  "02": ["Voedselbanken", "Armoedebestrijding", "Slachtofferhulp", "Dak- en thuislozen", "Diaconie & caritas", "Vrijwilligerswerk", "Vaste lasten / noodsteun", "Juridische hulp nationaal", "Sociale opvang", "Nationale acties"],
-  "03": ["Sportorganisaties", "Wedstrijden & competities", "Jeugdgroepen", "Speeltuinen", "Kinderboerderijen", "Kindervakantiekampen", "Recreatieve verenigingen", "Scouting", "Recreatieve evenementen"],
-  "04": ["Zorg algemeen", "GGZ", "Jeugdzorg", "Gehandicaptenzorg", "Verslavingszorg", "Mantelzorg", "Maatschappelijk werk", "Opvang", "Kinderopvang", "Kraamzorg"],
-  "05": ["Cultureel erfgoed", "Musea", "Podiumkunsten", "Bouwkunst & architectuur", "Monumentenzorg", "Dans", "Film & filmhuizen", "Schouwburgen", "Bibliotheken (cultureel/publiek)", "Festivals & evenementen", "Amateurkunst"],
-  "06": ["Dierenrechten", "Dierenwelzijn", "Dierenbescherming", "Dierenambulance", "Wildlife", "Natuurbehoud (soorten & leefgebied)", "Biodiversiteit", "Omgeving & leefgebied", "Voeding & voedselketen (dieren)"],
-  "07": ["Milieu algemeen", "Eco & bio", "Duurzaamheid", "Voedselverspilling", "Klimaat", "Energie", "Landbouw (duurzaam)", "Voeding (duurzaam)"],
-  "08": ["Basisonderwijs", "Voortgezet onderwijs", "Speciaal onderwijs", "Voorschoolse educatie", "Naschoolse opvang", "Bibliotheken (educatief)", "Onderwijssteun (school-/collegegeld)", "Studiebegeleiding"],
-  "09": ["Wetenschappelijk onderzoek", "Technologie & innovatie", "Medisch onderzoek", "Onderzoeksinstellingen & wetenschappers"],
-  "10": ["Kerkgenootschappen", "Zendingsorganisaties", "Islamitische organisaties", "Spiritualiteit", "Rituelen (herdenken/begrafenis/crematie)"],
-  "11": ["Burgerparticipatie & burgercollectieven", "Buurt- & wijkontwikkeling", "Gemeenschapsvoorzieningen (buurt-/dorps-/clubhuizen)", "Sociale cohesie & inclusie", "Emancipatie & gelijke behandeling", "Maatschappelijke participatie", "Protest / actiegroepen / pressie"],
-  "12": ["Ziekte & aandoeningen", "Gezondheid algemeen", "Lifestyle & leefstijl", "Medisch (niet onderzoek)", "Preventie", "Verzorging", "Sport als gezondheidsinterventie", "Medisch reizen / zorgreizen", "Wensen (laatste wensen)"]
-};
+// Namen van de aandachtsgebieden per sector, uit de afbakening voor de Starter.
+export const AANDACHT = Object.fromEntries(Object.entries(AFBAKENING).map(([nr, lijst]) => [nr, lijst.map((a) => a.naam)]));

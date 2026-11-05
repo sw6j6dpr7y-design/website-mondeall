@@ -46,11 +46,28 @@ function openSector(s, knop) {
   tel.textContent = lijst.length + ' aandachtsgebieden';
   var ul = document.createElement('ul');
   ul.className = 'sd-lijst';
+  var afb = (typeof AFBAKENING !== 'undefined' && AFBAKENING[s.nr]) || [];
   lijst.forEach(function (naam, i) {
     var li = document.createElement('li');
-    var n = document.createElement('span');
-    n.textContent = naam;
-    li.appendChild(n);
+    var d = afb[i];
+    if (d) {
+      var det = document.createElement('details');
+      det.className = 'ag';
+      var sum = document.createElement('summary');
+      sum.textContent = naam;
+      var p1 = document.createElement('p');
+      var b1 = document.createElement('strong'); b1.textContent = 'Omvat';
+      p1.appendChild(b1); p1.appendChild(document.createTextNode(' ' + d.omvat));
+      var p2 = document.createElement('p');
+      var b2 = document.createElement('strong'); b2.textContent = 'Valt hier niet onder';
+      p2.appendChild(b2); p2.appendChild(document.createTextNode(' ' + d.valt));
+      det.appendChild(sum); det.appendChild(p1); det.appendChild(p2);
+      li.appendChild(det);
+    } else {
+      var n = document.createElement('span');
+      n.textContent = naam;
+      li.appendChild(n);
+    }
     ul.appendChild(li);
   });
   body.appendChild(intro);

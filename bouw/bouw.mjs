@@ -9,6 +9,7 @@ import { DOMEIN, NAAM, BASISTITEL, BESCHRIJVING, DEELBEELD, EMAIL, STATUSREGEL, 
 import { statusregel } from './onderdelen.mjs';
 import { paginas, afgeleidePaginas, sectorPad, tekstVolgtZin } from '../inhoud/paginas.mjs';
 import { sectoren, AANDACHT } from '../inhoud/data/sectoren.mjs';
+import { AFBAKENING } from '../inhoud/data/aandachtsgebieden.mjs';
 import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
 import { IF_KERNEN, IF_KERNBUURT } from '../inhoud/data/kernen.mjs';
 import { hoofdnav, voetkolommen, onderbalk, auteursrecht } from '../inhoud/navigatie.mjs';
@@ -37,6 +38,9 @@ kopieer(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 
 // ---------- gegevens voor de browser ----------
 const sectorenMetPad = sectoren.map((s) => ({ ...s, pad: sectorPad(s) }));
+schrijf('assets/afbakening.js',
+  '/* Gegenereerd door bouw/bouw.mjs uit inhoud/data/aandachtsgebieden.mjs. Niet met de hand aanpassen. */\n' +
+  'var AFBAKENING = ' + JSON.stringify(AFBAKENING) + ';\n');
 schrijf('assets/data.js',
   '/* Gegenereerd door bouw/bouw.mjs uit inhoud/data. Niet met de hand aanpassen. */\n' +
   'var sectoren = ' + JSON.stringify(sectorenMetPad) + ';\n' +
@@ -190,7 +194,7 @@ function schil(p, binnen, opties = {}) {
   const canoniek = DOMEIN + (p.url === '/' ? '/' : p.url);
   const scripts = ['gemeen', ...(p.scripts || []), ...(opties.scripts || [])];
   const metData = scripts.some((s) => ['initiatieven', 'sectoren', 'starten'].includes(s));
-  const js = [metData ? '<script src="' + activa('assets/data.js') + '"></script>' : '']
+  const js = [metData ? '<script src="' + activa('assets/data.js') + '"></script>' : '', scripts.includes('sectoren') ? '<script src="' + activa('assets/afbakening.js') + '"></script>' : '']
     .concat(scripts.map((s) => '<script src="' + activa('assets/js/' + s + '.js') + '"></script>')).filter(Boolean).join('\n');
   const kaal = !!(p.werkplaats || p.wn);
   const beschrijving = p.beschrijving || BESCHRIJVING;
@@ -344,7 +348,7 @@ for (const s of sectoren) {
     <p class="sector-intro">${esc(s.toelichting)}</p>
     <div class="sector-foto"><img src="${s.foto}" alt="" loading="lazy"><span class="foto-credit">Foto: ${esc(s.credit)}</span></div>
     <h2 class="sector-h2">Aandachtsgebieden (${(AANDACHT[s.nr] || []).length})</h2>
-    <ul class="sector-lijst">${(AANDACHT[s.nr] || []).map((n) => '<li>' + esc(n) + '</li>').join('')}</ul>
+    <ul class="sector-lijst">${(AFBAKENING[s.nr] || []).map((a) => '<li><details class="ag"><summary>' + esc(a.naam) + '</summary><p><strong>Omvat</strong> ' + esc(a.omvat) + '</p><p><strong>Valt hier niet onder</strong> ' + esc(a.valt) + '</p></details></li>').join('')}</ul>
     <h2 class="sector-h2">Voorbeeld-Initiatieven</h2>
     ${voorbeelden.length
       ? '<ul class="sector-voorbeelden">' + voorbeelden.map((d) => '<li><a href="/initiatieven/' + d.slug + '">' + esc(d.titel) + '</a><span>' + esc(d.beg) + ', ' + esc(d.kern) + '. Voorbeeld.</span></li>').join('') + '</ul>'

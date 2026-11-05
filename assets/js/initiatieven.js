@@ -30,11 +30,13 @@ INI_DATA.forEach(function (d) {
   d.lng = k.c[1] + r * 1.7 * Math.cos(ang);
 });
 
-var IF = { kern: '', sectors: [], soort: '', status: '', q: '', view: 'lijst', inview: false, panel: false, sel: '' };
+var IF = { kern: '', sectors: [], dg: [], soort: '', status: '', q: '', view: 'lijst', inview: false, panel: false, sel: '' };
 var ifEl = {
   kernen: document.getElementById('if-kernen'), q: document.getElementById('if-q'),
   btn: document.getElementById('if-sector-btn'), txt: document.getElementById('if-sector-txt'), cnt: document.getElementById('if-sector-count'),
   panel: document.getElementById('if-panel'), opts: document.getElementById('if-opts'),
+  dgBtn: document.getElementById('if-dg-btn'), dgTxt: document.getElementById('if-dg-txt'), dgCnt: document.getElementById('if-dg-count'),
+  dgPanel: document.getElementById('if-dg-panel'), dgOpts: document.getElementById('if-dg-opts'),
   soort: document.getElementById('if-soort'), status: document.getElementById('if-status'),
   chips: document.getElementById('if-chips'), titel: document.getElementById('if-titel'), result: document.getElementById('if-result'),
   leeg: document.getElementById('if-leeg'), leegTxt: document.getElementById('if-leeg-txt'),
@@ -44,6 +46,12 @@ var ifEl = {
 function ifMobiel() { return window.matchMedia('(max-width:860px)').matches; }
 function ifRustig() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
 
+function ifDgNaam(id) { return DOELGROEPEN.filter(function (t) { return t.id === id; })[0].naam; }
+function ifVoorWie(d) {
+  return d.doelgroepen && d.doelgroepen.length
+    ? 'Voor: ' + d.doelgroepen.map(function (id) { return iniEsc(ifDgNaam(id)); }).join(', ')
+    : 'Voor iedereen';
+}
 function ifCardHTML(d) {
   var s = iniSector(d.sector);
   return '<div class="ini-stripe" style="background:' + s.hex + '"></div>' +
@@ -57,6 +65,7 @@ function ifCardHTML(d) {
       '<span class="ini-plaats">' + iniEsc(d.kern) + '</span>' +
       '<h3>' + iniEsc(d.titel) + '</h3>' +
       '<p class="ini-vz">' + iniEsc(d.vz) + '</p>' +
+      '<p class="ini-voor">' + ifVoorWie(d) + '</p>' +
       '<div class="ini-beg">' + iniEsc(d.beg) + '<span class="ini-meer">Bekijk het Initiatief &rarr;</span><span class="foto-credit">Foto: ' + iniEsc(d.credit) + '</span></div>' +
     '</div>';
 }
@@ -66,12 +75,15 @@ function ifCompactHTML(d) {
       '<span class="if-cstatus ' + st + '">' + IF_STATUSNAAM[st] + '</span></div>' +
     '<h4><button type="button" data-slug="' + d.slug + '">' + iniEsc(d.titel) + '</button></h4>' +
     '<p>' + iniEsc(d.vz) + '</p>' +
+    '<p class="ini-voor">' + ifVoorWie(d) + '</p>' +
     '<dl><dt>Begunstigde</dt><dd>' + iniEsc(d.beg) + '</dd><dt>Kern</dt><dd>' + iniEsc(d.kern) + '</dd></dl>' +
     '<a class="if-cmeer" href="/initiatieven/' + d.slug + '">Bekijk het Initiatief &rarr;</a>';
 }
 function ifMatches(d) {
   if (IF.kern && ifId(d.kern) !== IF.kern) return false;
   if (IF.sectors.length && IF.sectors.indexOf(d.sector) < 0) return false;
+  /* Een Initiatief zonder tag is voor iedereen en blijft altijd zichtbaar. */
+  if (IF.dg.length && d.doelgroepen.length && !d.doelgroepen.some(function (t) { return IF.dg.indexOf(t) >= 0; })) return false;
   if (IF.soort && d.soort !== IF.soort) return false;
   if (IF.status && ifStatus(d) !== IF.status) return false;
   if (IF.q) {
@@ -92,6 +104,7 @@ function ifRenderChips() {
   var chips = [];
   if (IF.kern) chips.push(['kern', '', ifKern(IF.kern).naam]);
   IF.sectors.forEach(function (nr) { chips.push(['sector', nr, iniSector(nr).naam]); });
+  IF.dg.forEach(function (id) { chips.push(['dg', id, ifDgNaam(id)]); });
   if (IF.soort) chips.push(['soort', '', IF.soort]);
   if (IF.status) chips.push(['status', '', IF_STATUSNAAM[IF.status]]);
   if (IF.q) chips.push(['q', '', '“' + IF.q + '”']);
@@ -107,6 +120,7 @@ function ifSchrijfUrl() {
   var p = new URLSearchParams();
   if (IF.kern) p.set('kern', IF.kern);
   if (IF.sectors.length) p.set('sector', IF.sectors.join(','));
+  if (IF.dg.length) p.set('voor', IF.dg.join(','));
   if (IF.soort) p.set('soort', IF.soort);
   if (IF.status) p.set('status', IF.status);
   if (IF.q) p.set('q', IF.q);
@@ -120,6 +134,7 @@ function ifLeesUrl() {
   IF.kern = ifKern(k) ? k : '';
   IF.panel = !!IF.kern;
   IF.sectors = (p.get('sector') || '').split(',').filter(function (nr) { return iniSector(nr); }).sort();
+  IF.dg = (p.get('voor') || '').split(',').filter(function (id) { return DOELGROEPEN.some(function (t) { return t.id === id; }); });
   var so = p.get('soort') || '';
   IF.soort = IF_SOORTEN.indexOf(so) >= 0 ? so : '';
   var st = p.get('status') || '';
@@ -132,6 +147,7 @@ function ifSyncUi() {
   ifEl.soort.value = IF.soort;
   ifEl.status.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-v') === IF.status); });
   ifEl.opts.querySelectorAll('input').forEach(function (i) { i.checked = IF.sectors.indexOf(i.value) >= 0; });
+  ifEl.dgOpts.querySelectorAll('input').forEach(function (i) { i.checked = IF.dg.indexOf(i.value) >= 0; });
   ifEl.explore.setAttribute('data-view', IF.view);
   ifEl.view.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === IF.view); });
 }
@@ -165,6 +181,9 @@ function ifUpdate(refit) {
   ifEl.txt.textContent = IF.sectors.length ? 'Sectoren' : 'Alle sectoren';
   ifEl.cnt.hidden = !IF.sectors.length;
   ifEl.cnt.textContent = IF.sectors.length;
+  ifEl.dgTxt.textContent = IF.dg.length ? 'Doelgroepen' : 'Iedereen';
+  ifEl.dgCnt.hidden = !IF.dg.length;
+  ifEl.dgCnt.textContent = IF.dg.length;
   ifRenderKernen();
   ifRenderChips();
   ifRenderPanel(gefilterd);
@@ -175,6 +194,8 @@ function ifWis(t, v) {
   if (t === 'kern' || t === 'all') { IF.kern = ''; IF.panel = false; }
   if (t === 'sector') IF.sectors = IF.sectors.filter(function (nr) { return nr !== v; });
   if (t === 'all') IF.sectors = [];
+  if (t === 'dg') IF.dg = IF.dg.filter(function (id) { return id !== v; });
+  if (t === 'all') IF.dg = [];
   if (t === 'soort' || t === 'all') IF.soort = '';
   if (t === 'status' || t === 'all') IF.status = '';
   if (t === 'q' || t === 'all') IF.q = '';
@@ -199,7 +220,7 @@ function ifRenderPanel(gefilterd) {
   var k = ifKern(IF.kern);
   p.hidden = false;
   var hier = gefilterd.filter(function (d) { return ifId(d.kern) === k.id; });
-  var andere = IF.sectors.length || IF.soort || IF.status || IF.q;
+  var andere = IF.sectors.length || IF.dg.length || IF.soort || IF.status || IF.q;
   var spons = INI_DATA.filter(function (d) { return ifId(d.kern) === k.id; }).map(function (d) { return d.sponsor; });
   var lijst = hier.length
     ? '<ul class="if-kplijst">' + hier.map(function (d) {
@@ -382,8 +403,21 @@ ifEl.opts.innerHTML = sectoren.map(function (s) {
 }).join('');
 ifEl.soort.insertAdjacentHTML('beforeend', IF_SOORTEN.map(function (x) { return '<option value="' + iniEsc(x) + '">' + iniEsc(x) + '</option>'; }).join(''));
 
+ifEl.dgOpts.innerHTML = DOELGROEPEN.map(function (t) {
+  return '<label class="if-opt if-opt-dg"><input type="checkbox" value="' + t.id + '"><span>' + iniEsc(t.naam) + '<small>' + iniEsc(t.omschrijving) + '</small></span></label>';
+}).join('');
+function ifDgPaneel(open) { ifEl.dgPanel.hidden = !open; ifEl.dgBtn.setAttribute('aria-expanded', open); if (open) { var f = ifEl.dgPanel.querySelector('input'); if (f) f.focus(); } }
+ifEl.dgBtn.addEventListener('click', function () { if (ifEl.dgPanel.hidden) ifPaneel(false); ifDgPaneel(ifEl.dgPanel.hidden); });
+document.getElementById('if-dg-close').addEventListener('click', function () { ifDgPaneel(false); ifEl.dgBtn.focus(); });
+document.getElementById('if-dg-clear').addEventListener('click', function () { IF.dg = []; ifSyncUi(); ifUpdate(true); });
+ifEl.dgOpts.addEventListener('change', function (e) {
+  var id = e.target.value;
+  IF.dg = IF.dg.filter(function (x) { return x !== id; });
+  if (e.target.checked) IF.dg.push(id);
+  ifUpdate(true);
+});
 function ifPaneel(open) { ifEl.panel.hidden = !open; ifEl.btn.setAttribute('aria-expanded', open); if (open) { var f = ifEl.panel.querySelector('input'); if (f) f.focus(); } }
-ifEl.btn.addEventListener('click', function () { ifPaneel(ifEl.panel.hidden); });
+ifEl.btn.addEventListener('click', function () { if (ifEl.panel.hidden) ifDgPaneel(false); ifPaneel(ifEl.panel.hidden); });
 document.getElementById('if-sector-close').addEventListener('click', function () { ifPaneel(false); ifEl.btn.focus(); });
 document.getElementById('if-sector-clear').addEventListener('click', function () { IF.sectors = []; ifSyncUi(); ifUpdate(true); });
 ifEl.opts.addEventListener('change', function (e) {
@@ -393,8 +427,15 @@ ifEl.opts.addEventListener('change', function (e) {
   IF.sectors.sort();
   ifUpdate(true);
 });
-document.addEventListener('click', function (e) { if (!ifEl.panel.hidden && !e.target.closest('.if-sectorwrap')) ifPaneel(false); });
-document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ifEl.panel.hidden) { ifPaneel(false); ifEl.btn.focus(); } });
+document.addEventListener('click', function (e) {
+  if (!ifEl.panel.hidden && !e.target.closest('#if-sectorwrap')) ifPaneel(false);
+  if (!ifEl.dgPanel.hidden && !e.target.closest('#if-dgwrap')) ifDgPaneel(false);
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  if (!ifEl.panel.hidden) { ifPaneel(false); ifEl.btn.focus(); }
+  if (!ifEl.dgPanel.hidden) { ifDgPaneel(false); ifEl.dgBtn.focus(); }
+});
 ifEl.soort.addEventListener('change', function () { IF.soort = ifEl.soort.value; ifUpdate(true); });
 ifEl.status.addEventListener('click', function (e) {
   var b = e.target.closest('button'); if (!b) return;

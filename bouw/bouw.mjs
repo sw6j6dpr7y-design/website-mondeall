@@ -10,6 +10,7 @@ import { statusregel } from './onderdelen.mjs';
 import { paginas, afgeleidePaginas, sectorPad, tekstVolgtZin } from '../inhoud/paginas.mjs';
 import { sectoren, AANDACHT } from '../inhoud/data/sectoren.mjs';
 import { AFBAKENING } from '../inhoud/data/aandachtsgebieden.mjs';
+import { DOELGROEPEN } from '../inhoud/data/doelgroepen.mjs';
 import { INI_DATA } from '../inhoud/data/initiatieven.mjs';
 import { IF_KERNEN, IF_KERNBUURT } from '../inhoud/data/kernen.mjs';
 import { hoofdnav, voetkolommen, onderbalk, auteursrecht } from '../inhoud/navigatie.mjs';
@@ -46,6 +47,7 @@ schrijf('assets/data.js',
   'var sectoren = ' + JSON.stringify(sectorenMetPad) + ';\n' +
   'var AANDACHT = ' + JSON.stringify(AANDACHT) + ';\n' +
   'var INI_DATA = ' + JSON.stringify(INI_DATA.map(({ v2, ...rest }) => rest)) + ';\n' +
+  'var DOELGROEPEN = ' + JSON.stringify(DOELGROEPEN) + ';\n' +
   'var IF_KERNEN = ' + JSON.stringify(IF_KERNEN) + ';\n' +
   'var IF_KERNBUURT = ' + JSON.stringify(IF_KERNBUURT) + ';\n');
 

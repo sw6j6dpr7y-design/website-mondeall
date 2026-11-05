@@ -4,6 +4,8 @@ const STIJL_BRICO = "font-family:'Bricolage Grotesque',sans-serif;font-weight:80
 const STIJL_MONO = "font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.02em;";
 const STIJL_SERIF = "font-family:'Source Serif 4',serif;font-weight:400;font-style:italic;font-size:1.15rem;";
 
+import { DOELGROEPEN, DOELGROEP_PER_INITIATIEF } from './doelgroepen.mjs';
+
 export const INI_DATA = [
   { voorbeeld: true, slug: "waterput-partnerdorp", soort: "Stichting", mensen: 71, bedrag: "2.140", sinds: "2 september", eerste: "Hanneke", afgesloten: "", foto: "/assets/fotos/voorbeeld-01-waterput.jpg", credit: "Matazu Multimedia / Pexels", pos: "50%", sector: "01", kern: "Lochem", titel: "Een waterput in een partnerdorp", beg: "Stichting Dorp aan Dorp", starter: "een bestuurslid",
     vz: "Een waterput met handpomp, zodat een dorp ver weg schoon water heeft dicht bij huis.",
@@ -183,5 +185,14 @@ export const INI_DATA = [
       ]
     } }
 ];
+
+/* Doelgroeptags koppelen; een onbekende slug of tag laat de bouw falen. */
+const TAG_IDS = new Set(DOELGROEPEN.map((t) => t.id));
+const SLUGS = new Set(INI_DATA.map((d) => d.slug));
+for (const slug of Object.keys(DOELGROEP_PER_INITIATIEF)) if (!SLUGS.has(slug)) throw new Error('Doelgroep: onbekend Initiatief ' + slug);
+for (const d of INI_DATA) {
+  d.doelgroepen = DOELGROEP_PER_INITIATIEF[d.slug] || [];
+  for (const t of d.doelgroepen) if (!TAG_IDS.has(t)) throw new Error('Doelgroep: onbekende tag ' + t + ' bij ' + d.slug);
+}
 
 export const INI_STAPPEN = [["01", "Voorbereiden"], ["02", "Starten"], ["03", "Bloeien"], ["04", "Vieren"]];

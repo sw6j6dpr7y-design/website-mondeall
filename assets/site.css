@@ -173,6 +173,11 @@
   .if-panel fieldset { border: 0; margin: 0; padding: 0; }
   .if-panel legend { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--gedempt); padding: 4px 10px 8px; }
   .if-opt { display: flex; align-items: center; gap: 10px; padding: 7px 10px; margin: 0; border-radius: 8px; cursor: pointer; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--tekst); letter-spacing: 0; }
+  #if-dg-panel { left: auto; right: 0; }
+  @media (max-width: 720px) { #if-dg-panel { right: auto; left: 0; } #if-dgwrap { position: static; } #if-dg-panel { left: 0; right: 0; width: auto; } }
+  .if-opt-dg { align-items: flex-start; }
+  .if-opt-dg small { display: block; font-weight: 400; font-size: .8rem; color: var(--gedempt); line-height: 1.35; margin-top: 1px; }
+  .ini-voor { margin: 6px 0 0; font-size: .85rem; color: var(--gedempt); }
   .if-opt:hover { background: var(--nevel); }
   .if-opt input { width: 18px; height: 18px; padding: 0; margin: 0; accent-color: var(--diep); flex: none; }
   .if-opt img { width: 22px; height: 22px; flex: none; display: block; }

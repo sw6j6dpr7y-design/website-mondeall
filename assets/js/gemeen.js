@@ -49,8 +49,12 @@
     if (a.closest('header')) sluitMenus(false);
   });
 
-  /* Lint schuift weg bij naar beneden scrollen en komt terug bij omhoog scrollen (blijft staan als een menu open is) */
+  /* De turquoise statusbalk schuift weg bij naar beneden scrollen en komt terug bij omhoog scrollen (blijft staan als een menu open is). Het lint met logo en menu blijft altijd in beeld. */
   var kopEl = document.querySelector('header .bar-wrap'), kopY = 0;
+  var lintStatus = document.querySelector('header .lint-status');
+  function zetLintHoogte() { if (kopEl && lintStatus) kopEl.style.setProperty('--lint-h', lintStatus.offsetHeight + 'px'); }
+  zetLintHoogte();
+  window.addEventListener('resize', zetLintHoogte);
   function kopMenuOpen() { return !!document.querySelector('header [data-menu][aria-expanded="true"]'); }
   if (kopEl) window.addEventListener('scroll', function () {
     var y = window.scrollY || document.documentElement.scrollTop || 0, d = y - kopY;

@@ -1,12 +1,12 @@
-// Navigatie volgens hoofdstuk 2 van de sitemap: vijf ingangen bovenaan, een footer met vijf kolommen en een onderbalk.
+// Navigatie volgens hoofdstuk 2 van de sitemap, met het organisatieregister bovenaan en Partners in de footer (mock-up 15-11-2026): vijf ingangen bovenaan, een footer met vijf kolommen en een onderbalk.
 // Een link wordt alleen een link als de pagina bestaat; anders staat er "Binnenkort".
 
 export const hoofdnav = [
   ['Initiatieven', '/initiatieven'],
+  ['Organisatieregister', '/organisatieregister'],
   ['Hoe het werkt', '/hoe-het-werkt'],
   ['Start een Initiatief', '/starten'],
   ['Sponsoren', '/sponsoren'],
-  ['Partners', '/partners'],
 ];
 
 export const voetkolommen = [
@@ -29,6 +29,7 @@ export const voetkolommen = [
   ['Sponsoren en Partners', [
     ['Sponsor worden', '/sponsoren'],
     ['Treden en tegenprestatie', '/sponsoren/treden'],
+    ['Partners', '/partners'],
     ['Gemeenten', '/partners#gemeenten'],
     ['Fondsen', '/partners#fondsen'],
     ['Strategische partners', '/partners#strategisch'],

@@ -3,6 +3,7 @@
 // fase volgens de sitemap: B = gebouwd, I = informatief openbaar, L = live na oprichting en Mollie.
 import { sectoren } from './data/sectoren.mjs';
 import { INI_DATA } from './data/initiatieven.mjs';
+import { REG_ORGS, REG_KERN, regOrgUrl } from './data/organisaties.mjs';
 
 export const slugify = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 export const sectorPad = (s) => '/sectoren/' + s.nr + '-' + slugify(s.naam);
@@ -14,6 +15,14 @@ export const paginas = [
 
   { url: '/initiatieven', titel: 'Alle Initiatieven', beschrijving: 'Zoek een Initiatief in jouw dorp of wijk, filter op Kern, sector, soort Begunstigde en status.', stukken: ['initiatieven'], scripts: ['initiatieven'], fase: 'L' },
   // /initiatieven/[slug] wordt gemaakt uit de gegevens (zie bouw.mjs)
+
+  // Organisatieregister volgens de mock-up van 15-11-2026. Fictieve voorbeeldgegevens, dus noindex en niet in sitemap.xml.
+  { url: '/organisatieregister', titel: 'Organisatieregister', beschrijving: 'Verenigingen, stichtingen, scholen en kerken in heel Nederland, per gemeente en per kern.', register: 'zoeken', scripts: ['register'], noindex: true, fase: 'L' },
+  { url: REG_KERN.url, titel: REG_KERN.naam, beschrijving: 'Organisaties in de kern ' + REG_KERN.naam + ', gemeente ' + REG_KERN.gemeente + ' (voorbeeld).', register: 'kern', noindex: true, fase: 'L' },
+  ...REG_ORGS.filter((o) => o.pagina).map((o) => ({
+    url: regOrgUrl(o), titel: o.naam, beschrijving: o.soort + ' in ' + REG_KERN.naam + ', gemeente ' + REG_KERN.gemeente + ' (voorbeeld).', register: 'organisatie', org: o, noindex: true, fase: 'L',
+    kruimelpad: [{ url: '/', titel: 'Home' }, { url: '/organisatieregister', titel: 'Organisatieregister' }, { url: REG_KERN.url, titel: REG_KERN.naam }],
+  })),
 
   { url: '/sectoren', titel: 'De twaalf sectoren', beschrijving: 'Elk Initiatief valt binnen één van de twaalf sectoren. Bekijk de aandachtsgebieden per sector.', stukken: ['sectoren', 'sector-dialog'], scripts: ['sectoren'], fase: 'I' },
   // /sectoren/[code]-[naam] wordt gemaakt uit de gegevens

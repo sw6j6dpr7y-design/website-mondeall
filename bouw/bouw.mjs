@@ -18,6 +18,7 @@ import { initiatiefHtml, sponsorHtml, esc, sectorVan } from './initiatief.mjs';
 import { initiatiefPaginaHtml } from './initiatiefpagina.mjs';
 import { leesTeksten, renderMd } from './tekst.mjs';
 import { formulieren } from './formulieren.mjs';
+import { registerZoekHtml, registerOrganisatieHtml, registerKernHtml } from './register.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -165,6 +166,7 @@ function ouders(url) {
 
 // De ouders voor kruimelpad en structured data: de ouder uit de tekst (frontmatter: ouder) of anders het pad zelf
 function keten(p) {
+  if (p.kruimelpad) return p.kruimelpad;
   const o = p.ouder && perUrl.get(p.ouder);
   return o ? [...ouders(p.ouder), { url: p.ouder, titel: o.titel }] : ouders(p.url);
 }
@@ -267,6 +269,11 @@ for (const p of paginas) {
     schrijf(utf8Url(p.url), schil(p, binnen, { scripts: ['werkplaats'] }));
     continue;
   }
+  if (p.register) {
+    binnen = p.register === 'zoeken' ? registerZoekHtml() : p.register === 'kern' ? registerKernHtml() : registerOrganisatieHtml(p.org);
+    schrijf(utf8Url(p.url), schil(p, binnen));
+    continue;
+  }
   if (p.tekst && !p.plaatshouder) {
     const ctx = {
       knop: ([doel, label]) => '<p><a class="cta-btn" href="' + esc(doel) + '">' + esc(label || doel) + '</a></p>',
@@ -363,7 +370,7 @@ for (const s of sectoren) {
 
 // ---------- /sitemap, sitemap.xml, robots.txt, 404 ----------
 const groepen = [
-  ['Initiatieven', '/initiatieven'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'], ['Sponsoren', '/sponsoren'],
+  ['Initiatieven', '/initiatieven'], ['Organisatieregister', '/organisatieregister'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'], ['Sponsoren', '/sponsoren'],
   ['Over Mondéall', '/over'], ['Partners', '/partners'], ['Hulp', '/hulp'], ['Contact en melden', null],
 ];
 const juridischeUrls = ['/contact', '/melden', '/klachten', '/toegankelijkheid', '/kernen', '/colofon', '/voorwaarden', '/voorwaarden/sponsoren', '/privacy', '/cookies'];

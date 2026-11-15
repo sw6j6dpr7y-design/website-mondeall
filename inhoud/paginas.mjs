@@ -17,11 +17,11 @@ export const paginas = [
   // /initiatieven/[slug] wordt gemaakt uit de gegevens (zie bouw.mjs)
 
   // Organisatieregister volgens de mock-up van 15-11-2026. Fictieve voorbeeldgegevens, dus noindex en niet in sitemap.xml.
-  { url: '/organisatieregister', titel: 'Organisatieregister', beschrijving: 'Verenigingen, stichtingen, scholen en kerken in heel Nederland, per gemeente en per kern.', register: 'zoeken', scripts: ['register'], noindex: true, fase: 'L' },
+  { url: '/organisaties', titel: 'Zoek een organisatie', beschrijving: 'Verenigingen, stichtingen, scholen en kerken in heel Nederland, per gemeente en per kern.', register: 'zoeken', scripts: ['register'], noindex: true, fase: 'L' },
   { url: REG_KERN.url, titel: REG_KERN.naam, beschrijving: 'Organisaties in de kern ' + REG_KERN.naam + ', gemeente ' + REG_KERN.gemeente + ' (voorbeeld).', register: 'kern', noindex: true, fase: 'L' },
   ...REG_ORGS.filter((o) => o.pagina).map((o) => ({
     url: regOrgUrl(o), titel: o.naam, beschrijving: o.soort + ' in ' + REG_KERN.naam + ', gemeente ' + REG_KERN.gemeente + ' (voorbeeld).', register: 'organisatie', org: o, noindex: true, fase: 'L',
-    kruimelpad: [{ url: '/', titel: 'Home' }, { url: '/organisatieregister', titel: 'Organisatieregister' }, { url: REG_KERN.url, titel: REG_KERN.naam }],
+    kruimelpad: [{ url: '/', titel: 'Home' }, { url: '/organisaties', titel: 'Zoek een organisatie' }, { url: REG_KERN.url, titel: REG_KERN.naam }],
   })),
 
   { url: '/sectoren', titel: 'De twaalf sectoren', beschrijving: 'Elk Initiatief valt binnen één van de twaalf sectoren. Bekijk de aandachtsgebieden per sector.', stukken: ['sectoren', 'sector-dialog'], scripts: ['sectoren'], fase: 'I' },

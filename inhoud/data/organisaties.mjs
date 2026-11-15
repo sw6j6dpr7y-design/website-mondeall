@@ -2,7 +2,7 @@
 // Alle namen, nummers en gegevens zijn fictief. De echte gegevens komen pas na de oprichting van Stichting Mondéall en de privacytoets.
 // status: open = uit openbare bronnen, aan = aangemeld, beg = Begunstigde.
 
-export const REG_KERN = { naam: 'Dorpveld', gemeente: 'Voorbeeld', url: '/organisatieregister/voorbeeld/dorpveld' };
+export const REG_KERN = { naam: 'Dorpveld', gemeente: 'Voorbeeld', url: '/organisaties/voorbeeld/dorpveld' };
 
 export const REG_STATUS = {
   open: 'Uit openbare bronnen',

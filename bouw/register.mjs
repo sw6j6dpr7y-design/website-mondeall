@@ -27,9 +27,9 @@ export function registerZoekHtml() {
   return `<section class="reg">
   <div class="reg-wrap">
     ${banner}
-    <h1 class="pagina-kop">Organisatieregister</h1>
+    <h1 class="pagina-kop">Zoek een vereniging, stichting, school of kerk</h1>
     <p class="reg-intro">Verenigingen, stichtingen, scholen en kerken in heel Nederland, per gemeente en per kern. Zoeken is gratis en je hebt geen account nodig.</p>
-    <form class="reg-zoek" role="search" action="/organisatieregister" method="get" id="reg-form">
+    <form class="reg-zoek" role="search" action="/organisaties" method="get" id="reg-form">
       <label class="verborgen" for="reg-q">Zoek op naam, plaats of organisatienummer</label>
       <input id="reg-q" type="search" name="q" placeholder="Zoek op naam, plaats of organisatienummer" autocomplete="off" maxlength="80">
       <button type="submit" class="cta-btn">Zoeken</button>
@@ -166,7 +166,7 @@ ${orgs.map((o) => `        <li><div><span class="reg-rij-naam">${naamLink(o)}</s
     ${groepen}
     <div class="reg-voetnoot">
       <p>Mist er een organisatie in ${esc(REG_KERN.naam)}? <a href="/starten/aanmelden">Meld haar aan</a>, dat is gratis.</p>
-      <p><a href="/organisatieregister">&larr; Terug naar het organisatieregister</a></p>
+      <p><a href="/organisaties">&larr; Terug naar Zoek een organisatie</a></p>
     </div>
   </div>
 </section>`;

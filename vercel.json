@@ -16,6 +16,16 @@
   ],
   "redirects": [
     {
+      "source": "/organisatieregister",
+      "destination": "/organisaties",
+      "permanent": true
+    },
+    {
+      "source": "/organisatieregister/:pad*",
+      "destination": "/organisaties/:pad*",
+      "permanent": true
+    },
+    {
       "source": "/partners/gemeenten",
       "destination": "/partners#gemeenten",
       "permanent": true

@@ -370,7 +370,7 @@ for (const s of sectoren) {
 
 // ---------- /sitemap, sitemap.xml, robots.txt, 404 ----------
 const groepen = [
-  ['Initiatieven', '/initiatieven'], ['Organisatieregister', '/organisatieregister'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'], ['Sponsoren', '/sponsoren'],
+  ['Initiatieven', '/initiatieven'], ['Zoek een organisatie', '/organisaties'], ['Sectoren', '/sectoren'], ['Hoe het werkt', '/hoe-het-werkt'], ['Start een Initiatief', '/starten'], ['Sponsoren', '/sponsoren'],
   ['Over Mondéall', '/over'], ['Partners', '/partners'], ['Hulp', '/hulp'], ['Contact en melden', null],
 ];
 const juridischeUrls = ['/contact', '/melden', '/klachten', '/toegankelijkheid', '/kernen', '/colofon', '/voorwaarden', '/voorwaarden/sponsoren', '/privacy', '/cookies'];

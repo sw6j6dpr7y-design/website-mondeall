@@ -101,6 +101,7 @@ const actief = (p, href) => p.url === href || p.url.startsWith(href + '/');
 function lintHtml(p) {
   const links = hoofdnav.map(([t, h]) => '<li><a href="' + h + '"' + (actief(p, h) ? ' aria-current="page"' : '') + '>' + esc(t) + '</a></li>').join('\n          ');
   return `  <div class="bar-wrap">
+    <div class="lint-status"><p>${esc(STATUSREGEL)}</p></div>
     <div class="hdr-wrap bar">
       <a class="merk" href="/" aria-label="Mondéall, naar de beginpagina">
         <img src="/assets/klavertje-mondeall.png" alt="" width="42" height="37">

@@ -354,6 +354,9 @@
   html { scroll-padding-top: 88px; }
   header .bar-wrap { position: sticky; top: 0; z-index: 1100; background: #fff; transition: transform .25s ease; }
   header .bar-wrap.weg { transform: translateY(-100%); }
+  header .lint-status { background: #40E0D0; border-bottom: 2px solid #102A23; }
+  header .lint-status p { max-width: 1240px; margin: 0 auto; padding: 12px 48px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500; letter-spacing: .04em; line-height: 1.5; color: #102A23; }
+  @media (max-width: 720px) { header .lint-status p { padding: 10px 20px; font-size: 13px; } }
   @media (prefers-reduced-motion: reduce) { header .bar-wrap { transition: none; } }
   header .hoofdnav { margin-left: 24px; margin-right: auto; }
   header .acties { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
